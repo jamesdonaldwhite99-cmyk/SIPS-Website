@@ -1,64 +1,145 @@
 {
-  "heroSlides": [
-    { "src": "/photos/gallery/01.jpg", "kicker": "Residential", "caption": "Family homes, built faster." },
-    { "src": "/photos/gallery/04.jpg", "kicker": "Architectural", "caption": "Pre-finished, panel-precise." },
-    { "src": "/photos/gallery/02.jpg", "kicker": "Sunset envelope", "caption": "A complete SIPs home." },
-    { "src": "/photos/gallery/06.jpg", "kicker": "Modular & multi-res", "caption": "Townhomes locked up in days." },
-    { "src": "/photos/gallery/07.jpg", "kicker": "Interiors", "caption": "Pre-finished interior walls." },
-    { "src": "/photos/gallery/05.jpg", "kicker": "Outdoor living", "caption": "Insulated roof, year-round." },
-    { "src": "/photos/gallery/14.jpg", "kicker": "Insulspan® roofing", "caption": "Long-span, no purlins." },
-    { "src": "/photos/gallery/17.jpg", "kicker": "On-site install", "caption": "Panels lock together fast." },
-    { "src": "/photos/gallery/15.jpg", "kicker": "Outdoor pavilion", "caption": "Insulspan over the deck." },
-    { "src": "/photos/gallery/16.jpg", "kicker": "Patio kits", "caption": "Pre-engineered awnings." },
-    { "src": "/photos/gallery/03.jpg", "kicker": "Dusk patio", "caption": "Insulspan® at golden hour." },
-    { "src": "/photos/gallery/08.jpg", "kicker": "Bedroom interiors", "caption": "MgO/FC interior walls." },
-    { "src": "/photos/gallery/09.jpg", "kicker": "Living rooms", "caption": "Acoustic, airtight, warm." },
-    { "src": "/photos/gallery/10.jpg", "kicker": "Granny flat", "caption": "Pre-finished, ready to live." },
-    { "src": "/photos/gallery/11.jpg", "kicker": "Compact add-on", "caption": "Extensions in days." },
-    { "src": "/photos/gallery/12.jpg", "kicker": "Aerial", "caption": "A complete SIPs cabin." },
-    { "src": "/photos/gallery/13.jpg", "kicker": "Coastal install", "caption": "Wall panels on the harbour." },
-    { "src": "/photos/gallery/19.jpg", "kicker": "Panelcore® coldroom", "caption": "Modular steel-skin envelope." },
-    { "src": "/photos/gallery/20.jpg", "kicker": "Cold storage interior", "caption": "Pre-finished, food-safe." },
-    { "src": "/photos/gallery/18.jpg", "kicker": "Coldroom build", "caption": "Airtight, cam-locked." }
-  ],
-  "heroEyebrow": "Insulspan® · Panelspan® · Panelcore®",
+  "productsLead": "Insulspan, Panelspan, and our pre-engineered patio kits work together as one high-performance envelope — engineered for Australian conditions.",
   "heroH1": "Australia's lightest, fastest structural insulated panel system.",
-  "heroLead": "Revolutionising construction, one panel at a time. From the roof down to the walls, our pre-finished SIPs deliver a faster, stronger, cleaner, more energy-efficient way to build.",
-  "heroCtaPrimary": "Request a quote",
-  "heroCtaSecondary": "View our products",
+  "ctaSecondary": "Download brochure",
   "heroStats": [
-    { "val": "3–4d", "lab": "Lock-up time" },
-    { "val": "25yrs", "lab": "Family heritage" },
-    { "val": "8★", "lab": "Energy performance" },
-    { "val": "90/90/90", "lab": "BAL bushfire rating" }
+    {
+      "val": "10 years",
+      "lab": "Warranty"
+    },
+    {
+      "val": "25yrs",
+      "lab": "Family heritage"
+    },
+    {
+      "val": "8★",
+      "lab": "Energy performance"
+    },
+    {
+      "val": "BAL-40 capable",
+      "lab": "BAL bushfire rating"
+    }
   ],
-  "introEyebrow": "About ThermaSpan",
-  "introH2": "We're redefining how Australia builds.",
   "introPara1": "From the roof down to the walls, our advanced structural insulated panel systems — Insulspan® Roofing Panels and Panelspan® Wall Panels — deliver a faster, stronger, cleaner, and more energy-efficient way to construct homes and outdoor living spaces.",
+  "productsEyebrow": "Our products",
+  "benefitsH2": "Built for builders. Engineered for Australian conditions.",
   "introPara2": "Unlike OSB-based SIPs that still require external cladding and additional finishing trades, our panels use pre-finished FC or MgO surfaces. The structure arrives ready to install with no extra cladding required.",
   "introPara3": "Together, they create a complete high-performance building system that outperforms traditional construction and OSB SIPs in every category: speed, cost, strength, thermal efficiency, and long-term durability.",
+  "heroCtaPrimary": "Request a quote",
   "introCta1": "More about us",
-  "introCta2": "Watch the build video",
-  "productsEyebrow": "Our products",
-  "productsH2": "One integrated SIPs system. Three product families.",
-  "productsLead": "Insulspan, Panelspan, and our pre-engineered patio kits work together as one high-performance envelope — engineered for Australian conditions.",
   "benefitsEyebrow": "Why ThermaSpan",
-  "benefitsH2": "Built for builders. Engineered for Australian conditions.",
+  "introCta2": "Watch the build video",
+  "productsH2": "One integrated SIPs system. Three product families.",
+  "heroEyebrow": "Insulspan® · Panelspan® · Panelcore®",
+  "ctaPrimary": "Request a quote",
+  "ctaBody": "Tell us about your project — patio, extension, new build, commercial — and our team will put together a no-obligation quote with panel specs, install timeline and supply options.",
+  "introH2": "We're redefining how Australia builds.",
+  "ctaPhoneLabel": "Speak to our team",
+  "heroLead": "Revolutionising construction, one panel at a time. From the roof down to the walls, our pre-finished SIPs deliver a faster, stronger, cleaner, more energy-efficient way to build.",
   "benefitsLead": "Five reasons our SIPs outperform traditional framing and OSB-based panels on every job.",
   "ctaH2": "Ready to build smarter?",
-  "ctaBody": "Tell us about your project — patio, extension, new build, commercial — and our team will put together a no-obligation quote with panel specs, install timeline and supply options.",
-  "ctaPhoneLabel": "Speak to our team",
-  "ctaPrimary": "Request a quote",
-  "ctaSecondary": "Download brochure",
-  "applicationsEyebrow": "Applications",
-  "applicationsH2": "Built for every Australian project.",
-  "applicationsLead": "From the family home to commercial cold storage — ThermaSpan panels are engineered to perform across every application.",
-  "applications": [
-    { "kicker": "Residential", "title": "New homes & extensions", "img": "/photos/gallery/01.jpg" },
-    { "kicker": "Outdoor living", "title": "Patios & pavilions", "img": "/photos/gallery/05.jpg" },
-    { "kicker": "Commercial", "title": "Offices & warehouses", "img": "/photos/gallery/19.jpg" },
-    { "kicker": "Modular", "title": "Granny flats & cabins", "img": "/photos/gallery/10.jpg" },
-    { "kicker": "Agricultural", "title": "Sheds & farm buildings", "img": "/photos/gallery/12.jpg" },
-    { "kicker": "Cold storage", "title": "Coolrooms & freezers", "img": "/photos/gallery/18.jpg" }
-  ]
+  "heroSlides": [
+    {
+      "src": "/photos/gallery/01.jpg",
+      "kicker": "Residential",
+      "caption": "Family homes, built faster."
+    },
+    {
+      "src": "/photos/gallery/04.jpg",
+      "kicker": "Architectural",
+      "caption": "Pre-finished, panel-precise."
+    },
+    {
+      "src": "/photos/gallery/02.jpg",
+      "kicker": "Sunset envelope",
+      "caption": "A complete SIPs home."
+    },
+    {
+      "src": "/photos/gallery/06.jpg",
+      "kicker": "Modular & multi-res",
+      "caption": "Townhomes locked up in days."
+    },
+    {
+      "src": "/photos/gallery/07.jpg",
+      "kicker": "Interiors",
+      "caption": "Pre-finished interior walls."
+    },
+    {
+      "src": "/photos/gallery/05.jpg",
+      "kicker": "Outdoor living",
+      "caption": "Insulated roof, year-round."
+    },
+    {
+      "src": "/photos/gallery/14.jpg",
+      "kicker": "Insulspan® roofing",
+      "caption": "Long-span, no purlins."
+    },
+    {
+      "src": "/photos/gallery/17.jpg",
+      "kicker": "On-site install",
+      "caption": "Panels lock together fast."
+    },
+    {
+      "src": "/photos/gallery/15.jpg",
+      "kicker": "Outdoor pavilion",
+      "caption": "Insulspan over the deck."
+    },
+    {
+      "src": "/photos/gallery/16.jpg",
+      "kicker": "Patio kits",
+      "caption": "Pre-engineered awnings."
+    },
+    {
+      "src": "/photos/gallery/03.jpg",
+      "kicker": "Dusk patio",
+      "caption": "Insulspan® at golden hour."
+    },
+    {
+      "src": "/photos/gallery/08.jpg",
+      "kicker": "Bedroom interiors",
+      "caption": "MgO/FC interior walls."
+    },
+    {
+      "src": "/photos/gallery/09.jpg",
+      "kicker": "Living rooms",
+      "caption": "Acoustic, airtight, warm."
+    },
+    {
+      "src": "/photos/gallery/10.jpg",
+      "kicker": "Granny flat",
+      "caption": "Pre-finished, ready to live."
+    },
+    {
+      "src": "/photos/gallery/11.jpg",
+      "kicker": "Compact add-on",
+      "caption": "Extensions in days."
+    },
+    {
+      "src": "/photos/gallery/12.jpg",
+      "kicker": "Aerial",
+      "caption": "A complete SIPs cabin."
+    },
+    {
+      "src": "/photos/gallery/13.jpg",
+      "kicker": "Coastal install",
+      "caption": "Wall panels on the harbour."
+    },
+    {
+      "src": "/photos/gallery/19.jpg",
+      "kicker": "Panelcore® coldroom",
+      "caption": "Modular steel-skin envelope."
+    },
+    {
+      "src": "/photos/gallery/20.jpg",
+      "kicker": "Cold storage interior",
+      "caption": "Pre-finished, food-safe."
+    },
+    {
+      "src": "/photos/gallery/18.jpg",
+      "kicker": "Coldroom build",
+      "caption": "Airtight, cam-locked."
+    }
+  ],
+  "introEyebrow": "About ThermaSpan",
+  "heroCtaSecondary": "View our products"
 }
