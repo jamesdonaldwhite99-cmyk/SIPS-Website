@@ -141,5 +141,16 @@
     }
   ],
   "introEyebrow": "About ThermaSpan",
-  "heroCtaSecondary": "View our products"
+  "heroCtaSecondary": "View our products",
+  "applicationsEyebrow": "Applications",
+  "applicationsH2": "Built for every Australian project.",
+  "applicationsLead": "From the family home to commercial cold storage — ThermaSpan panels are engineered to perform across every application.",
+  "applications": [
+    { "kicker": "Residential", "title": "New homes & extensions", "img": "/photos/gallery/01.jpg" },
+    { "kicker": "Outdoor living", "title": "Patios & pavilions", "img": "/photos/gallery/05.jpg" },
+    { "kicker": "Commercial", "title": "Offices & warehouses", "img": "/photos/gallery/19.jpg" },
+    { "kicker": "Modular", "title": "Granny flats & cabins", "img": "/photos/gallery/10.jpg" },
+    { "kicker": "Agricultural", "title": "Sheds & farm buildings", "img": "/photos/gallery/12.jpg" },
+    { "kicker": "Cold storage", "title": "Coolrooms & freezers", "img": "/photos/gallery/18.jpg" }
+  ]
 }
