@@ -39,13 +39,20 @@ export async function GET(req: NextRequest) {
     `<!doctype html><html><body><p>Logging in…</p><script>
       (function(){
         var token = ${JSON.stringify(data.access_token)};
-        var message = 'authorization:github:success:' + JSON.stringify({ token: token, provider: 'github' });
-        function send(){ window.opener && window.opener.postMessage(message, '*'); }
-        window.addEventListener('message', function(e){
-          if (e.data === 'authorizing:github') send();
-        });
-        send();
-        setTimeout(function(){ window.close(); }, 1000);
+        var payload = 'authorization:github:success:' + JSON.stringify({ token: token, provider: 'github' });
+        if (!window.opener) {
+          document.body.innerHTML = '<p>Error: no opener window. Please close this and try again.</p>';
+          return;
+        }
+        function receive(e){
+          if (e.data === 'authorizing:github') {
+            window.opener.postMessage(payload, e.origin);
+            window.removeEventListener('message', receive);
+            setTimeout(function(){ window.close(); }, 500);
+          }
+        }
+        window.addEventListener('message', receive, false);
+        window.opener.postMessage('authorizing:github', '*');
       })();
     </script></body></html>`,
     { headers: { "Content-Type": "text/html" } }
