@@ -2,7 +2,7 @@ backend:
   name: github
   repo: jamesdonaldwhite99-cmyk/thermaspan-website
   branch: main
-  base_url: https://thermaspan.com.au
+  base_url: https://thermaspan-website.vercel.app
   auth_endpoint: /api/auth
 media_folder: public/photos
 public_folder: /photos
