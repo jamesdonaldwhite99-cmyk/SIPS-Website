@@ -1,0 +1,79 @@
+{
+  "heroEyebrow": "Resources",
+  "heroH1": "Everything you need to specify ThermaSpan.",
+  "heroLead": "Download brochures, installation guides, engineering specifications and NCC compliance documentation.",
+  "resources": [
+    {
+      "kicker": "Brochure",
+      "title": "Insulspan® Brochure",
+      "copy": "Full product overview for the Insulspan® insulated roofing panel range — profiles, thicknesses, colour options and applications.",
+      "fileType": "PDF",
+      "fileSize": "1.8 MB",
+      "cover": "/photos/resources/insulspan-brochure.png",
+      "href": "/pdfs/insulspan-brochure.pdf"
+    },
+    {
+      "kicker": "Install guide",
+      "title": "Insulspan® Install Flyover",
+      "copy": "Step-by-step installation overview for Insulspan® roofing panels — designed for builders and site crews.",
+      "fileType": "PDF",
+      "fileSize": "1.8 MB",
+      "cover": "/photos/resources/insulspan-install-flyover.png",
+      "href": "/pdfs/insulspan-install-flyover.pdf"
+    },
+    {
+      "kicker": "Install guide",
+      "title": "Insulated Patio Install Guide",
+      "copy": "Complete installation guide for ThermaSpan insulated patio kits — covering fixings, flashings, beam connections and finishing.",
+      "fileType": "PDF",
+      "fileSize": "1.6 MB",
+      "cover": "/photos/resources/insulated-patio-install-guide.png",
+      "href": "/pdfs/insulated-patio-install-guide.pdf"
+    },
+    {
+      "kicker": "Brochure",
+      "title": "Panelspan® Wall Panel",
+      "copy": "Product brochure for the Panelspan® structural wall panel system — FC and MgO finishes, thicknesses and structural data.",
+      "fileType": "PDF",
+      "fileSize": "560 KB",
+      "cover": "/photos/resources/panelspan-wall-panel.png",
+      "href": "/pdfs/panelspan-wall-panel.pdf"
+    },
+    {
+      "kicker": "Technical guide",
+      "title": "QBS Home Construction Procedure Manual",
+      "copy": "Detailed construction procedure manual for QuickBuilt Systems homes — site preparation, panel installation and lock-up sequence.",
+      "fileType": "PDF",
+      "fileSize": "6.3 MB",
+      "cover": "/photos/resources/qbs-home-construction-manual.png",
+      "href": "/pdfs/qbs-home-construction-manual.pdf"
+    },
+    {
+      "kicker": "Brochure",
+      "title": "QBS Modular Homes & Cabins Brochure",
+      "copy": "Overview of QuickBuilt Systems modular home and cabin packages — designs, specifications and inclusions.",
+      "fileType": "PDF",
+      "fileSize": "1.8 MB",
+      "cover": "/photos/resources/qbs-modular-homes-cabins.png",
+      "href": "/pdfs/qbs-modular-homes-cabins.pdf"
+    },
+    {
+      "kicker": "Brochure",
+      "title": "QBS Patios Brochure",
+      "copy": "Full range overview for QuickBuilt Systems patio kits — eight architectural styles, panel options, colours and accessories.",
+      "fileType": "PDF",
+      "fileSize": "2.5 MB",
+      "cover": "/photos/resources/qbs-patios-brochure.png",
+      "href": "/pdfs/qbs-patios-brochure.pdf"
+    },
+    {
+      "kicker": "Install guide",
+      "title": "Quick Built Sub Floor Installation Guide",
+      "copy": "Step-by-step subfloor installation guide for QuickBuilt Systems — bearer and joist layout, fixing details and tolerances.",
+      "fileType": "PDF",
+      "fileSize": "644 KB",
+      "cover": "/photos/resources/quick-built-subfloor-guide.png",
+      "href": "/pdfs/quick-built-subfloor-guide.pdf"
+    }
+  ]
+}

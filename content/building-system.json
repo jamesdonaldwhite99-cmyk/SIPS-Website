@@ -1,0 +1,26 @@
+{
+  "heroEyebrow": "Building System",
+  "heroH1": "One system. Roof to wall.",
+  "heroLead": "ThermaSpan's Insulspan® roofing and Panelspan® wall panels work as one integrated building system — engineered to install together with precision, speed, and zero waste.",
+  "heroPhoto": "/photos/Building system.jpg",
+  "processEyebrow": "Our process",
+  "processH2": "From factory to lock-up in days.",
+  "processLead": "Every ThermaSpan project follows the same precise workflow — custom-engineered panels arrive on site pre-cut, pre-finished and ready to install.",
+  "steps": [
+    { "num": "01", "title": "Design & engineer", "copy": "Your project drawings are converted into a precise panel schedule. Every cut, notch, and service penetration is pre-engineered in the factory." },
+    { "num": "02", "title": "Factory fabrication", "copy": "Panels are cut, finished and bundled to your schedule. Arrive on site pre-labelled and ready for installation in order." },
+    { "num": "03", "title": "Site delivery", "copy": "Panels are delivered direct to site on flatbed trucks. No specialist cranes or equipment required for residential builds." },
+    { "num": "04", "title": "Install & lock-up", "copy": "A small crew installs the complete roof and wall envelope. Typical residential projects reach lock-up in 3–4 days." },
+    { "num": "05", "title": "Ready to finish", "copy": "Pre-finished FC and MgO surfaces are ready for paint or render. No additional cladding, sarking, or lining trades needed." }
+  ],
+  "systemEyebrow": "How it works",
+  "systemH2": "Insulspan® + Panelspan® = a complete envelope.",
+  "systemPara1": "Used together, Insulspan® roofing and Panelspan® walls create an airtight, pre-finished building envelope that outperforms traditional construction in every metric.",
+  "systemPara2": "No thermal bridging. No condensation risk. No multiple trades walking over each other's work. Just a precise, factory-engineered system delivered on time.",
+  "performanceStats": [
+    { "label": "Lock-up time", "value": "3–4 days" },
+    { "label": "Thermal performance", "value": "8 Star NatHERS" },
+    { "label": "Max span", "value": "8.1m" },
+    { "label": "Fire rating", "value": "BAL 29" }
+  ]
+}

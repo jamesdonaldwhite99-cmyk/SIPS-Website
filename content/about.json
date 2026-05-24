@@ -1,0 +1,25 @@
+{
+  "heroPhoto": "/photos/about-our-story.jpg",
+  "heroEyebrow": "The company",
+  "heroH1": "A builder's family business. Now making the panel they always wanted.",
+  "heroLead": "25 years in the trade. One SIPs panel range built for the people who actually have to lay it on site.",
+  "storyEyebrow": "Our story",
+  "storyH2": "Built on jobsites, not in boardrooms.",
+  "storyPara1": "At ThermaSpan, we believe your build deserves a system you can count on. That's why we've developed a product range that gives builders, tradies, and owner-builders the performance and confidence they need — from the slab up.",
+  "storyPara2": "As a proudly family-owned business with over 25 years of experience in modular construction and insulated panel supply, we combine deep industry knowledge with a genuine commitment to quality.",
+  "storyPara3": "Our SIPs panels are engineered for strength, stability and safety. Pre-finished, moisture stable and designed to outperform OSB-based SIPs and traditional framing — they deliver superior structural performance while remaining fast to install on site.",
+  "storyPara4": "Across Insulspan® roofing, Panelspan® walls and Panelcore® coldroom panels, ThermaSpan products are suitable for residential, commercial, agricultural and controlled-temperature use.",
+  "stats": [
+    { "label": "Years building", "value": "25+" },
+    { "label": "Ownership", "value": "Family-owned" },
+    { "label": "Headquarters", "value": "Sydney NSW" },
+    { "label": "Sister brands", "value": "Quick Built" }
+  ],
+  "videoEyebrow": "Watch our build video",
+  "videoH2": "A complete envelope, installed in days.",
+  "videoLead": "Watch a complete two-storey extension reach lock-up using our SIPs system — start to finish, panel by panel. The same factory-precise process every ThermaSpan job uses.",
+  "videoTag": "4 min 32 sec",
+  "systemH2": "A complete building system from ThermaSpan.",
+  "systemPara1": "When you use Insulspan® roofing and Panelspan® walls together, you get a complete pre-finished building envelope — no additional cladding, no bulk insulation, no separate lining boards.",
+  "systemPara2": "Every surface arrives ready to paint or finish. Every joint is factory-precise. Every panel is engineered together as one system."
+}

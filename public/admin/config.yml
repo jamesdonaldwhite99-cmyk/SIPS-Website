@@ -1,0 +1,165 @@
+backend:
+  name: github
+  repo: jamesdonaldwhite99-cmyk/thermaspan-website
+  branch: main
+  base_url: https://thermaspan.com.au
+  auth_endpoint: /api/auth
+media_folder: public/photos
+public_folder: /photos
+collections:
+  # ── Global ─────────────────────────────────────────────────
+  - name: global
+    label: Global Settings
+    files:
+      - name: global
+        label: Global Settings (phone, email, company)
+        file: content/global.json
+        format: json
+        fields:
+          - { name: phone,    label: Phone number,   widget: string, hint: "Shown in header, footer and contact page" }
+          - { name: email,    label: Email address,  widget: string }
+          - { name: address,  label: Address,        widget: string }
+          - { name: hours,    label: Office hours,   widget: string }
+          - { name: company,  label: Company name,   widget: string }
+
+  # ── Home page ──────────────────────────────────────────────
+  - name: home
+    label: Home Page
+    files:
+      - name: home
+        label: Home Page Content
+        file: content/home.json
+        format: json
+        fields:
+          - { name: heroEyebrow,     label: Hero eyebrow text,            widget: string }
+          - { name: heroH1,          label: Hero headline,                widget: text }
+          - { name: heroLead,        label: Hero intro text,              widget: text }
+          - { name: heroCtaPrimary,  label: Primary button text,          widget: string }
+          - { name: heroCtaSecondary,label: Secondary button text,        widget: string }
+          - name: heroStats
+            label: Hero stats (4 boxes)
+            widget: list
+            fields:
+              - { name: val, label: Value, widget: string }
+              - { name: lab, label: Label, widget: string }
+          - { name: introEyebrow,    label: Intro section eyebrow,        widget: string }
+          - { name: introH2,         label: Intro headline,               widget: string }
+          - { name: introPara1,      label: Intro paragraph 1,            widget: text }
+          - { name: introPara2,      label: Intro paragraph 2,            widget: text }
+          - { name: introPara3,      label: Intro paragraph 3,            widget: text }
+          - { name: productsEyebrow, label: Products section eyebrow,     widget: string }
+          - { name: productsH2,      label: Products headline,            widget: string }
+          - { name: productsLead,    label: Products intro text,          widget: text }
+          - { name: benefitsEyebrow, label: Benefits section eyebrow,     widget: string }
+          - { name: benefitsH2,      label: Benefits headline,            widget: string }
+          - { name: ctaH2,           label: CTA section headline,         widget: string }
+          - { name: ctaBody,         label: CTA body text,               widget: text }
+
+  # ── Insulspan product page ─────────────────────────────────
+  - name: insulspan
+    label: Insulspan® Product Page
+    files:
+      - name: insulspan
+        label: Insulspan® Content
+        file: content/insulspan.json
+        format: json
+        fields:
+          - { name: heroTitle,       label: Hero title (first line),  widget: string }
+          - { name: heroTitleAccent, label: Hero title accent (second line), widget: string }
+          - { name: heroLead,        label: Hero lead paragraph,      widget: text }
+          - { name: heroPhoto,       label: Hero photo,               widget: image }
+          - { name: overviewH2,      label: Overview headline,        widget: string }
+          - { name: overviewPara1,   label: Overview paragraph 1,     widget: text }
+          - { name: overviewPara2,   label: Overview paragraph 2,     widget: text }
+          - { name: overviewPara3,   label: Overview paragraph 3,     widget: text }
+          - { name: overviewPhoto,   label: Overview photo,           widget: image }
+
+  # ── Panelspan product page ─────────────────────────────────
+  - name: panelspan
+    label: Panelspan® Product Page
+    files:
+      - name: panelspan
+        label: Panelspan® Content
+        file: content/panelspan.json
+        format: json
+        fields:
+          - { name: heroTitle,       label: Hero title (first line),  widget: string }
+          - { name: heroTitleAccent, label: Hero title accent (second line), widget: string }
+          - { name: heroLead,        label: Hero lead paragraph,      widget: text }
+          - { name: heroPhoto,       label: Hero photo,               widget: image }
+          - { name: overviewH2,      label: Overview headline,        widget: string }
+          - { name: overviewPara1,   label: Overview paragraph 1,     widget: text }
+          - { name: overviewPara2,   label: Overview paragraph 2,     widget: text }
+
+  # ── Panelcore product page ─────────────────────────────────
+  - name: panelcore
+    label: Panelcore® Coldroom Page
+    files:
+      - name: panelcore
+        label: Panelcore® Content
+        file: content/panelcore.json
+        format: json
+        fields:
+          - { name: heroTitle,       label: Hero title (first line),  widget: string }
+          - { name: heroTitleAccent, label: Hero title accent (second line), widget: string }
+          - { name: heroLead,        label: Hero lead paragraph,      widget: text }
+          - { name: heroPhoto,       label: Hero photo,               widget: image }
+          - { name: overviewH2,      label: Overview headline,        widget: string }
+          - { name: overviewPara1,   label: Overview paragraph 1,     widget: text }
+          - { name: overviewPara2,   label: Overview paragraph 2,     widget: text }
+
+  # ── About page ─────────────────────────────────────────────
+  - name: about
+    label: About Page
+    files:
+      - name: about
+        label: About Page Content
+        file: content/about.json
+        format: json
+        fields:
+          - { name: heroPhoto,   label: Hero background image,  widget: image }
+          - { name: heroEyebrow, label: Hero eyebrow,           widget: string }
+          - { name: heroH1,      label: Hero headline,          widget: text }
+          - { name: heroLead,    label: Hero lead text,         widget: text }
+          - { name: storyEyebrow,label: Story section eyebrow,  widget: string }
+          - { name: storyH2,     label: Story headline,         widget: string }
+          - { name: storyPara1,  label: Story paragraph 1,      widget: text }
+          - { name: storyPara2,  label: Story paragraph 2,      widget: text }
+          - { name: storyPara3,  label: Story paragraph 3,      widget: text }
+          - { name: storyPara4,  label: Story paragraph 4,      widget: text }
+          - { name: videoEyebrow,label: Video section eyebrow,  widget: string }
+          - { name: videoH2,     label: Video section headline, widget: string }
+          - { name: videoLead,   label: Video section lead,     widget: text }
+
+  # ── Building System page ───────────────────────────────────
+  - name: building_system
+    label: Building System Page
+    files:
+      - name: building_system
+        label: Building System Content
+        file: content/building-system.json
+        format: json
+        fields:
+          - { name: heroEyebrow, label: Hero eyebrow,     widget: string }
+          - { name: heroH1,      label: Hero headline,    widget: text }
+          - { name: heroLead,    label: Hero lead text,   widget: text }
+          - { name: heroPhoto,   label: Hero background,  widget: image }
+          - { name: processH2,   label: Process headline, widget: string }
+          - { name: processLead, label: Process lead,     widget: text }
+
+  # ── Contact page ───────────────────────────────────────────
+  - name: contact
+    label: Contact Page
+    files:
+      - name: contact
+        label: Contact Page Content
+        file: content/contact.json
+        format: json
+        fields:
+          - { name: heroEyebrow, label: Hero eyebrow,      widget: string }
+          - { name: heroH1,      label: Hero headline,     widget: text }
+          - { name: heroLead,    label: Hero lead text,    widget: text }
+          - { name: asideH2,     label: Form aside headline, widget: string }
+          - { name: asidePara1,  label: Form aside para 1, widget: text }
+          - { name: asidePara2,  label: Form aside para 2, widget: text }
+          - { name: webhookUrl,  label: Make.com webhook URL, widget: string, hint: "The URL that receives form submissions" }

@@ -1,0 +1,15 @@
+{
+  "heroEyebrow": "Contact",
+  "heroH1": "Let's talk about your project.",
+  "heroLead": "Whether it's a patio, extension, new build or commercial project — our team is ready to help.",
+  "asideH2": "Tell us about your project.",
+  "asidePara1": "Fill in the form and one of our team will be in touch within 24 hours to discuss your project, provide panel specifications, and put together a no-obligation quote.",
+  "asidePara2": "Prefer to call? Our team is available Monday to Friday, 7:30am–4:30pm AEST.",
+  "channels": [
+    { "label": "Phone", "value": "1300 132 787", "href": "tel:1300132787" },
+    { "label": "Email", "value": "sales@quickbuiltsystems.com.au", "href": "mailto:sales@quickbuiltsystems.com.au" },
+    { "label": "Hours", "value": "Mon–Fri 7:30–4:30 AEST", "href": null },
+    { "label": "Location", "value": "Sydney, NSW", "href": null }
+  ],
+  "webhookUrl": "https://hook.eu2.make.com/PLACEHOLDER"
+}
