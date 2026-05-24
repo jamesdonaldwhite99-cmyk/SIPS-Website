@@ -66,14 +66,7 @@ const benefits = [
   { num: "05", icon: "clean", title: "Easy to clean", copy: "Pre-finished FC and MgO surfaces — moisture stable, no warping, low maintenance for the life of the build." },
 ];
 
-const applications = [
-  { kicker: "Residential", title: "New homes & extensions", img: "/photos/gallery/01.jpg" },
-  { kicker: "Outdoor living", title: "Patios & pavilions", img: "/photos/gallery/05.jpg" },
-  { kicker: "Commercial", title: "Offices & warehouses", img: "/photos/gallery/19.jpg" },
-  { kicker: "Modular", title: "Granny flats & cabins", img: "/photos/gallery/10.jpg" },
-  { kicker: "Agricultural", title: "Sheds & farm buildings", img: "/photos/gallery/12.jpg" },
-  { kicker: "Cold storage", title: "Coolrooms & freezers", img: "/photos/gallery/18.jpg" },
-];
+const applications = homeData.applications;
 
 function BenefitIcon({ icon }: { icon: string }) {
   if (icon === "light") return (
@@ -417,13 +410,10 @@ export default function HomePage() {
         <div className="ts-container">
           <div className="ts-section-head" style={{ marginBottom: 40 }}>
             <div>
-              <div className="ts-eyebrow section-head-animate">Applications</div>
-              <h2 className="section-head-animate">Built for every Australian project.</h2>
+              <div className="ts-eyebrow section-head-animate">{homeData.applicationsEyebrow}</div>
+              <h2 className="section-head-animate">{homeData.applicationsH2}</h2>
             </div>
-            <p className="section-head-animate">
-              From the family home to commercial cold storage — ThermaSpan panels are
-              engineered to perform across every application.
-            </p>
+            <p className="section-head-animate">{homeData.applicationsLead}</p>
           </div>
         </div>
         <div className="ts-applications">

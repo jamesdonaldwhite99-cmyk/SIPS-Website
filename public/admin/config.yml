@@ -173,6 +173,17 @@ collections:
           - { name: ctaPhoneLabel,   label: CTA phone label,              widget: string, required: false }
           - { name: ctaPrimary,      label: CTA primary button,           widget: string, required: false }
           - { name: ctaSecondary,    label: CTA secondary button,         widget: string, required: false }
+          - { name: applicationsEyebrow, label: Applications section eyebrow, widget: string }
+          - { name: applicationsH2,  label: Applications section headline, widget: string }
+          - { name: applicationsLead, label: Applications section intro text, widget: text }
+          - name: applications
+            label: Applications (image tiles)
+            widget: list
+            summary: "{{fields.kicker}} — {{fields.title}}"
+            fields:
+              - { name: kicker, label: Kicker (small tag),    widget: string }
+              - { name: title,  label: Title,                 widget: string }
+              - { name: img,    label: Tile image,            widget: image }
 
   # ── Insulspan product page ─────────────────────────────────
   - name: insulspan
