@@ -9,28 +9,7 @@ import homeData from "@/content/home.json";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const SLIDES = [
-  { src: "/photos/gallery/01.jpg", kicker: "Residential", caption: "Family homes, built faster." },
-  { src: "/photos/gallery/04.jpg", kicker: "Architectural", caption: "Pre-finished, panel-precise." },
-  { src: "/photos/gallery/02.jpg", kicker: "Sunset envelope", caption: "A complete SIPs home." },
-  { src: "/photos/gallery/06.jpg", kicker: "Modular & multi-res", caption: "Townhomes locked up in days." },
-  { src: "/photos/gallery/07.jpg", kicker: "Interiors", caption: "Pre-finished interior walls." },
-  { src: "/photos/gallery/05.jpg", kicker: "Outdoor living", caption: "Insulated roof, year-round." },
-  { src: "/photos/gallery/14.jpg", kicker: "Insulspan® roofing", caption: "Long-span, no purlins." },
-  { src: "/photos/gallery/17.jpg", kicker: "On-site install", caption: "Panels lock together fast." },
-  { src: "/photos/gallery/15.jpg", kicker: "Outdoor pavilion", caption: "Insulspan over the deck." },
-  { src: "/photos/gallery/16.jpg", kicker: "Patio kits", caption: "Pre-engineered awnings." },
-  { src: "/photos/gallery/03.jpg", kicker: "Dusk patio", caption: "Insulspan® at golden hour." },
-  { src: "/photos/gallery/08.jpg", kicker: "Bedroom interiors", caption: "MgO/FC interior walls." },
-  { src: "/photos/gallery/09.jpg", kicker: "Living rooms", caption: "Acoustic, airtight, warm." },
-  { src: "/photos/gallery/10.jpg", kicker: "Granny flat", caption: "Pre-finished, ready to live." },
-  { src: "/photos/gallery/11.jpg", kicker: "Compact add-on", caption: "Extensions in days." },
-  { src: "/photos/gallery/12.jpg", kicker: "Aerial", caption: "A complete SIPs cabin." },
-  { src: "/photos/gallery/13.jpg", kicker: "Coastal install", caption: "Wall panels on the harbour." },
-  { src: "/photos/gallery/19.jpg", kicker: "Panelcore® coldroom", caption: "Modular steel-skin envelope." },
-  { src: "/photos/gallery/20.jpg", kicker: "Cold storage interior", caption: "Pre-finished, food-safe." },
-  { src: "/photos/gallery/18.jpg", kicker: "Coldroom build", caption: "Airtight, cam-locked." },
-];
+const SLIDES = homeData.heroSlides;
 const SLIDE_DURATION = 2500;
 
 const products = [

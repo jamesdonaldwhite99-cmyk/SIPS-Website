@@ -136,6 +136,14 @@ collections:
         file: content/home.json
         format: json
         fields:
+          - name: heroSlides
+            label: Hero slideshow images (cycles in the background)
+            widget: list
+            summary: "{{fields.kicker}} — {{fields.caption}}"
+            fields:
+              - { name: src,     label: Image,   widget: image }
+              - { name: kicker,  label: Kicker (small tag on slide), widget: string }
+              - { name: caption, label: Caption (used as alt text), widget: string }
           - { name: heroEyebrow,     label: Hero eyebrow text,            widget: string }
           - { name: heroH1,          label: Hero headline,                widget: text }
           - { name: heroLead,        label: Hero intro text,              widget: text }
