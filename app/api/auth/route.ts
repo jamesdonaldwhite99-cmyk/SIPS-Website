@@ -36,13 +36,18 @@ export async function GET(req: NextRequest) {
   }
 
   return new NextResponse(
-    `<script>
-      const token = ${JSON.stringify(data.access_token)};
-      window.opener.postMessage(
-        'authorization:github:success:' + JSON.stringify({ token, provider: 'github' }),
-        '*'
-      );
-    </script>`,
+    `<!doctype html><html><body><p>Logging in…</p><script>
+      (function(){
+        var token = ${JSON.stringify(data.access_token)};
+        var message = 'authorization:github:success:' + JSON.stringify({ token: token, provider: 'github' });
+        function send(){ window.opener && window.opener.postMessage(message, '*'); }
+        window.addEventListener('message', function(e){
+          if (e.data === 'authorizing:github') send();
+        });
+        send();
+        setTimeout(function(){ window.close(); }, 1000);
+      })();
+    </script></body></html>`,
     { headers: { "Content-Type": "text/html" } }
   );
 }
