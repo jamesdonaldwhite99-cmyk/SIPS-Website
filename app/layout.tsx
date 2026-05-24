@@ -2,18 +2,19 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import seo from "@/content/seo.json";
 
 export const metadata: Metadata = {
   title: {
-    default: "ThermaSpan — Australia's Lightest, Fastest SIPs System",
-    template: "%s · ThermaSpan",
+    default: seo.site.defaultTitle,
+    template: seo.site.titleTemplate,
   },
-  description:
-    "Insulspan® roofing panels, Panelspan® wall panels and Panelcore® coldroom panels. Pre-finished SIPs engineered for Australian conditions. Family-owned, 25 years experience.",
-  keywords: ["SIPs panels", "structural insulated panels", "insulated roofing", "Insulspan", "Panelspan", "Panelcore", "ThermaSpan", "QuickBuilt", "Australian building"],
+  description: seo.site.description,
+  keywords: seo.site.keywords.split(",").map((k) => k.trim()).filter(Boolean),
   openGraph: {
-    siteName: "ThermaSpan",
-    locale: "en_AU",
+    siteName: seo.site.siteName,
+    locale: seo.site.locale,
+    ...(seo.site.ogImage ? { images: [{ url: seo.site.ogImage }] } : {}),
   },
 };
 

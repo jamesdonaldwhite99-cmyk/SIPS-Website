@@ -16,11 +16,116 @@ collections:
         file: content/global.json
         format: json
         fields:
-          - { name: phone,    label: Phone number,   widget: string, hint: "Shown in header, footer and contact page" }
+          - { name: phone,    label: Phone number,   widget: string }
           - { name: email,    label: Email address,  widget: string }
           - { name: address,  label: Address,        widget: string }
           - { name: hours,    label: Office hours,   widget: string }
           - { name: company,  label: Company name,   widget: string }
+          - { name: abn,      label: ABN,            widget: string, required: false }
+          - { name: heroCtaText, label: Header CTA text, widget: string, required: false }
+          - { name: heroCtaHref, label: Header CTA link, widget: string, required: false }
+
+  # ── SEO (per page) ─────────────────────────────────────────
+  - name: seo
+    label: SEO Settings
+    files:
+      - name: seo
+        label: SEO for every page
+        file: content/seo.json
+        format: json
+        fields:
+          - name: site
+            label: Site-wide defaults
+            widget: object
+            fields:
+              - { name: titleTemplate, label: Title template, widget: string, hint: "Use %s for the page title. e.g. '%s · ThermaSpan'" }
+              - { name: defaultTitle,  label: Default title, widget: string }
+              - { name: description,   label: Default description, widget: text }
+              - { name: keywords,      label: Default keywords (comma-separated), widget: text }
+              - { name: ogImage,       label: Default social share image, widget: image, required: false }
+              - { name: siteName,      label: Site name, widget: string }
+              - { name: locale,        label: Locale, widget: string, hint: "e.g. en_AU" }
+          - name: pages
+            label: Per-page SEO
+            widget: object
+            fields:
+              - name: home
+                label: Home
+                widget: object
+                fields:
+                  - { name: title, label: Title, widget: string }
+                  - { name: description, label: Description, widget: text }
+                  - { name: ogImage, label: Social share image, widget: image, required: false }
+              - name: about
+                label: About
+                widget: object
+                fields:
+                  - { name: title, label: Title, widget: string }
+                  - { name: description, label: Description, widget: text }
+                  - { name: ogImage, label: Social share image, widget: image, required: false }
+              - name: building_system
+                label: Building System
+                widget: object
+                fields:
+                  - { name: title, label: Title, widget: string }
+                  - { name: description, label: Description, widget: text }
+                  - { name: ogImage, label: Social share image, widget: image, required: false }
+              - name: products
+                label: Products (index)
+                widget: object
+                fields:
+                  - { name: title, label: Title, widget: string }
+                  - { name: description, label: Description, widget: text }
+                  - { name: ogImage, label: Social share image, widget: image, required: false }
+              - name: insulspan
+                label: Insulspan®
+                widget: object
+                fields:
+                  - { name: title, label: Title, widget: string }
+                  - { name: description, label: Description, widget: text }
+                  - { name: ogImage, label: Social share image, widget: image, required: false }
+              - name: panelspan
+                label: Panelspan®
+                widget: object
+                fields:
+                  - { name: title, label: Title, widget: string }
+                  - { name: description, label: Description, widget: text }
+                  - { name: ogImage, label: Social share image, widget: image, required: false }
+              - name: panelcore
+                label: Panelcore®
+                widget: object
+                fields:
+                  - { name: title, label: Title, widget: string }
+                  - { name: description, label: Description, widget: text }
+                  - { name: ogImage, label: Social share image, widget: image, required: false }
+              - name: patio_kits
+                label: Patio Kits
+                widget: object
+                fields:
+                  - { name: title, label: Title, widget: string }
+                  - { name: description, label: Description, widget: text }
+                  - { name: ogImage, label: Social share image, widget: image, required: false }
+              - name: gallery
+                label: Gallery
+                widget: object
+                fields:
+                  - { name: title, label: Title, widget: string }
+                  - { name: description, label: Description, widget: text }
+                  - { name: ogImage, label: Social share image, widget: image, required: false }
+              - name: contact
+                label: Contact
+                widget: object
+                fields:
+                  - { name: title, label: Title, widget: string }
+                  - { name: description, label: Description, widget: text }
+                  - { name: ogImage, label: Social share image, widget: image, required: false }
+              - name: resources
+                label: Resources
+                widget: object
+                fields:
+                  - { name: title, label: Title, widget: string }
+                  - { name: description, label: Description, widget: text }
+                  - { name: ogImage, label: Social share image, widget: image, required: false }
 
   # ── Home page ──────────────────────────────────────────────
   - name: home
@@ -47,13 +152,19 @@ collections:
           - { name: introPara1,      label: Intro paragraph 1,            widget: text }
           - { name: introPara2,      label: Intro paragraph 2,            widget: text }
           - { name: introPara3,      label: Intro paragraph 3,            widget: text }
+          - { name: introCta1,       label: Intro CTA 1 text,             widget: string, required: false }
+          - { name: introCta2,       label: Intro CTA 2 text,             widget: string, required: false }
           - { name: productsEyebrow, label: Products section eyebrow,     widget: string }
           - { name: productsH2,      label: Products headline,            widget: string }
           - { name: productsLead,    label: Products intro text,          widget: text }
           - { name: benefitsEyebrow, label: Benefits section eyebrow,     widget: string }
           - { name: benefitsH2,      label: Benefits headline,            widget: string }
+          - { name: benefitsLead,    label: Benefits intro text,          widget: text, required: false }
           - { name: ctaH2,           label: CTA section headline,         widget: string }
-          - { name: ctaBody,         label: CTA body text,               widget: text }
+          - { name: ctaBody,         label: CTA body text,                widget: text }
+          - { name: ctaPhoneLabel,   label: CTA phone label,              widget: string, required: false }
+          - { name: ctaPrimary,      label: CTA primary button,           widget: string, required: false }
+          - { name: ctaSecondary,    label: CTA secondary button,         widget: string, required: false }
 
   # ── Insulspan product page ─────────────────────────────────
   - name: insulspan
@@ -64,15 +175,45 @@ collections:
         file: content/insulspan.json
         format: json
         fields:
+          - { name: kicker,          label: Kicker (small tag above hero), widget: string }
           - { name: heroTitle,       label: Hero title (first line),  widget: string }
           - { name: heroTitleAccent, label: Hero title accent (second line), widget: string }
           - { name: heroLead,        label: Hero lead paragraph,      widget: text }
           - { name: heroPhoto,       label: Hero photo,               widget: image }
+          - { name: heroPhotoTag,    label: Hero photo caption,       widget: string }
+          - name: specs
+            label: Spec strip (4 boxes)
+            widget: list
+            fields:
+              - { name: label, label: Label, widget: string }
+              - { name: value, label: Value, widget: string }
+          - { name: overviewEyebrow, label: Overview eyebrow,         widget: string }
           - { name: overviewH2,      label: Overview headline,        widget: string }
           - { name: overviewPara1,   label: Overview paragraph 1,     widget: text }
           - { name: overviewPara2,   label: Overview paragraph 2,     widget: text }
           - { name: overviewPara3,   label: Overview paragraph 3,     widget: text }
           - { name: overviewPhoto,   label: Overview photo,           widget: image }
+          - { name: overviewPhotoTag,label: Overview photo caption,   widget: string }
+          - name: profiles
+            label: Profile options
+            widget: list
+            fields:
+              - { name: name, label: Name, widget: string }
+              - { name: copy, label: Description, widget: text }
+              - { name: img,  label: Image, widget: image }
+          - { name: bannerPhoto,     label: Banner photo,             widget: image }
+          - name: advantages
+            label: Advantages
+            widget: list
+            fields:
+              - { name: title, label: Title, widget: string }
+              - { name: copy,  label: Copy,  widget: text }
+          - name: colourSwatches
+            label: Colour swatches
+            widget: list
+            fields:
+              - { name: name, label: Name, widget: string }
+              - { name: hex,  label: Hex colour, widget: string, hint: "e.g. #e6dcc4" }
 
   # ── Panelspan product page ─────────────────────────────────
   - name: panelspan
@@ -83,13 +224,42 @@ collections:
         file: content/panelspan.json
         format: json
         fields:
+          - { name: kicker,          label: Kicker, widget: string }
           - { name: heroTitle,       label: Hero title (first line),  widget: string }
           - { name: heroTitleAccent, label: Hero title accent (second line), widget: string }
           - { name: heroLead,        label: Hero lead paragraph,      widget: text }
           - { name: heroPhoto,       label: Hero photo,               widget: image }
+          - { name: heroPhotoTag,    label: Hero photo caption,       widget: string }
+          - name: specs
+            label: Spec strip (4 boxes)
+            widget: list
+            fields:
+              - { name: label, label: Label, widget: string }
+              - { name: value, label: Value, widget: string }
+          - { name: overviewEyebrow, label: Overview eyebrow,         widget: string }
           - { name: overviewH2,      label: Overview headline,        widget: string }
           - { name: overviewPara1,   label: Overview paragraph 1,     widget: text }
           - { name: overviewPara2,   label: Overview paragraph 2,     widget: text }
+          - { name: overviewPara3,   label: Overview paragraph 3,     widget: text, required: false }
+          - { name: overviewPhoto,   label: Overview photo,           widget: image }
+          - { name: overviewPhotoTag,label: Overview photo caption,   widget: string }
+          - name: panelOptions
+            label: Panel options
+            widget: list
+            fields:
+              - { name: kicker, label: Kicker, widget: string }
+              - { name: name,   label: Name,   widget: string }
+              - { name: copy,   label: Copy,   widget: text }
+              - name: features
+                label: Features
+                widget: list
+                field: { name: feature, label: Feature, widget: string }
+          - name: advantages
+            label: Advantages
+            widget: list
+            fields:
+              - { name: title, label: Title, widget: string }
+              - { name: copy,  label: Copy,  widget: text }
 
   # ── Panelcore product page ─────────────────────────────────
   - name: panelcore
@@ -100,13 +270,102 @@ collections:
         file: content/panelcore.json
         format: json
         fields:
+          - { name: kicker,          label: Kicker, widget: string }
           - { name: heroTitle,       label: Hero title (first line),  widget: string }
           - { name: heroTitleAccent, label: Hero title accent (second line), widget: string }
           - { name: heroLead,        label: Hero lead paragraph,      widget: text }
           - { name: heroPhoto,       label: Hero photo,               widget: image }
+          - { name: heroPhotoTag,    label: Hero photo caption,       widget: string }
+          - name: specs
+            label: Spec strip (4 boxes)
+            widget: list
+            fields:
+              - { name: label, label: Label, widget: string }
+              - { name: value, label: Value, widget: string }
+          - { name: overviewEyebrow, label: Overview eyebrow,         widget: string }
           - { name: overviewH2,      label: Overview headline,        widget: string }
           - { name: overviewPara1,   label: Overview paragraph 1,     widget: text }
           - { name: overviewPara2,   label: Overview paragraph 2,     widget: text }
+          - { name: overviewPara3,   label: Overview paragraph 3,     widget: text, required: false }
+          - { name: overviewPhoto,   label: Overview photo,           widget: image }
+          - { name: overviewPhotoTag,label: Overview photo caption,   widget: string }
+          - name: applications
+            label: Applications
+            widget: list
+            fields:
+              - { name: name, label: Name, widget: string }
+              - { name: copy, label: Description, widget: text, required: false }
+          - name: advantages
+            label: Advantages
+            widget: list
+            fields:
+              - { name: title, label: Title, widget: string }
+              - { name: copy,  label: Copy,  widget: text }
+
+  # ── Patio Kits page ────────────────────────────────────────
+  - name: patio_kits
+    label: Patio Kits Page
+    files:
+      - name: patio_kits
+        label: Patio Kits Content
+        file: content/patio-kits.json
+        format: json
+        fields:
+          - { name: heroEyebrow,     label: Hero eyebrow,             widget: string }
+          - { name: heroKicker,      label: Hero kicker,              widget: string }
+          - { name: heroH1,          label: Hero headline,            widget: text }
+          - { name: heroLead,        label: Hero lead text,           widget: text }
+          - { name: heroPhotoTag,    label: Hero photo caption,       widget: string }
+          - name: specs
+            label: Spec strip (4 boxes)
+            widget: list
+            fields:
+              - { name: label, label: Label, widget: string }
+              - { name: value, label: Value, widget: string }
+          - { name: overviewEyebrow, label: Overview eyebrow,         widget: string }
+          - { name: overviewH2,      label: Overview headline,        widget: string }
+          - { name: overviewPara1,   label: Overview paragraph 1,     widget: text }
+          - { name: overviewPara2,   label: Overview paragraph 2,     widget: text }
+          - { name: overviewPara3,   label: Overview paragraph 3,     widget: text }
+          - { name: stylesEyebrow,   label: Styles eyebrow,           widget: string }
+          - { name: stylesH2,        label: Styles headline,          widget: string }
+          - { name: stylesCopy,      label: Styles intro copy,        widget: text }
+          - name: styles
+            label: Patio styles (8 designs)
+            widget: list
+            fields:
+              - { name: name,  label: Name,  widget: string }
+              - { name: copy,  label: Description, widget: text }
+              - { name: image, label: Image, widget: image }
+          - { name: panelOptionsEyebrow, label: Panel options eyebrow, widget: string }
+          - { name: panelOptionsH2,  label: Panel options headline,    widget: string }
+          - name: panelOptions
+            label: Panel options
+            widget: list
+            fields:
+              - { name: kicker, label: Kicker, widget: string }
+              - { name: name,   label: Name,   widget: string }
+              - { name: copy,   label: Copy,   widget: text }
+              - name: features
+                label: Features
+                widget: list
+                field: { name: feature, label: Feature, widget: string }
+          - { name: advantagesEyebrow, label: Advantages eyebrow,     widget: string }
+          - { name: advantagesH2,    label: Advantages headline,      widget: string }
+          - name: advantages
+            label: Advantages
+            widget: list
+            fields:
+              - { name: title, label: Title, widget: string }
+              - { name: copy,  label: Copy,  widget: text }
+          - { name: accessoriesEyebrow, label: Accessories eyebrow,   widget: string }
+          - { name: accessoriesH2,   label: Accessories headline,     widget: string }
+          - name: accessories
+            label: Accessories
+            widget: list
+            fields:
+              - { name: name, label: Name, widget: string }
+              - { name: copy, label: Copy, widget: text }
 
   # ── About page ─────────────────────────────────────────────
   - name: about
@@ -127,9 +386,19 @@ collections:
           - { name: storyPara2,  label: Story paragraph 2,      widget: text }
           - { name: storyPara3,  label: Story paragraph 3,      widget: text }
           - { name: storyPara4,  label: Story paragraph 4,      widget: text }
+          - name: stats
+            label: Stats (4 boxes)
+            widget: list
+            fields:
+              - { name: val, label: Value, widget: string }
+              - { name: lab, label: Label, widget: string }
           - { name: videoEyebrow,label: Video section eyebrow,  widget: string }
           - { name: videoH2,     label: Video section headline, widget: string }
           - { name: videoLead,   label: Video section lead,     widget: text }
+          - { name: videoTag,    label: Video caption,          widget: string, required: false }
+          - { name: systemH2,    label: System section headline, widget: string, required: false }
+          - { name: systemPara1, label: System paragraph 1,     widget: text, required: false }
+          - { name: systemPara2, label: System paragraph 2,     widget: text, required: false }
 
   # ── Building System page ───────────────────────────────────
   - name: building_system
@@ -143,9 +412,48 @@ collections:
           - { name: heroEyebrow, label: Hero eyebrow,     widget: string }
           - { name: heroH1,      label: Hero headline,    widget: text }
           - { name: heroLead,    label: Hero lead text,   widget: text }
-          - { name: heroPhoto,   label: Hero background,  widget: image }
+          - { name: heroPhoto,   label: Hero photo,       widget: image }
+          - { name: processEyebrow, label: Process eyebrow, widget: string }
           - { name: processH2,   label: Process headline, widget: string }
           - { name: processLead, label: Process lead,     widget: text }
+          - name: steps
+            label: Process steps
+            widget: list
+            fields:
+              - { name: num,   label: Number, widget: string }
+              - { name: title, label: Title,  widget: string }
+              - { name: copy,  label: Copy,   widget: text }
+          - { name: systemEyebrow, label: System section eyebrow, widget: string }
+          - { name: systemH2,    label: System section headline,  widget: string }
+          - { name: systemPara1, label: System paragraph 1,       widget: text }
+          - { name: systemPara2, label: System paragraph 2,       widget: text }
+          - name: performanceStats
+            label: Performance stats (4 boxes)
+            widget: list
+            fields:
+              - { name: label, label: Label, widget: string }
+              - { name: value, label: Value, widget: string }
+
+  # ── Gallery ────────────────────────────────────────────────
+  - name: gallery
+    label: Gallery
+    files:
+      - name: gallery
+        label: Gallery Content & Images
+        file: content/gallery.json
+        format: json
+        fields:
+          - { name: heroEyebrow, label: Hero eyebrow,    widget: string }
+          - { name: heroH1,      label: Hero headline,   widget: text }
+          - { name: heroLead,    label: Hero lead text,  widget: text }
+          - name: images
+            label: Gallery images
+            widget: list
+            summary: "{{fields.category}} — {{fields.alt}}"
+            fields:
+              - { name: src,      label: Image,       widget: image }
+              - { name: alt,      label: Alt text (for SEO + accessibility), widget: string }
+              - { name: category, label: Category,    widget: string, hint: "e.g. Residential, Outdoor living, Interiors, Panelcore®" }
 
   # ── Contact page ───────────────────────────────────────────
   - name: contact

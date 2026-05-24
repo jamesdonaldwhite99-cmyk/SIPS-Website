@@ -1,0 +1,68 @@
+{
+  "site": {
+    "titleTemplate": "%s · ThermaSpan",
+    "defaultTitle": "ThermaSpan — Australia's Lightest, Fastest SIPs System",
+    "description": "Insulspan® roofing panels, Panelspan® wall panels and Panelcore® coldroom panels. Pre-finished SIPs engineered for Australian conditions. Family-owned, 25 years experience.",
+    "keywords": "SIPs panels, structural insulated panels, insulated roofing, Insulspan, Panelspan, Panelcore, ThermaSpan, QuickBuilt, Australian building",
+    "ogImage": "/photos/og-default.jpg",
+    "siteName": "ThermaSpan",
+    "locale": "en_AU"
+  },
+  "pages": {
+    "home": {
+      "title": "Australia's Lightest, Fastest SIPs System",
+      "description": "Insulspan®, Panelspan® and Panelcore® — a complete pre-finished SIPs building system engineered for Australian conditions.",
+      "ogImage": ""
+    },
+    "about": {
+      "title": "About ThermaSpan",
+      "description": "Family owned, third-generation Australian manufacturer with 25 years of modular and SIPs experience.",
+      "ogImage": ""
+    },
+    "building_system": {
+      "title": "Building System",
+      "description": "How the ThermaSpan SIPs system works — Insulspan® roof and Panelspan® walls installed in days.",
+      "ogImage": ""
+    },
+    "products": {
+      "title": "Products",
+      "description": "Insulspan® roofing, Panelspan® wall panels, Panelcore® coldroom panels and pre-engineered patio kits.",
+      "ogImage": ""
+    },
+    "insulspan": {
+      "title": "Insulspan® Insulated Roofing Panels",
+      "description": "Structural insulated roofing panels with up to 8.1m clear span, pre-finished interior soffit, BAL-40 capable.",
+      "ogImage": ""
+    },
+    "panelspan": {
+      "title": "Panelspan® Wall Panels",
+      "description": "Pre-finished structural wall panels with FC or MgO surfaces — no extra cladding required.",
+      "ogImage": ""
+    },
+    "panelcore": {
+      "title": "Panelcore® Coldroom Panels",
+      "description": "High-performance coldroom and freezer panels for commercial and food storage applications.",
+      "ogImage": ""
+    },
+    "patio_kits": {
+      "title": "Patio Kits",
+      "description": "Pre-engineered flat-pack patio kits in eight styles. Insulated Insulspan® or Slimline panel options.",
+      "ogImage": ""
+    },
+    "gallery": {
+      "title": "Project Gallery",
+      "description": "Homes, extensions, patios, commercial builds and coldrooms built with ThermaSpan SIPs panels.",
+      "ogImage": ""
+    },
+    "contact": {
+      "title": "Contact Us",
+      "description": "Request a quote, ask a question, or get technical support — our Sydney team is ready to help.",
+      "ogImage": ""
+    },
+    "resources": {
+      "title": "Resources",
+      "description": "Specifications, install guides, brochures, warranty and NCC compliance information.",
+      "ogImage": ""
+    }
+  }
+}
