@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: jamesdonaldwhite99-cmyk/thermaspan-website
+  repo: jamesdonaldwhite99-cmyk/SIPS-Website
   branch: main
   base_url: https://thermaspan-website.vercel.app
   auth_endpoint: /api/auth
