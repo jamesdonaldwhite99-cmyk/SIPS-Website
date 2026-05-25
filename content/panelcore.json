@@ -1,23 +1,7 @@
 {
-  "kicker": "Panelcore®",
-  "heroTitle": "Coldroom",
-  "heroTitleAccent": "Panels.",
-  "heroLead": "Steel-skinned insulated panels engineered for cold storage, food processing, pharmaceutical, and any controlled-temperature application. Airtight, cam-locked, pre-finished.",
-  "heroPhoto": "/photos/product-panelcore-new.png",
-  "heroPhotoTag": "Panelcore® cold storage installation",
-  "specs": [
-    { "label": "Core thickness", "value": "75–200mm" },
-    { "label": "Temperature range", "value": "-40°C to +15°C" },
-    { "label": "Skin material", "value": "Steel (Colorbond)" },
-    { "label": "Panel width", "value": "600–1200mm" }
-  ],
-  "overviewEyebrow": "Overview",
-  "overviewH2": "Precision cold storage. Built to last.",
-  "overviewPara1": "Panelcore® steel-skinned insulated panels are engineered for controlled-temperature environments — from walk-in cool rooms to large-scale pharmaceutical and food processing facilities.",
-  "overviewPara2": "Each panel features pre-finished Colorbond steel skins bonded to a high-density polyurethane foam core. The cam-lock joining system creates an airtight, seamless envelope that maintains consistent internal temperatures.",
-  "overviewPara3": "Available in a wide range of thicknesses and lengths, Panelcore® panels are suitable for new builds and retrofits. The modular system allows rapid assembly on site with no special tools or trades required.",
-  "overviewPhoto": "/photos/coldroom-1.jpg",
   "overviewPhotoTag": "Panelcore® controlled-temperature facility",
+  "heroPhotoTag": "Panelcore® cold storage installation",
+  "overviewH2": "Precision cold storage. Built to last.",
   "applications": [
     "Walk-in cool rooms",
     "Cold storage warehouses",
@@ -28,11 +12,54 @@
     "Produce packing rooms",
     "Logistics & distribution"
   ],
+  "heroTitleAccent": "Panels.",
   "advantages": [
-    { "title": "Airtight envelope", "copy": "Cam-lock joining system eliminates cold bridges and air infiltration." },
-    { "title": "Rapid assembly", "copy": "Modular panels install without specialist trades or equipment." },
-    { "title": "Full temperature range", "copy": "Suitable for refrigeration (-2°C) through deep freeze (-40°C)." },
-    { "title": "Pre-finished steel", "copy": "Colorbond skins are hygienic, food-safe, and easy to clean." },
-    { "title": "Modular sizing", "copy": "Custom-cut panels for any footprint, height, or door configuration." }
-  ]
+    {
+      "title": "Airtight envelope",
+      "copy": "Cam-lock joining system eliminates cold bridges and air infiltration."
+    },
+    {
+      "title": "Rapid assembly",
+      "copy": "Modular panels install without specialist trades or equipment."
+    },
+    {
+      "title": "Full temperature range",
+      "copy": "Suitable for refrigeration (-2°C) through deep freeze (-40°C)."
+    },
+    {
+      "title": "Pre-finished steel",
+      "copy": "Colorbond skins are hygienic, food-safe, and easy to clean."
+    },
+    {
+      "title": "Modular sizing",
+      "copy": "Custom-cut panels for any footprint, height, or door configuration."
+    }
+  ],
+  "overviewEyebrow": "Overview",
+  "kicker": "Panelcore®",
+  "heroLead": "Steel-skinned insulated panels engineered for cold storage, food processing, pharmaceutical, and any controlled-temperature application. Airtight, cam-locked, pre-finished.",
+  "specs": [
+    {
+      "label": "Core thickness",
+      "value": "75–200mm"
+    },
+    {
+      "label": "Temperature range",
+      "value": "-40°C to +15°C"
+    },
+    {
+      "label": "Skin material",
+      "value": "Steel (Colorbond)"
+    },
+    {
+      "label": "Panel width",
+      "value": "1200mm"
+    }
+  ],
+  "overviewPara1": "Panelcore® steel-skinned insulated panels are engineered for controlled-temperature environments — from walk-in cool rooms to large-scale pharmaceutical and food processing facilities.",
+  "heroPhoto": "/photos/product-panelcore-new.png",
+  "overviewPhoto": "/photos/coldroom-1.jpg",
+  "overviewPara2": "Each panel features pre-finished Colorbond steel skins bonded to a high-density polyurethane foam core. The cam-lock joining system creates an airtight, seamless envelope that maintains consistent internal temperatures.",
+  "overviewPara3": "Available in a wide range of thicknesses and lengths, Panelcore® panels are suitable for new builds and retrofits. The modular system allows rapid assembly on site with no special tools or trades required.",
+  "heroTitle": "Coldroom"
 }
