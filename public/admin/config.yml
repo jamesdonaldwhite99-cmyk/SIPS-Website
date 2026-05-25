@@ -265,10 +265,12 @@ collections:
           - name: panelOptions
             label: Panel options
             widget: list
+            summary: "{{fields.kicker}} — {{fields.name}}"
             fields:
               - { name: kicker, label: Kicker, widget: string }
               - { name: name,   label: Name,   widget: string }
               - { name: copy,   label: Copy,   widget: text }
+              - { name: img,    label: Image,  widget: image }
               - name: features
                 label: Features
                 widget: list
@@ -309,11 +311,9 @@ collections:
           - { name: overviewPhoto,   label: Overview photo,           widget: image }
           - { name: overviewPhotoTag,label: Overview photo caption,   widget: string }
           - name: applications
-            label: Applications
+            label: Applications (list of uses)
             widget: list
-            fields:
-              - { name: name, label: Name, widget: string }
-              - { name: copy, label: Description, widget: text, required: false }
+            field: { name: application, label: Application, widget: string }
           - name: advantages
             label: Advantages
             widget: list
