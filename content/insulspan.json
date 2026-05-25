@@ -1,47 +1,119 @@
 {
-  "kicker": "Insulspan®",
-  "heroTitle": "Insulated",
-  "heroTitleAccent": "Roofing Panels.",
-  "heroLead": "Structural strength and high-performance insulation in one precision-engineered panel. Eliminates purlins, beams, trusses, sarking, bulk insulation and plasterboard — in a single install.",
-  "heroPhoto": "/photos/product-insulspan-new.png",
+  "overviewPhotoTag": "Insulspan® over a lakefront deck",
   "heroPhotoTag": "Insulspan® roofing — outdoor living",
-  "specs": [
-    { "label": "Span", "value": "Up to 8.1m" },
-    { "label": "Core thickness", "value": "50–150mm" },
-    { "label": "Fire rating", "value": "BAL-40 capable" },
-    { "label": "Warranty", "value": "10 years" }
+  "overviewH2": "The next generation of Australian roofing.",
+  "bannerPhoto": "/photos/insulspan-banner.jpg",
+  "heroTitleAccent": "Roofing Panels.",
+  "advantages": [
+    {
+      "title": "Long spans",
+      "copy": "Up to 8.1m clear — fewer columns, cleaner lines."
+    },
+    {
+      "title": "Quick install",
+      "copy": "No framing, sarking or lining stages."
+    },
+    {
+      "title": "Service cavities",
+      "copy": "Integrated for fast electrical fit-out."
+    },
+    {
+      "title": "Thermal performance",
+      "copy": "Supports 8-Star energy ratings."
+    },
+    {
+      "title": "Bushfire rated",
+      "copy": "BAL 29 compliant. NCC ready."
+    }
+  ],
+  "profiles": [
+    {
+      "name": "Monospan",
+      "copy": "Clean, contemporary trapezoidal ribs. Ideal for modern residential and architectural projects.",
+      "img": "/photos/profile-monospan.png"
+    },
+    {
+      "name": "Corrugated",
+      "copy": "Classic Australian corrugated profile. Traditional patio and pavilion look with the full structural performance of the range.",
+      "img": "/photos/profile-corrugated.png"
+    },
+    {
+      "name": "Corro / Corro",
+      "copy": "Corrugated profile both sides — bold linear repetition top and bottom for a fully architectural soffit.",
+      "img": "/photos/profile-corro-corro.png"
+    }
   ],
   "overviewEyebrow": "Overview",
-  "overviewH2": "The next generation of Australian roofing.",
+  "kicker": "Insulspan®",
+  "heroLead": "Structural strength and high-performance insulation in one precision-engineered panel. Eliminates purlins, beams, trusses, sarking, bulk insulation and plasterboard — in a single install.",
+  "colourSwatches": [
+    {
+      "name": "Classic Cream™",
+      "hex": "#e6dcc4"
+    },
+    {
+      "name": "Surfmist®",
+      "hex": "#e2e2d6"
+    },
+    {
+      "name": "Dune®",
+      "hex": "#9c9a8d"
+    },
+    {
+      "name": "Shale Grey™",
+      "hex": "#aab0aa"
+    },
+    {
+      "name": "Windspray®",
+      "hex": "#727878"
+    },
+    {
+      "name": "Wallaby®",
+      "hex": "#7e7c70"
+    },
+    {
+      "name": "Gully®",
+      "hex": "#5e564a"
+    },
+    {
+      "name": "Jasper®",
+      "hex": "#6f5e4f"
+    },
+    {
+      "name": "Bluegum®",
+      "hex": "#7d8b8c"
+    },
+    {
+      "name": "Pale Eucalypt®",
+      "hex": "#73796b"
+    },
+    {
+      "name": "Cottage Green®",
+      "hex": "#34433a"
+    }
+  ],
+  "specs": [
+    {
+      "label": "Span",
+      "value": "Up to 8.1m"
+    },
+    {
+      "label": "Core thickness",
+      "value": "50–125mm"
+    },
+    {
+      "label": "Fire rating",
+      "value": "BAL-40 capable"
+    },
+    {
+      "label": "Warranty",
+      "value": "10 years"
+    }
+  ],
   "overviewPara1": "Insulspan® combines structural strength and high-performance insulation in one precision-engineered panel system — delivering faster construction, superior thermal efficiency and cleaner architectural outcomes.",
+  "heroPhoto": "/photos/product-insulspan-new.png",
+  "overviewPhoto": "/photos/insulspan-overview.jpg",
   "overviewPara2": "Designed for Australian conditions, Insulspan® Structural Insulated Panels eliminate the need for purlins, beams, trusses, mesh, sarking, bulk insulation, and plasterboard, while dramatically reducing the number of trades required on site.",
   "overviewPara3": "This streamlined, pre-finished system shortens timelines, cuts complexity, and redefines how Australia builds.",
-  "overviewPhoto": "/photos/insulspan-overview.jpg",
-  "overviewPhotoTag": "Insulspan® over a lakefront deck",
-  "profiles": [
-    { "name": "Monospan", "copy": "Clean, contemporary trapezoidal ribs. Ideal for modern residential and architectural projects.", "img": "/photos/profile-monospan.png" },
-    { "name": "Corrugated", "copy": "Classic Australian corrugated profile. Traditional patio and pavilion look with the full structural performance of the range.", "img": "/photos/profile-corrugated.png" },
-    { "name": "Corro / Corro", "copy": "Corrugated profile both sides — bold linear repetition top and bottom for a fully architectural soffit.", "img": "/photos/profile-corro-corro.png" }
-  ],
-  "bannerPhoto": "/photos/insulspan-banner.jpg",
-  "advantages": [
-    { "title": "Long spans", "copy": "Up to 8.1m clear — fewer columns, cleaner lines." },
-    { "title": "Quick install", "copy": "No framing, sarking or lining stages." },
-    { "title": "Service cavities", "copy": "Integrated for fast electrical fit-out." },
-    { "title": "Thermal performance", "copy": "Supports 8-Star energy ratings." },
-    { "title": "Bushfire rated", "copy": "BAL 29 compliant. NCC ready." }
-  ],
-  "colourSwatches": [
-    { "name": "Classic Cream™", "hex": "#e6dcc4" },
-    { "name": "Surfmist®", "hex": "#e2e2d6" },
-    { "name": "Dune®", "hex": "#9c9a8d" },
-    { "name": "Shale Grey™", "hex": "#aab0aa" },
-    { "name": "Windspray®", "hex": "#727878" },
-    { "name": "Wallaby®", "hex": "#7e7c70" },
-    { "name": "Gully®", "hex": "#5e564a" },
-    { "name": "Jasper®", "hex": "#6f5e4f" },
-    { "name": "Bluegum®", "hex": "#7d8b8c" },
-    { "name": "Pale Eucalypt®", "hex": "#73796b" },
-    { "name": "Cottage Green®", "hex": "#34433a" }
-  ]
+  "heroTitle": "Insulated"
 }
