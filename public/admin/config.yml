@@ -406,11 +406,12 @@ collections:
           - { name: storyPara3,  label: Story paragraph 3,      widget: text }
           - { name: storyPara4,  label: Story paragraph 4,      widget: text }
           - name: stats
-            label: Stats (4 boxes)
+            label: Stats (4 boxes — Years Building, Ownership, etc.)
             widget: list
+            summary: "{{fields.label}} — {{fields.value}}"
             fields:
-              - { name: val, label: Value, widget: string }
-              - { name: lab, label: Label, widget: string }
+              - { name: label, label: Label (top heading), widget: string }
+              - { name: value, label: Value (main text),   widget: string }
           - { name: videoEyebrow,label: Video section eyebrow,  widget: string }
           - { name: videoH2,     label: Video section headline, widget: string }
           - { name: videoLead,   label: Video section lead,     widget: text }
