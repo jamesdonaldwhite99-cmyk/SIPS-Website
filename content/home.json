@@ -1,5 +1,37 @@
 {
   "productsLead": "Insulspan, Panelspan, and our pre-engineered patio kits work together as one high-performance envelope — engineered for Australian conditions.",
+  "applications": [
+    {
+      "kicker": "Residential",
+      "title": "New homes & extensions",
+      "img": "/photos/gallery/01.jpg"
+    },
+    {
+      "kicker": "Outdoor living",
+      "title": "Patios & pavilions",
+      "img": "/photos/gallery/05.jpg"
+    },
+    {
+      "kicker": "Commercial",
+      "title": "Coolrooms & Freezers",
+      "img": "/photos/gallery/19.jpg"
+    },
+    {
+      "kicker": "Modular",
+      "title": "Granny flats & cabins",
+      "img": "/photos/gallery/10.jpg"
+    },
+    {
+      "kicker": "Agricultural",
+      "title": "Sheds & farm buildings",
+      "img": "/photos/gallery/12.jpg"
+    },
+    {
+      "kicker": "Outdoor Living",
+      "title": "Sunrooms",
+      "img": "/photos/gallery/18.jpg"
+    }
+  ],
   "heroH1": "Australia's lightest, fastest structural insulated panel system.",
   "ctaSecondary": "Download brochure",
   "heroStats": [
@@ -23,10 +55,12 @@
   "introPara1": "From the roof down to the walls, our advanced structural insulated panel systems — Insulspan® Roofing Panels and Panelspan® Wall Panels — deliver a faster, stronger, cleaner, and more energy-efficient way to construct homes and outdoor living spaces.",
   "productsEyebrow": "Our products",
   "benefitsH2": "Built for builders. Engineered for Australian conditions.",
+  "applicationsEyebrow": "Applications",
   "introPara2": "Unlike OSB-based SIPs that still require external cladding and additional finishing trades, our panels use pre-finished FC or MgO surfaces. The structure arrives ready to install with no extra cladding required.",
   "introPara3": "Together, they create a complete high-performance building system that outperforms traditional construction and OSB SIPs in every category: speed, cost, strength, thermal efficiency, and long-term durability.",
   "heroCtaPrimary": "Request a quote",
   "introCta1": "More about us",
+  "applicationsH2": "Built for every Australian project.",
   "benefitsEyebrow": "Why ThermaSpan",
   "introCta2": "Watch the build video",
   "productsH2": "One integrated SIPs system. Three product families.",
@@ -142,15 +176,5 @@
   ],
   "introEyebrow": "About ThermaSpan",
   "heroCtaSecondary": "View our products",
-  "applicationsEyebrow": "Applications",
-  "applicationsH2": "Built for every Australian project.",
-  "applicationsLead": "From the family home to commercial cold storage — ThermaSpan panels are engineered to perform across every application.",
-  "applications": [
-    { "kicker": "Residential", "title": "New homes & extensions", "img": "/photos/gallery/01.jpg" },
-    { "kicker": "Outdoor living", "title": "Patios & pavilions", "img": "/photos/gallery/05.jpg" },
-    { "kicker": "Commercial", "title": "Offices & warehouses", "img": "/photos/gallery/19.jpg" },
-    { "kicker": "Modular", "title": "Granny flats & cabins", "img": "/photos/gallery/10.jpg" },
-    { "kicker": "Agricultural", "title": "Sheds & farm buildings", "img": "/photos/gallery/12.jpg" },
-    { "kicker": "Cold storage", "title": "Coolrooms & freezers", "img": "/photos/gallery/18.jpg" }
-  ]
+  "applicationsLead": "From the family home to commercial cold storage — ThermaSpan panels are engineered to perform across every application."
 }
