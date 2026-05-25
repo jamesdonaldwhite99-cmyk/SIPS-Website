@@ -1,44 +1,81 @@
 {
-  "kicker": "Panelspan®",
-  "heroTitle": "Structural Insulated",
-  "heroTitleAccent": "Wall Panels.",
-  "heroLead": "Pre-finished FC or MgO cladding bonded to a high-density EPS core. No external cladding required — just lock the panels together and reach lock-up in days.",
-  "heroPhoto": "/photos/product-panelspan-new.png",
+  "overviewPhotoTag": "Panelspan® — built for outdoor living",
   "heroPhotoTag": "Panelspan® wall installation",
-  "specs": [
-    { "label": "Core thickness", "value": "90–200mm" },
-    { "label": "Wall height", "value": "Up to 3.6m" },
-    { "label": "Fire rating", "value": "FRL 90/90/90" },
-    { "label": "Energy rating", "value": "8 Star NatHERS" }
+  "overviewH2": "Pre-finished walls. Zero extra cladding.",
+  "heroTitleAccent": "Wall Panels.",
+  "advantages": [
+    {
+      "title": "Lock-up in days",
+      "copy": "Pre-cut panels interlock on site. Reach lock-up in 3–4 days."
+    },
+    {
+      "title": "No extra cladding",
+      "copy": "Pre-finished surfaces are the wall. Zero cladding trades needed."
+    },
+    {
+      "title": "8-Star thermal",
+      "copy": "High-density EPS core eliminates thermal bridging."
+    },
+    {
+      "title": "Bushfire rated",
+      "copy": "MgO/MgO panels achieve BAL 40"
+    },
+    {
+      "title": "Acoustic performance",
+      "copy": "Dense EPS core reduces noise transmission significantly."
+    }
   ],
   "overviewEyebrow": "Overview",
-  "overviewH2": "Pre-finished walls. Zero extra cladding.",
+  "kicker": "Panelspan®",
+  "heroLead": "Pre-finished FC or MgO cladding bonded to a high-density EPS core. No external cladding required — just lock the panels together and reach lock-up in days.",
+  "specs": [
+    {
+      "label": "Core thickness",
+      "value": "90–115mm"
+    },
+    {
+      "label": "Wall height",
+      "value": "Up to 3.6m"
+    },
+    {
+      "label": "Fire rating",
+      "value": "BAL-40 capable"
+    },
+    {
+      "label": "Energy rating",
+      "value": "8 Star"
+    }
+  ],
   "overviewPara1": "Panelspan® structural insulated wall panels combine a high-density EPS core with pre-finished fibre cement (FC) or magnesium oxide (MgO) faces — eliminating the need for separate cladding, sarking, or internal lining trades.",
+  "heroPhoto": "/photos/product-panelspan-new.png",
+  "overviewPhoto": "/photos/panelspan-lifestyle.jpg",
   "overviewPara2": "Each panel interlocks precisely on site, creating a fully insulated, structurally strong wall in a fraction of the time of traditional framing. Available in three systems: Steel Skin, FC/FC and MgO/MgO.",
   "overviewPara3": "Engineered for Australian climate conditions, Panelspan® walls resist moisture, bushfire, and extreme temperature variations — delivering a superior thermal envelope that supports 8-Star NatHERS ratings.",
-  "overviewPhoto": "/photos/panelspan-lifestyle.jpg",
-  "overviewPhotoTag": "Panelspan® — built for outdoor living",
   "panelOptions": [
     {
       "kicker": "FC / FC",
       "name": "Fibre Cement Panel",
       "copy": "High-density EPS core with pre-finished FC faces both sides. Moisture stable, no warping, ideal for residential and commercial applications.",
       "img": "/photos/fc-panel-system.jpg",
-      "features": ["Pre-finished FC both sides", "Moisture and fire resistant", "No cladding or lining required", "8-star thermal performance"]
+      "features": [
+        "Pre-finished FC both sides",
+        "Moisture and fire resistant",
+        "No cladding or lining required",
+        "8-star thermal performance"
+      ]
     },
     {
       "kicker": "MgO / MgO",
       "name": "Magnesium Oxide Panel",
       "copy": "Premium MgO faces deliver superior fire resistance, moisture stability, and acoustic performance. The choice for high-specification builds.",
       "img": "/photos/mgo-panel-system.jpg",
-      "features": ["FRL 90/90/90 fire rating", "Superior acoustic rating", "Moisture and mould resistant", "BAL 29 compliant"]
+      "features": [
+        "FRL 90/90/90 fire rating",
+        "Superior acoustic rating",
+        "Moisture and mould resistant",
+        "BAL 29 compliant"
+      ]
     }
   ],
-  "advantages": [
-    { "title": "Lock-up in days", "copy": "Pre-cut panels interlock on site. Reach lock-up in 3–4 days." },
-    { "title": "No extra cladding", "copy": "Pre-finished surfaces are the wall. Zero cladding trades needed." },
-    { "title": "8-Star thermal", "copy": "High-density EPS core eliminates thermal bridging." },
-    { "title": "Bushfire rated", "copy": "MgO/MgO panels achieve BAL 29 and FRL 90/90/90." },
-    { "title": "Acoustic performance", "copy": "Dense EPS core reduces noise transmission significantly." }
-  ]
+  "heroTitle": "Structural Insulated"
 }
