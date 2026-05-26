@@ -16,7 +16,7 @@ export default function Footer() {
           <div className="ts-footer-brand">
             <Link href="/" aria-label="ThermaSpan">
               <Image
-                src="/photos/logo-qbs-white.png"
+                src="/photos/a_logo_for_quickbuilt_systems_is_displayed_agains.png"
                 alt="ThermaSpan — Structural Insulated Panels by QuickBuilt Systems"
                 width={380}
                 height={140}

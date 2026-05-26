@@ -70,7 +70,7 @@ export default function Navbar() {
         <div className="ts-header-inner">
           <Link href="/" className="ts-wordmark" aria-label="ThermaSpan">
             <Image
-              src="/photos/logo-qbs.png"
+              src="/photos/a_vector_based_logo_for_quickbuilt_systems_feat white.png"
               alt="ThermaSpan — Structural Insulated Panels by QuickBuilt Systems"
               width={380}
               height={140}
