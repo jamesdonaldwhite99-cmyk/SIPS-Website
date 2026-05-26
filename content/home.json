@@ -34,12 +34,12 @@
     {
       "kicker": "Residential Fencing",
       "title": "Modular boundary walls",
-      "img": "/photos/gallery/13.jpg"
+      "img": "/photos/010a7287.jpg"
     },
     {
       "kicker": "Commercial Fencing",
       "title": "Industrial & retaining walls",
-      "img": "/photos/gallery/06.jpg"
+      "img": "/photos/bunnings-orange-2-2.jpg"
     }
   ],
   "heroH1": "Australia's lightest, fastest structural insulated panel system.",
@@ -68,7 +68,65 @@
   "applicationsEyebrow": "Applications",
   "introPara2": "Unlike OSB-based SIPs that still require external cladding and additional finishing trades, our panels use pre-finished FC or MgO surfaces. The structure arrives ready to install with no extra cladding required.",
   "introPara3": "Together, they create a complete high-performance building system that outperforms traditional construction and OSB SIPs in every category: speed, cost, strength, thermal efficiency, and long-term durability.",
+  "showcaseLead": "From modular homes and fencing to wall panels, roofing and patio kits — every QuickBuilt brand is engineered, manufactured and supplied direct.",
+  "categoryShowcase": [
+    {
+      "kicker": "Modular Homes",
+      "title": "Cabins, granny flats & custom homes",
+      "copy": "Factory-built modular homes from Quick Built Homes.",
+      "image": "/photos/Building system.jpg",
+      "href": "https://www.quickbuilthomes.com.au/",
+      "external": true,
+      "footerLabel": "Modular Homes"
+    },
+    {
+      "kicker": "Modular Fencing & Retaining",
+      "title": "Residential & commercial walls",
+      "copy": "Modular wall and retaining systems from Quick Built Fencing.",
+      "image": "/photos/upscaled-image-6-.png",
+      "href": "https://www.quickbuiltfencing.com.au/",
+      "external": true,
+      "footerLabel": "Modular Fencing"
+    },
+    {
+      "kicker": "Wall Panels",
+      "title": "Panelspan® Fibre Cement",
+      "copy": "Pre-finished FC and MgO structural wall panels.",
+      "image": "/photos/product-panelspan-new.png",
+      "href": "/products/panelspan",
+      "external": false,
+      "footerLabel": "Panelspan®"
+    },
+    {
+      "kicker": "Wall Panels",
+      "title": "Panelcore® Steel Panel",
+      "copy": "Steel-skinned insulated panels for coldroom and commercial use.",
+      "image": "/photos/product-panelcore-new.png",
+      "href": "/products/panelcore",
+      "external": false,
+      "footerLabel": "Panelcore®"
+    },
+    {
+      "kicker": "Roofing",
+      "title": "Insulspan® insulated roofing",
+      "copy": "Long-span structural insulated roofing panels. Three profiles.",
+      "image": "/photos/product-insulspan-new.png",
+      "href": "/products/insulspan",
+      "external": false,
+      "footerLabel": "Insulspan®"
+    },
+    {
+      "kicker": "Patio Kits",
+      "title": "Pre-engineered outdoor living",
+      "copy": "Eight architectural patio styles, flat-packed and ready to install.",
+      "image": "/photos/Patio Kit.png",
+      "href": "https://www.patiokits.com.au/",
+      "external": true,
+      "footerLabel": "Patio Kits"
+    }
+  ],
   "heroCtaPrimary": "Request a quote",
+  "productIconLabel": "Our Products",
   "introCta1": "More about us",
   "applicationsH2": "Built for every Australian project.",
   "benefitsEyebrow": "Why ThermaSpan",
@@ -76,10 +134,49 @@
   "productsH2": "One integrated SIPs system. Three product families.",
   "heroEyebrow": "Insulspan® · Panelspan® · Panelcore®",
   "ctaPrimary": "Request a quote",
+  "productIconRow": [
+    {
+      "icon": "roof",
+      "label": "Insulated Roofing & Wall Panels",
+      "href": "/products/insulspan",
+      "external": false
+    },
+    {
+      "icon": "home",
+      "label": "Modular Homes",
+      "href": "https://www.quickbuilthomes.com.au/",
+      "external": true
+    },
+    {
+      "icon": "flat",
+      "label": "Granny Flats",
+      "href": "https://www.quickbuilthomes.com.au/files/modular-kit-home-comparison.php",
+      "external": true
+    },
+    {
+      "icon": "patio",
+      "label": "Patio Kits",
+      "href": "https://www.patiokits.com.au/",
+      "external": true
+    },
+    {
+      "icon": "fence",
+      "label": "Modular Fencing",
+      "href": "https://www.quickbuiltfencing.com.au/",
+      "external": true
+    },
+    {
+      "icon": "retaining",
+      "label": "Retaining Solutions",
+      "href": "https://www.quickbuiltfencing.com.au/files/product-retainline.php",
+      "external": true
+    }
+  ],
   "ctaBody": "Tell us about your project — patio, extension, new build, commercial — and our team will put together a no-obligation quote with panel specs, install timeline and supply options.",
   "introH2": "We're redefining how Australia builds.",
   "ctaPhoneLabel": "Speak to our team",
   "heroLead": "Revolutionising construction, one panel at a time. From the roof down to the walls, our pre-finished SIPs deliver a faster, stronger, cleaner, more energy-efficient way to build.",
+  "showcaseH2": "Six product families. One Australian family.",
   "benefitsLead": "Five reasons our SIPs outperform traditional framing and OSB-based panels on every job.",
   "ctaH2": "Ready to build smarter?",
   "heroSlides": [
@@ -184,75 +281,8 @@
       "caption": "Airtight, cam-locked."
     }
   ],
+  "showcaseEyebrow": "Explore the range",
   "introEyebrow": "About ThermaSpan",
   "heroCtaSecondary": "View our products",
-  "applicationsLead": "From the family home to commercial cold storage — ThermaSpan panels are engineered to perform across every application.",
-  "productIconLabel": "Our Products",
-  "productIconRow": [
-    { "icon": "roof", "label": "Insulated Roofing & Wall Panels", "href": "/products/insulspan" },
-    { "icon": "home", "label": "Modular Homes", "href": "https://www.quickbuilthomes.com.au/", "external": true },
-    { "icon": "flat", "label": "Granny Flats", "href": "https://www.quickbuilthomes.com.au/files/modular-kit-home-comparison.php", "external": true },
-    { "icon": "patio", "label": "Patio Kits", "href": "https://www.patiokits.com.au/", "external": true },
-    { "icon": "fence", "label": "Modular Fencing", "href": "https://www.quickbuiltfencing.com.au/", "external": true },
-    { "icon": "retaining", "label": "Retaining Solutions", "href": "https://www.quickbuiltfencing.com.au/files/product-retainline.php", "external": true }
-  ],
-  "showcaseEyebrow": "Explore the range",
-  "showcaseH2": "Six product families. One Australian family.",
-  "showcaseLead": "From modular homes and fencing to wall panels, roofing and patio kits — every QuickBuilt brand is engineered, manufactured and supplied direct.",
-  "categoryShowcase": [
-    {
-      "kicker": "Modular Homes",
-      "title": "Cabins, granny flats & custom homes",
-      "copy": "Factory-built modular homes from Quick Built Homes.",
-      "image": "/photos/gallery/01.jpg",
-      "href": "https://www.quickbuilthomes.com.au/",
-      "external": true,
-      "footerLabel": "Modular Homes"
-    },
-    {
-      "kicker": "Modular Fencing & Retaining",
-      "title": "Residential & commercial walls",
-      "copy": "Modular wall and retaining systems from Quick Built Fencing.",
-      "image": "/photos/gallery/13.jpg",
-      "href": "https://www.quickbuiltfencing.com.au/",
-      "external": true,
-      "footerLabel": "Modular Fencing"
-    },
-    {
-      "kicker": "Wall Panels",
-      "title": "Panelspan® Fibre Cement",
-      "copy": "Pre-finished FC and MgO structural wall panels.",
-      "image": "/photos/product-panelspan-new.png",
-      "href": "/products/panelspan",
-      "external": false,
-      "footerLabel": "Panelspan®"
-    },
-    {
-      "kicker": "Wall Panels",
-      "title": "Panelcore® Steel Panel",
-      "copy": "Steel-skinned insulated panels for coldroom and commercial use.",
-      "image": "/photos/product-panelcore-new.png",
-      "href": "/products/panelcore",
-      "external": false,
-      "footerLabel": "Panelcore®"
-    },
-    {
-      "kicker": "Roofing",
-      "title": "Insulspan® insulated roofing",
-      "copy": "Long-span structural insulated roofing panels. Three profiles.",
-      "image": "/photos/product-insulspan-new.png",
-      "href": "/products/insulspan",
-      "external": false,
-      "footerLabel": "Insulspan®"
-    },
-    {
-      "kicker": "Patio Kits",
-      "title": "Pre-engineered outdoor living",
-      "copy": "Eight architectural patio styles, flat-packed and ready to install.",
-      "image": "/photos/Patio Kit.png",
-      "href": "https://www.patiokits.com.au/",
-      "external": true,
-      "footerLabel": "Patio Kits"
-    }
-  ]
+  "applicationsLead": "From the family home to commercial cold storage — ThermaSpan panels are engineered to perform across every application."
 }
