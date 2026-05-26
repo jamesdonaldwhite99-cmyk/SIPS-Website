@@ -4,96 +4,57 @@ import { useState, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import menuData from "@/content/menu.json";
 
-const products = [
-  {
-    slug: "insulspan",
-    kicker: "Insulspan®",
-    title: "Insulated Roofing Panels",
-    copy: "Long-span structural roofing — three profiles. No purlins, sarking, or plasterboard.",
-    image: "/photos/product-insulspan-new.png",
-    href: "/products/insulspan",
-  },
-  {
-    slug: "panelspan",
-    kicker: "Panelspan®",
-    title: "Structural Insulated Panels",
-    copy: "Pre-finished FC or MgO walls bonded to a high-density EPS core. Lock-up in days.",
-    image: "/photos/product-panelspan-new.png",
-    href: "/products/panelspan",
-  },
-  {
-    slug: "panelcore",
-    kicker: "Panelcore®",
-    title: "Coldroom Panels",
-    copy: "Steel-skinned insulated panels for cold storage, food processing and pharma.",
-    image: "/photos/product-panelcore-new.png",
-    href: "/products/panelcore",
-  },
-];
-
-const systems = [
-  {
-    slug: "patio-kits",
-    kicker: "Patio Kits",
-    title: "Pre-engineered outdoor living",
-    copy: "Eight styles, flat-packed and ready to install. Insulspan® insulated or Slimline.",
-    image: "/photos/Patio Kit.png",
-    href: "/patio-kits",
-  },
-  {
-    slug: "building-system",
-    kicker: "Building System",
-    title: "Complete SIPs envelope",
-    copy: "Walls, roof and coldroom panels working together as one high-performance system.",
-    image: "/photos/Building system.jpg",
-    href: "/building-system",
-  },
-];
+const categories = menuData.categories;
 
 const navItems = [
   { id: "home", label: "Home", href: "/" },
   { id: "products", label: "Products", dropdown: true },
-  { id: "systems", label: "Systems", systemsDropdown: true },
   { id: "about", label: "About", href: "/about" },
   { id: "gallery", label: "Gallery", href: "/gallery" },
   { id: "resources", label: "Resources", href: "/resources" },
   { id: "contact", label: "Contact", href: "/contact" },
 ];
 
+type MenuItem = { title: string; copy: string; href: string; external: boolean; image: string };
+
+function MenuLink({ item, onClick, className, children }: { item: { href: string; external: boolean }; onClick?: () => void; className?: string; children: React.ReactNode }) {
+  if (item.external) {
+    return (
+      <a href={item.href} target="_blank" rel="noopener noreferrer" className={className} onClick={onClick}>
+        {children}
+      </a>
+    );
+  }
+  return (
+    <Link href={item.href} className={className} onClick={onClick}>
+      {children}
+    </Link>
+  );
+}
+
 export default function Navbar() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [systemsOpen, setSystemsOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const systemsCloseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const openMenu = () => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
-    setSystemsOpen(false);
     setMenuOpen(true);
   };
   const scheduleClose = () => {
     closeTimer.current = setTimeout(() => setMenuOpen(false), 140);
   };
 
-  const openSystems = () => {
-    if (systemsCloseTimer.current) clearTimeout(systemsCloseTimer.current);
-    setMenuOpen(false);
-    setSystemsOpen(true);
-  };
-  const scheduleSystems = () => {
-    systemsCloseTimer.current = setTimeout(() => setSystemsOpen(false), 140);
-  };
-
-  const isProductActive = pathname.startsWith("/products");
-  const isSystemsActive = pathname.startsWith("/building-system") || pathname.startsWith("/patio-kits");
+  const isProductActive =
+    pathname.startsWith("/products") ||
+    pathname.startsWith("/building-system");
 
   const getActiveId = () => {
     if (pathname === "/") return "home";
-    if (pathname.startsWith("/products")) return "products";
-    if (pathname.startsWith("/building-system") || pathname.startsWith("/patio-kits")) return "systems";
+    if (isProductActive) return "products";
     if (pathname.startsWith("/about")) return "about";
     if (pathname.startsWith("/gallery")) return "gallery";
     if (pathname.startsWith("/resources")) return "resources";
@@ -133,25 +94,6 @@ export default function Navbar() {
                       className={`ts-nav-btn has-caret${isProductActive ? " is-active" : ""}`}
                       aria-expanded={menuOpen}
                       onClick={() => setMenuOpen(!menuOpen)}
-                    >
-                      {item.label}
-                    </button>
-                  </div>
-                );
-              }
-              if (item.systemsDropdown) {
-                return (
-                  <div
-                    key={item.id}
-                    className={`ts-nav-trigger${systemsOpen ? " is-open" : ""}${isSystemsActive ? " is-active" : ""}`}
-                    onMouseEnter={openSystems}
-                    onMouseLeave={scheduleSystems}
-                  >
-                    <button
-                      type="button"
-                      className={`ts-nav-btn has-caret${isSystemsActive ? " is-active" : ""}`}
-                      aria-expanded={systemsOpen}
-                      onClick={() => setSystemsOpen(!systemsOpen)}
                     >
                       {item.label}
                     </button>
@@ -202,29 +144,17 @@ export default function Navbar() {
               if (item.dropdown) {
                 return (
                   <div key={item.id}>
-                    <div style={{ fontSize: 12, letterSpacing: "1.4px", textTransform: "uppercase", color: "var(--ts-accent)", fontWeight: 600, padding: "10px 0 6px", borderBottom: "1px solid var(--color-hairline)" }}>
-                      Products
-                    </div>
-                    {products.map((p) => (
-                      <Link key={p.slug} href={p.href} onClick={() => setMobileOpen(false)}
-                        style={{ display: "block", padding: "8px 0 8px 16px", borderBottom: "1px solid var(--color-hairline)", fontSize: 15 }}>
-                        {p.kicker} — {p.title}
-                      </Link>
-                    ))}
-                  </div>
-                );
-              }
-              if (item.systemsDropdown) {
-                return (
-                  <div key={item.id}>
-                    <div style={{ fontSize: 12, letterSpacing: "1.4px", textTransform: "uppercase", color: "var(--ts-accent)", fontWeight: 600, padding: "10px 0 6px", borderBottom: "1px solid var(--color-hairline)" }}>
-                      Systems
-                    </div>
-                    {systems.map((s) => (
-                      <Link key={s.slug} href={s.href} onClick={() => setMobileOpen(false)}
-                        style={{ display: "block", padding: "8px 0 8px 16px", borderBottom: "1px solid var(--color-hairline)", fontSize: 15 }}>
-                        {s.kicker} — {s.title}
-                      </Link>
+                    {categories.map((cat) => (
+                      <div key={cat.title}>
+                        <div style={{ fontSize: 12, letterSpacing: "1.4px", textTransform: "uppercase", color: "var(--ts-accent)", fontWeight: 600, padding: "10px 0 6px", borderBottom: "1px solid var(--color-hairline)" }}>
+                          {cat.title}
+                        </div>
+                        {cat.items.map((it) => (
+                          <MenuLink key={it.title} item={it} onClick={() => setMobileOpen(false)} className="ts-mobile-sub">
+                            {it.title}
+                          </MenuLink>
+                        ))}
+                      </div>
                     ))}
                   </div>
                 );
@@ -238,91 +168,44 @@ export default function Navbar() {
           </nav>
         )}
 
-        {/* Products mega menu */}
+        {/* Products mega menu — 4 columns */}
         <div
-          className={`ts-megamenu${menuOpen ? " is-open" : ""}`}
+          className={`ts-megamenu ts-megamenu--wide${menuOpen ? " is-open" : ""}`}
           onMouseEnter={openMenu}
           onMouseLeave={scheduleClose}
           aria-hidden={!menuOpen}
         >
           <div className="ts-megamenu-inner">
-            <div className="ts-megamenu-aside">
-              <div className="ts-eyebrow">Our products</div>
-              <h3>One panel system for every Australian build.</h3>
-              <p>
-                Roofing, walls, and coldroom panels — engineered to work as a complete
-                high-performance envelope, or specified individually for any project.
-              </p>
-              <Link href="/products" className="ts-link-arrow" onClick={() => setMenuOpen(false)}>
-                View all products
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.6">
-                  <path d="M5 12h14M13 5l7 7-7 7" />
-                </svg>
-              </Link>
-            </div>
-            <div className="ts-megamenu-grid">
-              {products.map((p) => (
-                <Link
-                  key={p.slug}
-                  href={p.href}
-                  className="ts-megamenu-item"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  <div className="ts-megamenu-thumb">
-                    <Image src={p.image} alt={p.title} fill style={{ objectFit: "cover" }} sizes="300px" />
+            <div className="ts-megamenu-columns">
+              {categories.map((cat) => (
+                <div key={cat.title} className="ts-megamenu-column">
+                  <MenuLink item={{ href: cat.href, external: cat.external }} onClick={() => setMenuOpen(false)} className="ts-megamenu-cat-card">
+                    {cat.image && (
+                      <div className="ts-megamenu-cat-thumb">
+                        <Image src={cat.image} alt={cat.title} fill style={{ objectFit: "cover" }} sizes="280px" />
+                      </div>
+                    )}
+                    <div className="ts-megamenu-cat-title">
+                      {cat.title}
+                      <span className="ts-megamenu-column-arrow">→</span>
+                    </div>
+                  </MenuLink>
+                  <div className="ts-megamenu-sublist">
+                    {cat.items.map((it: MenuItem) => (
+                      <MenuLink key={it.title} item={it} onClick={() => setMenuOpen(false)} className="ts-megamenu-textitem">
+                        {it.title}
+                      </MenuLink>
+                    ))}
                   </div>
-                  <div className="ts-megamenu-body">
-                    <div className="ts-megamenu-kicker">{p.kicker}</div>
-                    <div className="ts-megamenu-title">{p.title}</div>
-                    <div className="ts-megamenu-copy">{p.copy}</div>
-                    <span className="ts-megamenu-link">Explore →</span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Systems mega menu */}
-        <div
-          className={`ts-megamenu${systemsOpen ? " is-open" : ""}`}
-          onMouseEnter={openSystems}
-          onMouseLeave={scheduleSystems}
-          aria-hidden={!systemsOpen}
-        >
-          <div className="ts-megamenu-inner">
-            <div className="ts-megamenu-aside">
-              <div className="ts-eyebrow">Our systems</div>
-              <h3>Patio kits and complete building systems.</h3>
-              <p>
-                Pre-engineered patio kits and full SIPs building systems — designed, manufactured and supplied direct from our factory in Silverdale, NSW.
-              </p>
-            </div>
-            <div className="ts-megamenu-grid" style={{ gridTemplateColumns: "repeat(2, 1fr)" }}>
-              {systems.map((s) => (
-                <Link
-                  key={s.slug}
-                  href={s.href}
-                  className="ts-megamenu-item"
-                  onClick={() => setSystemsOpen(false)}
-                >
-                  <div className="ts-megamenu-thumb">
-                    <Image src={s.image} alt={s.title} fill style={{ objectFit: "cover" }} sizes="300px" />
-                  </div>
-                  <div className="ts-megamenu-body">
-                    <div className="ts-megamenu-title">{s.kicker}</div>
-                    <div className="ts-megamenu-copy">{s.title}</div>
-                    <span className="ts-megamenu-link">Explore →</span>
-                  </div>
-                </Link>
+                </div>
               ))}
             </div>
           </div>
         </div>
 
         <div
-          className={`ts-megamenu-scrim${menuOpen || systemsOpen ? " is-open" : ""}`}
-          onClick={() => { setMenuOpen(false); setSystemsOpen(false); }}
+          className={`ts-megamenu-scrim${menuOpen ? " is-open" : ""}`}
+          onClick={() => setMenuOpen(false)}
         />
       </header>
     </>

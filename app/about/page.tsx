@@ -28,6 +28,16 @@ export default function AboutPage() {
         y: 30, opacity: 0, duration: 0.8, stagger: 0.1, ease: "power2.out",
       });
 
+      gsap.from(".bleed-animate", {
+        scrollTrigger: { trigger: ".bleed-section", start: "top 80%", once: true },
+        scale: 1.04, opacity: 0, duration: 1.2, ease: "power2.out",
+      });
+
+      gsap.from(".story-cont-animate", {
+        scrollTrigger: { trigger: ".story-cont-section", start: "top 75%", once: true },
+        y: 30, opacity: 0, duration: 0.8, stagger: 0.12, ease: "power2.out",
+      });
+
       gsap.from(".stat-item", {
         scrollTrigger: { trigger: ".ts-product-specstrip", start: "top 85%", once: true },
         y: 20, opacity: 0, duration: 0.6, stagger: 0.07, ease: "power2.out",
@@ -118,7 +128,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Story */}
+      {/* Story — intro (paras 1-2) */}
       <section className="ts-section story-section" style={{ background: "var(--ts-cream-2)" }}>
         <div className="ts-container">
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "flex-start" }}>
@@ -149,9 +159,43 @@ export default function AboutPage() {
             <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
               <p className="story-animate">{data.storyPara1}</p>
               <p className="story-animate">{data.storyPara2}</p>
-              <p className="story-animate">{data.storyPara3}</p>
-              <p className="story-animate">{data.storyPara4}</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Full-bleed photo */}
+      <section className="bleed-section" style={{ background: "var(--ts-cream-2)", paddingBottom: 80 }}>
+        <div className="bleed-animate" style={{ position: "relative", width: "100%", aspectRatio: "21 / 9", overflow: "hidden", background: "#0c0d0f" }}>
+          <Image
+            src={data.bleedPhoto || data.heroPhoto}
+            alt={data.bleedPhotoCaption || "Quick Built Systems"}
+            fill
+            style={{ objectFit: "cover" }}
+            sizes="100vw"
+          />
+          {data.bleedPhotoCaption && (
+            <span
+              style={{
+                position: "absolute", bottom: 20, right: 24,
+                background: "rgba(0,0,0,0.35)", color: "#fff",
+                fontSize: 12, letterSpacing: 1.4, textTransform: "uppercase",
+                padding: "8px 14px", borderRadius: 2, backdropFilter: "blur(4px)",
+              }}
+            >
+              {data.bleedPhotoCaption}
+            </span>
+          )}
+        </div>
+      </section>
+
+      {/* Story — continued (paras 3-5) */}
+      <section className="ts-section story-cont-section" style={{ background: "var(--ts-cream-2)", paddingTop: 0 }}>
+        <div className="ts-container">
+          <div style={{ maxWidth: "70ch", margin: "0 auto", display: "flex", flexDirection: "column", gap: 22 }}>
+            <p className="story-cont-animate" style={{ fontSize: 17, lineHeight: 1.65, color: "var(--color-graphite)", margin: 0 }}>{data.storyPara3}</p>
+            <p className="story-cont-animate" style={{ fontSize: 17, lineHeight: 1.65, color: "var(--color-graphite)", margin: 0 }}>{data.storyPara4}</p>
+            <p className="story-cont-animate" style={{ fontSize: 17, lineHeight: 1.65, color: "var(--color-graphite)", margin: 0 }}>{data.storyPara5}</p>
           </div>
         </div>
       </section>

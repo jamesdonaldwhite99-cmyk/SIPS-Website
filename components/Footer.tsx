@@ -1,8 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import galleryData from "@/content/gallery.json";
+import homeData from "@/content/home.json";
 
 const galleryImages = galleryData.images.slice(0, 20);
+const footerProducts = homeData.categoryShowcase;
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -36,11 +38,18 @@ export default function Footer() {
           <div className="ts-footer-col">
             <h4>Products</h4>
             <ul>
-              <li><Link href="/products/insulspan">Insulspan® Roofing</Link></li>
-              <li><Link href="/products/panelspan">Panelspan® Walls</Link></li>
-              <li><Link href="/products/panelcore">Panelcore® Coldroom</Link></li>
-              <li><Link href="/products">All products</Link></li>
-              <li><Link href="/building-system">Building system</Link></li>
+              {footerProducts.map((p) => {
+                const label = (p as { footerLabel?: string }).footerLabel || p.title;
+                return (
+                  <li key={p.title}>
+                    {p.external ? (
+                      <a href={p.href} target="_blank" rel="noopener noreferrer">{label}</a>
+                    ) : (
+                      <Link href={p.href}>{label}</Link>
+                    )}
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
@@ -95,9 +104,9 @@ export default function Footer() {
         <div className="ts-footer-bar">
           <div>© {year} ThermaSpan · A Quick Built Systems brand · ABN 00 000 000 000</div>
           <div className="sister">
-            <a href="#">Quick Built Homes</a>
-            <a href="#">Quick Built Fencing</a>
-            <a href="#">Quick Built Flooring</a>
+            <a href="https://www.quickbuilthomes.com.au/" target="_blank" rel="noopener noreferrer">Quick Built Homes</a>
+            <a href="https://www.quickbuiltfencing.com.au/" target="_blank" rel="noopener noreferrer">Quick Built Fencing</a>
+            <a href="https://www.patiokits.com.au/" target="_blank" rel="noopener noreferrer">Patio Kits</a>
           </div>
         </div>
       </div>

@@ -6,57 +6,14 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import homeData from "@/content/home.json";
+import reviewsData from "@/content/reviews.json";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const SLIDES = homeData.heroSlides;
 const SLIDE_DURATION = 2500;
 
-const products = [
-  {
-    num: "01",
-    kicker: "Insulspan®",
-    title: "Insulated Roofing Panels",
-    copy: "Long-span structural roofing panels — three architectural profiles. Eliminates purlins, sarking, bulk insulation and plasterboard in one install.",
-    image: "/photos/product-insulspan-new.png",
-    href: "/products/insulspan",
-  },
-  {
-    num: "02",
-    kicker: "Panelspan®",
-    title: "Structural Insulated Panels",
-    copy: "Pre-finished FC or MgO cladding bonded to a high-density EPS core. Steel Skin, FC/FC and MgO/MgO finishes available.",
-    image: "/photos/product-panelspan-new.png",
-    href: "/products/panelspan",
-  },
-  {
-    num: "03",
-    kicker: "Panelcore®",
-    title: "Coldroom Panels",
-    copy: "Steel-skinned insulated panels for cold storage, food processing, pharma and any controlled-temperature application.",
-    image: "/photos/product-panelcore-new.png",
-    href: "/products/panelcore",
-  },
-];
-
-const systems = [
-  {
-    num: "01",
-    kicker: "Patio Kits",
-    title: "Pre-engineered outdoor living",
-    copy: "Eight architectural styles — flat-packed, pre-cut and ready to install. Insulspan® insulated or Slimline high-gloss.",
-    image: "/photos/Patio Kit.png",
-    href: "/patio-kits",
-  },
-  {
-    num: "02",
-    kicker: "Building System",
-    title: "Complete SIPs envelope",
-    copy: "Insulspan® roofing and Panelspan® wall panels working together as one high-performance building system.",
-    image: "/photos/Building system.jpg",
-    href: "/building-system",
-  },
-];
+const showcase = homeData.categoryShowcase;
 
 const benefits = [
   { num: "01", icon: "light", title: "Lightweight", copy: "High-density EPS core in a slim panel — easier to handle, easier to install, no heavy lifting gear required." },
@@ -67,6 +24,59 @@ const benefits = [
 ];
 
 const applications = homeData.applications;
+
+function ProductIcon({ icon }: { icon: string }) {
+  const stroke = { fill: "none" as const, stroke: "currentColor", strokeWidth: 1.4, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
+  if (icon === "roof") return (
+    <svg viewBox="0 0 64 40" {...stroke}>
+      <path d="M6 26L32 10l26 16" />
+      <path d="M18 22l4 5M28 18l4 5M38 14l4 5M48 10l4 5" />
+      <path d="M14 26l4-6M50 16l4-6" />
+      <path d="M28 28l-3-3M28 28l3-3" />
+      <path d="M40 28l-3-3M40 28l3-3" />
+    </svg>
+  );
+  if (icon === "home") return (
+    <svg viewBox="0 0 64 40" {...stroke}>
+      <path d="M14 36V18l18-10 18 10v18z" />
+      <path d="M14 18l18 10 18-10" />
+      <rect x="22" y="22" width="6" height="8" />
+      <rect x="36" y="22" width="6" height="6" />
+    </svg>
+  );
+  if (icon === "flat") return (
+    <svg viewBox="0 0 64 40" {...stroke}>
+      <path d="M18 36V18l14-8 14 8v18z" />
+      <path d="M18 18l14 8 14-8" />
+      <rect x="26" y="22" width="5" height="6" />
+      <rect x="34" y="22" width="5" height="5" />
+    </svg>
+  );
+  if (icon === "patio") return (
+    <svg viewBox="0 0 64 40" {...stroke}>
+      <path d="M8 14L56 8" />
+      <path d="M8 14h48" />
+      <path d="M12 14v22M52 14v22" />
+      <path d="M20 14v22M28 14v22M36 14v22M44 14v22" />
+    </svg>
+  );
+  if (icon === "fence") return (
+    <svg viewBox="0 0 64 40" {...stroke}>
+      <rect x="10" y="10" width="11" height="26" />
+      <rect x="26" y="10" width="11" height="26" />
+      <rect x="42" y="10" width="11" height="26" />
+      <path d="M10 20h44" />
+    </svg>
+  );
+  if (icon === "retaining") return (
+    <svg viewBox="0 0 64 40" {...stroke}>
+      <path d="M6 36h12V26h12V18h12V10h16" />
+      <path d="M6 36h52" />
+      <path d="M22 26v10M34 18v10M46 10v18" />
+    </svg>
+  );
+  return null;
+}
 
 function BenefitIcon({ icon }: { icon: string }) {
   if (icon === "light") return (
@@ -89,6 +99,7 @@ function BenefitIcon({ icon }: { icon: string }) {
 export default function HomePage() {
   const [slideIndex, setSlideIndex] = useState(0);
   const [paused, setPaused] = useState(false);
+  const reviews = reviewsData.reviews;
   const pageRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -157,19 +168,69 @@ export default function HomePage() {
         delay: 0.2,
       });
 
-      // Product cards
-      gsap.from(".product-card-animate", {
-        scrollTrigger: { trigger: ".ts-product-grid", start: "top 80%", once: true },
-        y: 40,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.12,
-        ease: "power3.out",
+      // Showcase header — eyebrow draws in, headline mask reveal, lead fade
+      gsap.from(".showcase-eyebrow", {
+        scrollTrigger: { trigger: ".ts-showcase", start: "top 80%", once: true },
+        x: -20, opacity: 0, duration: 0.7, ease: "power2.out",
+      });
+      gsap.from(".showcase-h2", {
+        scrollTrigger: { trigger: ".ts-showcase", start: "top 80%", once: true },
+        y: 50, opacity: 0, duration: 1, ease: "power3.out", delay: 0.1,
+      });
+      gsap.from(".showcase-lead", {
+        scrollTrigger: { trigger: ".ts-showcase", start: "top 80%", once: true },
+        y: 20, opacity: 0, duration: 0.8, ease: "power2.out", delay: 0.3,
+      });
+
+      // Showcase cards — alternating left/right slide + scale reveal
+      gsap.utils.toArray<HTMLElement>(".showcase-card-animate").forEach((card, i) => {
+        gsap.from(card, {
+          scrollTrigger: { trigger: card, start: "top 85%", once: true },
+          x: i % 2 === 0 ? -80 : 80,
+          y: 30,
+          opacity: 0,
+          scale: 0.96,
+          duration: 1.1,
+          ease: "power3.out",
+        });
+      });
+
+      // Showcase images — scroll-linked parallax (image moves as you scroll)
+      gsap.utils.toArray<HTMLElement>(".ts-showcase-image img").forEach((img) => {
+        gsap.fromTo(
+          img,
+          { y: -40, scale: 1.12 },
+          {
+            y: 40,
+            scale: 1.12,
+            ease: "none",
+            scrollTrigger: {
+              trigger: img.closest(".ts-showcase-card"),
+              start: "top bottom",
+              end: "bottom top",
+              scrub: true,
+            },
+          }
+        );
+      });
+
+      // Showcase body — title and copy fade up as card enters
+      gsap.utils.toArray<HTMLElement>(".ts-showcase-card").forEach((card) => {
+        const body = card.querySelector(".ts-showcase-body");
+        if (!body) return;
+        gsap.from(body.children, {
+          scrollTrigger: { trigger: card, start: "top 75%", once: true },
+          y: 20, opacity: 0, duration: 0.7, stagger: 0.08, ease: "power2.out", delay: 0.2,
+        });
       });
 
       // Benefits
+      gsap.from(".icon-animate", {
+        scrollTrigger: { trigger: ".ts-product-iconrow", start: "top 85%", once: true },
+        y: 20, opacity: 0, duration: 0.6, stagger: 0.08, ease: "power2.out",
+      });
       gsap.from(".benefit-animate", {
-        scrollTrigger: { trigger: ".ts-benefits", start: "top 80%", once: true },
+        scrollTrigger: { trigger: ".ts-benefits-strip", start: "top 90%", once: true },
         y: 30,
         opacity: 0,
         duration: 0.7,
@@ -185,6 +246,16 @@ export default function HomePage() {
         duration: 0.7,
         stagger: 0.08,
         ease: "power2.out",
+      });
+
+      // Reviews — staggered fade + lift
+      gsap.from(".reviews-eyebrow, .reviews-h2, .reviews-lead", {
+        scrollTrigger: { trigger: ".ts-reviews", start: "top 80%", once: true },
+        y: 30, opacity: 0, duration: 0.8, stagger: 0.1, ease: "power3.out",
+      });
+      gsap.from(".review-card-animate", {
+        scrollTrigger: { trigger: ".ts-reviews-grid", start: "top 85%", once: true },
+        y: 40, opacity: 0, scale: 0.96, duration: 0.8, stagger: 0.12, ease: "power3.out",
       });
 
       // CTA strip
@@ -227,16 +298,11 @@ export default function HomePage() {
         {/* Gradient overlay — dark on left, fades right */}
         <div className="ts-home-hero-overlay" />
 
-        {/* Text — sits above overlay */}
-        <div className="ts-home-hero-text">
-          <div className="ts-home-hero-kicker hero-animate">
-            <span className="ts-home-hero-kicker-line" />
-            {homeData.heroEyebrow}
-          </div>
+        {/* Text — anchored bottom-left */}
+        <div className="ts-home-hero-text ts-home-hero-text--bottom">
           <h1 className="hero-animate">
-            The Future of<br /><em>Australian</em> Building.
+            Your Outdoor Living <em>Specialists</em>.
           </h1>
-          <p className="lead hero-animate">{homeData.heroLead}</p>
           <div className="actions hero-animate">
             <Link href="/contact" className="ts-btn ts-btn--primary">
               {homeData.heroCtaPrimary}
@@ -270,22 +336,102 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Stat strip (mirrors Insulspan spec strip) ── */}
-      <div className="ts-product-specstrip">
+      {/* ── Our Products icon row ── */}
+      <section className="ts-product-iconrow" id="our-products">
         <div className="ts-container">
-          <div className="ts-product-specstrip-grid">
-            {homeData.heroStats.map((s, i) => (
-              <div key={i} className="ts-product-specstrip-item spec-item">
-                <div className="label">{s.lab}</div>
-                <div className="value">{s.val}</div>
-              </div>
-            ))}
+          <div className="ts-product-iconrow-inner">
+            <div className="ts-product-iconrow-label">{homeData.productIconLabel}</div>
+            <div className="ts-product-iconrow-items">
+              {homeData.productIconRow.map((p, i) => {
+                const inner = (
+                  <>
+                    <div className="ts-product-icon">
+                      <ProductIcon icon={p.icon} />
+                    </div>
+                    <div className="ts-product-icon-label">{p.label}</div>
+                  </>
+                );
+                const isExternal = "external" in p && (p as { external?: boolean }).external;
+                return isExternal ? (
+                  <a key={i} href={p.href} target="_blank" rel="noopener noreferrer" className="ts-product-iconitem icon-animate">
+                    {inner}
+                  </a>
+                ) : (
+                  <Link key={i} href={p.href} className="ts-product-iconitem icon-animate">
+                    {inner}
+                  </Link>
+                );
+              })}
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* ── Intro / About ── */}
-      <section className="ts-section" id="intro" style={{ background: "var(--ts-cream-2)" }}>
+      {/* ── Category Showcase (full-bleed, 2 per row) ── */}
+      <section className="ts-divider-top ts-showcase" id="products">
+        <div className="ts-section-head">
+          <div>
+            <div className="ts-eyebrow showcase-eyebrow">{homeData.showcaseEyebrow}</div>
+            <h2 className="showcase-h2">{homeData.showcaseH2}</h2>
+          </div>
+          <p className="showcase-lead">{homeData.showcaseLead}</p>
+        </div>
+
+        <div className="ts-showcase-grid">
+            {showcase.map((c, i) => {
+              const inner = (
+                <>
+                  <div className="ts-showcase-image">
+                    <Image
+                      src={c.image}
+                      alt={c.title}
+                      fill
+                      style={{ objectFit: "cover" }}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 33vw"
+                    />
+                    <span className="ts-showcase-num">0{i + 1} / 0{showcase.length}</span>
+                    <div className="ts-showcase-imageoverlay" />
+                  </div>
+                  <div className="ts-showcase-body">
+                    <div className="ts-showcase-kicker">{c.kicker}</div>
+                    <h3 className="ts-showcase-title">{c.title}</h3>
+                    <p className="ts-showcase-copy">{c.copy}</p>
+                    <span className="ts-showcase-link">
+                      Explore
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.6">
+                        <path d="M5 12h14M13 5l7 7-7 7" />
+                      </svg>
+                    </span>
+                  </div>
+                </>
+              );
+              return c.external ? (
+                <a
+                  key={c.kicker}
+                  href={c.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ts-showcase-card showcase-card-animate"
+                  data-index={i}
+                >
+                  {inner}
+                </a>
+              ) : (
+                <Link
+                  key={c.kicker}
+                  href={c.href}
+                  className="ts-showcase-card showcase-card-animate"
+                  data-index={i}
+                >
+                  {inner}
+                </Link>
+              );
+            })}
+        </div>
+      </section>
+
+      {/* ── Future of Building / Intro + Video ── */}
+      <section className="ts-section ts-divider-top" id="future" style={{ background: "var(--ts-cream-2)" }}>
         <div className="ts-container">
           <div className="ts-intro ts-intro--video">
             <div className="ts-intro-text">
@@ -322,89 +468,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Products ── */}
-      <section className="ts-section ts-divider-top" id="products">
-        <div className="ts-container">
-          <div className="ts-section-head">
-            <div>
-              <div className="ts-eyebrow section-head-animate">{homeData.productsEyebrow}</div>
-              <h2 className="section-head-animate">{homeData.productsH2}</h2>
-            </div>
-            <p className="section-head-animate">{homeData.productsLead}</p>
-          </div>
-
-          <div className="ts-product-grid">
-            {products.map((p) => (
-              <Link key={p.num} href={p.href} className="ts-product-card product-card-animate">
-                <div className="ts-product-image">
-                  <Image src={p.image} alt={p.title} fill style={{ objectFit: "cover" }} sizes="(max-width: 768px) 100vw, 33vw" />
-                  <span className="ts-product-num">{p.num} / 03</span>
-                </div>
-                <div className="ts-product-body">
-                  <div className="ts-product-kicker">{p.kicker}</div>
-                  <h3>{p.title}</h3>
-                  <p>{p.copy}</p>
-                  <span className="ts-product-link">Explore the range</span>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Systems ── */}
-      <section className="ts-section ts-divider-top" id="systems" style={{ background: "var(--ts-cream-2)" }}>
-        <div className="ts-container">
-          <div className="ts-section-head">
-            <div>
-              <div className="ts-eyebrow section-head-animate">Systems</div>
-              <h2 className="section-head-animate">Patio kits and complete building systems.</h2>
-            </div>
-            <p className="section-head-animate">Pre-engineered patio kits and full SIPs building systems — designed, manufactured and supplied direct from our factory in Silverdale, NSW.</p>
-          </div>
-          <div className="ts-product-grid ts-product-grid--two">
-            {systems.map((s) => (
-              <Link key={s.num} href={s.href} className="ts-product-card product-card-animate">
-                <div className="ts-product-image">
-                  <Image src={s.image} alt={s.title} fill style={{ objectFit: "cover" }} sizes="(max-width: 768px) 100vw, 50vw" />
-                  <span className="ts-product-num">{s.num} / 02</span>
-                </div>
-                <div className="ts-product-body">
-                  <div className="ts-product-kicker">{s.kicker}</div>
-                  <h3>{s.title}</h3>
-                  <p>{s.copy}</p>
-                  <span className="ts-product-link">Explore →</span>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Benefits ── */}
-      <section className="ts-section ts-divider-top" id="benefits" style={{ background: "var(--ts-cream-2)" }}>
-        <div className="ts-container">
-          <div className="ts-section-head">
-            <div>
-              <div className="ts-eyebrow section-head-animate">{homeData.benefitsEyebrow}</div>
-              <h2 className="section-head-animate">{homeData.benefitsH2}</h2>
-            </div>
-            <p className="section-head-animate">{homeData.benefitsLead}</p>
-          </div>
-
-          <div className="ts-benefits">
-            {benefits.map((b) => (
-              <div key={b.num} className="ts-benefit benefit-animate">
-                <div className="ts-benefit-num">{b.num}</div>
-                <BenefitIcon icon={b.icon} />
-                <h3>{b.title}</h3>
-                <p>{b.copy}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── Applications ── */}
       <section className="ts-section ts-divider-top" id="applications">
         <div className="ts-container">
@@ -427,6 +490,39 @@ export default function HomePage() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* ── Reviews (Google) ── */}
+      <section className="ts-section ts-divider-top ts-reviews" id="reviews">
+        <div className="ts-container">
+          <div className="ts-section-head">
+            <div>
+              <div className="ts-eyebrow reviews-eyebrow">{reviewsData.eyebrow}</div>
+              <h2 className="reviews-h2">{reviewsData.h2}</h2>
+            </div>
+            <p className="reviews-lead">{reviewsData.lead}</p>
+          </div>
+
+          <div className="ts-reviews-grid">
+            {reviews.map((r, i) => (
+              <div key={i} className="ts-review-card review-card-animate">
+                <div className="ts-review-stars" aria-label={`${r.rating} out of 5 stars`}>
+                  {Array.from({ length: 5 }).map((_, idx) => (
+                    <svg key={idx} viewBox="0 0 24 24" width="18" height="18" fill={idx < r.rating ? "var(--ts-accent)" : "rgba(0,0,0,0.12)"}>
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="ts-review-text">"{r.text}"</p>
+                <div className="ts-review-meta">
+                  <div className="ts-review-name">{r.name}</div>
+                  <div className="ts-review-date">{r.date}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+
         </div>
       </section>
 

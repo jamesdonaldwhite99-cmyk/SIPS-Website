@@ -1,0 +1,130 @@
+{
+  "asideEyebrow": "Our products",
+  "asideH3": "One panel system for every Australian build.",
+  "asideBody": "Modular homes, walls, roofing and outdoor living — all from Australia's family-owned QuickBuilt group.",
+  "categories": [
+    {
+      "title": "Modular Homes",
+      "href": "https://www.quickbuilthomes.com.au/",
+      "external": true,
+      "image": "/photos/gallery/01.jpg",
+      "items": [
+        {
+          "title": "Cabins",
+          "copy": "Backyard cabins, ready to live in.",
+          "href": "https://www.quickbuilthomes.com.au/files/backyard-cabins.php",
+          "external": true,
+          "image": "/photos/gallery/10.jpg"
+        },
+        {
+          "title": "Granny Flats",
+          "copy": "Modular kit homes & granny flats.",
+          "href": "https://www.quickbuilthomes.com.au/files/modular-kit-home-comparison.php",
+          "external": true,
+          "image": "/photos/gallery/11.jpg"
+        },
+        {
+          "title": "Custom Homes",
+          "copy": "Fully custom modular home builds.",
+          "href": "https://www.quickbuilthomes.com.au/",
+          "external": true,
+          "image": "/photos/gallery/01.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Modular Fencing & Retaining",
+      "href": "https://www.quickbuiltfencing.com.au/",
+      "external": true,
+      "image": "/photos/gallery/13.jpg",
+      "items": [
+        {
+          "title": "Residential Wall Solutions",
+          "copy": "Modular fencing for homes.",
+          "href": "https://www.quickbuiltfencing.com.au/",
+          "external": true,
+          "image": "/photos/gallery/13.jpg"
+        },
+        {
+          "title": "Commercial Wall Solutions",
+          "copy": "Large-scale modular walls.",
+          "href": "https://www.quickbuiltfencing.com.au/files/commercial-overview.php",
+          "external": true,
+          "image": "/photos/gallery/19.jpg"
+        },
+        {
+          "title": "Retaining Solutions",
+          "copy": "Modular retaining wall systems.",
+          "href": "https://www.quickbuiltfencing.com.au/files/product-retainline.php",
+          "external": true,
+          "image": "/photos/gallery/12.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Wall Panels",
+      "href": "/products",
+      "external": false,
+      "image": "/photos/product-panelspan-new.png",
+      "items": [
+        {
+          "title": "Panelspan® Fibre Cement",
+          "copy": "Pre-finished FC structural wall panels.",
+          "href": "/products/panelspan",
+          "external": false,
+          "image": "/photos/product-panelspan-new.png"
+        },
+        {
+          "title": "Panelcore® Steel Panel",
+          "copy": "Steel-skinned coldroom & wall panels.",
+          "href": "/products/panelcore",
+          "external": false,
+          "image": "/photos/product-panelcore-new.png"
+        },
+        {
+          "title": "Quick Built Building Solutions",
+          "copy": "Complete modular building system.",
+          "href": "/building-system",
+          "external": false,
+          "image": "/photos/Building system.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Roofing",
+      "href": "/products/insulspan",
+      "external": false,
+      "image": "/photos/product-insulspan-new.png",
+      "items": [
+        {
+          "title": "Insulspan® Insulated Roofing",
+          "copy": "Long-span structural insulated roofing.",
+          "href": "/products/insulspan",
+          "external": false,
+          "image": "/photos/product-insulspan-new.png"
+        },
+        {
+          "title": "Patio Kits",
+          "copy": "Pre-engineered insulated patio kits.",
+          "href": "https://www.patiokits.com.au/",
+          "external": true,
+          "image": "/photos/Patio Kit.png"
+        },
+        {
+          "title": "Alyspan Beams",
+          "copy": "Aluminium structural patio beams.",
+          "href": "#",
+          "external": true,
+          "image": "/photos/gallery/15.jpg"
+        },
+        {
+          "title": "Accessories",
+          "copy": "Downlights, fans, skylights & more.",
+          "href": "https://www.patiokits.com.au/files/accessories.php",
+          "external": true,
+          "image": "/photos/gallery/16.jpg"
+        }
+      ]
+    }
+  ]
+}

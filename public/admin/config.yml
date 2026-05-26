@@ -7,6 +7,38 @@ backend:
 media_folder: public/photos
 public_folder: /photos
 collections:
+  # ── Header / Products mega menu ───────────────────────────
+  - name: menu
+    label: Header Menu (Products dropdown)
+    files:
+      - name: menu
+        label: Products mega menu — 4 categories
+        file: content/menu.json
+        format: json
+        fields:
+          - { name: asideEyebrow, label: Aside eyebrow,   widget: string, required: false }
+          - { name: asideH3,      label: Aside headline,  widget: string, required: false }
+          - { name: asideBody,    label: Aside body text, widget: text,   required: false }
+          - name: categories
+            label: Categories (4 columns)
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { name: title,    label: Category title,            widget: string }
+              - { name: href,     label: Category link URL,         widget: string, hint: "Internal like /products, or external like https://..." }
+              - { name: external, label: External link? (opens new tab), widget: boolean, default: false }
+              - { name: image,    label: Category image, widget: image }
+              - name: items
+                label: Sub-items
+                widget: list
+                summary: "{{fields.title}}"
+                fields:
+                  - { name: title,    label: Title,    widget: string }
+                  - { name: copy,     label: Short description (not shown — kept for reference), widget: string, required: false }
+                  - { name: href,     label: Link URL, widget: string }
+                  - { name: external, label: External link? (opens new tab), widget: boolean, default: false }
+                  - { name: image,    label: Thumbnail image (unused — keep blank), widget: image, required: false }
+
   # ── Global ─────────────────────────────────────────────────
   - name: global
     label: Global Settings
@@ -98,13 +130,6 @@ collections:
                   - { name: title, label: Title, widget: string }
                   - { name: description, label: Description, widget: text }
                   - { name: ogImage, label: Social share image, widget: image, required: false }
-              - name: patio_kits
-                label: Patio Kits
-                widget: object
-                fields:
-                  - { name: title, label: Title, widget: string }
-                  - { name: description, label: Description, widget: text }
-                  - { name: ogImage, label: Social share image, widget: image, required: false }
               - name: gallery
                 label: Gallery
                 widget: object
@@ -184,6 +209,55 @@ collections:
               - { name: kicker, label: Kicker (small tag),    widget: string }
               - { name: title,  label: Title,                 widget: string }
               - { name: img,    label: Tile image,            widget: image }
+          - { name: productIconLabel, label: '"Our Products" label (icon row, below hero)', widget: string }
+          - name: productIconRow
+            label: Product icon row (below hero)
+            widget: list
+            summary: "{{fields.label}}"
+            fields:
+              - { name: icon,     label: Icon style, widget: select, options: ["roof", "home", "flat", "patio", "fence", "retaining"] }
+              - { name: label,    label: Label (shown under icon), widget: string }
+              - { name: href,     label: Link URL, widget: string }
+              - { name: external, label: External link? (opens new tab), widget: boolean, default: false }
+          - { name: showcaseEyebrow, label: Showcase section eyebrow, widget: string }
+          - { name: showcaseH2,      label: Showcase headline,       widget: string }
+          - { name: showcaseLead,    label: Showcase intro text,     widget: text }
+          - name: categoryShowcase
+            label: Category showcase (home page cards)
+            widget: list
+            summary: "{{fields.kicker}} — {{fields.title}}"
+            fields:
+              - { name: kicker,      label: Kicker (small tag on card), widget: string }
+              - { name: title,       label: Title (shown on card), widget: string }
+              - { name: copy,        label: Short description, widget: text }
+              - { name: image,       label: Image, widget: image }
+              - { name: href,        label: Link URL, widget: string, hint: "Internal like /products or external like https://..." }
+              - { name: external,    label: External link? (opens new tab), widget: boolean, default: false }
+              - { name: footerLabel, label: Footer label (short name for footer), widget: string, required: false, hint: "Leave blank to use Title" }
+
+  # ── Reviews (Google) ───────────────────────────────────────
+  - name: reviews
+    label: Google Reviews (Home Page)
+    files:
+      - name: reviews
+        label: Reviews content
+        file: content/reviews.json
+        format: json
+        fields:
+          - { name: eyebrow,         label: Section eyebrow,    widget: string }
+          - { name: h2,              label: Section headline,   widget: string }
+          - { name: lead,            label: Section intro text, widget: text }
+          - { name: googleUrl,       label: Google reviews URL, widget: string, hint: "Link to your Google Business reviews page" }
+          - { name: googleLinkText,  label: Google link text,   widget: string }
+          - name: reviews
+            label: Reviews (paste from Google)
+            widget: list
+            summary: "★{{fields.rating}} — {{fields.name}}"
+            fields:
+              - { name: name,   label: Reviewer name, widget: string }
+              - { name: rating, label: Rating (1–5),  widget: number, min: 1, max: 5, default: 5 }
+              - { name: date,   label: Date (e.g. "2 months ago"), widget: string }
+              - { name: text,   label: Review text,   widget: text }
 
   # ── Insulspan product page ─────────────────────────────────
   - name: insulspan
@@ -321,71 +395,6 @@ collections:
               - { name: title, label: Title, widget: string }
               - { name: copy,  label: Copy,  widget: text }
 
-  # ── Patio Kits page ────────────────────────────────────────
-  - name: patio_kits
-    label: Patio Kits Page
-    files:
-      - name: patio_kits
-        label: Patio Kits Content
-        file: content/patio-kits.json
-        format: json
-        fields:
-          - { name: heroEyebrow,     label: Hero eyebrow,             widget: string }
-          - { name: heroKicker,      label: Hero kicker,              widget: string }
-          - { name: heroH1,          label: Hero headline,            widget: text }
-          - { name: heroLead,        label: Hero lead text,           widget: text }
-          - { name: heroPhotoTag,    label: Hero photo caption,       widget: string }
-          - name: specs
-            label: Spec strip (4 boxes)
-            widget: list
-            fields:
-              - { name: label, label: Label, widget: string }
-              - { name: value, label: Value, widget: string }
-          - { name: overviewEyebrow, label: Overview eyebrow,         widget: string }
-          - { name: overviewH2,      label: Overview headline,        widget: string }
-          - { name: overviewPara1,   label: Overview paragraph 1,     widget: text }
-          - { name: overviewPara2,   label: Overview paragraph 2,     widget: text }
-          - { name: overviewPara3,   label: Overview paragraph 3,     widget: text }
-          - { name: stylesEyebrow,   label: Styles eyebrow,           widget: string }
-          - { name: stylesH2,        label: Styles headline,          widget: string }
-          - { name: stylesCopy,      label: Styles intro copy,        widget: text }
-          - name: styles
-            label: Patio styles (8 designs)
-            widget: list
-            fields:
-              - { name: name,  label: Name,  widget: string }
-              - { name: copy,  label: Description, widget: text }
-              - { name: image, label: Image, widget: image }
-          - { name: panelOptionsEyebrow, label: Panel options eyebrow, widget: string }
-          - { name: panelOptionsH2,  label: Panel options headline,    widget: string }
-          - name: panelOptions
-            label: Panel options
-            widget: list
-            fields:
-              - { name: kicker, label: Kicker, widget: string }
-              - { name: name,   label: Name,   widget: string }
-              - { name: copy,   label: Copy,   widget: text }
-              - name: features
-                label: Features
-                widget: list
-                field: { name: feature, label: Feature, widget: string }
-          - { name: advantagesEyebrow, label: Advantages eyebrow,     widget: string }
-          - { name: advantagesH2,    label: Advantages headline,      widget: string }
-          - name: advantages
-            label: Advantages
-            widget: list
-            fields:
-              - { name: title, label: Title, widget: string }
-              - { name: copy,  label: Copy,  widget: text }
-          - { name: accessoriesEyebrow, label: Accessories eyebrow,   widget: string }
-          - { name: accessoriesH2,   label: Accessories headline,     widget: string }
-          - name: accessories
-            label: Accessories
-            widget: list
-            fields:
-              - { name: name, label: Name, widget: string }
-              - { name: copy, label: Copy, widget: text }
-
   # ── About page ─────────────────────────────────────────────
   - name: about
     label: About Page
@@ -401,10 +410,13 @@ collections:
           - { name: heroLead,    label: Hero lead text,         widget: text }
           - { name: storyEyebrow,label: Story section eyebrow,  widget: string }
           - { name: storyH2,     label: Story headline,         widget: string }
-          - { name: storyPara1,  label: Story paragraph 1,      widget: text }
-          - { name: storyPara2,  label: Story paragraph 2,      widget: text }
-          - { name: storyPara3,  label: Story paragraph 3,      widget: text }
-          - { name: storyPara4,  label: Story paragraph 4,      widget: text }
+          - { name: storyPara1,  label: Story paragraph 1 (before bleed photo), widget: text }
+          - { name: storyPara2,  label: Story paragraph 2 (before bleed photo), widget: text }
+          - { name: bleedPhoto,  label: Full-width bleed photo, widget: image }
+          - { name: bleedPhotoCaption, label: Bleed photo caption (small tag, optional), widget: string, required: false }
+          - { name: storyPara3,  label: Story paragraph 3 (after bleed photo),  widget: text }
+          - { name: storyPara4,  label: Story paragraph 4 (after bleed photo),  widget: text }
+          - { name: storyPara5,  label: Story paragraph 5 (after bleed photo),  widget: text }
           - name: stats
             label: Stats (4 boxes — Years Building, Ownership, etc.)
             widget: list
