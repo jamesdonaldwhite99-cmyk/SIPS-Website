@@ -1,28 +1,40 @@
 {
-  "heroPhoto": "/photos/about-our-story.jpg",
-  "heroEyebrow": "About us",
+  "storyPara5": "At the core of many of our systems is our advanced Structural Insulated Panel System (SIPS) technology. Incorporating durable fibre cement facings, insulated EPS cores, and high-performance structural framing, our panels are designed to deliver superior thermal performance, moisture resistance, acoustic benefits, and long-term durability while remaining lightweight and fast to install.",
+  "systemPara1": "When you use Insulspan® roofing and Panelspan® walls together, you get a complete pre-finished building envelope — no additional cladding, no bulk insulation, no separate lining boards.",
   "heroH1": "A Proud Third Generation Family Business",
-  "heroLead": "25 years in the trade. One SIPs panel range built for the people who actually have to lay it on site.",
+  "systemPara2": "Every surface arrives ready to paint or finish. Every joint is factory-precise. Every panel is engineered together as one system.",
+  "videoH2": "A complete envelope, installed in days.",
+  "videoEyebrow": "Watch our build video",
+  "bleedPhotoCaption": "Quick Built Systems — Sydney, NSW",
+  "heroEyebrow": "About us",
   "storyEyebrow": "Our story",
-  "storyH2": "Built on jobsites, not in boardrooms.",
+  "heroLead": "25 years in the trade. One SIPs panel range built for the people who actually have to lay it on site.",
+  "videoLead": "Watch a complete two-storey extension reach lock-up using our SIPs system — start to finish, panel by panel. The same factory-precise process every ThermaSpan job uses.",
+  "heroPhoto": "/photos/010A7505.jpg",
+  "bleedPhoto": "/photos/PanelSpan-b9928402.jpg",
+  "systemH2": "A complete building system from ThermaSpan.",
   "storyPara1": "At Quick Built Systems, we believe building should be smarter, faster, and more accessible. Whether it's a home, outdoor space, fencing system, insulated panel solution, or commercial structure, our goal is simple — to provide high-performance building systems that give Australians more control over the way they build.",
   "storyPara2": "As a proudly family-owned Australian business based in Sydney, we bring over 25 years of hands-on experience in modular construction, insulated panel systems, and innovative building solutions. Over the years, we've refined our products and processes to create systems that are efficient, durable, easy to install, and designed specifically for Australian conditions.",
-  "bleedPhoto": "/photos/about-our-story.jpg",
-  "bleedPhotoCaption": "Quick Built Systems — Sydney, NSW",
   "storyPara3": "What began as a passion for smarter construction has evolved into a complete range of modular and panel-based systems servicing residential, commercial, agricultural, and controlled-temperature applications. Across every product we create, we focus on the same core principles: quality, simplicity, performance, and affordability.",
   "storyPara4": "Our systems are designed by builders and tradespeople with real-world installation in mind. From architecturally designed modular homes and DIY patio kits through to acoustic fencing, insulated roofing, wall systems, and coldroom panels, every Quick Built product is engineered to simplify construction without compromising on strength or finish.",
-  "storyPara5": "At the core of many of our systems is our advanced Structural Insulated Panel System (SIPS) technology. Incorporating durable fibre cement facings, insulated EPS cores, and high-performance structural framing, our panels are designed to deliver superior thermal performance, moisture resistance, acoustic benefits, and long-term durability while remaining lightweight and fast to install.",
+  "storyH2": "Built on jobsites, not in boardrooms.",
   "stats": [
-    { "label": "Years building", "value": "25+" },
-    { "label": "Ownership", "value": "Family-owned" },
-    { "label": "Headquarters", "value": "Sydney NSW" },
-    { "label": "Sister brands", "value": "Quick Built Systems" }
+    {
+      "label": "Years building",
+      "value": "25+"
+    },
+    {
+      "label": "Ownership",
+      "value": "Family-owned"
+    },
+    {
+      "label": "Headquarters",
+      "value": "Sydney NSW"
+    },
+    {
+      "label": "Sister brands",
+      "value": "Quick Built Systems"
+    }
   ],
-  "videoEyebrow": "Watch our build video",
-  "videoH2": "A complete envelope, installed in days.",
-  "videoLead": "Watch a complete two-storey extension reach lock-up using our SIPs system — start to finish, panel by panel. The same factory-precise process every ThermaSpan job uses.",
-  "videoTag": "4 min 32 sec",
-  "systemH2": "A complete building system from ThermaSpan.",
-  "systemPara1": "When you use Insulspan® roofing and Panelspan® walls together, you get a complete pre-finished building envelope — no additional cladding, no bulk insulation, no separate lining boards.",
-  "systemPara2": "Every surface arrives ready to paint or finish. Every joint is factory-precise. Every panel is engineered together as one system."
+  "videoTag": "4 min 32 sec"
 }
