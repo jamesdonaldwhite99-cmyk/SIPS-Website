@@ -2,6 +2,8 @@
   "overviewPhotoTag": "Panelspan® — built for outdoor living",
   "heroPhotoTag": "Panelspan® wall installation",
   "overviewH2": "Pre-finished walls. Zero extra cladding.",
+  "bannerPhotoAlt": "Panelspan® panel installation on a residential project",
+  "bannerPhoto": "/photos/Copy of 5B5DDB05-254F-4C9F-8B06-FC9279485FFC_1_105_c.jpeg",
   "heroTitleAccent": "Wall Panels.",
   "advantages": [
     {
@@ -25,6 +27,49 @@
       "copy": "Dense EPS core reduces noise transmission significantly."
     }
   ],
+  "comparison": {
+    "panelspanLabel": "Panelspan®",
+    "eyebrow": "OSB SIPs vs Panelspan",
+    "h2": "Engineered to outperform.",
+    "osbImageAlt": "Cross-section of an OSB-based SIP showing EPS core, OSB skins, battens, breathable membrane and external cladding",
+    "panelspanImage": "/photos/Panelspan product image copy.png",
+    "osbLabel": "OSB-Based SIPs",
+    "rows": [
+      {
+        "category": "System & Structure",
+        "osb": "Requires external cladding",
+        "panelspan": "One integrated, pre-finished system"
+      },
+      {
+        "category": "Speed & Efficiency",
+        "osb": "Faster but still needs cladding",
+        "panelspan": "Lock-up in 3–4 days"
+      },
+      {
+        "category": "Cost & Waste",
+        "osb": "Added cladding and finishing costs",
+        "panelspan": "No cladding required — major cost savings"
+      },
+      {
+        "category": "Environmental Impact",
+        "osb": "More finishing materials",
+        "panelspan": "Low-waste, pre-finished manufacturing with low energy requirements long term"
+      },
+      {
+        "category": "Trades & Labour Requirements",
+        "osb": "Still needs cladding trades",
+        "panelspan": "Minimal trades and simplified construction with integrated service channels"
+      },
+      {
+        "category": "Compliance & Safety",
+        "osb": "Lower fire resistance",
+        "panelspan": "FRL 60/60/60 (up to 90/90/90) and bushfire rated"
+      }
+    ],
+    "lead": "Traditional OSB-based SIPs are an improvement on stick framing — but they still require external cladding, extra trades, and additional finishing. Panelspan® arrives pre-finished and ready to install.",
+    "panelspanImageAlt": "Panelspan® panel layers — 10mm MgO or 6mm FC face, EPS-FR core, 10mm MgO or 9mm FC reverse face",
+    "osbImage": "/photos/OSB SIPS.png"
+  },
   "overviewEyebrow": "Overview",
   "kicker": "Panelspan®",
   "heroLead": "Pre-finished FC or MgO cladding bonded to a high-density EPS core. No external cladding required — just lock the panels together and reach lock-up in days.",
@@ -77,13 +122,70 @@
       ]
     }
   ],
-  "heroTitle": "Structural Insulated",
-  "bannerPhoto": "/photos/panelspan-overview.jpg",
-  "bannerPhotoAlt": "Panelspan® panel installation on a residential project",
   "technicalSpecs": {
+    "rValueUnit": "m²K/W",
+    "fireIndicesTitle": "Duragroove Early Fire Hazard Indices",
     "eyebrow": "Technical specifications",
     "h2": "Built to perform — verified to standard.",
-    "lead": "Material build-up, fire performance, R-values and panel weights across the Panelspan® range.",
+    "weightGroups": [
+      {
+        "group": "External Wall",
+        "rows": [
+          {
+            "size": "2.4 × 1.2",
+            "values": [
+              "61.11",
+              "61.98",
+              "62.84"
+            ]
+          },
+          {
+            "size": "2.7 × 1.2",
+            "values": [
+              "68.75",
+              "69.72",
+              "70.70"
+            ]
+          }
+        ]
+      },
+      {
+        "group": "Internal Wall",
+        "rows": [
+          {
+            "size": "2.7 × 1.2",
+            "values": [
+              "56.50",
+              "57.48",
+              "58.45"
+            ]
+          }
+        ]
+      }
+    ],
+    "weightsThicknessHeaders": [
+      "90mm",
+      "115mm",
+      "140mm"
+    ],
+    "fireIndices": [
+      {
+        "label": "Ignition Index",
+        "value": "0"
+      },
+      {
+        "label": "Spread of Flame",
+        "value": "0"
+      },
+      {
+        "label": "Heat Evolved Index",
+        "value": "0"
+      },
+      {
+        "label": "Smoke Developed Index",
+        "value": "0–1"
+      }
+    ],
     "construction": [
       {
         "title": "External Walls",
@@ -101,79 +203,23 @@
         ]
       }
     ],
-    "fireIndicesTitle": "Duragroove Early Fire Hazard Indices",
-    "fireIndices": [
-      { "label": "Ignition Index",        "value": "0" },
-      { "label": "Spread of Flame",       "value": "0" },
-      { "label": "Heat Evolved Index",    "value": "0" },
-      { "label": "Smoke Developed Index", "value": "0–1" }
+    "rValues": [
+      {
+        "thickness": "90mm",
+        "value": "2.20"
+      },
+      {
+        "thickness": "115mm",
+        "value": "2.86"
+      },
+      {
+        "thickness": "140mm",
+        "value": "3.52"
+      }
     ],
     "rValueTitle": "R Value by core thickness",
-    "rValueUnit": "m²K/W",
-    "rValues": [
-      { "thickness": "90mm",  "value": "2.20" },
-      { "thickness": "115mm", "value": "2.86" },
-      { "thickness": "140mm", "value": "3.52" }
-    ],
-    "weightsTitle": "Panel Weights (kg)",
-    "weightsThicknessHeaders": ["90mm", "115mm", "140mm"],
-    "weightGroups": [
-      {
-        "group": "External Wall",
-        "rows": [
-          { "size": "2.4 × 1.2", "values": ["61.11", "61.98", "62.84"] },
-          { "size": "2.7 × 1.2", "values": ["68.75", "69.72", "70.70"] }
-        ]
-      },
-      {
-        "group": "Internal Wall",
-        "rows": [
-          { "size": "2.7 × 1.2", "values": ["56.50", "57.48", "58.45"] }
-        ]
-      }
-    ]
+    "lead": "Material build-up, fire performance, R-values and panel weights across the Panelspan® range.",
+    "weightsTitle": "Panel Weights (kg)"
   },
-  "comparison": {
-    "eyebrow": "OSB SIPs vs Panelspan",
-    "h2": "Engineered to outperform.",
-    "lead": "Traditional OSB-based SIPs are an improvement on stick framing — but they still require external cladding, extra trades, and additional finishing. Panelspan® arrives pre-finished and ready to install.",
-    "osbLabel": "OSB-Based SIPs",
-    "osbImage": "/photos/OSB SIPS.png",
-    "osbImageAlt": "Cross-section of an OSB-based SIP showing EPS core, OSB skins, battens, breathable membrane and external cladding",
-    "panelspanLabel": "Panelspan®",
-    "panelspanImage": "/photos/Panelspan product image copy.png",
-    "panelspanImageAlt": "Panelspan® panel layers — 10mm MgO or 6mm FC face, EPS-FR core, 10mm MgO or 9mm FC reverse face",
-    "rows": [
-      {
-        "category": "System & Structure",
-        "osb": "Requires external cladding",
-        "panelspan": "One integrated, pre-finished system"
-      },
-      {
-        "category": "Speed & Efficiency",
-        "osb": "Faster but still needs cladding",
-        "panelspan": "Lock-up in 3–4 days"
-      },
-      {
-        "category": "Cost & Waste",
-        "osb": "Added cladding and finishing costs",
-        "panelspan": "No cladding required — major cost savings"
-      },
-      {
-        "category": "Environmental Impact",
-        "osb": "More finishing materials",
-        "panelspan": "Low-waste, pre-finished manufacturing with low energy requirements long term"
-      },
-      {
-        "category": "Trades & Labour Requirements",
-        "osb": "Still needs cladding trades",
-        "panelspan": "Minimal trades and simplified construction with integrated service channels"
-      },
-      {
-        "category": "Compliance & Safety",
-        "osb": "Lower fire resistance",
-        "panelspan": "FRL 60/60/60 (up to 90/90/90) and bushfire rated"
-      }
-    ]
-  }
+  "heroTitle": "Structural Insulated"
 }
