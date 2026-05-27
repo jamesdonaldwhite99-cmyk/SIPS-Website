@@ -29,6 +29,10 @@ export default function PanelspanPage() {
         scrollTrigger: { trigger: ".ts-panel-pair", start: "top 80%", once: true },
         y: 40, opacity: 0, duration: 0.7, stagger: 0.15, ease: "power3.out",
       });
+      gsap.from(".compare-row-animate", {
+        scrollTrigger: { trigger: ".ts-compare-table", start: "top 80%", once: true },
+        y: 24, opacity: 0, duration: 0.6, stagger: 0.06, ease: "power2.out",
+      });
       gsap.from(".advantage-item", {
         scrollTrigger: { trigger: ".ts-advantages-grid", start: "top 80%", once: true },
         y: 30, opacity: 0, duration: 0.7, stagger: 0.08, ease: "power2.out",
@@ -138,6 +142,70 @@ export default function PanelspanPage() {
                       <li key={j}><span className="dot" />{f}</li>
                     ))}
                   </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* OSB vs Panelspan comparison */}
+      <section className="ts-section ts-divider-top ts-compare-section">
+        <div className="ts-container">
+          <div className="ts-section-head">
+            <div>
+              <div className="ts-eyebrow">{data.comparison.eyebrow}</div>
+              <h2>{data.comparison.h2}</h2>
+            </div>
+            <p>{data.comparison.lead}</p>
+          </div>
+
+          <div className="ts-compare-grid">
+            <div className="ts-compare-col ts-compare-col--osb">
+              <div className="ts-compare-label">{data.comparison.osbLabel}</div>
+              <div className="ts-compare-img">
+                <Image
+                  src={data.comparison.osbImage}
+                  alt={data.comparison.osbImageAlt}
+                  width={900}
+                  height={520}
+                  style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                />
+              </div>
+            </div>
+            <div className="ts-compare-col ts-compare-col--panelspan">
+              <div className="ts-compare-label">{data.comparison.panelspanLabel}</div>
+              <div className="ts-compare-img">
+                <Image
+                  src={data.comparison.panelspanImage}
+                  alt={data.comparison.panelspanImageAlt}
+                  width={900}
+                  height={520}
+                  style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="ts-compare-table" role="table" aria-label="OSB-based SIPs compared to Panelspan">
+            <div className="ts-compare-table-head" role="row">
+              <div role="columnheader">Category</div>
+              <div role="columnheader">{data.comparison.osbLabel}</div>
+              <div role="columnheader">{data.comparison.panelspanLabel}</div>
+            </div>
+            {data.comparison.rows.map((row, i) => (
+              <div key={i} className="ts-compare-row compare-row-animate" role="row">
+                <div className="ts-compare-cat" role="rowheader">
+                  <span className="num">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="cat">{row.category}</span>
+                </div>
+                <div className="ts-compare-cell ts-compare-cell--osb" role="cell">
+                  <span className="mini-label" aria-hidden="true">{data.comparison.osbLabel}</span>
+                  {row.osb}
+                </div>
+                <div className="ts-compare-cell ts-compare-cell--panelspan" role="cell">
+                  <span className="mini-label" aria-hidden="true">{data.comparison.panelspanLabel}</span>
+                  {row.panelspan}
                 </div>
               </div>
             ))}

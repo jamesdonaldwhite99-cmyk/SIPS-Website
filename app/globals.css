@@ -1981,6 +1981,160 @@ a { color: inherit; }
   margin: 0;
 }
 
+/* OSB vs Panelspan comparison */
+.ts-compare-section { background: var(--ts-cream-2); }
+
+.ts-compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.ts-compare-col {
+  background: var(--color-canvas);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-md);
+  padding: 28px 28px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ts-compare-col--panelspan {
+  border-color: rgba(241, 90, 36, 0.28);
+  box-shadow: 0 1px 0 rgba(241, 90, 36, 0.06), 0 12px 32px rgba(28, 27, 24, 0.04);
+}
+
+.ts-compare-label {
+  font-family: var(--font-display);
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  color: var(--color-ink);
+}
+
+.ts-compare-col--panelspan .ts-compare-label::after {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ts-accent);
+  margin-left: 10px;
+  vertical-align: middle;
+  transform: translateY(-2px);
+}
+
+.ts-compare-img {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f5ec;
+  border-radius: var(--radius-sm, 6px);
+  overflow: hidden;
+}
+
+.ts-compare-table {
+  margin-top: 48px;
+  background: var(--color-canvas);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.ts-compare-table-head {
+  display: grid;
+  grid-template-columns: 0.9fr 1fr 1fr;
+  gap: 0;
+  padding: 18px 28px;
+  background: var(--color-ink);
+  color: #f6f1e3;
+  font-size: 11px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.ts-compare-table-head > div:last-child { color: var(--ts-accent); }
+
+.ts-compare-row {
+  display: grid;
+  grid-template-columns: 0.9fr 1fr 1fr;
+  gap: 0;
+  padding: 22px 28px;
+  border-top: 1px solid var(--color-hairline);
+  align-items: start;
+}
+
+.ts-compare-cat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: var(--font-display);
+  font-size: 17px;
+  color: var(--color-ink);
+  padding-right: 24px;
+}
+
+.ts-compare-cat .num {
+  font-family: var(--font-mono, ui-monospace, "SF Mono", monospace);
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  color: var(--ts-accent);
+  font-weight: 600;
+}
+
+.ts-compare-cell {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--color-graphite, #5b5a55);
+  padding-right: 20px;
+}
+
+.ts-compare-cell .mini-label {
+  display: none;
+  font-size: 10px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--ts-accent);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.ts-compare-cell--panelspan {
+  color: var(--color-ink);
+  font-weight: 500;
+  position: relative;
+}
+
+.ts-compare-cell--panelspan::before {
+  content: "";
+  position: absolute;
+  left: -14px;
+  top: 10px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--ts-accent);
+}
+
+@media (max-width: 900px) {
+  .ts-compare-grid { grid-template-columns: 1fr; }
+  .ts-compare-table-head { display: none; }
+  .ts-compare-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 24px 22px;
+  }
+  .ts-compare-cat { padding-right: 0; }
+  .ts-compare-cell { padding-right: 0; }
+  .ts-compare-cell .mini-label { display: block; }
+  .ts-compare-cell--panelspan::before { display: none; }
+}
+
 /* Advantages */
 .ts-advantages-grid {
   display: grid;

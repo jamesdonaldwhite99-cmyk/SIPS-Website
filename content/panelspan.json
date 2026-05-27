@@ -77,5 +77,48 @@
       ]
     }
   ],
-  "heroTitle": "Structural Insulated"
+  "heroTitle": "Structural Insulated",
+  "comparison": {
+    "eyebrow": "OSB SIPs vs Panelspan",
+    "h2": "Engineered to outperform.",
+    "lead": "Traditional OSB-based SIPs are an improvement on stick framing — but they still require external cladding, extra trades, and additional finishing. Panelspan® arrives pre-finished and ready to install.",
+    "osbLabel": "OSB-Based SIPs",
+    "osbImage": "/photos/OSB SIPS.png",
+    "osbImageAlt": "Cross-section of an OSB-based SIP showing EPS core, OSB skins, battens, breathable membrane and external cladding",
+    "panelspanLabel": "Panelspan®",
+    "panelspanImage": "/photos/Panelspan product image copy.png",
+    "panelspanImageAlt": "Panelspan® panel layers — 10mm MgO or 6mm FC face, EPS-FR core, 10mm MgO or 9mm FC reverse face",
+    "rows": [
+      {
+        "category": "System & Structure",
+        "osb": "Requires external cladding",
+        "panelspan": "One integrated, pre-finished system"
+      },
+      {
+        "category": "Speed & Efficiency",
+        "osb": "Faster but still needs cladding",
+        "panelspan": "Lock-up in 3–4 days"
+      },
+      {
+        "category": "Cost & Waste",
+        "osb": "Added cladding and finishing costs",
+        "panelspan": "No cladding required — major cost savings"
+      },
+      {
+        "category": "Environmental Impact",
+        "osb": "More finishing materials",
+        "panelspan": "Low-waste, pre-finished manufacturing with low energy requirements long term"
+      },
+      {
+        "category": "Trades & Labour Requirements",
+        "osb": "Still needs cladding trades",
+        "panelspan": "Minimal trades and simplified construction with integrated service channels"
+      },
+      {
+        "category": "Compliance & Safety",
+        "osb": "Lower fire resistance",
+        "panelspan": "FRL 60/60/60 (up to 90/90/90) and bushfire rated"
+      }
+    ]
+  }
 }

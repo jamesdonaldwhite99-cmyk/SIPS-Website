@@ -355,6 +355,27 @@ collections:
             fields:
               - { name: title, label: Title, widget: string }
               - { name: copy,  label: Copy,  widget: text }
+          - name: comparison
+            label: OSB SIPs vs Panelspan® comparison
+            widget: object
+            fields:
+              - { name: eyebrow, label: Section eyebrow,  widget: string }
+              - { name: h2,      label: Section headline, widget: string }
+              - { name: lead,    label: Section intro text, widget: text }
+              - { name: osbLabel,       label: OSB column label,        widget: string }
+              - { name: osbImage,       label: OSB diagram image,       widget: image }
+              - { name: osbImageAlt,    label: OSB image alt text,      widget: string }
+              - { name: panelspanLabel, label: Panelspan® column label, widget: string }
+              - { name: panelspanImage, label: Panelspan® diagram image, widget: image }
+              - { name: panelspanImageAlt, label: Panelspan® image alt text, widget: string }
+              - name: rows
+                label: Comparison rows
+                widget: list
+                summary: "{{fields.category}}"
+                fields:
+                  - { name: category,  label: Category,           widget: string }
+                  - { name: osb,       label: OSB SIPs answer,    widget: text }
+                  - { name: panelspan, label: Panelspan® answer,  widget: text }
 
   # ── Panelcore product page ─────────────────────────────────
   - name: panelcore
