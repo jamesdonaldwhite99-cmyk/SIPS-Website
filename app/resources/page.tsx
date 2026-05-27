@@ -92,7 +92,7 @@ export default function ResourcesPage() {
       <section className="ts-section ts-divider-top" style={{ background: "var(--ts-cream-2)", textAlign: "center", paddingBlock: "72px" }}>
         <div className="ts-container">
           <div style={{ maxWidth: 600, marginInline: "auto" }}>
-            <div className="ts-eyebrow" style={{ justifyContent: "center" }}>Can&apos;t find what you need?</div>
+            <div className="ts-eyebrow" style={{ justifyContent: "center" }}>{data.ctaEyebrow}</div>
             <h2
               style={{
                 fontFamily: "var(--font-display)", fontSize: "clamp(28px, 3vw, 40px)",
@@ -100,20 +100,20 @@ export default function ResourcesPage() {
                 margin: "16px 0 16px",
               }}
             >
-              Talk to our technical team.
+              {data.ctaH2}
             </h2>
             <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--color-graphite)", margin: "0 0 32px" }}>
-              Our team can provide custom span tables, engineering calculations, NCC compliance advice and product samples for your specific project.
+              {data.ctaBody}
             </p>
             <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
               <Link href="/contact" className="ts-btn ts-btn--dark">
-                Contact us
+                {data.ctaPrimary}
                 <svg className="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14M13 5l7 7-7 7" />
                 </svg>
               </Link>
-              <a href="tel:1300132787" className="ts-btn ts-btn--ghost">
-                1300 132 787
+              <a href={`tel:${data.ctaPhone.replace(/\s+/g, "")}`} className="ts-btn ts-btn--ghost">
+                {data.ctaPhone}
               </a>
             </div>
           </div>

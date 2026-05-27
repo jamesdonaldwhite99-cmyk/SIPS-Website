@@ -626,6 +626,36 @@ collections:
               - { name: alt,      label: Alt text (for SEO + accessibility), widget: string }
               - { name: category, label: Category,    widget: string, hint: "e.g. Residential, Outdoor living, Interiors, Panelcore®" }
 
+  # ── Resources page ─────────────────────────────────────────
+  - name: resources
+    label: Resources Page
+    files:
+      - name: resources
+        label: Resources Page Content
+        file: content/resources.json
+        format: json
+        fields:
+          - { name: heroEyebrow, label: Hero eyebrow,    widget: string }
+          - { name: heroH1,      label: Hero headline,   widget: text }
+          - { name: heroLead,    label: Hero lead text,  widget: text }
+          - { name: ctaEyebrow,  label: CTA eyebrow,     widget: string }
+          - { name: ctaH2,       label: CTA headline,    widget: string }
+          - { name: ctaBody,     label: CTA body text,   widget: text }
+          - { name: ctaPrimary,  label: CTA primary button text, widget: string }
+          - { name: ctaPhone,    label: CTA phone number, widget: string }
+          - name: resources
+            label: Downloadable resources
+            widget: list
+            summary: "{{fields.kicker}} — {{fields.title}}"
+            fields:
+              - { name: kicker,   label: Kicker (small tag, e.g. Brochure / Install guide), widget: string }
+              - { name: title,    label: Title,        widget: string }
+              - { name: copy,     label: Description,  widget: text }
+              - { name: fileType, label: File type (e.g. PDF), widget: string }
+              - { name: fileSize, label: File size (e.g. 1.8 MB), widget: string }
+              - { name: cover,    label: Cover image,  widget: image }
+              - { name: href,     label: Download URL, widget: string, hint: "Path to file in /public, e.g. /pdfs/example.pdf" }
+
   # ── Contact page ───────────────────────────────────────────
   - name: contact
     label: Contact Page
