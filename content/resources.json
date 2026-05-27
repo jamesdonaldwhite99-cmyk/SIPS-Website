@@ -1,12 +1,5 @@
 {
-  "heroEyebrow": "Resources",
-  "heroH1": "Everything you need to specify ThermaSpan.",
-  "heroLead": "Download brochures, installation guides, engineering specifications and NCC compliance documentation.",
-  "ctaEyebrow": "Can't find what you need?",
-  "ctaH2": "Talk to our technical team.",
-  "ctaBody": "Our team can provide custom span tables, engineering calculations, NCC compliance advice and product samples for your specific project.",
-  "ctaPrimary": "Contact us",
-  "ctaPhone": "1300 132 787",
+  "heroH1": "All things technical for Quick Built Systems.",
   "resources": [
     {
       "kicker": "Brochure",
@@ -80,5 +73,12 @@
       "cover": "/photos/resources/quick-built-subfloor-guide.png",
       "href": "/pdfs/quick-built-subfloor-guide.pdf"
     }
-  ]
+  ],
+  "heroEyebrow": "Resources",
+  "ctaPrimary": "Contact us",
+  "ctaBody": "Our team can provide custom span tables, engineering calculations, NCC compliance advice and product samples for your specific project.",
+  "heroLead": "Download brochures, installation guides, engineering specifications and NCC compliance documentation.",
+  "ctaEyebrow": "Can't find what you need?",
+  "ctaH2": "Talk to our technical team.",
+  "ctaPhone": "1300 132 787"
 }
