@@ -44,7 +44,7 @@ export default function GalleryPage() {
       {/* Hero */}
       <section style={{ background: "var(--color-ink)", color: "var(--color-on-primary)", padding: "88px 0 72px" }}>
         <div className="ts-container">
-          <div className="ts-eyebrow hero-animate" style={{ color: "var(--ts-accent)" }}>Gallery</div>
+          <div className="ts-eyebrow hero-animate" style={{ color: "var(--ts-accent)" }}>{data.heroEyebrow}</div>
           <h1
             className="hero-animate"
             style={{
@@ -55,13 +55,13 @@ export default function GalleryPage() {
               margin: "16px 0 20px", maxWidth: "18ch",
             }}
           >
-            Projects built with ThermaSpan.
+            {data.heroH1}
           </h1>
           <p
             className="hero-animate"
-            style={{ fontSize: 17, lineHeight: 1.55, color: "rgba(255,255,255,0.75)", maxWidth: "44ch", margin: 0 }}
+            style={{ fontSize: 17, lineHeight: 1.55, color: "rgba(255,255,255,0.75)", maxWidth: "44ch", margin: 0, whiteSpace: "pre-line" }}
           >
-            Homes, extensions, patios, commercial builds and coldrooms — built with Insulspan® and Panelspan® panels across Australia.
+            {data.heroLead}
           </p>
         </div>
       </section>
