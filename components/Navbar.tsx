@@ -38,7 +38,17 @@ export default function Navbar() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [openCategory, setOpenCategory] = useState<string | null>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const toggleCategory = (title: string) => {
+    setOpenCategory((prev) => (prev === title ? null : title));
+  };
+
+  const closeMobile = () => {
+    setMobileOpen(false);
+    setOpenCategory(null);
+  };
 
   const openMenu = () => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
@@ -145,34 +155,76 @@ export default function Navbar() {
                 return (
                   <div key={item.id} className="ts-mobile-section">
                     <div className="ts-mobile-section-title">Products</div>
-                    {categories.map((cat) => (
-                      <MenuLink
-                        key={cat.title}
-                        item={{ href: cat.href, external: cat.external }}
-                        onClick={() => setMobileOpen(false)}
-                        className="ts-mobile-sub"
-                      >
-                        {cat.title}
-                      </MenuLink>
-                    ))}
+                    {categories.map((cat) => {
+                      const isOpen = openCategory === cat.title;
+                      return (
+                        <div key={cat.title} className={`ts-mobile-cat${isOpen ? " is-open" : ""}`}>
+                          <button
+                            type="button"
+                            className="ts-mobile-cat-toggle"
+                            onClick={() => toggleCategory(cat.title)}
+                            aria-expanded={isOpen}
+                          >
+                            <span>{cat.title}</span>
+                            <svg
+                              className="chev"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="1.8"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              width="16"
+                              height="16"
+                            >
+                              <path d="M6 9l6 6 6-6" />
+                            </svg>
+                          </button>
+                          {isOpen && (
+                            <div className="ts-mobile-cat-items">
+                              <MenuLink
+                                item={{ href: cat.href, external: cat.external }}
+                                onClick={closeMobile}
+                                className="ts-mobile-cat-overview"
+                              >
+                                View all {cat.title}
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" width="14" height="14">
+                                  <path d="M5 12h14M13 5l7 7-7 7" />
+                                </svg>
+                              </MenuLink>
+                              {cat.items.map((it: MenuItem) => (
+                                <MenuLink
+                                  key={it.title}
+                                  item={it}
+                                  onClick={closeMobile}
+                                  className="ts-mobile-sub"
+                                >
+                                  {it.title}
+                                </MenuLink>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
                   </div>
                 );
               }
               return (
-                <Link key={item.id} href={item.href!} onClick={() => setMobileOpen(false)}>
+                <Link key={item.id} href={item.href!} onClick={closeMobile}>
                   {item.label}
                 </Link>
               );
             })}
 
             <div className="ts-mobile-cta">
-              <a className="ts-phone-pill" href="tel:1300132787" onClick={() => setMobileOpen(false)}>
+              <a className="ts-phone-pill" href="tel:1300132787" onClick={closeMobile}>
                 <svg className="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z" />
                 </svg>
                 1300 132 787
               </a>
-              <Link href="/contact" className="ts-btn ts-btn--primary" onClick={() => setMobileOpen(false)}>
+              <Link href="/contact" className="ts-btn ts-btn--primary" onClick={closeMobile}>
                 Request a quote
                 <svg className="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14M13 5l7 7-7 7" />
