@@ -6,6 +6,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import data from "@/content/insulspan.json";
+import ProductResources from "@/components/ProductResources";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -332,6 +333,13 @@ export default function InsulspanPage() {
           </div>
         </div>
       </section>
+
+      <ProductResources
+        eyebrow={data.relatedResources.eyebrow}
+        h2={data.relatedResources.h2}
+        lead={data.relatedResources.lead}
+        files={data.relatedResources.files}
+      />
 
       {/* CTA */}
       <section className="ts-cta-strip">

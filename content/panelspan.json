@@ -221,5 +221,15 @@
     "lead": "Material build-up, fire performance, R-values and panel weights across the Panelspan® range.",
     "weightsTitle": "Panel Weights (kg)"
   },
-  "heroTitle": "Structural Insulated"
+  "heroTitle": "Structural Insulated",
+  "relatedResources": {
+    "eyebrow": "Resources",
+    "h2": "Panelspan® specs, brochures and install guides.",
+    "lead": "Download technical documentation for Panelspan® and the wider QuickBuilt Systems range.",
+    "files": [
+      "panelspan-wall-panel.pdf",
+      "qbs-home-construction-manual.pdf",
+      "qbs-modular-homes-cabins.pdf"
+    ]
+  }
 }

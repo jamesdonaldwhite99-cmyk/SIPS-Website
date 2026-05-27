@@ -143,18 +143,17 @@ export default function Navbar() {
             {navItems.map((item) => {
               if (item.dropdown) {
                 return (
-                  <div key={item.id}>
+                  <div key={item.id} className="ts-mobile-section">
+                    <div className="ts-mobile-section-title">Products</div>
                     {categories.map((cat) => (
-                      <div key={cat.title}>
-                        <div style={{ fontSize: 12, letterSpacing: "1.4px", textTransform: "uppercase", color: "var(--ts-accent)", fontWeight: 600, padding: "10px 0 6px", borderBottom: "1px solid var(--color-hairline)" }}>
-                          {cat.title}
-                        </div>
-                        {cat.items.map((it) => (
-                          <MenuLink key={it.title} item={it} onClick={() => setMobileOpen(false)} className="ts-mobile-sub">
-                            {it.title}
-                          </MenuLink>
-                        ))}
-                      </div>
+                      <MenuLink
+                        key={cat.title}
+                        item={{ href: cat.href, external: cat.external }}
+                        onClick={() => setMobileOpen(false)}
+                        className="ts-mobile-sub"
+                      >
+                        {cat.title}
+                      </MenuLink>
                     ))}
                   </div>
                 );
@@ -165,6 +164,21 @@ export default function Navbar() {
                 </Link>
               );
             })}
+
+            <div className="ts-mobile-cta">
+              <a className="ts-phone-pill" href="tel:1300132787" onClick={() => setMobileOpen(false)}>
+                <svg className="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z" />
+                </svg>
+                1300 132 787
+              </a>
+              <Link href="/contact" className="ts-btn ts-btn--primary" onClick={() => setMobileOpen(false)}>
+                Request a quote
+                <svg className="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M13 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
           </nav>
         )}
 

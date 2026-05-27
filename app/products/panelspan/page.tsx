@@ -6,6 +6,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import data from "@/content/panelspan.json";
+import ProductResources from "@/components/ProductResources";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -324,6 +325,13 @@ export default function PanelspanPage() {
           </div>
         </div>
       </section>
+
+      <ProductResources
+        eyebrow={data.relatedResources.eyebrow}
+        h2={data.relatedResources.h2}
+        lead={data.relatedResources.lead}
+        files={data.relatedResources.files}
+      />
 
       <section className="ts-cta-strip">
         <div className="ts-container">

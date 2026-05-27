@@ -1,16 +1,37 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import data from "@/content/resources.json";
+import DownloadGate, { hasStoredAccess } from "@/components/DownloadGate";
 
 gsap.registerPlugin(ScrollTrigger);
 
+type Resource = (typeof data.resources)[number];
+
 export default function ResourcesPage() {
   const pageRef = useRef<HTMLDivElement>(null);
+  const [activeResource, setActiveResource] = useState<Resource | null>(null);
+
+  const handleDownloadClick = (e: React.MouseEvent, r: Resource) => {
+    e.preventDefault();
+    const access = hasStoredAccess();
+    if (access) {
+      const a = document.createElement("a");
+      a.href = r.href;
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+      a.download = r.href.split("/").pop() || "";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      return;
+    }
+    setActiveResource(r);
+  };
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -63,6 +84,7 @@ export default function ResourcesPage() {
                 className="ts-resource-card resource-card-animate"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={(e) => handleDownloadClick(e, r)}
               >
                 <div className="ts-resource-cover">
                   <Image src={r.cover} alt={r.title} fill style={{ objectFit: "cover" }} sizes="320px" />
@@ -119,6 +141,12 @@ export default function ResourcesPage() {
           </div>
         </div>
       </section>
+
+      <DownloadGate
+        resource={activeResource}
+        webhookUrl={data.webhookUrl || ""}
+        onClose={() => setActiveResource(null)}
+      />
     </div>
   );
 }

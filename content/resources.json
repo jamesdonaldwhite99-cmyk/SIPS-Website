@@ -72,6 +72,33 @@
       "fileSize": "644 KB",
       "cover": "/photos/resources/quick-built-subfloor-guide.png",
       "href": "/pdfs/quick-built-subfloor-guide.pdf"
+    },
+    {
+      "kicker": "Brochure",
+      "title": "Acoustic Fencing & Retaining Brochure",
+      "copy": "Full range overview for QuickBuilt acoustic fencing and retaining systems — Grandline, Slenderline, Slenderline Aluminium, Slenderline Folded and Retainline.",
+      "fileType": "PDF",
+      "fileSize": "2.7 MB",
+      "cover": "/photos/resources/fencing-retaining-brochure.png",
+      "href": "/pdfs/Quickbuilt Fencing & Retaining Brochure_compressed.pdf"
+    },
+    {
+      "kicker": "Install guide",
+      "title": "Slenderline Installation Guide",
+      "copy": "Step-by-step installation guide for the QuickBuilt Slenderline modular acoustic fencing system — site set-out, post install, panel and capping installation, painting and finishing.",
+      "fileType": "PDF",
+      "fileSize": "1.2 MB",
+      "cover": "/photos/resources/slenderline-install-guide.png",
+      "href": "/pdfs/Quickbuilt Slenderline Installation Guide V3_compressed.pdf"
+    },
+    {
+      "kicker": "Install guide",
+      "title": "Slenderline Aluminium Post Install Manual",
+      "copy": "Installation manual for Slenderline aluminium posts — site set-out, base brackets, corner posts, panel and capping installation, painting and finishing.",
+      "fileType": "PDF",
+      "fileSize": "13.7 MB",
+      "cover": "/photos/resources/slenderline-aluminium-post-install.png",
+      "href": "/pdfs/Slenderline Aluminium Post Install Manual V3.pdf"
     }
   ],
   "heroEyebrow": "Resources",
@@ -80,5 +107,6 @@
   "heroLead": "Download brochures, installation guides, engineering specifications and NCC compliance documentation.",
   "ctaEyebrow": "Can't find what you need?",
   "ctaH2": "Talk to our technical team.",
-  "ctaPhone": "1300 132 787"
+  "ctaPhone": "1300 132 787",
+  "webhookUrl": "https://hook.eu2.make.com/PLACEHOLDER"
 }

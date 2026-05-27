@@ -180,5 +180,16 @@
     "rValueTitle": "Insulation Factor — R Value",
     "rValueUnit": "m²K/W",
     "rValues": ["1.39", "2.09", "2.78", "3.48"]
+  },
+  "relatedResources": {
+    "eyebrow": "Resources",
+    "h2": "Insulspan® specs, brochures and install guides.",
+    "lead": "Download technical documentation for Insulspan® roofing panels and related QuickBuilt Systems products.",
+    "files": [
+      "insulspan-brochure.pdf",
+      "insulspan-install-flyover.pdf",
+      "insulated-patio-install-guide.pdf",
+      "qbs-patios-brochure.pdf"
+    ]
   }
 }

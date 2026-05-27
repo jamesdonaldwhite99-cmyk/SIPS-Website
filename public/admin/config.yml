@@ -370,6 +370,17 @@ collections:
                 label: R-values matching the thickness headers
                 widget: list
                 field: { name: rvalue, label: R-value, widget: string }
+          - name: relatedResources
+            label: Related resources (shown at bottom of page)
+            widget: object
+            fields:
+              - { name: eyebrow, label: Section eyebrow,  widget: string }
+              - { name: h2,      label: Section headline, widget: string }
+              - { name: lead,    label: Section intro,    widget: text }
+              - name: files
+                label: Files to feature (filename only, e.g. insulspan-brochure.pdf)
+                widget: list
+                field: { name: file, label: PDF filename, widget: string, hint: "Must match a file under /public/pdfs/. The matching entry in Resources Page is used for title, cover and description." }
 
   # ── Panelspan product page ─────────────────────────────────
   - name: panelspan
@@ -473,6 +484,17 @@ collections:
                         label: Weights matching the thickness headers above
                         widget: list
                         field: { name: weight, label: Weight (kg), widget: string }
+          - name: relatedResources
+            label: Related resources (shown at bottom of page)
+            widget: object
+            fields:
+              - { name: eyebrow, label: Section eyebrow,  widget: string }
+              - { name: h2,      label: Section headline, widget: string }
+              - { name: lead,    label: Section intro,    widget: text }
+              - name: files
+                label: Files to feature (filename only, e.g. panelspan-wall-panel.pdf)
+                widget: list
+                field: { name: file, label: PDF filename, widget: string, hint: "Must match a file under /public/pdfs/. The matching entry in Resources Page is used for title, cover and description." }
           - name: comparison
             label: OSB SIPs vs Panelspan® comparison
             widget: object
@@ -643,6 +665,7 @@ collections:
           - { name: ctaBody,     label: CTA body text,   widget: text }
           - { name: ctaPrimary,  label: CTA primary button text, widget: string }
           - { name: ctaPhone,    label: CTA phone number, widget: string }
+          - { name: webhookUrl,  label: Download-gate webhook URL, widget: string, hint: "Make.com webhook that receives download leads (name/email/phone + resource title)" }
           - name: resources
             label: Downloadable resources
             widget: list
