@@ -84,8 +84,8 @@
         {
           "title": "Quick Built Building Solutions",
           "copy": "Complete modular building system.",
-          "href": "/building-system",
-          "external": false,
+          "href": "https://www.quickbuilthomes.com.au/",
+          "external": true,
           "image": "/photos/Building system.jpg"
         }
       ]
