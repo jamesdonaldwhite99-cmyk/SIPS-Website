@@ -1,52 +1,232 @@
 {
   "heroEyebrow": "Gallery",
-  "heroH1": "Projects built with ThermaSpan.",
-  "heroLead": "Homes, extensions, patios, commercial builds and coldrooms — all built with Insulspan® and Panelspan® panels.",
+  "heroH1": "Projects built with Quick Built Systems.",
+  "heroLead": "From modular homes and fencing to wall panels, roofing and patio kits — every QuickBuilt brand is engineered, manufactured and supplied direct.\n\n",
   "images": [
-    { "src": "/photos/gallery/01.jpg", "alt": "ThermaSpan residential home", "category": "Residential" },
-    { "src": "/photos/gallery/02.jpg", "alt": "SIPs home at sunset", "category": "Residential" },
-    { "src": "/photos/gallery/03.jpg", "alt": "Insulspan® patio at dusk", "category": "Outdoor living" },
-    { "src": "/photos/gallery/04.jpg", "alt": "Architectural home", "category": "Residential" },
-    { "src": "/photos/gallery/05.jpg", "alt": "Outdoor living space", "category": "Outdoor living" },
-    { "src": "/photos/gallery/06.jpg", "alt": "Multi-res townhome build", "category": "Multi-res" },
-    { "src": "/photos/gallery/07.jpg", "alt": "Pre-finished interior walls", "category": "Interiors" },
-    { "src": "/photos/gallery/08.jpg", "alt": "Bedroom with MgO walls", "category": "Interiors" },
-    { "src": "/photos/gallery/09.jpg", "alt": "Living room SIPs build", "category": "Interiors" },
-    { "src": "/photos/gallery/10.jpg", "alt": "Granny flat SIPs", "category": "Residential" },
-    { "src": "/photos/gallery/11.jpg", "alt": "Home extension", "category": "Residential" },
-    { "src": "/photos/gallery/12.jpg", "alt": "Aerial view SIPs build", "category": "Residential" },
-    { "src": "/photos/gallery/13.jpg", "alt": "Coastal installation", "category": "Residential" },
-    { "src": "/photos/gallery/14.jpg", "alt": "Insulspan® roofing installation", "category": "Insulspan®" },
-    { "src": "/photos/gallery/15.jpg", "alt": "Outdoor pavilion", "category": "Outdoor living" },
-    { "src": "/photos/gallery/16.jpg", "alt": "Patio kit installation", "category": "Outdoor living" },
-    { "src": "/photos/gallery/18.jpg", "alt": "Coldroom build", "category": "Panelcore®" },
-    { "src": "/photos/gallery/19.jpg", "alt": "Commercial coldroom", "category": "Panelcore®" },
-    { "src": "/photos/gallery/20.jpg", "alt": "Cold storage interior", "category": "Panelcore®" },
-    { "src": "/photos/gallery/21.jpg", "alt": "Cabin with fire pit and fairy lights at dusk", "category": "Residential" },
-    { "src": "/photos/gallery/22.jpg", "alt": "Insulated patio with pool and BBQ", "category": "Outdoor living" },
-    { "src": "/photos/gallery/23.jpg", "alt": "Panelcore® coldroom interior with evaporator unit", "category": "Panelcore®" },
-    { "src": "/photos/gallery/24.jpg", "alt": "Open storage building with insulated panels", "category": "Panelcore®" },
-    { "src": "/photos/gallery/25.jpg", "alt": "Cabin bedroom with bead chandelier and deck views", "category": "Interiors" },
-    { "src": "/photos/gallery/26.jpg", "alt": "Bathroom detail with gold tap and marble basin", "category": "Interiors" },
-    { "src": "/photos/gallery/27.jpg", "alt": "SIPs kitchenette with white cabinetry and country views", "category": "Interiors" },
-    { "src": "/photos/gallery/28.jpg", "alt": "Bathroom with round mirror and gold shower fixtures", "category": "Interiors" },
-    { "src": "/photos/gallery/29.jpg", "alt": "Woman walking in golden field with SIPs cabin behind", "category": "Residential" },
-    { "src": "/photos/gallery/30.jpg", "alt": "Covered deck at sunset with wicker daybed", "category": "Outdoor living" },
-    { "src": "/photos/gallery/31.jpg", "alt": "Cabin shower lifestyle interior", "category": "Interiors" },
-    { "src": "/photos/gallery/32.jpg", "alt": "SIPs cabin at pink sunset with fire pit", "category": "Residential" },
-    { "src": "/photos/gallery/33.jpg", "alt": "SIPs interior with hessian curtains and deck view", "category": "Interiors" },
-    { "src": "/photos/gallery/34.jpg", "alt": "Bright cabin bedroom with bead chandelier", "category": "Interiors" },
-    { "src": "/photos/gallery/35.jpg", "alt": "Bedroom with ceiling fan and macramé wall art", "category": "Interiors" },
-    { "src": "/photos/gallery/36.jpg", "alt": "Open-plan living room with wood stove and orange cushions", "category": "Interiors" },
-    { "src": "/photos/gallery/37.jpg", "alt": "Musician playing guitar under insulated patio roof", "category": "Outdoor living" },
-    { "src": "/photos/gallery/38.jpg", "alt": "Grey SIPs home exterior on rural property", "category": "Residential" },
-    { "src": "/photos/gallery/39.jpg", "alt": "Panelspan® wall extension on existing brick home", "category": "Residential" },
-    { "src": "/photos/gallery/40.jpg", "alt": "Panelspan® installation at Sydney Harbour", "category": "Panelspan®" },
-    { "src": "/photos/gallery/41.jpg", "alt": "Alfresco patio with corrugated ceiling and copper pendant lights", "category": "Outdoor living" },
-    { "src": "/photos/gallery/42.jpg", "alt": "QuickBuilt team cutting Panelspan® wall panels on site", "category": "Building System" },
-    { "src": "/photos/gallery/43.jpg", "alt": "QuickBuilt team reviewing panel installation plans", "category": "Building System" },
-    { "src": "/photos/gallery/44.jpg", "alt": "Insulated carport with charcoal steel posts", "category": "Outdoor living" },
-    { "src": "/photos/gallery/45.jpg", "alt": "Covered deck with white insulated ceiling and river views", "category": "Outdoor living" },
-    { "src": "/photos/gallery/46.jpg", "alt": "Couple relaxing on insulated deck overlooking countryside", "category": "Outdoor living" }
+    {
+      "src": "/photos/gallery/01.jpg",
+      "alt": "ThermaSpan residential home",
+      "category": "Residential"
+    },
+    {
+      "src": "/photos/gallery/02.jpg",
+      "alt": "SIPs home at sunset",
+      "category": "Residential"
+    },
+    {
+      "src": "/photos/gallery/03.jpg",
+      "alt": "Insulspan® patio at dusk",
+      "category": "Outdoor living"
+    },
+    {
+      "src": "/photos/gallery/04.jpg",
+      "alt": "Architectural home",
+      "category": "Residential"
+    },
+    {
+      "src": "/photos/gallery/05.jpg",
+      "alt": "Outdoor living space",
+      "category": "Outdoor living"
+    },
+    {
+      "src": "/photos/gallery/06.jpg",
+      "alt": "Multi-res townhome build",
+      "category": "Multi-res"
+    },
+    {
+      "src": "/photos/gallery/07.jpg",
+      "alt": "Pre-finished interior walls",
+      "category": "Interiors"
+    },
+    {
+      "src": "/photos/gallery/08.jpg",
+      "alt": "Bedroom with MgO walls",
+      "category": "Interiors"
+    },
+    {
+      "src": "/photos/gallery/09.jpg",
+      "alt": "Living room SIPs build",
+      "category": "Interiors"
+    },
+    {
+      "src": "/photos/gallery/10.jpg",
+      "alt": "Granny flat SIPs",
+      "category": "Residential"
+    },
+    {
+      "src": "/photos/gallery/11.jpg",
+      "alt": "Home extension",
+      "category": "Residential"
+    },
+    {
+      "src": "/photos/gallery/12.jpg",
+      "alt": "Aerial view SIPs build",
+      "category": "Residential"
+    },
+    {
+      "src": "/photos/gallery/13.jpg",
+      "alt": "Coastal installation",
+      "category": "Residential"
+    },
+    {
+      "src": "/photos/gallery/14.jpg",
+      "alt": "Insulspan® roofing installation",
+      "category": "Insulspan®"
+    },
+    {
+      "src": "/photos/gallery/15.jpg",
+      "alt": "Outdoor pavilion",
+      "category": "Outdoor living"
+    },
+    {
+      "src": "/photos/gallery/16.jpg",
+      "alt": "Patio kit installation",
+      "category": "Outdoor living"
+    },
+    {
+      "src": "/photos/gallery/18.jpg",
+      "alt": "Coldroom build",
+      "category": "Panelcore®"
+    },
+    {
+      "src": "/photos/gallery/19.jpg",
+      "alt": "Commercial coldroom",
+      "category": "Panelcore®"
+    },
+    {
+      "src": "/photos/gallery/20.jpg",
+      "alt": "Cold storage interior",
+      "category": "Panelcore®"
+    },
+    {
+      "src": "/photos/gallery/21.jpg",
+      "alt": "Cabin with fire pit and fairy lights at dusk",
+      "category": "Residential"
+    },
+    {
+      "src": "/photos/gallery/22.jpg",
+      "alt": "Insulated patio with pool and BBQ",
+      "category": "Outdoor living"
+    },
+    {
+      "src": "/photos/gallery/23.jpg",
+      "alt": "Panelcore® coldroom interior with evaporator unit",
+      "category": "Panelcore®"
+    },
+    {
+      "src": "/photos/gallery/24.jpg",
+      "alt": "Open storage building with insulated panels",
+      "category": "Panelcore®"
+    },
+    {
+      "src": "/photos/gallery/25.jpg",
+      "alt": "Cabin bedroom with bead chandelier and deck views",
+      "category": "Interiors"
+    },
+    {
+      "src": "/photos/gallery/26.jpg",
+      "alt": "Bathroom detail with gold tap and marble basin",
+      "category": "Interiors"
+    },
+    {
+      "src": "/photos/gallery/27.jpg",
+      "alt": "SIPs kitchenette with white cabinetry and country views",
+      "category": "Interiors"
+    },
+    {
+      "src": "/photos/gallery/28.jpg",
+      "alt": "Bathroom with round mirror and gold shower fixtures",
+      "category": "Interiors"
+    },
+    {
+      "src": "/photos/gallery/29.jpg",
+      "alt": "Woman walking in golden field with SIPs cabin behind",
+      "category": "Residential"
+    },
+    {
+      "src": "/photos/gallery/30.jpg",
+      "alt": "Covered deck at sunset with wicker daybed",
+      "category": "Outdoor living"
+    },
+    {
+      "src": "/photos/gallery/31.jpg",
+      "alt": "Cabin shower lifestyle interior",
+      "category": "Interiors"
+    },
+    {
+      "src": "/photos/gallery/32.jpg",
+      "alt": "SIPs cabin at pink sunset with fire pit",
+      "category": "Residential"
+    },
+    {
+      "src": "/photos/gallery/33.jpg",
+      "alt": "SIPs interior with hessian curtains and deck view",
+      "category": "Interiors"
+    },
+    {
+      "src": "/photos/gallery/34.jpg",
+      "alt": "Bright cabin bedroom with bead chandelier",
+      "category": "Interiors"
+    },
+    {
+      "src": "/photos/gallery/35.jpg",
+      "alt": "Bedroom with ceiling fan and macramé wall art",
+      "category": "Interiors"
+    },
+    {
+      "src": "/photos/gallery/36.jpg",
+      "alt": "Open-plan living room with wood stove and orange cushions",
+      "category": "Interiors"
+    },
+    {
+      "src": "/photos/gallery/37.jpg",
+      "alt": "Musician playing guitar under insulated patio roof",
+      "category": "Outdoor living"
+    },
+    {
+      "src": "/photos/gallery/38.jpg",
+      "alt": "Grey SIPs home exterior on rural property",
+      "category": "Residential"
+    },
+    {
+      "src": "/photos/gallery/39.jpg",
+      "alt": "Panelspan® wall extension on existing brick home",
+      "category": "Residential"
+    },
+    {
+      "src": "/photos/gallery/40.jpg",
+      "alt": "Panelspan® installation at Sydney Harbour",
+      "category": "Panelspan®"
+    },
+    {
+      "src": "/photos/gallery/41.jpg",
+      "alt": "Alfresco patio with corrugated ceiling and copper pendant lights",
+      "category": "Outdoor living"
+    },
+    {
+      "src": "/photos/gallery/42.jpg",
+      "alt": "QuickBuilt team cutting Panelspan® wall panels on site",
+      "category": "Building System"
+    },
+    {
+      "src": "/photos/gallery/43.jpg",
+      "alt": "QuickBuilt team reviewing panel installation plans",
+      "category": "Building System"
+    },
+    {
+      "src": "/photos/gallery/44.jpg",
+      "alt": "Insulated carport with charcoal steel posts",
+      "category": "Outdoor living"
+    },
+    {
+      "src": "/photos/gallery/45.jpg",
+      "alt": "Covered deck with white insulated ceiling and river views",
+      "category": "Outdoor living"
+    },
+    {
+      "src": "/photos/gallery/46.jpg",
+      "alt": "Couple relaxing on insulated deck overlooking countryside",
+      "category": "Outdoor living"
+    }
   ]
 }
