@@ -26,6 +26,7 @@ interface FormState {
   patioAddress: string;
   roofType: string;
   panelProfile: string;
+  panelColour: string;
   beamSize: string;
   beamColour: string;
   postSize: string;
@@ -107,6 +108,7 @@ const COLORBOND_EXTRA_COLOURS = [
   "Windspray", "Wallaby", "Woodland Grey", "Ironstone", "Basalt",
   "Pale Eucalypt", "Jasper", "Cove", "Mangrove", "Night Sky",
 ];
+const SLIMLINE_COLOURS = ["Pearl White", "Monument", "Paperbark"];
 const BEAM_SIZES = ['100 × 50mm', '150 × 100mm'];
 const POST_SIZES = ['67mm', '90mm'];
 const ACCESSORIES_WITH_QTY = ['Skylights', 'Downlights', 'Fan brackets'];
@@ -132,6 +134,7 @@ export default function ContactPage() {
     patioAddress: "",
     roofType: "",
     panelProfile: "",
+    panelColour: "",
     beamSize: "",
     beamColour: "",
     postSize: "",
@@ -429,7 +432,7 @@ export default function ContactPage() {
                         <label
                           key={p.name}
                           className={`ts-patio-card${form.panelProfile === p.name ? " is-checked" : ""}`}
-                          onClick={() => setForm((f) => ({ ...f, panelProfile: p.name, roofType: "Insulspan® (insulated)" }))}
+                          onClick={() => setForm((f) => ({ ...f, panelProfile: p.name, roofType: "Insulspan® (insulated)", panelColour: f.roofType === "Insulspan® (insulated)" ? f.panelColour : "" }))}
                         >
                           <input type="radio" name="panelProfile" value={p.name} checked={form.panelProfile === p.name} onChange={() => {}} />
                           <div className="ts-patio-card-thumb">
@@ -445,7 +448,7 @@ export default function ContactPage() {
                         <label
                           key={p.name}
                           className={`ts-patio-card${form.panelProfile === p.name ? " is-checked" : ""}`}
-                          onClick={() => setForm((f) => ({ ...f, panelProfile: p.name, roofType: "Slimline (non-insulated)" }))}
+                          onClick={() => setForm((f) => ({ ...f, panelProfile: p.name, roofType: "Slimline (non-insulated)", panelColour: f.roofType === "Slimline (non-insulated)" ? f.panelColour : "" }))}
                         >
                           <input type="radio" name="panelProfile" value={p.name} checked={form.panelProfile === p.name} onChange={() => {}} />
                           <div className="ts-patio-card-thumb">
@@ -456,6 +459,42 @@ export default function ContactPage() {
                       ))}
                     </div>
                   </div>
+
+                  {/* Roof panel colour */}
+                  {form.roofType === "Insulspan® (insulated)" && (
+                    <div className="ts-form-group">
+                      <div className="legend">
+                        <span className="name" style={{ fontSize: 16 }}>Roof panel colour <span style={{ fontWeight: 400, color: "var(--color-graphite)", fontSize: 13 }}>(Colorbond®)</span></span>
+                      </div>
+                      <div className="ts-colour-extra">
+                        <select
+                          className="ts-colour-select"
+                          value={form.panelColour}
+                          onChange={(e) => setForm((f) => ({ ...f, panelColour: e.target.value }))}
+                        >
+                          <option value="">Select a Colorbond® colour</option>
+                          {[...STANDARD_COLOURS, ...COLORBOND_EXTRA_COLOURS].map((c) => (
+                            <option key={c} value={c}>{c}</option>
+                          ))}
+                        </select>
+                      </div>
+                    </div>
+                  )}
+
+                  {form.roofType === "Slimline (non-insulated)" && (
+                    <div className="ts-form-group">
+                      <div className="legend">
+                        <span className="name" style={{ fontSize: 16 }}>Roof panel colour <span style={{ fontWeight: 400, color: "var(--color-graphite)", fontSize: 13 }}>(Colorbond®)</span></span>
+                      </div>
+                      <div className="ts-choice-grid">
+                        {SLIMLINE_COLOURS.map((c) => (
+                          <Choice key={c} type="radio" name="panelColour" value={c} checked={form.panelColour === c} onChange={(v) => setForm((f) => ({ ...f, panelColour: v }))}>
+                            {c}
+                          </Choice>
+                        ))}
+                      </div>
+                    </div>
+                  )}
 
                   {/* Beams */}
                   <div className="ts-form-group">
