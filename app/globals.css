@@ -2101,6 +2101,21 @@ a { color: inherit; }
   margin: 0;
 }
 
+/* About — story intro (eyebrow/headline + paragraphs) */
+.ts-story-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+  .ts-story-intro {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
 /* OSB vs Panelspan comparison */
 .ts-compare-section { background: var(--ts-cream-2); }
 

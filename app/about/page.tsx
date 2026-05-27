@@ -131,7 +131,7 @@ export default function AboutPage() {
       {/* Story — intro (paras 1-2) */}
       <section className="ts-section story-section" style={{ background: "var(--ts-cream-2)" }}>
         <div className="ts-container">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "flex-start" }}>
+          <div className="ts-story-intro">
             <div>
               <div
                 className="story-animate"
