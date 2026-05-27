@@ -115,5 +115,70 @@
   "overviewPhoto": "/photos/insulspan-overview.jpg",
   "overviewPara2": "Designed for Australian conditions, Insulspan® Structural Insulated Panels eliminate the need for purlins, beams, trusses, mesh, sarking, bulk insulation, and plasterboard, while dramatically reducing the number of trades required on site.",
   "overviewPara3": "This streamlined, pre-finished system shortens timelines, cuts complexity, and redefines how Australia builds.",
-  "heroTitle": "Insulated"
+  "heroTitle": "Insulated",
+  "spanTable": {
+    "eyebrow": "Span tables",
+    "h2": "Recommended single spans — patios less than 3m high.",
+    "lead": "Maximum spans (mm) by wind classification, panel thickness and number of open sides. Confirm specification with our team for site-specific conditions.",
+    "footnote": "Values in mm. Service / structural roof pressures shown in kPa.",
+    "thicknessHeaders": ["50mm", "75mm", "100mm", "125mm"],
+    "groups": [
+      {
+        "wind": "N1",
+        "windNote": "W40N",
+        "rows": [
+          { "sides": "3 sides open", "serv": "0.50", "str": "0.86", "spans": ["5100", "6400", "7800", "8100"] },
+          { "sides": "2 sides open", "serv": "0.56", "str": "0.96", "spans": ["4500", "5400", "6200", "7000"] },
+          { "sides": "1 side open",  "serv": "0.67", "str": "1.15", "spans": ["4100", "5100", "5700", "6400"] }
+        ]
+      },
+      {
+        "wind": "N2",
+        "windNote": "W40N",
+        "rows": [
+          { "sides": "3 sides open", "serv": "0.50", "str": "1.19", "spans": ["5100", "6400", "7800", "8100"] },
+          { "sides": "2 sides open", "serv": "0.56", "str": "1.32", "spans": ["4500", "5400", "6200", "7000"] },
+          { "sides": "1 side open",  "serv": "0.67", "str": "1.59", "spans": ["4100", "5100", "5700", "6400"] }
+        ]
+      },
+      {
+        "wind": "N3",
+        "windNote": "W50N",
+        "rows": [
+          { "sides": "3 sides open", "serv": "0.76", "str": "1.86", "spans": ["4900", "5900", "6900", "7700"] },
+          { "sides": "2 sides open", "serv": "0.85", "str": "2.07", "spans": ["3600", "4300", "5000", "5600"] },
+          { "sides": "1 side open",  "serv": "1.02", "str": "2.48", "spans": ["3300", "3900", "4500", "4900"] }
+        ]
+      },
+      {
+        "wind": "N4",
+        "windNote": "W61N",
+        "rows": [
+          { "sides": "3 sides open", "serv": "1.13", "str": "2.77", "spans": ["4000", "4800", "5600", "6300"] },
+          { "sides": "2 sides open", "serv": "1.26", "str": "3.08", "spans": ["2900", "3500", "4100", "4600"] },
+          { "sides": "1 side open",  "serv": "1.51", "str": "3.70", "spans": ["2700", "3100", "3700", "4200"] }
+        ]
+      }
+    ]
+  },
+  "technicalSpecs": {
+    "eyebrow": "Technical specifications",
+    "h2": "Engineered performance — across every thickness.",
+    "lead": "Material build-up, weights and insulation factors for Insulspan® across all panel thicknesses.",
+    "construction": {
+      "title": "Construction",
+      "items": [
+        "Colorbond Monospan or Corrugated external cladding",
+        "0.5mm Off-White steel internal cladding (Corrugated)",
+        "Expanded Polystyrene (EPS-FR) core including flame retardant additive"
+      ]
+    },
+    "thicknessHeaders": ["50mm", "75mm", "100mm", "125mm"],
+    "weightsTitle": "Insulated Roofing Panel Weight",
+    "weightsUnit": "kg/m²",
+    "weights": ["8.8", "9.1", "9.3", "9.5"],
+    "rValueTitle": "Insulation Factor — R Value",
+    "rValueUnit": "m²K/W",
+    "rValues": ["1.39", "2.09", "2.78", "3.48"]
+  }
 }

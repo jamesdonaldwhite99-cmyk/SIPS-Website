@@ -307,6 +307,69 @@ collections:
             fields:
               - { name: name, label: Name, widget: string }
               - { name: hex,  label: Hex colour, widget: string, hint: "e.g. #e6dcc4" }
+          - name: spanTable
+            label: Span table (recommended single spans)
+            widget: object
+            fields:
+              - { name: eyebrow, label: Section eyebrow,  widget: string }
+              - { name: h2,      label: Section headline, widget: string }
+              - { name: lead,    label: Section intro,    widget: text }
+              - { name: footnote, label: Footnote (below table), widget: string }
+              - name: thicknessHeaders
+                label: Panel thickness headers (e.g. 50mm, 75mm, …)
+                widget: list
+                field: { name: header, label: Thickness, widget: string }
+              - name: groups
+                label: Wind classification groups
+                widget: list
+                summary: "{{fields.wind}}"
+                fields:
+                  - { name: wind, label: Wind class (e.g. N1), widget: string }
+                  - { name: windNote, label: Wind note (e.g. W40N), widget: string }
+                  - name: rows
+                    label: Rows for this wind class
+                    widget: list
+                    summary: "{{fields.sides}}"
+                    fields:
+                      - { name: sides, label: Open sides, widget: string }
+                      - { name: serv,  label: "Service pressure (kPa)", widget: string }
+                      - { name: str,   label: "Structural pressure (kPa)", widget: string }
+                      - name: spans
+                        label: Maximum spans matching the thickness headers
+                        widget: list
+                        field: { name: span, label: Span (mm), widget: string }
+          - name: technicalSpecs
+            label: Technical specifications
+            widget: object
+            fields:
+              - { name: eyebrow, label: Section eyebrow,  widget: string }
+              - { name: h2,      label: Section headline, widget: string }
+              - { name: lead,    label: Section intro,    widget: text }
+              - name: construction
+                label: Construction
+                widget: object
+                fields:
+                  - { name: title, label: Title, widget: string }
+                  - name: items
+                    label: Bullet points
+                    widget: list
+                    field: { name: item, label: Item, widget: text }
+              - name: thicknessHeaders
+                label: Panel thickness headers
+                widget: list
+                field: { name: header, label: Thickness, widget: string }
+              - { name: weightsTitle, label: Weights title, widget: string }
+              - { name: weightsUnit,  label: Weights unit (e.g. kg/m²), widget: string }
+              - name: weights
+                label: Weight values matching the thickness headers
+                widget: list
+                field: { name: weight, label: Weight, widget: string }
+              - { name: rValueTitle, label: R-value title, widget: string }
+              - { name: rValueUnit,  label: R-value unit, widget: string }
+              - name: rValues
+                label: R-values matching the thickness headers
+                widget: list
+                field: { name: rvalue, label: R-value, widget: string }
 
   # ── Panelspan product page ─────────────────────────────────
   - name: panelspan
@@ -355,6 +418,61 @@ collections:
             fields:
               - { name: title, label: Title, widget: string }
               - { name: copy,  label: Copy,  widget: text }
+          - { name: bannerPhoto,    label: Full-bleed banner photo, widget: image }
+          - { name: bannerPhotoAlt, label: Banner photo alt text,   widget: string }
+          - name: technicalSpecs
+            label: Technical specifications
+            widget: object
+            fields:
+              - { name: eyebrow, label: Section eyebrow,  widget: string }
+              - { name: h2,      label: Section headline, widget: string }
+              - { name: lead,    label: Section intro,    widget: text }
+              - name: construction
+                label: Construction blocks (e.g. External / Internal Walls)
+                widget: list
+                summary: "{{fields.title}}"
+                fields:
+                  - { name: title, label: Title, widget: string }
+                  - name: items
+                    label: Bullet points
+                    widget: list
+                    field: { name: item, label: Item, widget: text }
+              - { name: fireIndicesTitle, label: Fire indices section title, widget: string }
+              - name: fireIndices
+                label: Fire indices (4 metrics)
+                widget: list
+                fields:
+                  - { name: label, label: Label, widget: string }
+                  - { name: value, label: Value, widget: string }
+              - { name: rValueTitle, label: R-value section title, widget: string }
+              - { name: rValueUnit,  label: R-value unit (e.g. m²K/W), widget: string }
+              - name: rValues
+                label: R-values by thickness
+                widget: list
+                fields:
+                  - { name: thickness, label: Thickness, widget: string }
+                  - { name: value,     label: R-value,   widget: string }
+              - { name: weightsTitle, label: Weights section title, widget: string }
+              - name: weightsThicknessHeaders
+                label: Weight table thickness headers (e.g. 90mm, 115mm, 140mm)
+                widget: list
+                field: { name: header, label: Thickness, widget: string }
+              - name: weightGroups
+                label: Weight groups
+                widget: list
+                summary: "{{fields.group}}"
+                fields:
+                  - { name: group, label: Group name (e.g. External Wall), widget: string }
+                  - name: rows
+                    label: Rows
+                    widget: list
+                    summary: "{{fields.size}}"
+                    fields:
+                      - { name: size, label: "Panel size (e.g. 2.4 × 1.2)", widget: string }
+                      - name: values
+                        label: Weights matching the thickness headers above
+                        widget: list
+                        field: { name: weight, label: Weight (kg), widget: string }
           - name: comparison
             label: OSB SIPs vs Panelspan® comparison
             widget: object

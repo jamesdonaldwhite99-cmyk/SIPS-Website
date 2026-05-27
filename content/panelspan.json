@@ -78,6 +78,61 @@
     }
   ],
   "heroTitle": "Structural Insulated",
+  "bannerPhoto": "/photos/panelspan-overview.jpg",
+  "bannerPhotoAlt": "Panelspan® panel installation on a residential project",
+  "technicalSpecs": {
+    "eyebrow": "Technical specifications",
+    "h2": "Built to perform — verified to standard.",
+    "lead": "Material build-up, fire performance, R-values and panel weights across the Panelspan® range.",
+    "construction": [
+      {
+        "title": "External Walls",
+        "items": [
+          "9mm Duragroove external cladding (or 10mm MgO for premium fire / acoustic performance)",
+          "6mm Duraliner internal cladding (or 10mm MgO for premium fire / acoustic performance)",
+          "Expanded Polystyrene (EPS-FR) core including flame retardant additive"
+        ]
+      },
+      {
+        "title": "Internal Walls",
+        "items": [
+          "6mm Duraliner internal and external cladding (or 10mm MgO for premium spec)",
+          "Expanded Polystyrene (EPS-FR) core including flame retardant additive"
+        ]
+      }
+    ],
+    "fireIndicesTitle": "Duragroove Early Fire Hazard Indices",
+    "fireIndices": [
+      { "label": "Ignition Index",        "value": "0" },
+      { "label": "Spread of Flame",       "value": "0" },
+      { "label": "Heat Evolved Index",    "value": "0" },
+      { "label": "Smoke Developed Index", "value": "0–1" }
+    ],
+    "rValueTitle": "R Value by core thickness",
+    "rValueUnit": "m²K/W",
+    "rValues": [
+      { "thickness": "90mm",  "value": "2.20" },
+      { "thickness": "115mm", "value": "2.86" },
+      { "thickness": "140mm", "value": "3.52" }
+    ],
+    "weightsTitle": "Panel Weights (kg)",
+    "weightsThicknessHeaders": ["90mm", "115mm", "140mm"],
+    "weightGroups": [
+      {
+        "group": "External Wall",
+        "rows": [
+          { "size": "2.4 × 1.2", "values": ["61.11", "61.98", "62.84"] },
+          { "size": "2.7 × 1.2", "values": ["68.75", "69.72", "70.70"] }
+        ]
+      },
+      {
+        "group": "Internal Wall",
+        "rows": [
+          { "size": "2.7 × 1.2", "values": ["56.50", "57.48", "58.45"] }
+        ]
+      }
+    ]
+  },
   "comparison": {
     "eyebrow": "OSB SIPs vs Panelspan",
     "h2": "Engineered to outperform.",

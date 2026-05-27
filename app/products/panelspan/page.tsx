@@ -29,6 +29,10 @@ export default function PanelspanPage() {
         scrollTrigger: { trigger: ".ts-panel-pair", start: "top 80%", once: true },
         y: 40, opacity: 0, duration: 0.7, stagger: 0.15, ease: "power3.out",
       });
+      gsap.from(".techspec-animate", {
+        scrollTrigger: { trigger: ".ts-techspecs-section", start: "top 80%", once: true },
+        y: 24, opacity: 0, duration: 0.7, stagger: 0.1, ease: "power2.out",
+      });
       gsap.from(".compare-row-animate", {
         scrollTrigger: { trigger: ".ts-compare-table", start: "top 80%", once: true },
         y: 24, opacity: 0, duration: 0.6, stagger: 0.06, ease: "power2.out",
@@ -149,6 +153,11 @@ export default function PanelspanPage() {
         </div>
       </section>
 
+      {/* Full-bleed banner */}
+      <div className="ts-image-banner">
+        <Image src={data.bannerPhoto} alt={data.bannerPhotoAlt} fill style={{ objectFit: "cover" }} sizes="100vw" />
+      </div>
+
       {/* OSB vs Panelspan comparison */}
       <section className="ts-section ts-divider-top ts-compare-section">
         <div className="ts-container">
@@ -233,6 +242,85 @@ export default function PanelspanPage() {
                 <p>{a.copy}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Technical specifications */}
+      <section className="ts-section ts-divider-top ts-techspecs-section">
+        <div className="ts-container">
+          <div className="ts-section-head">
+            <div>
+              <div className="ts-eyebrow">{data.technicalSpecs.eyebrow}</div>
+              <h2>{data.technicalSpecs.h2}</h2>
+            </div>
+            <p>{data.technicalSpecs.lead}</p>
+          </div>
+
+          <div className="ts-techspecs-grid">
+            {data.technicalSpecs.construction.map((block, i) => (
+              <div key={i} className="ts-techspecs-card techspec-animate">
+                <div className="ts-techspecs-card-head">
+                  <span className="num">0{i + 1}</span>
+                  <h3>{block.title}</h3>
+                </div>
+                <ul className="ts-techspecs-list">
+                  {block.items.map((it, j) => (
+                    <li key={j}><span className="dot" />{it}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <div className="ts-techspecs-row techspec-animate">
+            <div className="ts-techspecs-fire">
+              <div className="ts-techspecs-subtitle">{data.technicalSpecs.fireIndicesTitle}</div>
+              <div className="ts-techspecs-fire-grid">
+                {data.technicalSpecs.fireIndices.map((f, i) => (
+                  <div key={i} className="ts-techspecs-fire-item">
+                    <div className="value">{f.value}</div>
+                    <div className="label">{f.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="ts-techspecs-rvalue">
+              <div className="ts-techspecs-subtitle">{data.technicalSpecs.rValueTitle}</div>
+              <div className="ts-techspecs-rvalue-grid">
+                {data.technicalSpecs.rValues.map((r, i) => (
+                  <div key={i} className="ts-techspecs-rvalue-item">
+                    <div className="thickness">{r.thickness}</div>
+                    <div className="value">{r.value}<span className="unit">{data.technicalSpecs.rValueUnit}</span></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="ts-techspecs-weights techspec-animate">
+            <div className="ts-techspecs-subtitle">{data.technicalSpecs.weightsTitle}</div>
+            <div className="ts-techspecs-weights-table" role="table">
+              <div className="ts-techspecs-weights-head" role="row">
+                <div role="columnheader">Configuration</div>
+                <div role="columnheader">Panel size (m)</div>
+                {data.technicalSpecs.weightsThicknessHeaders.map((t) => (
+                  <div key={t} role="columnheader">{t}</div>
+                ))}
+              </div>
+              {data.technicalSpecs.weightGroups.map((group) =>
+                group.rows.map((row, ri) => (
+                  <div key={`${group.group}-${ri}`} className="ts-techspecs-weights-row" role="row">
+                    <div className="grp" role="rowheader">{ri === 0 ? group.group : ""}</div>
+                    <div className="size">{row.size}</div>
+                    {row.values.map((v, vi) => (
+                      <div key={vi} className="val">{v}</div>
+                    ))}
+                  </div>
+                ))
+              )}
+            </div>
           </div>
         </div>
       </section>
