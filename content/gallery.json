@@ -14,6 +14,11 @@
       "category": "Residential"
     },
     {
+      "src": "/photos/upscaled-image-6-.png",
+      "alt": "Residential Pool Fence",
+      "category": "Placeholder"
+    },
+    {
       "src": "/photos/gallery/03.jpg",
       "alt": "Insulspan® patio at dusk",
       "category": "Outdoor living"
@@ -22,6 +27,11 @@
       "src": "/photos/gallery/04.jpg",
       "alt": "Architectural home",
       "category": "Residential"
+    },
+    {
+      "src": "/photos/010a7287.jpg",
+      "alt": "Slenderline Modular Fencing",
+      "category": "Placeholder"
     },
     {
       "src": "/photos/gallery/05.jpg",
@@ -44,6 +54,11 @@
       "category": "Interiors"
     },
     {
+      "src": "/photos/bunnings-orange-2-2.jpg",
+      "alt": "Commercial Acoustic Modular Fence",
+      "category": "Placeholder"
+    },
+    {
       "src": "/photos/gallery/09.jpg",
       "alt": "Living room SIPs build",
       "category": "Interiors"
@@ -52,6 +67,11 @@
       "src": "/photos/gallery/10.jpg",
       "alt": "Granny flat SIPs",
       "category": "Residential"
+    },
+    {
+      "src": "/photos/010a6725-enhanced-nr-2.jpg",
+      "alt": "Grandline Modular Fencing",
+      "category": "Placeholder"
     },
     {
       "src": "/photos/gallery/11.jpg",
@@ -229,52 +249,32 @@
       "category": "Outdoor living"
     },
     {
-      "src": "/photos/gallery/placeholder.svg",
+      "src": "/photos/010a7268-hdr-2.jpg",
+      "alt": "Slenderline Modular Fencing",
+      "category": "Placeholder"
+    },
+    {
+      "src": "/photos/3.jpg",
+      "alt": "Grandline Modular Fencing",
+      "category": "Placeholder"
+    },
+    {
+      "src": "/photos/010a6665.jpg",
       "alt": "Image placeholder — replace via CMS",
       "category": "Placeholder"
     },
     {
-      "src": "/photos/gallery/placeholder.svg",
+      "src": "/photos/20160113_175107-2-edit.jpg",
       "alt": "Image placeholder — replace via CMS",
       "category": "Placeholder"
     },
     {
-      "src": "/photos/gallery/placeholder.svg",
+      "src": "/photos/010a7308-hdr.jpg",
       "alt": "Image placeholder — replace via CMS",
       "category": "Placeholder"
     },
     {
-      "src": "/photos/gallery/placeholder.svg",
-      "alt": "Image placeholder — replace via CMS",
-      "category": "Placeholder"
-    },
-    {
-      "src": "/photos/gallery/placeholder.svg",
-      "alt": "Image placeholder — replace via CMS",
-      "category": "Placeholder"
-    },
-    {
-      "src": "/photos/gallery/placeholder.svg",
-      "alt": "Image placeholder — replace via CMS",
-      "category": "Placeholder"
-    },
-    {
-      "src": "/photos/gallery/placeholder.svg",
-      "alt": "Image placeholder — replace via CMS",
-      "category": "Placeholder"
-    },
-    {
-      "src": "/photos/gallery/placeholder.svg",
-      "alt": "Image placeholder — replace via CMS",
-      "category": "Placeholder"
-    },
-    {
-      "src": "/photos/gallery/placeholder.svg",
-      "alt": "Image placeholder — replace via CMS",
-      "category": "Placeholder"
-    },
-    {
-      "src": "/photos/gallery/placeholder.svg",
+      "src": "/photos/byron-and-beyond-fencing-job-3.jpg",
       "alt": "Image placeholder — replace via CMS",
       "category": "Placeholder"
     }
