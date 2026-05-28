@@ -66,7 +66,7 @@ export default function AboutPage() {
           display: "flex",
           alignItems: "flex-end",
           overflow: "hidden",
-          background: "#0c0d0f",
+          background: "#1F1F1F",
           color: "var(--color-on-primary)",
         }}
       >
@@ -166,7 +166,7 @@ export default function AboutPage() {
 
       {/* Full-bleed photo */}
       <section className="bleed-section" style={{ background: "var(--ts-cream-2)", paddingBottom: 80 }}>
-        <div className="bleed-animate" style={{ position: "relative", width: "100%", aspectRatio: "21 / 9", overflow: "hidden", background: "#0c0d0f" }}>
+        <div className="bleed-animate" style={{ position: "relative", width: "100%", aspectRatio: "21 / 9", overflow: "hidden", background: "#1F1F1F" }}>
           <Image
             src={data.bleedPhoto || data.heroPhoto}
             alt={data.bleedPhotoCaption || "Quick Built Systems"}
@@ -255,7 +255,7 @@ export default function AboutPage() {
                 muted
                 loop
                 playsInline
-                style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "contain", background: "#0c0d0f" }}
+                style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "contain", background: "#1F1F1F" }}
               />
               <span className="ts-photo-tag">{data.videoTag}</span>
             </div>

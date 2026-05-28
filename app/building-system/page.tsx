@@ -185,7 +185,7 @@ export default function BuildingSystemPage() {
                 muted
                 loop
                 playsInline
-                style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "contain", background: "#0c0d0f" }}
+                style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "contain", background: "#1F1F1F" }}
               />
               <span className="ts-photo-tag">4 min 32 sec</span>
             </div>
