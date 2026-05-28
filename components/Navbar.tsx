@@ -82,9 +82,9 @@ export default function Navbar() {
             <Image
               src="/photos/a_vector_based_logo_for_quickbuilt_systems_feat white.png"
               alt="ThermaSpan — Structural Insulated Panels by QuickBuilt Systems"
-              width={380}
-              height={140}
-              style={{ height: 140, width: "auto" }}
+              width={520}
+              height={200}
+              className="ts-logo-img"
               priority
             />
           </Link>

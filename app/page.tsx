@@ -25,57 +25,27 @@ const benefits = [
 
 const applications = homeData.applications;
 
+const PRODUCT_ICON_SRC: Record<string, { src: string; alt: string }> = {
+  roof:      { src: "/photos/icons-clean/Insulated Roofing & Wall Panels Icon.png", alt: "Insulated Roofing & Wall Panels" },
+  home:      { src: "/photos/icons-clean/Modular Homes Icon.png",                   alt: "Modular Homes" },
+  flat:      { src: "/photos/icons-clean/Granny Flats Icon.png",                    alt: "Granny Flats" },
+  patio:     { src: "/photos/icons-clean/Patio Kits Icon.png",                      alt: "Patio Kits" },
+  fence:     { src: "/photos/icons-clean/Modular Fencing Icon.png",                 alt: "Modular Fencing" },
+  retaining: { src: "/photos/icons-clean/Retaining Solutions Icon.png",             alt: "Retaining Solutions" },
+};
+
 function ProductIcon({ icon }: { icon: string }) {
-  const stroke = { fill: "none" as const, stroke: "currentColor", strokeWidth: 1.4, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
-  if (icon === "roof") return (
-    <svg viewBox="0 0 64 40" {...stroke}>
-      <path d="M6 26L32 10l26 16" />
-      <path d="M18 22l4 5M28 18l4 5M38 14l4 5M48 10l4 5" />
-      <path d="M14 26l4-6M50 16l4-6" />
-      <path d="M28 28l-3-3M28 28l3-3" />
-      <path d="M40 28l-3-3M40 28l3-3" />
-    </svg>
+  const entry = PRODUCT_ICON_SRC[icon];
+  if (!entry) return null;
+  return (
+    <Image
+      src={entry.src}
+      alt={entry.alt}
+      width={160}
+      height={100}
+      style={{ width: "100%", height: "100%", objectFit: "contain" }}
+    />
   );
-  if (icon === "home") return (
-    <svg viewBox="0 0 64 40" {...stroke}>
-      <path d="M14 36V18l18-10 18 10v18z" />
-      <path d="M14 18l18 10 18-10" />
-      <rect x="22" y="22" width="6" height="8" />
-      <rect x="36" y="22" width="6" height="6" />
-    </svg>
-  );
-  if (icon === "flat") return (
-    <svg viewBox="0 0 64 40" {...stroke}>
-      <path d="M18 36V18l14-8 14 8v18z" />
-      <path d="M18 18l14 8 14-8" />
-      <rect x="26" y="22" width="5" height="6" />
-      <rect x="34" y="22" width="5" height="5" />
-    </svg>
-  );
-  if (icon === "patio") return (
-    <svg viewBox="0 0 64 40" {...stroke}>
-      <path d="M8 14L56 8" />
-      <path d="M8 14h48" />
-      <path d="M12 14v22M52 14v22" />
-      <path d="M20 14v22M28 14v22M36 14v22M44 14v22" />
-    </svg>
-  );
-  if (icon === "fence") return (
-    <svg viewBox="0 0 64 40" {...stroke}>
-      <rect x="10" y="10" width="11" height="26" />
-      <rect x="26" y="10" width="11" height="26" />
-      <rect x="42" y="10" width="11" height="26" />
-      <path d="M10 20h44" />
-    </svg>
-  );
-  if (icon === "retaining") return (
-    <svg viewBox="0 0 64 40" {...stroke}>
-      <path d="M6 36h12V26h12V18h12V10h16" />
-      <path d="M6 36h52" />
-      <path d="M22 26v10M34 18v10M46 10v18" />
-    </svg>
-  );
-  return null;
 }
 
 function BenefitIcon({ icon }: { icon: string }) {
@@ -303,17 +273,6 @@ export default function HomePage() {
           <h1 className="hero-animate">
             Your Outdoor Living <em>Specialists</em>.
           </h1>
-          <div className="actions hero-animate">
-            <Link href="/contact" className="ts-btn ts-btn--primary">
-              {homeData.heroCtaPrimary}
-              <svg className="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M5 12h14M13 5l7 7-7 7" />
-              </svg>
-            </Link>
-            <Link href="/products" className="ts-btn ts-btn--ghost-on-dark">
-              {homeData.heroCtaSecondary}
-            </Link>
-          </div>
         </div>
 
         {/* Slide label bottom-left + dots bottom-center */}

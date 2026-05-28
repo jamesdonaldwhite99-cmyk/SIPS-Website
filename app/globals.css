@@ -201,10 +201,12 @@ a { color: inherit; }
   padding-inline: 40px;
 }
 
-.ts-wordmark img {
+.ts-wordmark { display: flex; align-items: center; }
+.ts-wordmark .ts-logo-img {
   display: block;
-  height: 44px;
+  height: 200px;
   width: auto;
+  max-width: none;
 }
 
 .ts-nav {
@@ -384,9 +386,9 @@ a { color: inherit; }
 
 /* ── Our Products icon row ──────────────────────────────────── */
 .ts-product-iconrow {
-  background: #0c0d0f;
+  background: #a89e8c;
   padding: 56px 0;
-  color: var(--color-canvas);
+  color: #fff;
 }
 .ts-product-iconrow-inner {
   display: grid;
@@ -396,7 +398,7 @@ a { color: inherit; }
 }
 .ts-product-iconrow-label {
   font-family: var(--font-display);
-  font-size: 22px;
+  font-size: 28px;
   font-weight: 400;
   letter-spacing: -0.4px;
   color: #fff;
@@ -419,10 +421,9 @@ a { color: inherit; }
 }
 .ts-product-iconitem:hover { transform: translateY(-3px); }
 .ts-product-icon {
-  width: 72px;
-  height: 48px;
-  margin-bottom: 12px;
-  color: #fff;
+  width: 96px;
+  height: 60px;
+  margin-bottom: 14px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -430,9 +431,17 @@ a { color: inherit; }
 .ts-product-icon svg {
   width: 100%;
   height: 100%;
-  max-width: 72px;
-  max-height: 48px;
+  max-width: 96px;
+  max-height: 60px;
 }
+.ts-product-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: brightness(0) invert(22%);
+  transition: filter 200ms var(--ease-standard);
+}
+.ts-product-iconitem:hover .ts-product-icon img { filter: brightness(0) invert(8%); }
 .ts-product-icon-label {
   font-size: 11.5px;
   font-weight: 600;
@@ -448,7 +457,9 @@ a { color: inherit; }
   .ts-product-iconrow-items { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 560px) {
-  .ts-product-iconrow-items { grid-template-columns: repeat(2, 1fr); }
+  .ts-product-iconrow-items { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .ts-product-icon { width: 72px; height: 46px; margin-bottom: 10px; }
+  .ts-product-icon-label { font-size: 10px; letter-spacing: 1px; }
 }
 
 /* ── Benefits strip (Versiclad-style) ───────────────────────── */
@@ -4106,10 +4117,17 @@ a { color: inherit; }
   .ts-container { padding-inline: 20px; }
   .ts-section { padding-block: 56px; }
   .ts-header-inner { padding-inline: 20px; height: 70px; }
-  .ts-wordmark img { height: 44px !important; width: auto !important; }
+  .ts-wordmark .ts-logo-img { height: 88px !important; width: auto !important; }
   .ts-nav { display: none; }
   .ts-header-actions .ts-phone-pill { display: none; }
-  .ts-header-actions .ts-btn { display: none; }
+  .ts-header-actions { gap: 10px; }
+  .ts-header-actions .ts-btn--primary {
+    padding: 9px 14px;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    border-radius: 999px;
+  }
+  .ts-header-actions .ts-btn--primary .arrow { display: none; }
   .ts-hamburger { display: flex; }
   .ts-mobile-menu { display: flex; }
   .ts-megamenu-grid { grid-template-columns: 1fr; }
