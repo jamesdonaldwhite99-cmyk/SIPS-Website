@@ -12,9 +12,9 @@
       "img": "/photos/gallery/05.jpg"
     },
     {
-      "kicker": "Commercial",
-      "title": "Coolrooms & Freezers",
-      "img": "/photos/gallery/19.jpg"
+      "kicker": "Residential Fencing",
+      "title": "Modular boundary walls",
+      "img": "/photos/010a7287.jpg"
     },
     {
       "kicker": "Modular",
@@ -32,14 +32,14 @@
       "img": "/photos/gallery/18.jpg"
     },
     {
-      "kicker": "Residential Fencing",
-      "title": "Modular boundary walls",
-      "img": "/photos/010a7287.jpg"
-    },
-    {
       "kicker": "Commercial Fencing",
       "title": "Industrial & retaining walls",
       "img": "/photos/bunnings-orange-2-2.jpg"
+    },
+    {
+      "kicker": "Commercial",
+      "title": "Coolrooms & Freezers",
+      "img": "/photos/gallery/19.jpg"
     }
   ],
   "heroH1": "Australia's lightest, fastest structural insulated panel system.",
@@ -89,8 +89,26 @@
       "footerLabel": "Modular Fencing"
     },
     {
+      "kicker": "Patio Kits",
+      "title": "Pre-engineered outdoor living",
+      "copy": "Eight architectural patio styles, flat-packed and ready to install.",
+      "image": "/photos/Patio Kit.png",
+      "href": "https://www.patiokits.com.au/",
+      "external": true,
+      "footerLabel": "Patio Kits"
+    },
+    {
+      "kicker": "Roofing",
+      "title": "Insulspan Insulated roofing",
+      "copy": "Long-span structural insulated roofing panels. Three profiles.",
+      "image": "/photos/product-insulspan-new.png",
+      "href": "/products/insulspan",
+      "external": false,
+      "footerLabel": "Insulspan®"
+    },
+    {
       "kicker": "Wall Panels",
-      "title": "Panelspan® Fibre Cement",
+      "title": "Panelspan",
       "copy": "Pre-finished FC and MgO structural wall panels.",
       "image": "/photos/product-panelspan-new.png",
       "href": "/products/panelspan",
@@ -99,30 +117,12 @@
     },
     {
       "kicker": "Wall Panels",
-      "title": "Panelcore® Steel Panel",
+      "title": "Panelcore",
       "copy": "Steel-skinned insulated panels for coldroom and commercial use.",
-      "image": "/photos/product-panelcore-new.png",
+      "image": "/photos/panelcore-image.png",
       "href": "/products/panelcore",
       "external": false,
       "footerLabel": "Panelcore®"
-    },
-    {
-      "kicker": "Roofing",
-      "title": "Insulspan® insulated roofing",
-      "copy": "Long-span structural insulated roofing panels. Three profiles.",
-      "image": "/photos/product-insulspan-new.png",
-      "href": "/products/insulspan",
-      "external": false,
-      "footerLabel": "Insulspan®"
-    },
-    {
-      "kicker": "Patio Kits",
-      "title": "Pre-engineered outdoor living",
-      "copy": "Eight architectural patio styles, flat-packed and ready to install.",
-      "image": "/photos/Patio Kit.png",
-      "href": "https://www.patiokits.com.au/",
-      "external": true,
-      "footerLabel": "Patio Kits"
     }
   ],
   "heroCtaPrimary": "Request a quote",
