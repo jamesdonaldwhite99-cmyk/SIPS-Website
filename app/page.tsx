@@ -406,9 +406,9 @@ export default function HomePage() {
                     <path d="M5 12h14M13 5l7 7-7 7" />
                   </svg>
                 </Link>
-                <Link href="/building-system" className="ts-btn ts-btn--ghost">
-                  Watch the build video
-                </Link>
+                <a href="https://www.quickbuilthomes.com.au/" target="_blank" rel="noopener noreferrer" className="ts-btn ts-btn--ghost">
+                  View our Building Systems
+                </a>
               </div>
             </div>
             <div className="ts-intro-photo ts-intro-photo--wide intro-photo-animate">
