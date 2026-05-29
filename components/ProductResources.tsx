@@ -22,15 +22,17 @@ function pickResources(files: string[]): ResourceItem[] {
 }
 
 export default function ProductResources({
-  eyebrow = "Resources",
-  h2 = "Specs, brochures and install guides.",
-  lead = "Download technical documentation for this product range.",
+  eyebrow = "Technical specifications",
+  h2 = "Want to find out more about technical specifications?",
+  lead = "Download our brochures below for full panel specs, span tables, R-values, fire ratings and install details.",
   files,
 }: Props) {
   const items = pickResources(files);
   const [activeResource, setActiveResource] = useState<ResourceItem | null>(null);
 
   if (items.length === 0) return null;
+
+  const stackCovers = items.slice(0, 4);
 
   const handleClick = (e: React.MouseEvent, r: ResourceItem) => {
     e.preventDefault();
@@ -50,14 +52,38 @@ export default function ProductResources({
   };
 
   return (
-    <section className="ts-section ts-divider-top" style={{ background: "var(--ts-cream-2)" }}>
+    <section className="ts-resources-feature ts-divider-top">
       <div className="ts-container">
-        <div className="ts-section-head">
-          <div>
-            <div className="ts-eyebrow">{eyebrow}</div>
-            <h2>{h2}</h2>
+        <div className="ts-resources-feature-intro">
+          <div className="ts-resources-feature-text">
+            <div className="ts-eyebrow ts-resources-feature-eyebrow">{eyebrow}</div>
+            <h2 className="ts-resources-feature-h2">{h2}</h2>
+            <p className="ts-resources-feature-lead">{lead}</p>
+            <div className="ts-resources-feature-meta">
+              <span className="num">{items.length.toString().padStart(2, "0")}</span>
+              <span className="label">Documents available · PDF</span>
+            </div>
+            <div className="ts-resources-feature-arrow" aria-hidden="true">
+              <span>Browse below</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" width="18" height="18">
+                <path d="M12 5v14M5 12l7 7 7-7" />
+              </svg>
+            </div>
           </div>
-          <p>{lead}</p>
+
+          <div className="ts-resources-feature-stack" aria-hidden="true">
+            {stackCovers.map((r, i) => (
+              <div key={i} className="ts-resources-feature-stack-card" style={{ ['--i' as string]: i }}>
+                <Image src={r.cover} alt="" fill style={{ objectFit: "cover" }} sizes="280px" />
+              </div>
+            ))}
+            <div className="ts-resources-feature-stack-tag">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" width="14" height="14">
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
+              </svg>
+              Download brochures
+            </div>
+          </div>
         </div>
 
         <div className="ts-resource-grid">

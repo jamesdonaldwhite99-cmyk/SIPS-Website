@@ -277,12 +277,12 @@ export default function AboutPage() {
               <p className="system-animate">{data.systemPara1}</p>
               <p className="system-animate">{data.systemPara2}</p>
               <div className="ts-cta-row system-animate">
-                <Link href="/building-system" className="ts-btn ts-btn--dark">
+                <a href="https://www.quickbuilthomes.com.au/" target="_blank" rel="noopener noreferrer" className="ts-btn ts-btn--dark">
                   See how it works
                   <svg className="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M5 12h14M13 5l7 7-7 7" />
                   </svg>
-                </Link>
+                </a>
                 <Link href="/products" className="ts-btn ts-btn--ghost">View products</Link>
               </div>
             </div>
