@@ -130,7 +130,7 @@ export default function Navbar() {
               1300 132 787
             </a>
             <Link href="/contact" className="ts-btn ts-btn--primary">
-              Request a quote
+              Enquire Now
               <svg className="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M5 12h14M13 5l7 7-7 7" />
               </svg>
@@ -225,7 +225,7 @@ export default function Navbar() {
                 1300 132 787
               </a>
               <Link href="/contact" className="ts-btn ts-btn--primary" onClick={closeMobile}>
-                Request a quote
+                Enquire Now
                 <svg className="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14M13 5l7 7-7 7" />
                 </svg>

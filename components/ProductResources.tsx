@@ -77,12 +77,6 @@ export default function ProductResources({
                 <Image src={r.cover} alt="" fill style={{ objectFit: "cover" }} sizes="280px" />
               </div>
             ))}
-            <div className="ts-resources-feature-stack-tag">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" width="14" height="14">
-                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
-              </svg>
-              Download brochures
-            </div>
           </div>
         </div>
 

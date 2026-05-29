@@ -208,7 +208,7 @@ export default function BuildingSystemPage() {
               <p className="system-animate">{data.systemPara2}</p>
               <div className="ts-cta-row system-animate">
                 <Link href="/contact" className="ts-btn ts-btn--dark">
-                  Request a quote
+                  Enquire Now
                   <svg className="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M5 12h14M13 5l7 7-7 7" />
                   </svg>
@@ -234,7 +234,7 @@ export default function BuildingSystemPage() {
               <p className="hours">Mon–Fri · 7:30am – 4:30pm AEST</p>
               <div className="actions">
                 <Link href="/contact" className="ts-btn ts-btn--primary">
-                  Request a quote
+                  Enquire Now
                   <svg className="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M5 12h14M13 5l7 7-7 7" />
                   </svg>

@@ -70,7 +70,7 @@ export default function InsulspanPage() {
               <p className="lead hero-animate">{data.heroLead}</p>
               <div className="actions hero-animate">
                 <Link href="/contact" className="ts-btn ts-btn--primary">
-                  Request a quote
+                  Enquire Now
                   <svg className="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M5 12h14M13 5l7 7-7 7" />
                   </svg>
@@ -225,7 +225,7 @@ export default function InsulspanPage() {
               <p className="hours">Mon–Fri · 7:30am – 4:30pm AEST</p>
               <div className="actions">
                 <Link href="/contact" className="ts-btn ts-btn--primary">
-                  Request a quote
+                  Enquire Now
                   <svg className="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M5 12h14M13 5l7 7-7 7" />
                   </svg>
