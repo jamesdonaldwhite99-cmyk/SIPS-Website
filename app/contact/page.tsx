@@ -189,14 +189,80 @@ export default function ContactPage() {
       setError("Please fill in your name, email and phone number.");
       return;
     }
+
+    const isPatioSubmission = form.wantsPatio || Boolean(form.patioStyle);
+    if (isPatioSubmission) {
+      const requiredPatio: Array<{ key: keyof FormState; label: string }> = [
+        { key: "patioStyle",   label: "Patio style" },
+        { key: "patioWidth",   label: "Width" },
+        { key: "patioLength",  label: "Length" },
+        { key: "patioAddress", label: "Site address" },
+        { key: "panelProfile", label: "Roof panel profile" },
+        { key: "roofType",     label: "Roof panel type" },
+        { key: "panelColour",  label: "Roof panel colour" },
+        { key: "beamSize",     label: "Beam size" },
+        { key: "beamColour",   label: "Beam colour" },
+        { key: "postSize",     label: "Post size" },
+        { key: "postColour",   label: "Post colour" },
+      ];
+      const missing = requiredPatio.filter((f) => {
+        const value = form[f.key];
+        return typeof value === "string" ? !value.trim() : !value;
+      });
+      if (missing.length > 0) {
+        setError(
+          `Please complete the patio configurator — missing: ${missing.map((m) => m.label).join(", ")}.`
+        );
+        return;
+      }
+    }
+
     setSending(true);
     setError("");
 
     try {
-      const res = await fetch(data.webhookUrl, {
+      const targetWebhook = isPatioSubmission && data.patioWebhookUrl
+        ? data.patioWebhookUrl
+        : data.webhookUrl;
+      const formType = isPatioSubmission ? "patio-quote" : "contact-enquiry";
+
+      const basePayload = {
+        name: form.name,
+        email: form.email,
+        phone: form.phone,
+        company: form.company,
+        location: form.location,
+        message: form.message,
+        interests: form.interests,
+      };
+
+      const patioPayload = isPatioSubmission ? {
+        patioStyle: form.patioStyle,
+        patioWidth: form.patioWidth,
+        patioLength: form.patioLength,
+        patioAddress: form.patioAddress,
+        roofType: form.roofType,
+        panelProfile: form.panelProfile,
+        panelColour: form.panelColour,
+        beamSize: form.beamSize,
+        beamColour: form.beamColour,
+        postSize: form.postSize,
+        postColour: form.postColour,
+        accessories: form.accessories,
+        accessoryQty: form.accessoryQty,
+        financeInterest: form.financeInterest,
+      } : {};
+
+      const res = await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, submittedAt: new Date().toISOString() }),
+        body: JSON.stringify({
+          webhookUrl: targetWebhook,
+          formType,
+          ...basePayload,
+          ...patioPayload,
+          submittedAt: new Date().toISOString(),
+        }),
       });
 
       if (!res.ok) throw new Error("Submission failed");

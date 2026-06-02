@@ -694,4 +694,5 @@ collections:
           - { name: asideH2,     label: Form aside headline, widget: string }
           - { name: asidePara1,  label: Form aside para 1, widget: text }
           - { name: asidePara2,  label: Form aside para 2, widget: text }
-          - { name: webhookUrl,  label: Make.com webhook URL, widget: string, hint: "The URL that receives form submissions" }
+          - { name: webhookUrl,      label: "Make.com webhook — General enquiry", widget: string, hint: "Used when the user has NOT selected patio/awning. Receives all general contact form submissions." }
+          - { name: patioWebhookUrl, label: "Make.com webhook — Patio quote",   widget: string, hint: "Used when the user has selected patio/awning OR filled in any of the patio configurator fields. Receives patio kit quote submissions." }

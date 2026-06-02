@@ -96,13 +96,12 @@ export default function DownloadGate({ resource, webhookUrl, onClose }: Props) {
     };
 
     try {
-      if (webhookUrl && !webhookUrl.includes("PLACEHOLDER")) {
-        await fetch(webhookUrl, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
-        });
-      }
+      const res = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) throw new Error("Lead submission failed");
       window.localStorage.setItem(
         STORAGE_KEY,
         JSON.stringify({ name: payload.name, email: payload.email, phone: payload.phone, savedAt: Date.now() } as StoredAccess)

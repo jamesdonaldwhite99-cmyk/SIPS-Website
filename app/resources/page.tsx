@@ -18,18 +18,8 @@ export default function ResourcesPage() {
 
   const handleDownloadClick = (e: React.MouseEvent, r: Resource) => {
     e.preventDefault();
-    const access = hasStoredAccess();
-    if (access) {
-      const a = document.createElement("a");
-      a.href = r.href;
-      a.target = "_blank";
-      a.rel = "noopener noreferrer";
-      a.download = r.href.split("/").pop() || "";
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      return;
-    }
+    // Remember-me temporarily disabled for testing — always show the form
+    void hasStoredAccess;
     setActiveResource(r);
   };
 

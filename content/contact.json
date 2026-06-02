@@ -11,5 +11,6 @@
     { "label": "Hours", "value": "Mon–Fri 7:30–4:30 AEST", "href": null },
     { "label": "Location", "value": "Sydney, NSW", "href": null }
   ],
-  "webhookUrl": "https://hook.eu1.make.com/mxeoct37142rfhryr7ri6vacqlpcuc3b"
+  "webhookUrl": "https://hook.eu1.make.com/i438klr3mq1lt1qublt8l03rx93nb52y",
+  "patioWebhookUrl": "https://hook.eu1.make.com/kqn4resuphdh1s6ge2e4lofvvd3mdseq"
 }
