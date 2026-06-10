@@ -1,17 +1,8 @@
 {
-  "heroVideo": "/photos/panelspan-hero.mp4",
-  "heroVideoPoster": "/photos/gallery/06.jpg",
-  "galleryEyebrow": "Recent projects",
-  "galleryH2": "Projects we've built.",
-  "nextStepEyebrow": "Take your next step",
-  "nextStepH2": "Ready when you are.",
-  "nextStepBody1": "For more information on our panel systems, finishes, spans and pricing, get a free quote.",
-  "nextStepBody2": "Or get in touch — we can help you choose the right panel system for your build.",
-  "nextStepPrimary": "Get a free quote",
-  "nextStepSecondary": "Get in touch",
-  "nextStepImage": "/photos/gallery/05.jpg",
   "faqH2": "Frequently asked questions.",
   "productsLead": "Insulspan, Panelspan, and our pre-engineered patio kits work together as one high-performance envelope — engineered for Australian conditions.",
+  "heroVideo": "/photos/QBS Video.mov",
+  "nextStepPrimary": "Get a free quote",
   "applications": [
     {
       "kicker": "Residential",
@@ -81,6 +72,8 @@
   "introPara2": "Unlike OSB-based SIPs that still require external cladding and additional finishing trades, our panels use pre-finished FC or MgO surfaces. The structure arrives ready to install with no extra cladding required.",
   "introPara3": "Together, they create a complete high-performance building system that outperforms traditional construction and OSB SIPs in every category: speed, cost, strength, thermal efficiency, and long-term durability.",
   "showcaseLead": "From modular homes and fencing to wall panels, roofing and patio kits — every QuickBuilt brand is engineered, manufactured and supplied direct.",
+  "nextStepH2": "Ready when you are.",
+  "nextStepEyebrow": "Take your next step",
   "categoryShowcase": [
     {
       "kicker": "Modular Homes",
@@ -144,7 +137,10 @@
   "benefitsEyebrow": "Why Quick Built Systems",
   "introCta2": "Watch the build video",
   "productsH2": "One integrated SIPs system. Three product families.",
+  "heroVideoPoster": "/photos/gallery/06.jpg",
   "heroEyebrow": "Insulspan® · Panelspan® · Panelcore®",
+  "nextStepBody1": "For more information on our panel systems, finishes, spans and pricing, get a free quote.",
+  "nextStepBody2": "Or get in touch — we can help you choose the right panel system for your build.",
   "ctaPrimary": "Enquire Now",
   "productIconRow": [
     {
@@ -185,12 +181,15 @@
     }
   ],
   "ctaBody": "Tell us about your project — patio, extension, new build, commercial — and our team will put together a no-obligation quote with panel specs, install timeline and supply options.",
+  "nextStepSecondary": "Get in touch",
   "introH2": "We're redefining how Australia builds.",
   "ctaPhoneLabel": "Speak to our team",
   "heroLead": "Revolutionising construction, one panel at a time. From the roof down to the walls, our pre-finished SIPs deliver a faster, stronger, cleaner, more energy-efficient way to build.",
+  "galleryEyebrow": "Recent projects",
   "showcaseH2": "Six product families by one Australian family.",
   "benefitsLead": "Five reasons our SIPs outperform traditional framing and OSB-based panels on every job.",
   "ctaH2": "Ready to build smarter?",
+  "nextStepImage": "/photos/gallery/05.jpg",
   "heroSlides": [
     {
       "src": "/photos/gallery/06.jpg",
@@ -294,6 +293,7 @@
     }
   ],
   "showcaseEyebrow": "Explore the range",
+  "galleryH2": "Projects we've built.",
   "introEyebrow": "About Quick Built Systems",
   "heroCtaSecondary": "View our products",
   "applicationsLead": "From the family home to modular fencing — Quick Built Systems panels are engineered to perform across every application."
