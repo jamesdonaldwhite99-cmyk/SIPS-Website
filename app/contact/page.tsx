@@ -6,6 +6,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import data from "@/content/contact.json";
+import PageHero from "@/components/PageHero";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -297,17 +298,8 @@ export default function ContactPage() {
 
   return (
     <div ref={pageRef}>
-      {/* Hero — slim strip */}
-      <section className="ts-page-strip">
-        <div className="ts-container">
-          <div className="ts-breadcrumbs hero-animate">
-            <Link href="/">Home</Link>
-            <span className="sep">/</span>
-            <span>Contact</span>
-          </div>
-          <h1 className="hero-animate">Contact Us</h1>
-        </div>
-      </section>
+      {/* Hero */}
+      <PageHero crumb="Contact" eyebrow={data.heroEyebrow} h1={data.heroH1} lead={data.heroLead} photo={data.heroPhoto} />
 
       {/* Channel strip */}
       <div className="ts-channel-strip">

@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 /* ============================================================
-   ThermaSpan Design Tokens
+   Quick Built Systems Design Tokens
    ============================================================ */
 
 :root {
@@ -1177,6 +1177,16 @@ a { color: inherit; }
   overflow: hidden;
   background: var(--color-ink);
   color: var(--color-on-primary);
+}
+
+/* Full-bleed looping background video */
+.ts-home-hero-video {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Gradient: opaque dark on left, transparent on right */
@@ -4328,4 +4338,119 @@ a { color: inherit; }
   .ts-choice-grid, .ts-choice-grid.two { grid-template-columns: 1fr; }
   .ts-channel-grid { grid-template-columns: 1fr; }
   .ts-channel-item { border-right: 0; border-bottom: 1px solid var(--color-hairline); }
+}
+
+/* ============================================================
+   Pre-footer — shared gallery / reviews carousel / CTA / FAQ
+   Rendered above the footer on every page (PreFooter.tsx)
+   ============================================================ */
+
+/* Featured project gallery */
+.qb-feature-gallery { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
+.qb-feature-tile { position: relative; display: block; aspect-ratio: 1 / 1; border-radius: 8px; overflow: hidden; background: #1a1a1a; }
+.qb-feature-tile img { transition: transform 600ms var(--ease-standard); }
+.qb-feature-tile:hover img { transform: scale(1.08); }
+
+/* Reviews carousel */
+.ts-prefooter-reviews {
+  background: #2e2e2e;
+  color: #fff;
+  padding: clamp(56px, 8vw, 96px) 0;
+}
+.ts-prefooter-stars {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 28px;
+}
+.ts-prefooter-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(8px, 3vw, 32px);
+}
+.ts-prefooter-arrow {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  border-radius: var(--radius-full);
+  transition: color 180ms var(--ease-standard), transform 180ms var(--ease-standard);
+}
+.ts-prefooter-arrow:hover { color: #fff; }
+.ts-prefooter-review {
+  flex: 1;
+  max-width: 620px;
+  min-height: 132px;
+}
+.ts-prefooter-review-text {
+  font-size: clamp(15px, 1.7vw, 18px);
+  line-height: 1.7;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.92);
+  margin: 0 0 18px;
+}
+.ts-prefooter-review-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+}
+.ts-prefooter-review-date {
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.55);
+  margin-top: 2px;
+}
+.ts-prefooter-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 30px;
+}
+.ts-prefooter-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.28);
+  cursor: pointer;
+  transition: background 180ms var(--ease-standard), transform 180ms var(--ease-standard);
+}
+.ts-prefooter-dot.is-active { background: var(--ts-accent); transform: scale(1.25); }
+
+/* Take-your-next-step CTA buttons */
+.ts-prefooter-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 26px;
+  max-width: 360px;
+}
+.ts-prefooter-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 26px;
+  background: var(--ts-accent);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 3px;
+  transition: background 180ms var(--ease-standard), transform 180ms var(--ease-standard);
+}
+.ts-prefooter-btn:hover { background: #d94f1a; transform: translateY(-1px); }
+
+@media (max-width: 900px) { .qb-feature-gallery { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 560px) {
+  .qb-feature-gallery { grid-template-columns: repeat(3, 1fr); }
+  .ts-prefooter-actions { max-width: none; }
+  .ts-prefooter-review { min-height: 168px; }
 }

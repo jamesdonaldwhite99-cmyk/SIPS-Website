@@ -2,10 +2,11 @@
   "heroEyebrow": "Gallery",
   "heroH1": "Projects built with Quick Built Systems.",
   "heroLead": "From modular homes and fencing to wall panels, roofing and patio kits — every QuickBuilt brand is engineered, manufactured and supplied direct.",
+  "heroPhoto": "/photos/gallery/12.jpg",
   "images": [
     {
       "src": "/photos/gallery/01.jpg",
-      "alt": "ThermaSpan residential home",
+      "alt": "Quick Built Systems residential home",
       "category": "Residential"
     },
     {

@@ -78,10 +78,10 @@ export default function Navbar() {
     <>
       <header className="ts-header">
         <div className="ts-header-inner">
-          <Link href="/" className="ts-wordmark" aria-label="ThermaSpan">
+          <Link href="/" className="ts-wordmark" aria-label="Quick Built Systems">
             <Image
               src="/photos/a_vector_based_logo_for_quickbuilt_systems_feat white.png"
-              alt="ThermaSpan — Structural Insulated Panels by QuickBuilt Systems"
+              alt="Quick Built Systems — Structural Insulated Panels"
               width={520}
               height={200}
               className="ts-logo-img"

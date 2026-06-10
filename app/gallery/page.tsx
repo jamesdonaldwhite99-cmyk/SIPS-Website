@@ -5,6 +5,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import data from "@/content/gallery.json";
+import PageHero from "@/components/PageHero";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -42,29 +43,7 @@ export default function GalleryPage() {
   return (
     <div ref={pageRef}>
       {/* Hero */}
-      <section style={{ background: "var(--ts-taupe)", color: "var(--color-ink)", padding: "88px 0 72px" }}>
-        <div className="ts-container">
-          <div className="ts-eyebrow hero-animate" style={{ color: "var(--ts-accent)" }}>{data.heroEyebrow}</div>
-          <h1
-            className="hero-animate"
-            style={{
-              fontFamily: "var(--font-display)",
-              fontSize: "clamp(40px, 5vw, 68px)",
-              fontWeight: 400, lineHeight: 0.98, letterSpacing: "-1.8px",
-              color: "var(--color-ink)",
-              margin: "16px 0 20px", maxWidth: "18ch",
-            }}
-          >
-            {data.heroH1}
-          </h1>
-          <p
-            className="hero-animate"
-            style={{ fontSize: 17, lineHeight: 1.55, color: "rgba(31,31,31,0.75)", maxWidth: "44ch", margin: 0, whiteSpace: "pre-line" }}
-          >
-            {data.heroLead}
-          </p>
-        </div>
-      </section>
+      <PageHero crumb="Gallery" eyebrow={data.heroEyebrow} h1={data.heroH1} lead={data.heroLead} photo={data.heroPhoto} />
 
       {/* Gallery grid */}
       <section className="ts-section">

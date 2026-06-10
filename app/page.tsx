@@ -1,17 +1,13 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import homeData from "@/content/home.json";
-import reviewsData from "@/content/reviews.json";
 
 gsap.registerPlugin(ScrollTrigger);
-
-const SLIDES = homeData.heroSlides;
-const SLIDE_DURATION = 2500;
 
 const showcase = homeData.categoryShowcase;
 
@@ -67,18 +63,8 @@ function BenefitIcon({ icon }: { icon: string }) {
 }
 
 export default function HomePage() {
-  const [slideIndex, setSlideIndex] = useState(0);
-  const [paused, setPaused] = useState(false);
-  const reviews = reviewsData.reviews;
   const pageRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-
-  // Slideshow — interval restarts only when paused state changes
-  useEffect(() => {
-    if (paused) return;
-    const id = setInterval(() => setSlideIndex((n) => (n + 1) % SLIDES.length), SLIDE_DURATION);
-    return () => clearInterval(id);
-  }, [paused]);
 
   // Video playback rate
   useEffect(() => {
@@ -218,25 +204,6 @@ export default function HomePage() {
         ease: "power2.out",
       });
 
-      // Reviews — staggered fade + lift
-      gsap.from(".reviews-eyebrow, .reviews-h2, .reviews-lead", {
-        scrollTrigger: { trigger: ".ts-reviews", start: "top 80%", once: true },
-        y: 30, opacity: 0, duration: 0.8, stagger: 0.1, ease: "power3.out",
-      });
-      gsap.from(".review-card-animate", {
-        scrollTrigger: { trigger: ".ts-reviews-grid", start: "top 85%", once: true },
-        y: 40, opacity: 0, scale: 0.96, duration: 0.8, stagger: 0.12, ease: "power3.out",
-      });
-
-      // CTA strip
-      gsap.from(".cta-animate", {
-        scrollTrigger: { trigger: ".ts-cta-strip", start: "top 80%", once: true },
-        y: 30,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.1,
-        ease: "power3.out",
-      });
     }, pageRef);
 
     return () => ctx.revert();
@@ -244,26 +211,20 @@ export default function HomePage() {
 
   return (
     <div ref={pageRef}>
-      {/* ── Hero — full-bleed photo with overlay ── */}
-      <section
-        id="top"
-        className="ts-home-hero"
-        onMouseEnter={() => setPaused(true)}
-        onMouseLeave={() => setPaused(false)}
-      >
-        {/* Background slideshow — fills full section */}
-        {SLIDES.map((s, idx) => (
-          <div key={idx} className={`ts-slide${idx === slideIndex ? " is-active" : ""}`}>
-            <Image
-              src={s.src}
-              alt={s.caption}
-              fill
-              style={{ objectFit: "cover" }}
-              priority={idx === 0}
-              sizes="100vw"
-            />
-          </div>
-        ))}
+      {/* ── Hero — full-bleed looping background video with overlay ── */}
+      <section id="top" className="ts-home-hero">
+        {/* Background video — fills full section, autoplays muted & loops */}
+        <video
+          className="ts-home-hero-video"
+          src={homeData.heroVideo}
+          poster={homeData.heroVideoPoster}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          aria-hidden="true"
+        />
 
         {/* Gradient overlay — dark on left, fades right */}
         <div className="ts-home-hero-overlay" />
@@ -273,25 +234,6 @@ export default function HomePage() {
           <h1 className="hero-animate">
             Your Outdoor Living <em>Specialists</em>.
           </h1>
-        </div>
-
-        {/* Slide label bottom-left + dots bottom-center */}
-        <div className="ts-home-hero-bar">
-          <div className="ts-home-hero-caption hero-animate">
-            <span className="ts-home-hero-caption-kicker">{SLIDES[slideIndex].kicker}</span>
-            <span className="ts-home-hero-caption-text">{SLIDES[slideIndex].caption}</span>
-          </div>
-          <div className="ts-slide-dots">
-            {SLIDES.map((_, idx) => (
-              <button
-                key={idx}
-                type="button"
-                className={`ts-slide-dot${idx === slideIndex ? " is-active" : ""}`}
-                onClick={() => setSlideIndex(idx)}
-                aria-label={`Slide ${idx + 1}`}
-              />
-            ))}
-          </div>
         </div>
       </section>
 
@@ -452,66 +394,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Reviews (Google) ── */}
-      <section className="ts-section ts-divider-top ts-reviews" id="reviews">
-        <div className="ts-container">
-          <div className="ts-section-head">
-            <div>
-              <div className="ts-eyebrow reviews-eyebrow">{reviewsData.eyebrow}</div>
-              <h2 className="reviews-h2">{reviewsData.h2}</h2>
-            </div>
-            <p className="reviews-lead">{reviewsData.lead}</p>
-          </div>
-
-          <div className="ts-reviews-grid">
-            {reviews.map((r, i) => (
-              <div key={i} className="ts-review-card review-card-animate">
-                <div className="ts-review-stars" aria-label={`${r.rating} out of 5 stars`}>
-                  {Array.from({ length: 5 }).map((_, idx) => (
-                    <svg key={idx} viewBox="0 0 24 24" width="18" height="18" fill={idx < r.rating ? "var(--ts-accent)" : "rgba(0,0,0,0.12)"}>
-                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" />
-                    </svg>
-                  ))}
-                </div>
-                <p className="ts-review-text">"{r.text}"</p>
-                <div className="ts-review-meta">
-                  <div className="ts-review-name">{r.name}</div>
-                  <div className="ts-review-date">{r.date}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
-
-      {/* ── CTA Strip ── */}
-      <section className="ts-cta-strip" id="quote">
-        <div className="ts-container">
-          <div className="inner">
-            <div>
-              <h2 className="cta-animate">{homeData.ctaH2}</h2>
-              <p className="cta-animate">{homeData.ctaBody}</p>
-            </div>
-            <div className="ts-cta-card cta-animate">
-              <span className="ts-eyebrow">{homeData.ctaPhoneLabel}</span>
-              <a href="tel:1300132787" className="phone">1300 132 787</a>
-              <p className="hours">Mon–Fri · 7:30am – 4:30pm AEST</p>
-              <div className="actions">
-                <Link href="/contact" className="ts-btn ts-btn--primary">
-                  {homeData.ctaPrimary}
-                  <svg className="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M5 12h14M13 5l7 7-7 7" />
-                  </svg>
-                </Link>
-                <Link href="/resources" className="ts-btn ts-btn--ghost-on-dark">
-                  {homeData.ctaSecondary}
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

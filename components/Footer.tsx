@@ -14,10 +14,10 @@ export default function Footer() {
       <div className="ts-container">
         <div className="ts-footer-top">
           <div className="ts-footer-brand">
-            <Link href="/" aria-label="ThermaSpan">
+            <Link href="/" aria-label="Quick Built Systems">
               <Image
                 src="/photos/a_logo_for_quickbuilt_systems_is_displayed_agains.png"
-                alt="ThermaSpan — Structural Insulated Panels by QuickBuilt Systems"
+                alt="Quick Built Systems — Structural Insulated Panels"
                 width={380}
                 height={140}
                 style={{ height: 140, width: "auto" }}
@@ -102,7 +102,7 @@ export default function Footer() {
         </div>
 
         <div className="ts-footer-bar">
-          <div>© {year} ThermaSpan · A Quick Built Systems brand · ABN 00 000 000 000</div>
+          <div>© {year} Quick Built Systems · ABN 00 000 000 000</div>
           <div className="sister">
             <a href="https://www.quickbuilthomes.com.au/" target="_blank" rel="noopener noreferrer">Quick Built Homes</a>
             <a href="https://www.quickbuiltfencing.com.au/" target="_blank" rel="noopener noreferrer">Quick Built Fencing</a>

@@ -1,5 +1,6 @@
 {
   "heroH1": "All things technical for Quick Built Systems.",
+  "heroPhoto": "/photos/010a7287.jpg",
   "resources": [
     {
       "kicker": "Brochure",
@@ -22,7 +23,7 @@
     {
       "kicker": "Install guide",
       "title": "Insulated Patio Install Guide",
-      "copy": "Complete installation guide for ThermaSpan insulated patio kits — covering fixings, flashings, beam connections and finishing.",
+      "copy": "Complete installation guide for Quick Built Systems insulated patio kits — covering fixings, flashings, beam connections and finishing.",
       "fileType": "PDF",
       "fileSize": "1.6 MB",
       "cover": "/photos/resources/insulated-patio-install-guide.png",

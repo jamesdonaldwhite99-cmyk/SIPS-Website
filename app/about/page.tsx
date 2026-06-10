@@ -6,6 +6,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import data from "@/content/about.json";
+import PageHero from "@/components/PageHero";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -59,74 +60,7 @@ export default function AboutPage() {
   return (
     <div ref={pageRef}>
       {/* Hero */}
-      <section
-        style={{
-          position: "relative",
-          minHeight: 640,
-          display: "flex",
-          alignItems: "flex-end",
-          overflow: "hidden",
-          background: "#1F1F1F",
-          color: "var(--color-on-primary)",
-        }}
-      >
-        <Image
-          src={data.heroPhoto}
-          alt={data.heroH1}
-          fill
-          style={{ objectFit: "cover", opacity: 0.85 }}
-          priority
-          sizes="100vw"
-        />
-        <div
-          style={{
-            position: "absolute", inset: 0,
-            background: "linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.75) 100%)",
-          }}
-        />
-        <div className="ts-container" style={{ position: "relative", zIndex: 2, paddingBottom: 64, paddingTop: 120 }}>
-          <div className="ts-breadcrumbs hero-animate" style={{ color: "rgba(255,255,255,0.55)" }}>
-            <Link href="/">Home</Link>
-            <span className="sep">/</span>
-            <span>About</span>
-          </div>
-          <div
-            className="hero-animate"
-            style={{
-              fontSize: 12, letterSpacing: 2, textTransform: "uppercase",
-              fontWeight: 600, color: "var(--ts-accent)", marginTop: 16, marginBottom: 16,
-            }}
-          >
-            {data.heroEyebrow}
-          </div>
-          <h1
-            className="hero-animate"
-            style={{
-              fontFamily: "var(--font-display)",
-              fontSize: "clamp(28px, 2.6vw, 40px)",
-              fontWeight: 500,
-              lineHeight: 1.15,
-              letterSpacing: "-0.6px",
-              margin: 0,
-              maxWidth: "32ch",
-              color: "var(--color-on-primary)",
-            }}
-          >
-            {data.heroH1}
-          </h1>
-          <p
-            className="hero-animate"
-            style={{
-              fontSize: 15, lineHeight: 1.6,
-              color: "rgba(255,255,255,0.75)",
-              maxWidth: "44ch",
-              margin: "14px 0 0",
-            }}
-          >
-            {data.heroLead}
-          </p>
-        </div>
-      </section>
+      <PageHero crumb="About" eyebrow={data.heroEyebrow} h1={data.heroH1} lead={data.heroLead} photo={data.heroPhoto} />
 
       {/* Story — intro (paras 1-2) */}
       <section className="ts-section story-section" style={{ background: "var(--ts-cream-2)" }}>
@@ -295,7 +229,7 @@ export default function AboutPage() {
         <div className="ts-container">
           <div className="inner">
             <div>
-              <h2>Ready to build with ThermaSpan?</h2>
+              <h2>Ready to build with Quick Built Systems?</h2>
               <p>Talk to our team about your next project. We&apos;ll put together a no-obligation quote with panel specs and timeline.</p>
             </div>
             <div className="ts-cta-card">

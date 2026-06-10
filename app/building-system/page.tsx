@@ -67,7 +67,7 @@ export default function BuildingSystemPage() {
               </div>
             </div>
             <div className="ts-product-hero-photo">
-              <Image src={data.heroPhoto} alt="ThermaSpan Building System" fill style={{ objectFit: "cover" }} priority sizes="60vw" />
+              <Image src={data.heroPhoto} alt="Quick Built Systems Building System" fill style={{ objectFit: "cover" }} priority sizes="60vw" />
               <span className="ts-photo-tag">{data.heroEyebrow}</span>
             </div>
           </div>
@@ -174,7 +174,7 @@ export default function BuildingSystemPage() {
               <p style={{ fontSize: 17, lineHeight: 1.55, color: "var(--color-graphite)", margin: 0, maxWidth: "44ch" }}>
                 Watch a complete two-storey extension reach lock-up using our SIPs system
                 — start to finish, panel by panel. The same factory-precise process every
-                ThermaSpan job uses.
+                Quick Built Systems job uses.
               </p>
             </div>
             <div className="ts-product-hero-photo" style={{ minHeight: 360 }}>
@@ -225,7 +225,7 @@ export default function BuildingSystemPage() {
         <div className="ts-container">
           <div className="inner">
             <div>
-              <h2>Ready to build with ThermaSpan?</h2>
+              <h2>Ready to build with Quick Built Systems?</h2>
               <p>Get a no-obligation quote for your project — patio, extension, new build or commercial.</p>
             </div>
             <div className="ts-cta-card">

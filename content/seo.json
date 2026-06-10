@@ -1,11 +1,11 @@
 {
   "site": {
-    "titleTemplate": "%s · ThermaSpan",
-    "defaultTitle": "ThermaSpan — Australia's Lightest, Fastest SIPs System",
+    "titleTemplate": "%s · Quick Built Systems",
+    "defaultTitle": "Quick Built Systems — Australia's Lightest, Fastest SIPs System",
     "description": "Insulspan® roofing panels, Panelspan® wall panels and Panelcore® coldroom panels. Pre-finished SIPs engineered for Australian conditions. Family-owned, 25 years experience.",
-    "keywords": "SIPs panels, structural insulated panels, insulated roofing, Insulspan, Panelspan, Panelcore, ThermaSpan, QuickBuilt, Australian building",
+    "keywords": "SIPs panels, structural insulated panels, insulated roofing, Insulspan, Panelspan, Panelcore, Quick Built Systems, QuickBuilt, Australian building",
     "ogImage": "/photos/og-default.jpg",
-    "siteName": "ThermaSpan",
+    "siteName": "Quick Built Systems",
     "locale": "en_AU"
   },
   "pages": {
@@ -15,13 +15,13 @@
       "ogImage": ""
     },
     "about": {
-      "title": "About ThermaSpan",
+      "title": "About Quick Built Systems",
       "description": "Family owned, third-generation Australian manufacturer with 25 years of modular and SIPs experience.",
       "ogImage": ""
     },
     "building_system": {
       "title": "Building System",
-      "description": "How the ThermaSpan SIPs system works — Insulspan® roof and Panelspan® walls installed in days.",
+      "description": "How the Quick Built Systems SIPs system works — Insulspan® roof and Panelspan® walls installed in days.",
       "ogImage": ""
     },
     "products": {
@@ -46,7 +46,7 @@
     },
     "gallery": {
       "title": "Project Gallery",
-      "description": "Homes, extensions, patios, commercial builds and coldrooms built with ThermaSpan SIPs panels.",
+      "description": "Homes, extensions, patios, commercial builds and coldrooms built with Quick Built Systems SIPs panels.",
       "ogImage": ""
     },
     "contact": {

@@ -1,4 +1,16 @@
 {
+  "heroVideo": "/photos/panelspan-hero.mp4",
+  "heroVideoPoster": "/photos/gallery/06.jpg",
+  "galleryEyebrow": "Recent projects",
+  "galleryH2": "Projects we've built.",
+  "nextStepEyebrow": "Take your next step",
+  "nextStepH2": "Ready when you are.",
+  "nextStepBody1": "For more information on our panel systems, finishes, spans and pricing, get a free quote.",
+  "nextStepBody2": "Or get in touch — we can help you choose the right panel system for your build.",
+  "nextStepPrimary": "Get a free quote",
+  "nextStepSecondary": "Get in touch",
+  "nextStepImage": "/photos/gallery/05.jpg",
+  "faqH2": "Frequently asked questions.",
   "productsLead": "Insulspan, Panelspan, and our pre-engineered patio kits work together as one high-performance envelope — engineered for Australian conditions.",
   "applications": [
     {

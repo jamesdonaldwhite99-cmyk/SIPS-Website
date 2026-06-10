@@ -142,34 +142,6 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="ts-cta-strip">
-        <div className="ts-container">
-          <div className="inner">
-            <div>
-              <h2>Need help choosing the right panel?</h2>
-              <p>
-                Our team can advise on the best system for your project — whether
-                it&apos;s a residential extension, patio, new build or commercial fit-out.
-              </p>
-            </div>
-            <div className="ts-cta-card">
-              <span className="ts-eyebrow">Speak to our team</span>
-              <a href="tel:1300132787" className="phone">1300 132 787</a>
-              <p className="hours">Mon–Fri · 7:30am – 4:30pm AEST</p>
-              <div className="actions">
-                <Link href="/contact" className="ts-btn ts-btn--primary">
-                  Enquire Now
-                  <svg className="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M5 12h14M13 5l7 7-7 7" />
-                  </svg>
-                </Link>
-                <Link href="/resources" className="ts-btn ts-btn--ghost-on-dark">Download brochure</Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

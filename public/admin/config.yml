@@ -70,7 +70,7 @@ collections:
             label: Site-wide defaults
             widget: object
             fields:
-              - { name: titleTemplate, label: Title template, widget: string, hint: "Use %s for the page title. e.g. '%s · ThermaSpan'" }
+              - { name: titleTemplate, label: Title template, widget: string, hint: "Use %s for the page title. e.g. '%s · Quick Built Systems'" }
               - { name: defaultTitle,  label: Default title, widget: string }
               - { name: description,   label: Default description, widget: text }
               - { name: keywords,      label: Default keywords (comma-separated), widget: text }
@@ -161,9 +161,23 @@ collections:
         file: content/home.json
         format: json
         fields:
+          - { name: heroVideo, label: Hero background video (loops behind the headline), widget: file, hint: "Upload an MP4. Plays muted on a loop, full-screen behind the hero text." }
+          - { name: heroVideoPoster, label: Hero video poster image, widget: image, required: false, hint: "Shown while the video loads. Use a still frame from the video." }
+          # ── Pre-footer (shows on every page, above the footer) ──
+          - { name: galleryEyebrow,  label: "Pre-footer gallery — small label", widget: string, hint: "e.g. Recent projects" }
+          - { name: galleryH2,       label: "Pre-footer gallery — headline", widget: string, hint: "e.g. Projects we've built." }
+          - { name: nextStepEyebrow, label: "Pre-footer CTA — small label", widget: string }
+          - { name: nextStepH2,      label: "Pre-footer CTA — headline", widget: string }
+          - { name: nextStepBody1,   label: "Pre-footer CTA — paragraph 1", widget: text }
+          - { name: nextStepBody2,   label: "Pre-footer CTA — paragraph 2", widget: text }
+          - { name: nextStepPrimary, label: "Pre-footer CTA — primary button text", widget: string }
+          - { name: nextStepSecondary, label: "Pre-footer CTA — secondary button text", widget: string }
+          - { name: nextStepImage,   label: "Pre-footer CTA — image", widget: image }
+          - { name: faqH2,           label: "Pre-footer FAQ — headline", widget: string, hint: "e.g. Frequently asked questions." }
           - name: heroSlides
-            label: Hero slideshow images (cycles in the background)
+            label: Hero slideshow images (legacy — no longer shown; the hero now uses a video)
             widget: list
+            required: false
             summary: "{{fields.kicker}} — {{fields.caption}}"
             fields:
               - { name: src,     label: Image,   widget: image }
@@ -258,6 +272,23 @@ collections:
               - { name: rating, label: Rating (1–5),  widget: number, min: 1, max: 5, default: 5 }
               - { name: date,   label: Date (e.g. "2 months ago"), widget: string }
               - { name: text,   label: Review text,   widget: text }
+
+  # ── FAQ (shows on every page, above the footer) ────────────
+  - name: faq
+    label: FAQ (every page)
+    files:
+      - name: faq
+        label: FAQ content
+        file: content/faq.json
+        format: json
+        fields:
+          - name: faqs
+            label: Questions & answers
+            widget: list
+            summary: "{{fields.q}}"
+            fields:
+              - { name: q, label: Question, widget: string }
+              - { name: a, label: Answer,   widget: text }
 
   # ── Insulspan product page ─────────────────────────────────
   - name: insulspan
@@ -639,6 +670,7 @@ collections:
           - { name: heroEyebrow, label: Hero eyebrow,    widget: string }
           - { name: heroH1,      label: Hero headline,   widget: text }
           - { name: heroLead,    label: Hero lead text,  widget: text }
+          - { name: heroPhoto,   label: Hero background photo, widget: image }
           - name: images
             label: Gallery images
             widget: list
@@ -660,6 +692,7 @@ collections:
           - { name: heroEyebrow, label: Hero eyebrow,    widget: string }
           - { name: heroH1,      label: Hero headline,   widget: text }
           - { name: heroLead,    label: Hero lead text,  widget: text }
+          - { name: heroPhoto,   label: Hero background photo, widget: image }
           - { name: ctaEyebrow,  label: CTA eyebrow,     widget: string }
           - { name: ctaH2,       label: CTA headline,    widget: string }
           - { name: ctaBody,     label: CTA body text,   widget: text }
@@ -691,6 +724,7 @@ collections:
           - { name: heroEyebrow, label: Hero eyebrow,      widget: string }
           - { name: heroH1,      label: Hero headline,     widget: text }
           - { name: heroLead,    label: Hero lead text,    widget: text }
+          - { name: heroPhoto,   label: Hero background photo, widget: image }
           - { name: asideH2,     label: Form aside headline, widget: string }
           - { name: asidePara1,  label: Form aside para 1, widget: text }
           - { name: asidePara2,  label: Form aside para 2, widget: text }
