@@ -119,9 +119,9 @@ export default function PanelcorePage() {
           <div className="ts-section-head">
             <div>
               <div className="ts-eyebrow">Applications</div>
-              <h2>Engineered for every controlled-temperature application.</h2>
+              <h2>Engineered for sunrooms, outdoor rooms and cold storage.</h2>
             </div>
-            <p>From walk-in cool rooms to large-scale pharmaceutical storage — Panelcore® panels are engineered to perform across any controlled-temperature environment.</p>
+            <p>From bright, year-round sunrooms and enclosed outdoor living to walk-in cool rooms and cold storage — one insulated panel system, engineered to perform in any of them.</p>
           </div>
           <div className="ts-app-list">
             {data.applications.map((a, i) => (
@@ -142,7 +142,7 @@ export default function PanelcorePage() {
               <div className="ts-eyebrow">Advantages</div>
               <h2>Why Panelcore® outperforms the alternatives.</h2>
             </div>
-            <p>Precision-engineered for controlled-temperature performance, on-site ease of installation, and long-term food-safe hygiene.</p>
+            <p>Engineered for year-round comfort, fast on-site installation and a finished, low-maintenance result — whether you're building a sunroom or a cold room.</p>
           </div>
           <div className="ts-advantages-grid">
             {data.advantages.map((a, i) => (
@@ -163,7 +163,7 @@ export default function PanelcorePage() {
           <div className="inner">
             <div>
               <h2>Ready to specify Panelcore®?</h2>
-              <p>Get a no-obligation quote for your cold storage or food processing project.</p>
+              <p>Get a no-obligation quote for your sunroom, outdoor room or cold storage project.</p>
             </div>
             <div className="ts-cta-card">
               <span className="ts-eyebrow">Speak to our team</span>

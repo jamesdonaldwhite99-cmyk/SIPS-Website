@@ -2,7 +2,7 @@
   "site": {
     "titleTemplate": "%s · Quick Built Systems",
     "defaultTitle": "Quick Built Systems — Australia's Lightest, Fastest SIPs System",
-    "description": "Insulspan® roofing panels, Panelspan® wall panels and Panelcore® coldroom panels. Pre-finished SIPs engineered for Australian conditions. Family-owned, 25 years experience.",
+    "description": "Insulspan® roofing panels, Panelspan® wall panels and Panelcore® sunroom & coldroom panels. Pre-finished SIPs engineered for Australian conditions. Family-owned, 25 years experience.",
     "keywords": "SIPs panels, structural insulated panels, insulated roofing, Insulspan, Panelspan, Panelcore, Quick Built Systems, QuickBuilt, Australian building",
     "ogImage": "/photos/og-default.jpg",
     "siteName": "Quick Built Systems",
@@ -26,7 +26,7 @@
     },
     "products": {
       "title": "Products",
-      "description": "Insulspan® roofing, Panelspan® wall panels, Panelcore® coldroom panels and pre-engineered patio kits.",
+      "description": "Insulspan® roofing, Panelspan® wall panels, Panelcore® sunroom & coldroom panels and pre-engineered patio kits.",
       "ogImage": ""
     },
     "insulspan": {
@@ -40,8 +40,8 @@
       "ogImage": ""
     },
     "panelcore": {
-      "title": "Panelcore® Coldroom Panels",
-      "description": "High-performance coldroom and freezer panels for commercial and food storage applications.",
+      "title": "Panelcore® Sunroom & Coldroom Panels",
+      "description": "Steel-skinned insulated panels for sunrooms, enclosed outdoor living and controlled-temperature spaces — from year-round sunrooms to cold rooms and freezers.",
       "ogImage": ""
     },
     "gallery": {

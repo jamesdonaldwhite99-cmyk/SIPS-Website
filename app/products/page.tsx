@@ -30,9 +30,9 @@ const products = [
   {
     num: "03",
     kicker: "Panelcore®",
-    title: "Coldroom Panels",
-    copy: "Steel-skinned insulated panels for cold storage, food processing, pharmaceutical and any controlled-temperature application. Cam-lock joining system creates an airtight, seamless envelope.",
-    features: ["Steel Colorbond skins", "75–200mm PU foam core", "-40°C to +15°C range", "Food-safe, hygienic finish"],
+    title: "Sunroom & Coldroom Panels",
+    copy: "Steel-skinned insulated panels for sunrooms, enclosed outdoor living, cold storage and any controlled-temperature space. Cam-lock joining creates an airtight, seamless envelope that stays comfortable year-round.",
+    features: ["Steel Colorbond skins", "Insulated foam core", "Warm in winter, cool in summer", "Sunroom to deep-freeze rated"],
     image: "/photos/product-panelcore-new.png",
     href: "/products/panelcore",
   },
