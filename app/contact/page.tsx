@@ -35,7 +35,6 @@ interface FormState {
   accessories: string[];
   accessoryQty: Record<string, number>;
   financeInterest: boolean;
-  attachment: { name: string; type: string; dataUrl: string } | null;
 }
 
 // ── Choice component ────────────────────────────────────────────────────────
@@ -118,7 +117,10 @@ const ACCESSORIES_WITH_QTY = ['Skylights', 'Downlights', 'Fan brackets'];
 // Read an image file and downscale it client-side so even large phone photos
 // send cleanly inside the JSON lead payload (no file storage required).
 const MAX_IMAGE_DIM = 1600;
-async function fileToDownscaledImage(file: File): Promise<{ name: string; type: string; dataUrl: string }> {
+const MAX_PHOTOS = 4;
+type Attachment = { filename: string; contentType: string; data: string };
+
+async function fileToDownscaledImage(file: File): Promise<Attachment> {
   const original = await new Promise<string>((resolve, reject) => {
     const reader = new FileReader();
     reader.onload = () => resolve(reader.result as string);
@@ -136,18 +138,18 @@ async function fileToDownscaledImage(file: File): Promise<{ name: string; type: 
   const scale = Math.min(1, MAX_IMAGE_DIM / Math.max(img.width, img.height));
   // Small enough already — keep as-is to preserve quality/transparency.
   if (scale === 1 && file.size < 900_000) {
-    return { name: file.name, type: file.type || "image/jpeg", dataUrl: original };
+    return { filename: file.name, contentType: file.type || "image/jpeg", data: original.split(",")[1] || "" };
   }
 
   const canvas = document.createElement("canvas");
   canvas.width = Math.max(1, Math.round(img.width * scale));
   canvas.height = Math.max(1, Math.round(img.height * scale));
   const ctx = canvas.getContext("2d");
-  if (!ctx) return { name: file.name, type: file.type || "image/jpeg", dataUrl: original };
+  if (!ctx) return { filename: file.name, contentType: file.type || "image/jpeg", data: original.split(",")[1] || "" };
   ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
   const dataUrl = canvas.toDataURL("image/jpeg", 0.82);
   const baseName = file.name.replace(/\.[^.]+$/, "") || "project-photo";
-  return { name: `${baseName}.jpg`, type: "image/jpeg", dataUrl };
+  return { filename: `${baseName}.jpg`, contentType: "image/jpeg", data: dataUrl.split(",")[1] || "" };
 }
 
 export default function ContactPage() {
@@ -179,8 +181,8 @@ export default function ContactPage() {
     accessories: [],
     accessoryQty: {},
     financeInterest: false,
-    attachment: null,
   });
+  const [photos, setPhotos] = useState<Attachment[]>([]);
   const [imgBusy, setImgBusy] = useState(false);
 
   // Detect patio interest
@@ -218,31 +220,37 @@ export default function ContactPage() {
     }));
   }, []);
 
-  const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    e.target.value = ""; // allow re-selecting the same file
-    if (!file) return;
-    if (!file.type.startsWith("image/")) {
-      setError("Please choose an image file (JPG, PNG, HEIC or similar).");
+  const addPhotos = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = Array.from(e.target.files || []);
+    e.target.value = ""; // allow re-selecting the same file after removal
+    const imageFiles = files.filter((f) => f.type.startsWith("image/"));
+    if (files.length && !imageFiles.length) {
+      setError("Please choose image files (JPG, PNG, HEIC or similar).");
       return;
     }
-    if (file.size > 25 * 1024 * 1024) {
-      setError("That image is very large — please choose one under 25 MB.");
+    if (!imageFiles.length) return;
+    const room = MAX_PHOTOS - photos.length;
+    if (room <= 0) {
+      setError(`You can attach up to ${MAX_PHOTOS} photos.`);
+      return;
+    }
+    if (imageFiles.some((f) => f.size > 25 * 1024 * 1024)) {
+      setError("One of those images is over 25 MB — please choose smaller files.");
       return;
     }
     setError("");
     setImgBusy(true);
     try {
-      const attachment = await fileToDownscaledImage(file);
-      setForm((f) => ({ ...f, attachment }));
+      const processed = await Promise.all(imageFiles.slice(0, room).map((f) => fileToDownscaledImage(f)));
+      setPhotos((p) => [...p, ...processed]);
     } catch {
-      setError("Sorry, we couldn't read that image. Please try another.");
+      setError("One of those images couldn't be added. Please try another file.");
     } finally {
       setImgBusy(false);
     }
   };
 
-  const removeImage = () => setForm((f) => ({ ...f, attachment: null }));
+  const removePhoto = (idx: number) => setPhotos((p) => p.filter((_, i) => i !== idx));
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -299,15 +307,8 @@ export default function ContactPage() {
         // toBinary( data ; attachmentEncoding ). It's a webhook-level field so it
         // can't come through empty the way a nested/iterated field can.
         attachmentEncoding: "base64",
-        // Attachments shape matches the other Quick Built sites:
-        // an array of { filename, contentType, data } with pure base64 (no prefix).
-        attachments: form.attachment
-          ? [{
-              filename: form.attachment.name,
-              contentType: form.attachment.type,
-              data: form.attachment.dataUrl.split(",")[1] || "",
-            }]
-          : [],
+        // Up to MAX_PHOTOS images, each { filename, contentType, data } as pure base64.
+        attachments: photos,
       };
 
       const patioPayload = isPatioSubmission ? {
@@ -482,26 +483,27 @@ export default function ContactPage() {
                     />
                   </div>
                   <div className="ts-form-input full">
-                    <label>Add a photo <span style={{ color: "var(--color-slate)", fontWeight: 400 }}>(optional)</span></label>
-                    {!form.attachment ? (
+                    <label>Add photos <span style={{ color: "var(--color-slate)", fontWeight: 400 }}>(optional · up to {MAX_PHOTOS})</span></label>
+                    {photos.length < MAX_PHOTOS && (
                       <label className={`ts-upload${imgBusy ? " is-busy" : ""}`}>
-                        <input type="file" accept="image/*" onChange={handleImageChange} hidden disabled={imgBusy} />
+                        <input type="file" accept="image/*" multiple onChange={addPhotos} hidden disabled={imgBusy} />
                         <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                           <path d="M12 16V4M7 9l5-5 5 5" />
                         </svg>
-                        <span className="ts-upload-main">{imgBusy ? "Processing image…" : "Upload a site photo, sketch or plan"}</span>
-                        <span className="ts-upload-sub">Tap to choose or take a photo · JPG, PNG or HEIC</span>
+                        <span className="ts-upload-main">{imgBusy ? "Processing…" : photos.length ? "Add more photos" : "Upload site photos, sketches or plans"}</span>
+                        <span className="ts-upload-sub">Tap to choose or take photos · JPG, PNG or HEIC</span>
                       </label>
-                    ) : (
-                      <div className="ts-upload-preview">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={form.attachment.dataUrl} alt="Selected project photo" />
-                        <div className="meta">
-                          <span className="fname">{form.attachment.name}</span>
-                          <span className="note">Attached to your enquiry</span>
-                        </div>
-                        <button type="button" className="ts-upload-remove" onClick={removeImage} aria-label="Remove photo">Remove</button>
+                    )}
+                    {photos.length > 0 && (
+                      <div className="ts-upload-grid">
+                        {photos.map((ph, i) => (
+                          <div key={i} className="ts-upload-thumb">
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img src={`data:${ph.contentType};base64,${ph.data}`} alt={ph.filename} />
+                            <button type="button" onClick={() => removePhoto(i)} aria-label={`Remove ${ph.filename}`}>×</button>
+                          </div>
+                        ))}
                       </div>
                     )}
                   </div>
