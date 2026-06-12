@@ -35,6 +35,7 @@ interface FormState {
   accessories: string[];
   accessoryQty: Record<string, number>;
   financeInterest: boolean;
+  attachment: { name: string; type: string; dataUrl: string } | null;
 }
 
 // ── Choice component ────────────────────────────────────────────────────────
@@ -114,6 +115,41 @@ const BEAM_SIZES = ['100 × 50mm', '150 × 100mm'];
 const POST_SIZES = ['67mm', '90mm'];
 const ACCESSORIES_WITH_QTY = ['Skylights', 'Downlights', 'Fan brackets'];
 
+// Read an image file and downscale it client-side so even large phone photos
+// send cleanly inside the JSON lead payload (no file storage required).
+const MAX_IMAGE_DIM = 1600;
+async function fileToDownscaledImage(file: File): Promise<{ name: string; type: string; dataUrl: string }> {
+  const original = await new Promise<string>((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result as string);
+    reader.onerror = () => reject(new Error("read failed"));
+    reader.readAsDataURL(file);
+  });
+
+  const img = await new Promise<HTMLImageElement>((resolve, reject) => {
+    const image = new window.Image();
+    image.onload = () => resolve(image);
+    image.onerror = () => reject(new Error("decode failed"));
+    image.src = original;
+  });
+
+  const scale = Math.min(1, MAX_IMAGE_DIM / Math.max(img.width, img.height));
+  // Small enough already — keep as-is to preserve quality/transparency.
+  if (scale === 1 && file.size < 900_000) {
+    return { name: file.name, type: file.type || "image/jpeg", dataUrl: original };
+  }
+
+  const canvas = document.createElement("canvas");
+  canvas.width = Math.max(1, Math.round(img.width * scale));
+  canvas.height = Math.max(1, Math.round(img.height * scale));
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return { name: file.name, type: file.type || "image/jpeg", dataUrl: original };
+  ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+  const dataUrl = canvas.toDataURL("image/jpeg", 0.82);
+  const baseName = file.name.replace(/\.[^.]+$/, "") || "project-photo";
+  return { name: `${baseName}.jpg`, type: "image/jpeg", dataUrl };
+}
+
 export default function ContactPage() {
   const pageRef = useRef<HTMLDivElement>(null);
   const [submitted, setSubmitted] = useState(false);
@@ -143,7 +179,9 @@ export default function ContactPage() {
     accessories: [],
     accessoryQty: {},
     financeInterest: false,
+    attachment: null,
   });
+  const [imgBusy, setImgBusy] = useState(false);
 
   // Detect patio interest
   useEffect(() => {
@@ -166,13 +204,9 @@ export default function ContactPage() {
     return () => ctx.revert();
   }, []);
 
-  const toggleInterest = useCallback((val: string, checked: boolean) => {
-    setForm((f) => ({
-      ...f,
-      interests: checked
-        ? [...f.interests, val]
-        : f.interests.filter((i) => i !== val),
-    }));
+  // Enquiry type is a single choice (Patio Kit vs General Enquiry).
+  const selectInterest = useCallback((val: string) => {
+    setForm((f) => ({ ...f, interests: [val] }));
   }, []);
 
   const toggleAccessory = useCallback((val: string, checked: boolean) => {
@@ -183,6 +217,32 @@ export default function ContactPage() {
         : f.accessories.filter((a) => a !== val),
     }));
   }, []);
+
+  const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    e.target.value = ""; // allow re-selecting the same file
+    if (!file) return;
+    if (!file.type.startsWith("image/")) {
+      setError("Please choose an image file (JPG, PNG, HEIC or similar).");
+      return;
+    }
+    if (file.size > 25 * 1024 * 1024) {
+      setError("That image is very large — please choose one under 25 MB.");
+      return;
+    }
+    setError("");
+    setImgBusy(true);
+    try {
+      const attachment = await fileToDownscaledImage(file);
+      setForm((f) => ({ ...f, attachment }));
+    } catch {
+      setError("Sorry, we couldn't read that image. Please try another.");
+    } finally {
+      setImgBusy(false);
+    }
+  };
+
+  const removeImage = () => setForm((f) => ({ ...f, attachment: null }));
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -235,6 +295,19 @@ export default function ContactPage() {
         location: form.location,
         message: form.message,
         interests: form.interests,
+        // Top-level encoding constant — map this in Make's Drive "Data" field as
+        // toBinary( data ; attachmentEncoding ). It's a webhook-level field so it
+        // can't come through empty the way a nested/iterated field can.
+        attachmentEncoding: "base64",
+        // Attachments shape matches the other Quick Built sites:
+        // an array of { filename, contentType, data } with pure base64 (no prefix).
+        attachments: form.attachment
+          ? [{
+              filename: form.attachment.name,
+              contentType: form.attachment.type,
+              data: form.attachment.dataUrl.split(",")[1] || "",
+            }]
+          : [],
       };
 
       const patioPayload = isPatioSubmission ? {
@@ -251,6 +324,15 @@ export default function ContactPage() {
         postColour: form.postColour,
         accessories: form.accessories,
         accessoryQty: form.accessoryQty,
+        // Make-friendly: a fixed list of {name, qty} (iterates cleanly) and a
+        // flat summary string that's always present regardless of selection.
+        accessoryDetails: form.accessories.map((name) => ({
+          name,
+          qty: form.accessoryQty[name] ?? 1,
+        })),
+        accessoriesSummary: form.accessories
+          .map((name) => (form.accessoryQty[name] ? `${name} ×${form.accessoryQty[name]}` : name))
+          .join(", "),
         financeInterest: form.financeInterest,
       } : {};
 
@@ -360,25 +442,21 @@ export default function ContactPage() {
               <div className="ts-form-group">
                 <div className="legend">
                   <span className="num">01</span>
-                  <span className="name">What are you interested in?</span>
+                  <span className="name">What&rsquo;s your enquiry about?</span>
                 </div>
-                <p className="hint">Select all that apply.</p>
-                <div className="ts-choice-grid">
+                <p className="hint">Choose one.</p>
+                <div className="ts-choice-grid two">
                   {[
-                    "Insulspan® Roofing",
-                    "Panelspan® Walls",
-                    "Panelcore® Coldroom",
-                    "Patio / awning kit",
-                    "Complete building system",
-                    "Technical advice",
+                    "Patio Kit",
+                    "General Enquiry",
                   ].map((opt) => (
                     <Choice
                       key={opt}
-                      type="checkbox"
+                      type="radio"
                       name="interests"
                       value={opt}
                       checked={form.interests.includes(opt)}
-                      onChange={toggleInterest}
+                      onChange={(val) => selectInterest(val)}
                     >
                       {opt}
                     </Choice>
@@ -402,6 +480,30 @@ export default function ContactPage() {
                       value={form.message}
                       onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
                     />
+                  </div>
+                  <div className="ts-form-input full">
+                    <label>Add a photo <span style={{ color: "var(--color-slate)", fontWeight: 400 }}>(optional)</span></label>
+                    {!form.attachment ? (
+                      <label className={`ts-upload${imgBusy ? " is-busy" : ""}`}>
+                        <input type="file" accept="image/*" onChange={handleImageChange} hidden disabled={imgBusy} />
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                          <path d="M12 16V4M7 9l5-5 5 5" />
+                        </svg>
+                        <span className="ts-upload-main">{imgBusy ? "Processing image…" : "Upload a site photo, sketch or plan"}</span>
+                        <span className="ts-upload-sub">Tap to choose or take a photo · JPG, PNG or HEIC</span>
+                      </label>
+                    ) : (
+                      <div className="ts-upload-preview">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={form.attachment.dataUrl} alt="Selected project photo" />
+                        <div className="meta">
+                          <span className="fname">{form.attachment.name}</span>
+                          <span className="note">Attached to your enquiry</span>
+                        </div>
+                        <button type="button" className="ts-upload-remove" onClick={removeImage} aria-label="Remove photo">Remove</button>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>

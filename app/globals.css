@@ -4454,3 +4454,63 @@ a { color: inherit; }
   .ts-prefooter-actions { max-width: none; }
   .ts-prefooter-review { min-height: 168px; }
 }
+
+/* ============================================================
+   Contact form — image upload control
+   ============================================================ */
+.ts-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-align: center;
+  padding: 26px 20px;
+  border: 1.5px dashed var(--color-hairline-soft);
+  border-radius: var(--radius-md);
+  background: var(--ts-cream-2);
+  color: var(--color-graphite);
+  cursor: pointer;
+  transition: border-color 180ms var(--ease-standard), background 180ms var(--ease-standard), color 180ms var(--ease-standard);
+}
+.ts-upload:hover { border-color: var(--ts-accent); color: var(--ts-accent); background: var(--ts-cream-hover); }
+.ts-upload.is-busy { opacity: 0.7; cursor: progress; }
+.ts-upload svg { color: var(--ts-accent); }
+.ts-upload-main { font-size: 14px; font-weight: 600; color: var(--color-ink); }
+.ts-upload-sub { font-size: 12.5px; color: var(--color-slate); }
+
+.ts-upload-preview {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px;
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-md);
+  background: #fff;
+}
+.ts-upload-preview img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+.ts-upload-preview .meta { display: flex; flex-direction: column; gap: 2px; min-width: 0; flex: 1; }
+.ts-upload-preview .fname {
+  font-size: 13.5px; font-weight: 600; color: var(--color-ink);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.ts-upload-preview .note { font-size: 12px; color: var(--color-slate); }
+.ts-upload-remove {
+  flex-shrink: 0;
+  padding: 8px 14px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--color-graphite);
+  background: var(--ts-cream-2);
+  border: 1px solid var(--color-hairline-soft);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: border-color 180ms var(--ease-standard), color 180ms var(--ease-standard);
+}
+.ts-upload-remove:hover { border-color: var(--ts-accent); color: var(--ts-accent); }
