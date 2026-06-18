@@ -281,30 +281,27 @@ export default function HomePage() {
         <div className="ts-showcase-grid">
             {showcase.map((c, i) => {
               const inner = (
-                <>
-                  <div className="ts-showcase-image">
-                    <Image
-                      src={c.image}
-                      alt={c.title}
-                      fill
-                      style={{ objectFit: "cover" }}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 33vw"
-                    />
-                    <span className="ts-showcase-num">0{i + 1} / 0{showcase.length}</span>
-                    <div className="ts-showcase-imageoverlay" />
-                  </div>
-                  <div className="ts-showcase-body">
+                <div className="ts-showcase-image">
+                  <Image
+                    src={c.image}
+                    alt={c.title}
+                    fill
+                    style={{ objectFit: "cover" }}
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                  <div className="ts-showcase-imageoverlay" />
+                  <div className="ts-showcase-overlay-content">
                     <div className="ts-showcase-kicker">{c.kicker}</div>
                     <h3 className="ts-showcase-title">{c.title}</h3>
                     <p className="ts-showcase-copy">{c.copy}</p>
                     <span className="ts-showcase-link">
-                      Explore
+                      Show me the range
                       <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.6">
                         <path d="M5 12h14M13 5l7 7-7 7" />
                       </svg>
                     </span>
                   </div>
-                </>
+                </div>
               );
               return c.external ? (
                 <a
