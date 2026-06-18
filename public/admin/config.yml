@@ -199,6 +199,7 @@ collections:
           - { name: introPara1,      label: Intro paragraph 1,            widget: text }
           - { name: introPara2,      label: Intro paragraph 2,            widget: text }
           - { name: introPara3,      label: Intro paragraph 3,            widget: text }
+          - { name: introVideoSpeed, label: Intro video playback speed,   widget: number, value_type: float, min: 0.25, max: 4, step: 0.25, default: 2, hint: "How fast the video next to the About text plays. 1 = normal, 2 = double speed." }
           - { name: introCta1,       label: Intro CTA 1 text,             widget: string, required: false }
           - { name: introCta2,       label: Intro CTA 2 text,             widget: string, required: false }
           - { name: productsEyebrow, label: Products section eyebrow,     widget: string }

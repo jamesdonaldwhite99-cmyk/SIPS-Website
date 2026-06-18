@@ -68,7 +68,7 @@ export default function HomePage() {
 
   // Video playback rate
   useEffect(() => {
-    if (videoRef.current) videoRef.current.playbackRate = 2;
+    if (videoRef.current) videoRef.current.playbackRate = homeData.introVideoSpeed ?? 2;
   }, []);
 
   // GSAP animations
