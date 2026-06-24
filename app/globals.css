@@ -3884,6 +3884,19 @@ a { color: inherit; }
   gap: 12px;
 }
 
+/* Patio style picker: centred rows (4 on top, 5 on the bottom). */
+.ts-patio-grid--styles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.ts-patio-grid--styles > .ts-patio-card { flex: 0 0 calc((100% - 48px) / 5); }
+.ts-patio-grid-break { flex-basis: 100%; height: 0; }
+@media (max-width: 760px) {
+  .ts-patio-grid--styles > .ts-patio-card { flex-basis: calc((100% - 12px) / 2); }
+  .ts-patio-grid-break { display: none; }
+}
+
 .ts-patio-card {
   position: relative;
   display: flex;

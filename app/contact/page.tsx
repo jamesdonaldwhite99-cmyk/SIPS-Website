@@ -90,6 +90,7 @@ const PATIO_STYLES = [
   { name: "Gable Freestanding",  image: "/photos/patio-styles/gable-freestanding.png" },
   { name: "Dutch Gable Attached", image: "/photos/patio-styles/dutch-gable-attached.png" },
   { name: "Dutch Gable Flyover", image: "/photos/patio-styles/dutch-gable-flyover.png" },
+  { name: "Arbor",               image: "/photos/patio-styles/arbor.png" },
 ];
 const PANEL_PROFILES = [
   { name: "Monospan",      image: "/photos/profile-monospan.png" },
@@ -251,6 +252,11 @@ export default function ContactPage() {
 
   const removePhoto = (idx: number) => setPhotos((p) => p.filter((_, i) => i !== idx));
 
+  // An arbor has no roof → hide roof panel + accessories, keep only beam/post.
+  const isArbor = form.patioStyle === "Arbor";
+  // Slimline (non-insulated) roofs don't offer downlights or fan brackets.
+  const isSlimline = form.roofType === "Slimline (non-insulated)";
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.name || !form.email || !form.phone) {
@@ -264,10 +270,13 @@ export default function ContactPage() {
         { key: "patioStyle",   label: "Patio style" },
         { key: "patioWidth",   label: "Width" },
         { key: "patioLength",  label: "Length" },
-        { key: "patioAddress", label: "Site address" },
-        { key: "panelProfile", label: "Roof panel profile" },
-        { key: "roofType",     label: "Roof panel type" },
-        { key: "panelColour",  label: "Roof panel colour" },
+        { key: "location",     label: "Site address (under Your details)" },
+        // Roof panel fields don't apply to an arbor.
+        ...(isArbor ? [] : [
+          { key: "panelProfile" as const, label: "Roof panel profile" },
+          { key: "roofType"     as const, label: "Roof panel type" },
+          { key: "panelColour"  as const, label: "Roof panel colour" },
+        ]),
         { key: "beamSize",     label: "Beam size" },
         { key: "beamColour",   label: "Beam colour" },
         { key: "postSize",     label: "Post size" },
@@ -310,27 +319,32 @@ export default function ContactPage() {
         attachments: photos,
       };
 
+      // Arbor → no roof/accessories. Slimline → skylights only. Keep all keys for Make.
+      const hiddenAccessory = (name: string) =>
+        isArbor || (isSlimline && (name === "Downlights" || name === "Fan brackets"));
+      const sentAccessories = form.accessories.filter((name) => !hiddenAccessory(name));
+
       const patioPayload = isPatioSubmission ? {
         patioStyle: form.patioStyle,
         patioWidth: form.patioWidth,
         patioLength: form.patioLength,
-        patioAddress: form.patioAddress,
-        roofType: form.roofType,
-        panelProfile: form.panelProfile,
-        panelColour: form.panelColour,
+        patioAddress: form.location,
+        roofType: isArbor ? "" : form.roofType,
+        panelProfile: isArbor ? "" : form.panelProfile,
+        panelColour: isArbor ? "" : form.panelColour,
         beamSize: form.beamSize,
         beamColour: form.beamColour,
         postSize: form.postSize,
         postColour: form.postColour,
-        accessories: form.accessories,
+        accessories: sentAccessories,
         accessoryQty: form.accessoryQty,
         // Make-friendly: a fixed list of {name, qty} (iterates cleanly) and a
         // flat summary string that's always present regardless of selection.
-        accessoryDetails: form.accessories.map((name) => ({
+        accessoryDetails: sentAccessories.map((name) => ({
           name,
           qty: form.accessoryQty[name] ?? 1,
         })),
-        accessoriesSummary: form.accessories
+        accessoriesSummary: sentAccessories
           .map((name) => (form.accessoryQty[name] ? `${name} ×${form.accessoryQty[name]}` : name))
           .join(", "),
         financeInterest: form.financeInterest,
@@ -519,27 +533,31 @@ export default function ContactPage() {
                     <div className="legend">
                       <span className="name" style={{ fontSize: 16 }}>Patio style</span>
                     </div>
-                    <div className="ts-patio-grid">
-                      {PATIO_STYLES.map((style) => (
-                        <label
-                          key={style.name}
-                          className={`ts-patio-card${form.patioStyle === style.name ? " is-checked" : ""}`}
-                          onClick={() => setForm((f) => ({ ...f, patioStyle: style.name }))}
-                        >
-                          <input type="radio" name="patioStyle" value={style.name} checked={form.patioStyle === style.name} onChange={() => {}} />
-                          <div className="ts-patio-card-thumb">
-                            <Image src={style.image} alt={style.name} fill style={{ objectFit: "contain" }} sizes="160px" />
-                          </div>
-                          <div className="ts-patio-card-label">{style.name}</div>
-                        </label>
-                      ))}
+                    <div className="ts-patio-grid ts-patio-grid--styles">
+                      {PATIO_STYLES.flatMap((style, i) => {
+                        const card = (
+                          <label
+                            key={style.name}
+                            className={`ts-patio-card${form.patioStyle === style.name ? " is-checked" : ""}`}
+                            onClick={() => setForm((f) => ({ ...f, patioStyle: style.name }))}
+                          >
+                            <input type="radio" name="patioStyle" value={style.name} checked={form.patioStyle === style.name} onChange={() => {}} />
+                            <div className="ts-patio-card-thumb">
+                              <Image src={style.image} alt={style.name} fill style={{ objectFit: "contain" }} sizes="160px" />
+                            </div>
+                            <div className="ts-patio-card-label">{style.name}</div>
+                          </label>
+                        );
+                        // Break after the 4th card → top row 4, bottom row 5, both centred.
+                        return i === 3 ? [card, <span key="row-break" className="ts-patio-grid-break" aria-hidden />] : [card];
+                      })}
                     </div>
                   </div>
 
                   {/* Dimensions & site */}
                   <div className="ts-form-group">
                     <div className="legend">
-                      <span className="name" style={{ fontSize: 16 }}>Dimensions &amp; site</span>
+                      <span className="name" style={{ fontSize: 16 }}>Dimensions</span>
                     </div>
                     <div className="ts-form-inputs">
                       <div className="ts-form-input">
@@ -566,19 +584,11 @@ export default function ContactPage() {
                           onChange={(e) => setForm((f) => ({ ...f, patioLength: e.target.value }))}
                         />
                       </div>
-                      <div className="ts-form-input full">
-                        <label htmlFor="patioAddress">Site address</label>
-                        <input
-                          id="patioAddress"
-                          type="text"
-                          placeholder="e.g. 12 Smith St, Penrith NSW 2750"
-                          value={form.patioAddress}
-                          onChange={(e) => setForm((f) => ({ ...f, patioAddress: e.target.value }))}
-                        />
-                      </div>
                     </div>
                   </div>
 
+                  {!isArbor && (
+                  <>
                   {/* Roof panel type + profile combined */}
                   <div className="ts-form-group">
                     <div className="legend">
@@ -652,6 +662,8 @@ export default function ContactPage() {
                         ))}
                       </div>
                     </div>
+                  )}
+                  </>
                   )}
 
                   {/* Beams */}
@@ -734,13 +746,13 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  {/* Accessories */}
+                  {!isArbor && (
                   <div className="ts-form-group">
                     <div className="legend">
                       <span className="name" style={{ fontSize: 16 }}>Accessories</span>
                     </div>
                     <div className="ts-choice-grid">
-                      {ACCESSORIES_WITH_QTY.map((acc) => (
+                      {ACCESSORIES_WITH_QTY.filter((acc) => !isSlimline || acc === "Skylights").map((acc) => (
                         <div key={acc} className="ts-accessory-qty-row">
                           <Choice
                             type="checkbox"
@@ -773,6 +785,7 @@ export default function ContactPage() {
                       ))}
                     </div>
                   </div>
+                  )}
 
                   {/* Finance */}
                   <div className="ts-form-group">
@@ -841,11 +854,11 @@ export default function ContactPage() {
                     />
                   </div>
                   <div className="ts-form-input full">
-                    <label htmlFor="location">Project location</label>
+                    <label htmlFor="location">Site address / project location</label>
                     <input
                       id="location"
                       type="text"
-                      placeholder="e.g. Penrith NSW 2750"
+                      placeholder="e.g. 12 Smith St, Penrith NSW 2750"
                       value={form.location}
                       onChange={(e) => setForm((f) => ({ ...f, location: e.target.value }))}
                     />
