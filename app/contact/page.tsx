@@ -6,7 +6,6 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import data from "@/content/contact.json";
-import PageHero from "@/components/PageHero";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -379,10 +378,37 @@ export default function ContactPage() {
     );
   }
 
+  // Highlight the final word of the headline in the brand accent colour.
+  const headlineWords = data.heroH1.trim().split(" ");
+  const headlineLast = headlineWords.pop() ?? "";
+  const headlineLead = headlineWords.join(" ");
+
   return (
     <div ref={pageRef}>
       {/* Hero */}
-      <PageHero crumb="Contact" eyebrow={data.heroEyebrow} h1={data.heroH1} lead={data.heroLead} photo={data.heroPhoto} />
+      <section className="ts-contact-hero">
+        <Image
+          src={data.heroPhoto}
+          alt={data.heroH1}
+          fill
+          priority
+          sizes="100vw"
+          style={{ objectFit: "cover", opacity: 0.9 }}
+        />
+        <div className="ts-contact-hero-overlay" />
+        <div className="ts-container ts-contact-hero-inner">
+          <div className="ts-breadcrumbs hero-animate">
+            <Link href="/">Home</Link>
+            <span className="sep">/</span>
+            <span>Contact</span>
+          </div>
+          <div className="ts-eyebrow hero-animate">{data.heroEyebrow}</div>
+          <h1 className="ts-contact-hero-h1 hero-animate">
+            {headlineLead} <span className="accent">{headlineLast}</span>
+          </h1>
+          <p className="ts-contact-hero-lead hero-animate">{data.heroLead}</p>
+        </div>
+      </section>
 
       {/* Channel strip */}
       <div className="ts-channel-strip">
@@ -406,36 +432,6 @@ export default function ContactPage() {
       <section className="ts-section">
         <div className="ts-container">
           <div className="ts-quote-grid form-animate">
-            {/* Aside */}
-            <aside className="ts-quote-aside">
-              <div className="ts-eyebrow">Get in touch</div>
-              <h2>{data.asideH2}</h2>
-              <p>{data.asidePara1}</p>
-              <p>{data.asidePara2}</p>
-              <div className="ts-quote-meta">
-                <div className="item">
-                  <div className="l">Phone</div>
-                  <div className="v"><a href="tel:1300132787">1300 132 787</a></div>
-                </div>
-                <div className="item">
-                  <div className="l">Email</div>
-                  <div className="v">
-                    <a href="mailto:sales@quickbuiltsystems.com.au">
-                      sales@quickbuiltsystems.com.au
-                    </a>
-                  </div>
-                </div>
-                <div className="item">
-                  <div className="l">Hours</div>
-                  <div className="v" style={{ fontSize: 16 }}>Mon–Fri 7:30am–4:30pm AEST</div>
-                </div>
-                <div className="item">
-                  <div className="l">Location</div>
-                  <div className="v" style={{ fontSize: 16 }}>Sydney, NSW</div>
-                </div>
-              </div>
-            </aside>
-
             {/* Form */}
             <form className="ts-form" onSubmit={handleSubmit}>
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
@@ -39,7 +39,31 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openCategory, setOpenCategory] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Pages whose hero is dark — the navbar may overlay them transparently.
+  // (Product sub-pages like /products/insulspan have a LIGHT hero, so /products
+  // is matched exactly, not as a prefix.)
+  const darkHeroPaths = ["/about", "/gallery", "/resources", "/contact"];
+  const hasDarkHero =
+    pathname === "/" ||
+    pathname === "/products" ||
+    darkHeroPaths.some((p) => pathname.startsWith(p));
+
+  // Solid (white) when scrolled, when a menu is open, or on light-hero pages.
+  const isSolid = !hasDarkHero || scrolled || menuOpen || mobileOpen;
+
+  const logoSrc = isSolid
+    ? "/photos/a_vector_based_logo_for_quickbuilt_systems_feat white.png"
+    : "/photos/a_logo_for_quickbuilt_systems_is_displayed_agains.png";
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const toggleCategory = (title: string) => {
     setOpenCategory((prev) => (prev === title ? null : title));
@@ -76,11 +100,11 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="ts-header">
+      <header className={`ts-header${isSolid ? " is-solid" : ""}`}>
         <div className="ts-header-inner">
           <Link href="/" className="ts-wordmark" aria-label="Quick Built Systems">
             <Image
-              src="/photos/a_vector_based_logo_for_quickbuilt_systems_feat white.png"
+              src={logoSrc}
               alt="Quick Built Systems — Structural Insulated Panels"
               width={520}
               height={200}

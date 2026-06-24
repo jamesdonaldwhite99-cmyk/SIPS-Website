@@ -72,7 +72,7 @@ export default function ProductsPage() {
         style={{
           background: "var(--color-ink)",
           color: "var(--color-on-primary)",
-          padding: "88px 0 72px",
+          padding: "124px 0 72px",
         }}
       >
         <div className="ts-container">

@@ -183,12 +183,30 @@ a { color: inherit; }
    ============================================================ */
 
 .ts-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 50;
-  background: var(--color-canvas);
-  border-bottom: 1px solid var(--color-hairline);
+  background: transparent;
+  border-bottom: 1px solid transparent;
   overflow: visible;
+  transition: background var(--dur-base) var(--ease-standard),
+    border-color var(--dur-base) var(--ease-standard);
+}
+.ts-header.is-solid {
+  background: var(--color-canvas);
+  border-bottom-color: var(--color-hairline);
+}
+
+/* Transparent state (over a dark hero): make controls white */
+.ts-header:not(.is-solid) .ts-nav a,
+.ts-header:not(.is-solid) .ts-nav-btn,
+.ts-header:not(.is-solid) .ts-phone-pill {
+  color: #fff;
+}
+.ts-header:not(.is-solid) .ts-hamburger span {
+  background: #fff;
 }
 
 .ts-header-inner {
@@ -1174,7 +1192,7 @@ a { color: inherit; }
 /* ── Home hero — full-bleed photo with overlay text ── */
 .ts-home-hero {
   position: relative;
-  height: min(calc(100vh - 100px), 820px);
+  height: min(100vh, 820px);
   overflow: hidden;
   background: var(--color-ink);
   color: var(--color-on-primary);
@@ -1923,7 +1941,7 @@ a { color: inherit; }
   background: var(--ts-taupe);
   color: var(--color-ink);
   overflow: hidden;
-  padding: 88px 0 0;
+  padding: 124px 0 0;
 }
 
 .ts-product-hero .ts-breadcrumbs { color: rgba(31, 31, 31, 0.6); }
@@ -3543,9 +3561,54 @@ a { color: inherit; }
    ============================================================ */
 
 .ts-quote-grid {
-  display: grid;
-  grid-template-columns: 4fr 6fr;
-  gap: 80px;
+  display: block;
+  max-width: 820px;
+  margin-inline: auto;
+}
+
+/* ── Contact hero (large, full-bleed) ────────────────────────── */
+.ts-contact-hero {
+  position: relative;
+  min-height: 78vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: #1F1F1F;
+  color: #fff;
+}
+.ts-contact-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.30) 45%, rgba(0,0,0,0.78) 100%);
+}
+.ts-contact-hero-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-top: 160px;
+  padding-bottom: 72px;
+}
+.ts-contact-hero .ts-breadcrumbs { color: rgba(255,255,255,0.55); }
+.ts-contact-hero-h1 {
+  font-family: var(--font-display);
+  font-size: clamp(34px, 4.4vw, 60px);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -1.2px;
+  margin: 12px 0 0;
+  max-width: 16ch;
+  color: #fff;
+}
+.ts-contact-hero-h1 .accent { color: var(--ts-accent); }
+.ts-contact-hero-lead {
+  font-size: clamp(16px, 1.4vw, 20px);
+  line-height: 1.55;
+  color: rgba(255,255,255,0.82);
+  max-width: 52ch;
+  margin: 24px 0 0;
+}
+@media (max-width: 760px) {
+  .ts-contact-hero-inner { padding-top: 120px; padding-bottom: 48px; }
 }
 
 .ts-quote-aside h2 {
