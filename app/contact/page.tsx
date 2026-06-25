@@ -79,6 +79,75 @@ function Choice({
   );
 }
 
+// ── Colour pickers (chips) ───────────────────────────────────────────────────
+
+function ColourSwatch({ hex }: { hex?: string }) {
+  return <span className={`qb-swatch${hex ? "" : " qb-swatch--empty"}`} style={hex ? { background: hex } : undefined} aria-hidden />;
+}
+
+// Compact colour dropdown where every option shows its colour chip.
+function ColourSelect({ options, value, onChange, placeholder = "Select a Colorbond® colour" }: { options: Colour[]; value: string; onChange: (v: string) => void; placeholder?: string }) {
+  const [open, setOpen] = useState(false);
+  const selected = options.find((o) => o.name === value);
+  return (
+    <div className="qb-colourselect">
+      <button type="button" className="qb-select qb-colourselect-trigger" aria-haspopup="listbox" aria-expanded={open} onClick={() => setOpen((o) => !o)}>
+        <ColourSwatch hex={selected?.hex} />
+        <span className="qb-colourselect-value" style={{ color: selected ? "var(--color-ink)" : "var(--color-graphite)" }}>{selected ? selected.name : placeholder}</span>
+        <span className="qb-colourselect-caret" aria-hidden>▾</span>
+      </button>
+      {open && (
+        <>
+          <div className="qb-colourselect-backdrop" onClick={() => setOpen(false)} />
+          <ul className="qb-colourselect-list" role="listbox">
+            {options.map((o) => (
+              <li key={o.name} role="option" aria-selected={o.name === value}>
+                <button type="button" className="qb-colourselect-option" onClick={() => { onChange(o.name); setOpen(false); }}>
+                  <ColourSwatch hex={o.hex} />
+                  <span>{o.name}</span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+    </div>
+  );
+}
+
+// Compact swatch grid for a large colour range — chips only, name on hover + a "Selected" line.
+function ColourGrid({ options, value, onChange }: { options: Colour[]; value: string; onChange: (v: string) => void }) {
+  return (
+    <div>
+      <div className="qb-swatch-grid">
+        {options.map((c) => (
+          <button key={c.name} type="button" title={c.name} aria-label={c.name} aria-pressed={value === c.name} onClick={() => onChange(c.name)} className={`qb-swatch-btn${value === c.name ? " is-on" : ""}`} style={{ background: c.hex }} />
+        ))}
+      </div>
+      <p className="qb-swatch-selected">{value ? <>Selected: <strong>{value}</strong></> : "Tap a colour to select"}</p>
+    </div>
+  );
+}
+
+// Standard quick-pick buttons + a chips dropdown for the rest of the range.
+function ColourChoiceChips({ standard, value, onPick }: { standard: Colour[]; value: string; onPick: (v: string) => void }) {
+  const isStandard = standard.some((c) => c.name === value);
+  const extras = FULL_COLOURS.filter((c) => !standard.some((b) => b.name === c.name));
+  return (
+    <>
+      <div className="qb-radio-grid">
+        {standard.map((c) => (
+          <button key={c.name} type="button" onClick={() => onPick(c.name)} aria-pressed={value === c.name} className={`qb-radio${value === c.name ? " is-on" : ""}`}>
+            <ColourSwatch hex={c.hex} />
+            <span><span className="lbl">{c.name}</span><span className="sub" style={{ display: "block", fontSize: 12, color: "var(--color-graphite)" }}>Standard</span></span>
+          </button>
+        ))}
+      </div>
+      <ColourSelect options={extras} value={isStandard ? "" : value} onChange={onPick} placeholder="Other Colorbond® colour (additional charges apply)" />
+    </>
+  );
+}
+
 // ── Main page ───────────────────────────────────────────────────────────────
 
 const PATIO_STYLES = [
@@ -103,13 +172,28 @@ const SLIMLINE_PROFILES = [
   { name: "Slimline Flat",  image: "/photos/profile-slimline-flat.jpg" },
 ];
 
-const STANDARD_COLOURS = ["Pearl White", "Monument"];
-const COLORBOND_EXTRA_COLOURS = [
-  "Classic Cream", "Surfmist", "Paperbark", "Dune", "Shale Grey",
-  "Windspray", "Wallaby", "Woodland Grey", "Ironstone", "Basalt",
-  "Pale Eucalypt", "Jasper", "Cove", "Mangrove", "Night Sky",
+// Colorbond colours with hex (kept in sync with the Patio Kits site).
+type Colour = { name: string; hex: string };
+const FULL_COLOURS: Colour[] = [
+  { name: "Surfmist", hex: "#E4E2D5" }, { name: "Classic Cream", hex: "#E6DCBE" },
+  { name: "Dune", hex: "#CFC9BC" }, { name: "Evening Haze", hex: "#C6C1A8" },
+  { name: "Paperbark", hex: "#CABFA4" }, { name: "Shale Grey", hex: "#BCBDB5" },
+  { name: "Windspray", hex: "#888C8D" }, { name: "Bluegum", hex: "#7E8083" },
+  { name: "Gully", hex: "#6B675C" }, { name: "Jasper", hex: "#6E665C" },
+  { name: "Wallaby", hex: "#7C7872" }, { name: "Pale Eucalypt", hex: "#7C8472" },
+  { name: "Cottage Green", hex: "#314A43" }, { name: "Manor Red", hex: "#5E2129" },
+  { name: "Deep Ocean", hex: "#39414D" }, { name: "Ironstone", hex: "#42474C" },
+  { name: "Woodland Grey", hex: "#4B4E48" }, { name: "Basalt", hex: "#585A5C" },
+  { name: "Monument", hex: "#323233" }, { name: "Night Sky", hex: "#1B1B1B" },
+  { name: "Pearl White", hex: "#EDE9E0" }, { name: "Dover White", hex: "#F1EEE2" },
 ];
-const SLIMLINE_COLOURS = ["Pearl White", "Monument", "Paperbark"];
+const BEAMPOST_COLOURS: Colour[] = [
+  { name: "Pearl White", hex: "#EDE9E0" }, { name: "Monument", hex: "#323233" },
+];
+const SLIMLINE_ROOF_COLOURS: Colour[] = [
+  { name: "Pearl White", hex: "#EDE9E0" }, { name: "Monument", hex: "#323233" },
+  { name: "Paperbark", hex: "#CABFA4" },
+];
 const BEAM_SIZES = ['100 × 50mm', '150 × 100mm'];
 const POST_SIZES = ['67mm', '90mm'];
 const ACCESSORIES_WITH_QTY = ['Skylights', 'Downlights', 'Fan brackets'];
@@ -634,18 +718,7 @@ export default function ContactPage() {
                       <div className="legend">
                         <span className="name" style={{ fontSize: 16 }}>Roof panel colour <span style={{ fontWeight: 400, color: "var(--color-graphite)", fontSize: 13 }}>(Colorbond®)</span></span>
                       </div>
-                      <div className="ts-colour-extra">
-                        <select
-                          className="ts-colour-select"
-                          value={form.panelColour}
-                          onChange={(e) => setForm((f) => ({ ...f, panelColour: e.target.value }))}
-                        >
-                          <option value="">Select a Colorbond® colour</option>
-                          {[...STANDARD_COLOURS, ...COLORBOND_EXTRA_COLOURS].map((c) => (
-                            <option key={c} value={c}>{c}</option>
-                          ))}
-                        </select>
-                      </div>
+                      <ColourGrid options={FULL_COLOURS} value={form.panelColour} onChange={(v) => setForm((f) => ({ ...f, panelColour: v }))} />
                     </div>
                   )}
 
@@ -654,11 +727,12 @@ export default function ContactPage() {
                       <div className="legend">
                         <span className="name" style={{ fontSize: 16 }}>Roof panel colour <span style={{ fontWeight: 400, color: "var(--color-graphite)", fontSize: 13 }}>(Colorbond®)</span></span>
                       </div>
-                      <div className="ts-choice-grid">
-                        {SLIMLINE_COLOURS.map((c) => (
-                          <Choice key={c} type="radio" name="panelColour" value={c} checked={form.panelColour === c} onChange={(v) => setForm((f) => ({ ...f, panelColour: v }))}>
-                            {c}
-                          </Choice>
+                      <div className="qb-radio-grid">
+                        {SLIMLINE_ROOF_COLOURS.map((c) => (
+                          <button key={c.name} type="button" onClick={() => setForm((f) => ({ ...f, panelColour: c.name }))} aria-pressed={form.panelColour === c.name} className={`qb-radio${form.panelColour === c.name ? " is-on" : ""}`}>
+                            <ColourSwatch hex={c.hex} />
+                            <span className="lbl">{c.name}</span>
+                          </button>
                         ))}
                       </div>
                     </div>
@@ -685,25 +759,7 @@ export default function ContactPage() {
                     <div className="legend">
                       <span className="name" style={{ fontSize: 16 }}>Beam colour</span>
                     </div>
-                    <div className="ts-choice-grid">
-                      {STANDARD_COLOURS.map((c) => (
-                        <Choice key={c} type="radio" name="beamColour" value={c} checked={form.beamColour === c} onChange={(v) => setForm((f) => ({ ...f, beamColour: v }))}>
-                          {c} <small>Standard</small>
-                        </Choice>
-                      ))}
-                    </div>
-                    <div className="ts-colour-extra">
-                      <select
-                        className="ts-colour-select"
-                        value={STANDARD_COLOURS.includes(form.beamColour) ? "" : form.beamColour}
-                        onChange={(e) => setForm((f) => ({ ...f, beamColour: e.target.value }))}
-                      >
-                        <option value="">Other Colorbond® colour (additional charges apply)</option>
-                        {COLORBOND_EXTRA_COLOURS.map((c) => (
-                          <option key={c} value={c}>{c}</option>
-                        ))}
-                      </select>
-                    </div>
+                    <ColourChoiceChips standard={BEAMPOST_COLOURS} value={form.beamColour} onPick={(v) => setForm((f) => ({ ...f, beamColour: v }))} />
                   </div>
 
                   {/* Posts */}
@@ -725,25 +781,7 @@ export default function ContactPage() {
                     <div className="legend">
                       <span className="name" style={{ fontSize: 16 }}>Post colour</span>
                     </div>
-                    <div className="ts-choice-grid">
-                      {STANDARD_COLOURS.map((c) => (
-                        <Choice key={c} type="radio" name="postColour" value={c} checked={form.postColour === c} onChange={(v) => setForm((f) => ({ ...f, postColour: v }))}>
-                          {c} <small>Standard</small>
-                        </Choice>
-                      ))}
-                    </div>
-                    <div className="ts-colour-extra">
-                      <select
-                        className="ts-colour-select"
-                        value={STANDARD_COLOURS.includes(form.postColour) ? "" : form.postColour}
-                        onChange={(e) => setForm((f) => ({ ...f, postColour: e.target.value }))}
-                      >
-                        <option value="">Other Colorbond® colour (additional charges apply)</option>
-                        {COLORBOND_EXTRA_COLOURS.map((c) => (
-                          <option key={c} value={c}>{c}</option>
-                        ))}
-                      </select>
-                    </div>
+                    <ColourChoiceChips standard={BEAMPOST_COLOURS} value={form.postColour} onPick={(v) => setForm((f) => ({ ...f, postColour: v }))} />
                   </div>
 
                   {!isArbor && (

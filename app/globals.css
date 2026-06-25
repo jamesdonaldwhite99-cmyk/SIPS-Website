@@ -3897,6 +3897,40 @@ a { color: inherit; }
   .ts-patio-grid-break { display: none; }
 }
 
+/* ── Colour pickers (ported from Patio Kits) ─────────────────────────── */
+.qb-radio-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+@media (max-width: 680px) { .qb-radio-grid { grid-template-columns: 1fr; } }
+.qb-radio {
+  display: flex; align-items: center; gap: 12px; width: 100%; text-align: left;
+  padding: 14px 16px; border-radius: var(--radius-md); background: var(--color-canvas);
+  border: 1.5px solid var(--color-hairline); cursor: pointer; font: inherit; color: var(--color-ink);
+  transition: border-color 140ms, box-shadow 140ms, background 140ms;
+}
+.qb-radio:hover { border-color: color-mix(in srgb, var(--ts-accent) 45%, var(--color-hairline)); }
+.qb-radio.is-on { border-color: var(--ts-accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--ts-accent) 14%, transparent); }
+.qb-radio .lbl { font-size: 14.5px; font-weight: 600; }
+
+.qb-select { width: 100%; margin-top: 12px; padding: 13px 16px; border-radius: var(--radius-md); border: 1.5px solid var(--color-hairline); background: var(--color-canvas); font: inherit; font-size: 14px; color: var(--color-ink); cursor: pointer; }
+.qb-select:focus { outline: none; border-color: var(--ts-accent); }
+
+.qb-swatch { flex-shrink: 0; width: 22px; height: 22px; border-radius: 5px; border: 1px solid var(--color-hairline); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.35); }
+.qb-swatch--empty { background: repeating-linear-gradient(45deg, var(--color-canvas), var(--color-canvas) 4px, var(--color-hairline) 4px, var(--color-hairline) 5px); }
+
+.qb-colourselect { position: relative; margin-top: 12px; }
+.qb-colourselect-trigger { display: flex; align-items: center; gap: 10px; margin-top: 0; text-align: left; }
+.qb-colourselect-value { flex: 1; }
+.qb-colourselect-caret { opacity: 0.5; }
+.qb-colourselect-backdrop { position: fixed; inset: 0; z-index: 40; }
+.qb-colourselect-list { position: absolute; z-index: 41; top: calc(100% + 4px); left: 0; right: 0; max-height: 300px; overflow-y: auto; margin: 0; padding: 6px; list-style: none; background: var(--color-canvas); border: 1.5px solid var(--color-hairline); border-radius: var(--radius-md); box-shadow: 0 16px 40px -16px rgba(0,0,0,0.28); }
+.qb-colourselect-option { display: flex; align-items: center; gap: 10px; width: 100%; padding: 9px 10px; border: 0; background: none; cursor: pointer; font: inherit; font-size: 14px; color: var(--color-ink); border-radius: 8px; text-align: left; }
+.qb-colourselect-option:hover { background: var(--ts-cream-2); }
+
+.qb-swatch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(36px, 1fr)); gap: 8px; margin-top: 12px; }
+.qb-swatch-btn { aspect-ratio: 1; padding: 0; border-radius: 6px; border: 1px solid var(--color-hairline); cursor: pointer; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.35); transition: transform 120ms var(--ease-standard), box-shadow 120ms var(--ease-standard); }
+.qb-swatch-btn:hover { transform: translateY(-1px); }
+.qb-swatch-btn.is-on { box-shadow: 0 0 0 2px var(--color-canvas), 0 0 0 4px var(--ts-accent); }
+.qb-swatch-selected { font-size: 13px; color: var(--color-graphite); margin: 10px 0 0; }
+
 .ts-patio-card {
   position: relative;
   display: flex;
