@@ -561,25 +561,25 @@ export default function ContactPage() {
                     </div>
                     <div className="ts-form-inputs">
                       <div className="ts-form-input">
-                        <label htmlFor="patioWidth">Width (m)</label>
+                        <label htmlFor="patioWidth">Width (mm)</label>
                         <input
                           id="patioWidth"
                           type="number"
                           min="0"
-                          step="0.1"
-                          placeholder="e.g. 4.5"
+                          step="10"
+                          placeholder="e.g. 4500"
                           value={form.patioWidth}
                           onChange={(e) => setForm((f) => ({ ...f, patioWidth: e.target.value }))}
                         />
                       </div>
                       <div className="ts-form-input">
-                        <label htmlFor="patioLength">Length (m)</label>
+                        <label htmlFor="patioLength">Length (mm)</label>
                         <input
                           id="patioLength"
                           type="number"
                           min="0"
-                          step="0.1"
-                          placeholder="e.g. 6.0"
+                          step="10"
+                          placeholder="e.g. 6000"
                           value={form.patioLength}
                           onChange={(e) => setForm((f) => ({ ...f, patioLength: e.target.value }))}
                         />
