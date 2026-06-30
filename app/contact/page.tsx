@@ -20,6 +20,7 @@ interface FormState {
   email: string;
   phone: string;
   location: string;
+  postcode: string;
   wantsPatio: boolean;
   patioStyle: string;
   patioWidth: string;
@@ -251,6 +252,7 @@ export default function ContactPage() {
     email: "",
     phone: "",
     location: "",
+    postcode: "",
     wantsPatio: false,
     patioStyle: "",
     patioWidth: "",
@@ -356,6 +358,7 @@ export default function ContactPage() {
         { key: "patioWidth",   label: "Width" },
         { key: "patioLength",  label: "Length" },
         { key: "location",     label: "Site address (under Your details)" },
+        { key: "postcode",     label: "Postcode (4-digit, under Your details)" },
         // Roof panel fields don't apply to an arbor.
         ...(isArbor ? [] : [
           { key: "panelProfile" as const, label: "Roof panel profile" },
@@ -394,6 +397,7 @@ export default function ContactPage() {
         phone: form.phone,
         company: form.company,
         location: form.location,
+        deliveryPostcode: form.postcode,
         message: form.message,
         interests: form.interests,
         // Top-level encoding constant — map this in Make's Drive "Data" field as
@@ -899,8 +903,12 @@ export default function ContactPage() {
                       placeholder="Start typing your address…"
                       types={["address"]}
                       onChange={(v) => setForm((f) => ({ ...f, location: v }))}
-                      onSelect={(s) => setForm((f) => ({ ...f, location: s.formatted }))}
+                      onSelect={(s) => setForm((f) => ({ ...f, location: s.formatted, postcode: s.postcode || f.postcode }))}
                     />
+                  </div>
+                  <div className="ts-form-input">
+                    <label htmlFor="postcode">Postcode *</label>
+                    <input id="postcode" type="text" inputMode="numeric" placeholder="e.g. 2752" value={form.postcode} onChange={(e) => setForm((f) => ({ ...f, postcode: e.target.value }))} required />
                   </div>
                 </div>
               </div>
