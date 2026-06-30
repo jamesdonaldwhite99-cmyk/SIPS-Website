@@ -6,6 +6,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import data from "@/content/contact.json";
+import PlacesAutocomplete from "@/components/PlacesAutocomplete";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -893,12 +894,12 @@ export default function ContactPage() {
                   </div>
                   <div className="ts-form-input full">
                     <label htmlFor="location">Site address / project location</label>
-                    <input
-                      id="location"
-                      type="text"
-                      placeholder="e.g. 12 Smith St, Penrith NSW 2750"
+                    <PlacesAutocomplete
                       value={form.location}
-                      onChange={(e) => setForm((f) => ({ ...f, location: e.target.value }))}
+                      placeholder="Start typing your address…"
+                      types={["address"]}
+                      onChange={(v) => setForm((f) => ({ ...f, location: v }))}
+                      onSelect={(s) => setForm((f) => ({ ...f, location: s.formatted }))}
                     />
                   </div>
                 </div>
