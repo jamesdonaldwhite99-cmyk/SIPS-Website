@@ -452,6 +452,28 @@ export default function ContactPage() {
       });
 
       if (!res.ok) throw new Error("Submission failed");
+
+      // Enquiry submitted successfully — notify the agency's trackers.
+      if (typeof window !== "undefined") {
+        // Google Tag Manager: push the enquiry + customer details to the dataLayer.
+        (window as any).dataLayer = (window as any).dataLayer || [];
+        (window as any).dataLayer.push({
+          enquiry: "true",
+          page: window.location.pathname,
+          customerdetails: [
+            {
+              name: form.name,
+              email: form.email,
+              phone: form.phone,
+            },
+          ],
+        });
+        // Meta Pixel: record a Lead conversion.
+        if (typeof (window as any).fbq === "function") {
+          (window as any).fbq("track", "Lead");
+        }
+      }
+
       setSubmitted(true);
     } catch {
       setError("Something went wrong. Please try again or call us on 1300 132 787.");
