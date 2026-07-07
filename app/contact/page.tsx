@@ -196,7 +196,7 @@ const SLIMLINE_ROOF_COLOURS: Colour[] = [
   { name: "Pearl White", hex: "#EDE9E0" }, { name: "Monument", hex: "#323233" },
   { name: "Paperbark", hex: "#CABFA4" },
 ];
-const BEAM_SIZES = ['100 × 50mm', '150 × 100mm'];
+const BEAM_SIZES = ['100 × 50mm', '150 × 50mm'];
 const POST_SIZES = ['67mm', '90mm'];
 const ACCESSORIES_WITH_QTY = ['Skylights', 'Downlights', 'Fan brackets'];
 
