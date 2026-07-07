@@ -458,7 +458,8 @@ export default function ContactPage() {
         // Google Tag Manager: push the enquiry + customer details to the dataLayer.
         (window as any).dataLayer = (window as any).dataLayer || [];
         (window as any).dataLayer.push({
-          enquiry: "true",
+          event: "enquiry_form_submit",
+          enquiry: true,
           page: window.location.pathname,
           customerdetails: [
             {
