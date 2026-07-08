@@ -102,7 +102,7 @@ export default function Footer() {
         </div>
 
         <div className="ts-footer-bar">
-          <div>© {year} Quick Built Systems · ABN 00 000 000 000 · <Link href="/terms">Terms &amp; Conditions</Link></div>
+          <div>© {year} Quick Built Systems · ABN 63 167 322 116 · <Link href="/terms">Terms &amp; Conditions</Link></div>
           <div className="sister">
             <a href="https://www.quickbuilthomes.com.au/" target="_blank" rel="noopener noreferrer">Quick Built Homes</a>
             <a href="https://www.quickbuiltfencing.com.au/" target="_blank" rel="noopener noreferrer">Quick Built Fencing</a>
