@@ -940,6 +940,10 @@ export default function ContactPage() {
                 <p style={{ color: "#c0392b", fontSize: 14, margin: 0 }}>{error}</p>
               )}
 
+              <p style={{ fontSize: 13, lineHeight: 1.6, color: "var(--color-stone)", margin: "0 0 12px" }}>
+                By submitting, you agree to our <Link href="/privacy-policy">Privacy Policy</Link> and <Link href="/terms">Terms</Link>.
+              </p>
+
               <div className="ts-form-submit">
                 <button
                   type="submit"
