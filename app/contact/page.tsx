@@ -673,28 +673,30 @@ export default function ContactPage() {
                     </div>
                     <div className="ts-form-inputs">
                       <div className="ts-form-input">
-                        <label htmlFor="patioWidth">Width (mm)</label>
+                        <label htmlFor="patioWidth">Width — along the wall (mm)</label>
                         <input
                           id="patioWidth"
                           type="number"
                           min="0"
                           step="10"
-                          placeholder="e.g. 4500"
+                          placeholder="e.g. 6000"
                           value={form.patioWidth}
                           onChange={(e) => setForm((f) => ({ ...f, patioWidth: e.target.value }))}
                         />
+                        <span style={{ display: "block", marginTop: 4, fontSize: 12, color: "var(--color-graphite)" }}>The length of wall the patio runs along.</span>
                       </div>
                       <div className="ts-form-input">
-                        <label htmlFor="patioLength">Length (mm)</label>
+                        <label htmlFor="patioLength">Length — projection out from the house (mm)</label>
                         <input
                           id="patioLength"
                           type="number"
                           min="0"
                           step="10"
-                          placeholder="e.g. 6000"
+                          placeholder="e.g. 3600"
                           value={form.patioLength}
                           onChange={(e) => setForm((f) => ({ ...f, patioLength: e.target.value }))}
                         />
+                        <span style={{ display: "block", marginTop: 4, fontSize: 12, color: "var(--color-graphite)" }}>How far the roof sheets project out (front to back).</span>
                       </div>
                     </div>
                   </div>
