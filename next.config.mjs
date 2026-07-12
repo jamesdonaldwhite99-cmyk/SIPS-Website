@@ -37,6 +37,26 @@ const nextConfig = {
       },
     ];
   },
+  // Long-lived caching for static media so browsers and the CDN stop
+  // re-downloading images/PDFs on every visit. Filenames under these folders
+  // are stable, so "immutable" is safe — but see ASSET_OPTIMISATION.md: if you
+  // change an image, give it a NEW filename or cached visitors keep the old one.
+  async headers() {
+    return [
+      {
+        source: '/photos/:path*',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
+        ],
+      },
+      {
+        source: '/pdfs/:path*',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;

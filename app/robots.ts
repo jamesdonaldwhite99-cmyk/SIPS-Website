@@ -9,6 +9,9 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
+      // Keep bots out of the heavy PDF brochures (they don't need indexing and
+      // are large). Images under /photos stay crawlable for image SEO.
+      disallow: "/pdfs/",
     },
     sitemap: `${BASE_URL}/sitemap.xml`,
   };
