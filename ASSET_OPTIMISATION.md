@@ -211,12 +211,20 @@ video) before committing. The Action's file filter is `jpg|jpeg|png` only.
 **Only changed files.** It diffs `github.event.before..sha` and processes just the
 images changed in that push — never the whole `/public` folder.
 
-**Idempotent — no churn commits.** Re-running on an already-optimised image does
-nothing, so runs where nothing genuinely shrank make no commit:
-- Images are only replaced if the result is **>5% smaller**.
-- JPEGs re-encode stably; PNGs are only resized when oversized, and pngquant is
-  skipped when the PNG is already a palette image (colour-type 3 = already
-  quantised). So a second pass produces byte-identical output.
+**Idempotent — no churn commits, no quality loss on existing images.** Re-running
+on an already-optimised image does nothing, so runs where nothing genuinely shrank
+make no commit:
+- Both formats are only **resized when oversized** (longest edge > 2048 px). An
+  in-size image is left completely untouched — never re-encoded — so it keeps its
+  quality and produces no change. (Your site images are all ≤2048, so they're never
+  re-touched.)
+- PNGs also skip pngquant when already a palette image (colour-type 3 = already
+  quantised).
+- A file is only replaced if the result is **>5% smaller**.
+
+This matters for quality: `ffmpeg` re-encodes a JPEG ~20% smaller than `sips` at
+*any* quality, so re-compressing an already-optimised photo would degrade it. The
+Action avoids that by only ever resizing genuinely oversized uploads.
 
 **Safe push.** The commit-back step: `git config core.fileMode false` (ignore
 mode-only noise) → skip entirely if `git diff --cached --quiet` → commit →

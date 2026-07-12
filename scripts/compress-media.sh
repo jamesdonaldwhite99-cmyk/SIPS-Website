@@ -34,7 +34,13 @@ for f in "$@"; do
   case "$ext" in
     jpg|jpeg)
       [ -n "$have_ffmpeg" ] || continue
-      ffmpeg -y -loglevel error -i "$f" -vf "scale='min($MAX_IMG,iw)':-2" -q:v "$JPG_QSCALE" "$out" 2>/dev/null || { rm -f "$out"; continue; }
+      # Only resize OVERSIZED JPEGs (the real win). Leave in-size images untouched:
+      # they're already compressed, and re-encoding only degrades them and churns.
+      dims=$(ffmpeg -nostdin -hide_banner -i "$f" 2>&1 | grep -oE '[0-9]+x[0-9]+' | head -1)
+      w=${dims%x*}; h=${dims#*x}
+      longest=$(( ${w:-0} > ${h:-0} ? ${w:-0} : ${h:-0} ))
+      [ "$longest" -le "$MAX_IMG" ] && continue
+      ffmpeg -nostdin -y -loglevel error -i "$f" -vf "scale='min($MAX_IMG,iw)':-2" -q:v "$JPG_QSCALE" "$out" 2>/dev/null || { rm -f "$out"; continue; }
       ;;
     png)
       # Resize ONLY if oversized. Re-encoding an in-size PNG every run would make
@@ -60,7 +66,7 @@ for f in "$@"; do
     mp4|mov|webm|m4v)
       [ -n "$have_ffmpeg" ] || continue
       # Keep audio: a general upload may legitimately have sound.
-      ffmpeg -y -loglevel error -i "$f" -vf "scale='min($MAX_VID,iw)':-2" \
+      ffmpeg -nostdin -y -loglevel error -i "$f" -vf "scale='min($MAX_VID,iw)':-2" \
         -c:v libx264 -crf "$VID_CRF" -preset slow -pix_fmt yuv420p \
         -movflags +faststart "$out" 2>/dev/null || { rm -f "$out"; continue; }
       ;;
