@@ -57,10 +57,20 @@ jobs:
           rm -f changed.txt
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          # Ignore permission-bit-only changes so a run that shrank nothing is a
+          # true no-op (avoids the "N files changed, 0 insertions, 0 deletions" commit).
+          git config core.fileMode false
           git add -A
           if git diff --cached --quiet; then
-            echo "Nothing shrank — nothing to commit."
-          else
-            git commit -m "Auto-compress uploaded media [skip ci]"
-            git push
+            echo "No files got smaller — nothing to commit."
+            exit 0
           fi
+          git commit -m "Auto-compress uploaded media [skip ci]"
+          # main may have moved since checkout (e.g. another CMS save) — rebase our
+          # single commit on top before pushing so the push can't be rejected.
+          if ! git pull --rebase origin "$GITHUB_REF_NAME"; then
+            git rebase --abort 2>/dev/null || true
+            echo "Could not rebase cleanly; skipping push this run (next upload retries)."
+            exit 0
+          fi
+          git push origin "HEAD:$GITHUB_REF_NAME"

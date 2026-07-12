@@ -193,3 +193,22 @@ match Googlebot / Bingbot / facebookexternalhit (none contain those tokens).
 
 Portable: `middleware.ts` is identical on all four sites; `robots.ts` differs only
 by each site's domain and its existing disallow list.
+
+---
+
+## Automatic compression on upload (GitHub Action)
+
+`.github/workflows/compress-media.yml` compresses new media on every push to
+`main` (including Decap CMS uploads) via `scripts/compress-media.sh`, then commits
+the smaller files back. Requires the repo's **Settings → Actions → General →
+Workflow permissions → "Read and write permissions"**.
+
+The commit-back step is hardened so it can't fail or spam empty commits:
+- `git config core.fileMode false` — ignores permission-bit-only changes, so a run
+  where nothing actually shrank is a true no-op (no "N files changed, 0 insertions,
+  0 deletions" commit).
+- Skips the commit entirely when `git diff --cached --quiet` reports no real change.
+- `git pull --rebase origin <branch>` before pushing, so if `main` moved since
+  checkout (another CMS save) the push isn't rejected as non-fast-forward. If the
+  rebase can't apply cleanly, it aborts and skips the push (the next upload retries)
+  rather than failing the run.
