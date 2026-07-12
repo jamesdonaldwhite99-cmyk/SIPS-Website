@@ -159,3 +159,37 @@ ffmpeg -i public/photos/about-animation.mp4 -vf "scale='min(1440,iw)':-2" \
 32–34 for smaller/lower quality, drop to 26–28 for higher quality.)
 
 Re-run `npm run build`, spot-check the homepage/product/gallery, commit, sync.
+
+---
+
+## Bot blocking (bandwidth + scraper protection)
+
+Two layers, applied identically on all four sites. Blocks AI scrapers and
+aggressive SEO crawlers; leaves Googlebot, Bingbot, facebookexternalhit and real
+browsers fully working. Neither layer touches `/api` (lead forms, autoresponder,
+`sales@` flow).
+
+Blocked list: `GPTBot, ClaudeBot, CCBot, Bytespider, AhrefsBot, SemrushBot,
+MJ12bot, DotBot, PetalBot, DataForSeoBot`.
+
+**1. `app/robots.ts`** — a first rule disallows the blocked bots; the existing
+`*` rule (allow `/` plus each site's own disallows) and the sitemap/host stay
+intact. This is the polite layer (well-behaved bots obey it).
+
+**2. `middleware.ts`** (repo root) — the enforced layer, since the worst crawlers
+ignore robots.txt. Returns `403` when the request's User-Agent matches the list:
+```ts
+const BLOCKED = /(GPTBot|ClaudeBot|CCBot|Bytespider|AhrefsBot|SemrushBot|MJ12bot|DotBot|PetalBot|DataForSeoBot)/i;
+export function middleware(req) {
+  if (BLOCKED.test(req.headers.get("user-agent") || "")) {
+    return new NextResponse("Forbidden", { status: 403 });
+  }
+  return NextResponse.next();
+}
+export const config = { matcher: ["/((?!api/|_next/|favicon.ico).*)"] };
+```
+The `matcher` excludes `/api` so form posts are never screened. The regex can't
+match Googlebot / Bingbot / facebookexternalhit (none contain those tokens).
+
+Portable: `middleware.ts` is identical on all four sites; `robots.ts` differs only
+by each site's domain and its existing disallow list.
