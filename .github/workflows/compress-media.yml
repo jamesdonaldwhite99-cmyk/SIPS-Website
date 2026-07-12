@@ -1,0 +1,66 @@
+name: Compress uploaded media
+
+# Runs whenever media under /public changes on main — including uploads made
+# through Decap CMS (which saves by committing to the repo). It compresses only
+# the files that changed in the push and commits the smaller versions back.
+#
+# No infinite loop: the commit-back uses the default GITHUB_TOKEN, and pushes
+# made with that token do not trigger new workflow runs. The "[skip ci]" message
+# and the head_commit guard below are extra insurance.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'public/**'
+
+# Don't re-run on our own compression commit.
+jobs:
+  compress:
+    if: "!contains(github.event.head_commit.message, 'Auto-compress uploaded media')"
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout (full history for diffing)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install ffmpeg + pngquant
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg pngquant
+
+      - name: Find media changed in this push
+        id: changed
+        run: |
+          git config core.quotepath false
+          BEFORE='${{ github.event.before }}'
+          if git cat-file -e "${BEFORE}^{commit}" 2>/dev/null; then
+            RANGE="${BEFORE} ${GITHUB_SHA}"
+          else
+            RANGE="${GITHUB_SHA}~1 ${GITHUB_SHA}"
+          fi
+          git diff --name-only --diff-filter=AM $RANGE -- 'public/**' \
+            | grep -iE '\.(jpg|jpeg|png|mp4|mov|webm|m4v)$' > changed.txt || true
+          echo "count=$(wc -l < changed.txt | tr -d ' ')" >> "$GITHUB_OUTPUT"
+          echo "Changed media:"; cat changed.txt || true
+
+      - name: Compress changed media
+        if: steps.changed.outputs.count != '0'
+        run: |
+          mapfile -t FILES < changed.txt
+          bash scripts/compress-media.sh "${FILES[@]}"
+
+      - name: Commit smaller files back
+        if: steps.changed.outputs.count != '0'
+        run: |
+          rm -f changed.txt
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Nothing shrank — nothing to commit."
+          else
+            git commit -m "Auto-compress uploaded media [skip ci]"
+            git push
+          fi
