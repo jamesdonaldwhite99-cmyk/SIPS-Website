@@ -1,7 +1,7 @@
 {
   "faqH2": "Frequently asked questions.",
   "productsLead": "Insulspan, Panelspan, and our pre-engineered patio kits work together as one high-performance envelope — engineered for Australian conditions.",
-  "heroVideo": "/photos/QBS  Website Video.mov",
+  "heroVideo": "/photos/qbs_hero.mp4",
   "nextStepPrimary": "Get a free quote",
   "applications": [
     {
@@ -133,7 +133,6 @@
   "heroCtaPrimary": "Enquire Now",
   "productIconLabel": "Our Products",
   "introCta1": "More about us",
-  "introVideoSpeed": 2,
   "applicationsH2": "Built for every Australian project.",
   "benefitsEyebrow": "Why Quick Built Systems",
   "introCta2": "Watch the build video",
@@ -188,6 +187,7 @@
   "heroLead": "Revolutionising construction, one panel at a time. From the roof down to the walls, our pre-finished SIPs deliver a faster, stronger, cleaner, more energy-efficient way to build.",
   "galleryEyebrow": "Recent projects",
   "showcaseH2": "Six product families by one Australian family.",
+  "introVideoSpeed": 2,
   "benefitsLead": "Five reasons our SIPs outperform traditional framing and OSB-based panels on every job.",
   "ctaH2": "Ready to build smarter?",
   "nextStepImage": "/photos/gallery/05.jpg",
