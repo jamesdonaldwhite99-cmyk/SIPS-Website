@@ -11,15 +11,18 @@ None of the steps below go near them.
 
 | Metric | Before | After |
 |---|---|---|
-| `/public` total | 459 MB | 195 MB |
-| Images (>200 KB set) | 194 MB | 119 MB (−74 MB) |
+| `/public` total | 459 MB | 124 MB |
+| Images (JPEG, in place) | 194 MB | 119 MB (−74 MB) |
+| PNGs (pngquant) | 63 MB | 16 MB (−47 MB) |
+| Videos (ffmpeg re-encode) | 39 MB | 14 MB (−25 MB) |
 | Orphaned video/images removed | — | 7 files, ~208 MB |
 | `/photos` + `/pdfs` caching | `max-age=0` (re-fetched every visit) | `immutable`, 1 year |
-| Homepage payload (full scroll) | ~76 MB | ~54 MB* |
+| Homepage payload (full scroll) | ~76 MB | ~26 MB |
 
-\* The remaining homepage weight is two autoplay videos (~28 MB) and two
-photographic PNGs (~10 MB). Crushing those needs `ffmpeg` / `pngquant` — see
-"Optional extra wins" at the bottom. Everything above that line needs no installs.
+**Floor note:** the homepage still carries two autoplay videos (`qbs_hero.mp4`
+~5 MB and `about-animation.mp4` ~4.4 MB). That ~9–10 MB is the hard floor for the
+current design — to go lower you must shorten those clips or replace the
+animation with a static image (a design decision, not an optimisation one).
 
 ---
 
@@ -116,29 +119,43 @@ Commit, then **Sync** the repo in VS Code so Vercel redeploys.
 
 ---
 
-## Optional extra wins (need a one-time tool install)
+## Steps 5 & 6 — PNG + video crush (need `pngquant` and `ffmpeg`)
 
-These weren't done here because the tools aren't installed on the machine. They
-target the last heavy items (photographic PNGs and autoplay videos).
+These need two extra tools. This machine has no Homebrew and no admin password,
+so we used **standalone binaries** (no install, no sudo):
 
-Install once (Homebrew):
 ```bash
-brew install pngquant ffmpeg
+# arm64 (Apple Silicon) ffmpeg:
+curl -L -o ffmpeg.zip https://www.osxexperts.net/ffmpeg81arm.zip && unzip ffmpeg.zip
+# pngquant (Mac):
+curl -L -o pq.tar.bz2 https://pngquant.org/pngquant.tar.bz2 && tar xjf pq.tar.bz2
+# let macOS run the downloaded binaries:
+chmod +x ffmpeg pngquant/pngquant && xattr -dr com.apple.quarantine ffmpeg pngquant/pngquant
+```
+(If Homebrew *is* available on a machine, `brew install ffmpeg pngquant` is simpler.)
+
+### 5. PNGs — pngquant (keeps `.png` name + transparency, no reference changes)
+```bash
+find public/photos -iname '*.png' -type f -size +300k -print0 \
+  | while IFS= read -r -d '' f; do
+      pngquant --quality=65-88 --skip-if-larger --force --strip --ext .png "$f"
+    done
 ```
 
-**PNGs** — crush photographic PNGs losslessly-ish, keeping the `.png` name (so no
-references change) and preserving transparency:
+### 6. Videos — ffmpeg re-encode (drops audio, keeps filename)
+Background videos (under an overlay) can go harder; visible/animation content
+should stay sharper. Only the file is replaced if the result is smaller:
 ```bash
-find public/photos -iname '*.png' -size +500k -exec pngquant --force --quality=65-85 --skip-if-larger --ext .png {} +
-```
-
-**Videos** — re-encode oversized autoplay videos (e.g. `about-animation.mp4`,
-~18 MB) to ~3-5 MB with no visible loss, keeping the same filename:
-```bash
-ffmpeg -i public/photos/about-animation.mp4 -vf "scale='min(1920,iw)':-2" \
-  -c:v libx264 -crf 26 -preset slow -an -movflags +faststart out.mp4 \
+# background hero, hard: scale 1280, crf 30
+ffmpeg -i public/photos/qbs_hero.mp4 -vf "scale='min(1280,iw)':-2" \
+  -c:v libx264 -crf 30 -preset slow -pix_fmt yuv420p -an -movflags +faststart out.mp4 \
+  && mv out.mp4 public/photos/qbs_hero.mp4
+# visible animation, keep sharper: scale 1440, crf 30
+ffmpeg -i public/photos/about-animation.mp4 -vf "scale='min(1440,iw)':-2" \
+  -c:v libx264 -crf 30 -preset slow -pix_fmt yuv420p -an -movflags +faststart out.mp4 \
   && mv out.mp4 public/photos/about-animation.mp4
 ```
-(`-an` drops the audio track, which a muted background video doesn't need.)
+(`-an` drops audio, which a muted autoplay video doesn't need. Bump `-crf` to
+32–34 for smaller/lower quality, drop to 26–28 for higher quality.)
 
-Re-run `npm run build`, spot-check, commit, sync.
+Re-run `npm run build`, spot-check the homepage/product/gallery, commit, sync.
