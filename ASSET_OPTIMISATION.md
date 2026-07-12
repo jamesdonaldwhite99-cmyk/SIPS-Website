@@ -198,17 +198,28 @@ by each site's domain and its existing disallow list.
 
 ## Automatic compression on upload (GitHub Action)
 
-`.github/workflows/compress-media.yml` compresses new media on every push to
+`.github/workflows/compress-media.yml` compresses new **images** on every push to
 `main` (including Decap CMS uploads) via `scripts/compress-media.sh`, then commits
 the smaller files back. Requires the repo's **Settings → Actions → General →
 Workflow permissions → "Read and write permissions"**.
 
-The commit-back step is hardened so it can't fail or spam empty commits:
-- `git config core.fileMode false` — ignores permission-bit-only changes, so a run
-  where nothing actually shrank is a true no-op (no "N files changed, 0 insertions,
-  0 deletions" commit).
-- Skips the commit entirely when `git diff --cached --quiet` reports no real change.
-- `git pull --rebase origin <branch>` before pushing, so if `main` moved since
-  checkout (another CMS save) the push isn't rejected as non-fast-forward. If the
-  rebase can't apply cleanly, it aborts and skips the push (the next upload retries)
-  rather than failing the run.
+**Images only.** GitHub runners have no hardware video encoder, so re-encoding
+video there is far too slow (it was taking ~9 minutes). Video uploads are rare —
+crush those **locally** with `scripts/compress-media.sh` (which still handles
+video) before committing. The Action's file filter is `jpg|jpeg|png` only.
+
+**Only changed files.** It diffs `github.event.before..sha` and processes just the
+images changed in that push — never the whole `/public` folder.
+
+**Idempotent — no churn commits.** Re-running on an already-optimised image does
+nothing, so runs where nothing genuinely shrank make no commit:
+- Images are only replaced if the result is **>5% smaller**.
+- JPEGs re-encode stably; PNGs are only resized when oversized, and pngquant is
+  skipped when the PNG is already a palette image (colour-type 3 = already
+  quantised). So a second pass produces byte-identical output.
+
+**Safe push.** The commit-back step: `git config core.fileMode false` (ignore
+mode-only noise) → skip entirely if `git diff --cached --quiet` → commit →
+`git pull --rebase` (so a moved `main` can't reject the push) → push. If the
+rebase can't apply cleanly it skips the push and the next upload retries, rather
+than failing the run.

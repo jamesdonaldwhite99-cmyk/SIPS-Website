@@ -2,7 +2,11 @@ name: Compress uploaded media
 
 # Runs whenever media under /public changes on main — including uploads made
 # through Decap CMS (which saves by committing to the repo). It compresses only
-# the files that changed in the push and commits the smaller versions back.
+# the IMAGES that changed in the push and commits the smaller versions back.
+#
+# Images only: GitHub runners have no hardware video encoder, so re-encoding video
+# here is far too slow. Video uploads are rare — crush those locally with
+# scripts/compress-media.sh (which still handles video) before committing.
 #
 # No infinite loop: the commit-back uses the default GITHUB_TOKEN, and pushes
 # made with that token do not trigger new workflow runs. The "[skip ci]" message
@@ -30,7 +34,7 @@ jobs:
       - name: Install ffmpeg + pngquant
         run: sudo apt-get update && sudo apt-get install -y ffmpeg pngquant
 
-      - name: Find media changed in this push
+      - name: Find images changed in this push
         id: changed
         run: |
           git config core.quotepath false
@@ -40,12 +44,13 @@ jobs:
           else
             RANGE="${GITHUB_SHA}~1 ${GITHUB_SHA}"
           fi
+          # Only files changed in THIS push, and only images (no video on the runner).
           git diff --name-only --diff-filter=AM $RANGE -- 'public/**' \
-            | grep -iE '\.(jpg|jpeg|png|mp4|mov|webm|m4v)$' > changed.txt || true
+            | grep -iE '\.(jpg|jpeg|png)$' > changed.txt || true
           echo "count=$(wc -l < changed.txt | tr -d ' ')" >> "$GITHUB_OUTPUT"
-          echo "Changed media:"; cat changed.txt || true
+          echo "Changed images:"; cat changed.txt || true
 
-      - name: Compress changed media
+      - name: Compress changed images
         if: steps.changed.outputs.count != '0'
         run: |
           mapfile -t FILES < changed.txt

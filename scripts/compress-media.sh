@@ -37,9 +37,23 @@ for f in "$@"; do
       ffmpeg -y -loglevel error -i "$f" -vf "scale='min($MAX_IMG,iw)':-2" -q:v "$JPG_QSCALE" "$out" 2>/dev/null || { rm -f "$out"; continue; }
       ;;
     png)
-      [ -n "$have_ffmpeg" ] || continue
-      ffmpeg -y -loglevel error -i "$f" -vf "scale='min($MAX_IMG,iw)':-2" "$out" 2>/dev/null || { rm -f "$out"; continue; }
-      if [ -n "$have_pngquant" ]; then
+      # Resize ONLY if oversized. Re-encoding an in-size PNG every run would make
+      # the result drift and re-churn; quantising a copy in place is stable.
+      longest=0
+      if [ -n "$have_ffmpeg" ]; then
+        dims=$(ffmpeg -nostdin -hide_banner -i "$f" 2>&1 | grep -oE '[0-9]+x[0-9]+' | head -1)
+        w=${dims%x*}; h=${dims#*x}
+        longest=$(( ${w:-0} > ${h:-0} ? ${w:-0} : ${h:-0} ))
+      fi
+      if [ "$longest" -gt "$MAX_IMG" ] && [ -n "$have_ffmpeg" ]; then
+        ffmpeg -nostdin -y -loglevel error -i "$f" -vf "scale='min($MAX_IMG,iw)':-2" "$out" 2>/dev/null || { rm -f "$out"; continue; }
+      else
+        cp "$f" "$out"
+      fi
+      # PNG colour-type byte (offset 25): 3 = palette = already quantised. Skip
+      # pngquant on those so re-running on an optimised PNG is a true no-op.
+      ct=$(od -An -tu1 -j25 -N1 "$out" 2>/dev/null | tr -d ' ')
+      if [ -n "$have_pngquant" ] && [ "$ct" != "3" ]; then
         pngquant --quality="$PNG_QUALITY" --strip --force --output "$out" "$out" 2>/dev/null || true
       fi
       ;;
@@ -57,13 +71,15 @@ for f in "$@"; do
 
   [ -f "$out" ] || continue
   after=$(size "$out")
-  if [ "$after" -gt 0 ] && [ "$after" -lt "$before" ]; then
+  # Only replace if it saves a meaningful amount (>5%). This makes re-running on
+  # an already-optimised file a no-op, so the Action never produces churn commits.
+  if [ "$after" -gt 0 ] && [ $((after * 100)) -lt $((before * 95)) ]; then
     mv "$out" "$f"
     changed=$((changed + 1))
     printf 'compressed  %8d -> %8d  %s\n' "$before" "$after" "$f"
   else
     rm -f "$out"
-    printf 'kept        %s (no smaller result)\n' "$f"
+    printf 'kept        %s (already optimised)\n' "$f"
   fi
 done
 
