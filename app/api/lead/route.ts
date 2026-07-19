@@ -17,16 +17,50 @@ function isAllowedWebhook(url: string): boolean {
   return allowList.includes(url);
 }
 
+// Real-time alert when a lead fails to reach the service, so an outage SCREAMS instead of
+// hiding. Best-effort and never throws. Set ALERT_WEBHOOK_URL in Vercel to a Slack/Teams/
+// Discord incoming webhook; the alert carries the contact details so it doubles as a recovery
+// copy. If unset, the durable log capture above still records every lead.
+async function notifyFailure(payload: Record<string, unknown>, reason: string) {
+  const url = process.env.ALERT_WEBHOOK_URL;
+  if (!url) return;
+  try {
+    await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        text:
+          `🚨 ${SOURCE}: LEAD NOT DELIVERED (${reason})\n` +
+          `name: ${payload.name ?? "?"} | email: ${payload.email ?? "?"} | phone: ${payload.phone ?? "?"}\n` +
+          `The QBS service may be down. Full lead is in the Vercel logs — grep "[/api/lead] LEAD".`,
+      }),
+    });
+  } catch {
+    /* alerting must never throw */
+  }
+}
+
 async function forward(url: string, payload: Record<string, unknown>) {
+  // DURABLE CAPTURE: log the full lead BEFORE forwarding. If the downstream service is ever
+  // down, the lead is still recorded here and recoverable from the Vercel logs — the silent
+  // total loss that happened in Jul 2026 (service mount failure) can never occur again.
+  console.log("[/api/lead] LEAD " + JSON.stringify(payload));
   try {
     const res = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
     });
+    if (!res.ok) {
+      const detail = await res.text().catch(() => "");
+      // Loud, greppable failure line that still carries the full lead for recovery/replay.
+      console.error(`[/api/lead] DELIVERY-FAILED status=${res.status} detail=${detail.slice(0, 300)} lead=${JSON.stringify(payload)}`);
+      await notifyFailure(payload, `service ${res.status}`);
+    }
     return NextResponse.json({ ok: res.ok, via: "service", status: res.status });
   } catch (err) {
-    console.error("[/api/lead] service error", err);
+    console.error("[/api/lead] DELIVERY-FAILED (exception) lead=" + JSON.stringify(payload), err);
+    await notifyFailure(payload, "service unreachable");
     return NextResponse.json({ ok: false, error: "Service unavailable" }, { status: 502 });
   }
 }
