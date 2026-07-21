@@ -240,6 +240,7 @@ async function fileToDownscaledImage(file: File): Promise<Attachment> {
 
 export default function ContactPage() {
   const pageRef = useRef<HTMLDivElement>(null);
+  const hpRef = useRef<HTMLInputElement>(null);
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
@@ -447,6 +448,7 @@ export default function ContactPage() {
           formType,
           ...basePayload,
           ...patioPayload,
+          hp: hpRef.current?.value || "",
           submittedAt: new Date().toISOString(),
         }),
       });
@@ -560,6 +562,9 @@ export default function ContactPage() {
           <div className="ts-quote-grid form-animate">
             {/* Form */}
             <form className="ts-form" onSubmit={handleSubmit}>
+
+              {/* Honeypot — hidden from people; bots fill it and are filtered server-side. Do not remove. */}
+              <input ref={hpRef} type="text" name="hp" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: "1px", height: "1px", opacity: 0 }} />
 
               {/* 01 — Interests */}
               <div className="ts-form-group">

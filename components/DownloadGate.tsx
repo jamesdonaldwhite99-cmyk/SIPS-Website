@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type Resource = {
   title: string;
@@ -48,6 +48,7 @@ export default function DownloadGate({ resource, webhookUrl, onClose }: Props) {
   const [phone, setPhone] = useState("");
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
+  const hpRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (!resource) return;
@@ -92,6 +93,7 @@ export default function DownloadGate({ resource, webhookUrl, onClose }: Props) {
       phone: phone.trim(),
       resourceTitle: resource.title,
       resourceFile: resource.href,
+      hp: hpRef.current?.value || "",
       submittedAt: new Date().toISOString(),
     };
 
@@ -144,6 +146,8 @@ export default function DownloadGate({ resource, webhookUrl, onClose }: Props) {
         </div>
 
         <form className="ts-gate-form" onSubmit={handleSubmit}>
+          {/* Honeypot — hidden from people; bots fill it and are filtered server-side. Do not remove. */}
+          <input ref={hpRef} type="text" name="hp" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: "1px", height: "1px", opacity: 0 }} />
           <label className="ts-gate-field">
             <span>Full name</span>
             <input
