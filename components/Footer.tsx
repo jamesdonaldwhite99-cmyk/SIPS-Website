@@ -66,7 +66,7 @@ export default function Footer() {
           <div className="ts-footer-col">
             <h4>Resources</h4>
             <ul>
-              <li><Link href="/resources">Brochures</Link></li>
+              <li><Link href="/resources">Resources</Link></li>
               <li><Link href="/resources">Specifications</Link></li>
               <li><Link href="/resources">Install guides</Link></li>
               <li><Link href="/resources">Warranty</Link></li>
