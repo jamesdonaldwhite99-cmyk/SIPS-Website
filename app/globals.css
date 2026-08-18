@@ -425,7 +425,8 @@ a { color: inherit; }
 }
 .ts-product-iconrow-items {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  /* auto-fit keeps the row balanced as product families are added */
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 20px;
   align-items: start;
 }
@@ -640,6 +641,19 @@ a { color: inherit; }
 }
 .ts-showcase-grid > .ts-showcase-card:nth-child(2n) { border-right: 0; }
 .ts-showcase-grid > .ts-showcase-card:nth-last-child(-n+2) { border-bottom: 0; }
+.ts-showcase-grid > .ts-showcase-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  border-right: 0;
+  border-bottom: 0;
+}
+/* Full-width feature card: banner proportions and a deeper scrim so the
+   overlay copy stays legible on bright photography */
+.ts-showcase-grid > .ts-showcase-card:last-child:nth-child(odd) .ts-showcase-image {
+  aspect-ratio: 24 / 9;
+}
+.ts-showcase-grid > .ts-showcase-card:last-child:nth-child(odd) .ts-showcase-imageoverlay {
+  background: linear-gradient(180deg, rgba(0,0,0,0.42) 0%, rgba(0,0,0,0.28) 45%, rgba(0,0,0,0.55) 100%);
+}
 .ts-showcase-grid .ts-showcase-image { aspect-ratio: 3/2; }
 .ts-showcase-grid .ts-showcase-title { font-size: 40px; }
 .ts-showcase-grid .ts-showcase-copy { font-size: 16px; }
@@ -765,8 +779,10 @@ a { color: inherit; }
 }
 .ts-megamenu-columns {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
+  /* auto-fit so a fifth product family (Structural Aluminium) sits in the row
+     on wide screens and wraps cleanly on narrower ones */
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 32px;
 }
 .ts-megamenu-cat-card {
   display: block;
@@ -4655,3 +4671,484 @@ a { color: inherit; }
   line-height: 1;
 }
 .ts-upload-thumb button:hover { background: rgba(0, 0, 0, 0.82); }
+
+/* ============================================================
+   Alyspan® — structural aluminium beams product page
+   ============================================================ */
+
+/* Four large finish chips instead of the 11-up Colorbond bar */
+.ts-colourbar--large {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 190px));
+  gap: 20px;
+  justify-content: start;
+}
+.ts-colourbar--large .chip { aspect-ratio: 3/2; }
+.ts-colourbar--large .name { font-size: 12px; letter-spacing: 1px; }
+
+/* --- Beam cards: studio photo + certified section drawing --- */
+.ts-aly-beams {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.ts-aly-beam {
+  background: var(--color-canvas);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.ts-aly-beam-photo {
+  position: relative;
+  aspect-ratio: 16/10;
+  background: var(--color-canvas-warm);
+  border-bottom: 1px solid var(--color-hairline);
+}
+
+.ts-aly-beam-num {
+  position: absolute;
+  top: 16px;
+  left: 18px;
+  font-size: 11px;
+  letter-spacing: 1.6px;
+  color: var(--color-slate);
+  font-weight: 500;
+}
+
+.ts-aly-beam-body { padding: 28px; display: flex; flex-direction: column; gap: 20px; }
+
+.ts-aly-beam-body h3 {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  color: var(--color-ink);
+  margin: 0;
+}
+
+.ts-aly-section-dwg {
+  background: var(--color-canvas-warm);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-xs);
+  padding: 14px 18px;
+}
+
+.ts-aly-props { margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; }
+.ts-aly-prop {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-hairline);
+}
+.ts-aly-prop:nth-child(odd) { padding-right: 18px; }
+.ts-aly-prop:nth-child(even) { padding-left: 18px; border-left: 1px solid var(--color-hairline); }
+.ts-aly-prop:last-child:nth-child(odd) { grid-column: 1 / -1; padding-right: 0; }
+.ts-aly-prop dt {
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--color-slate);
+  font-weight: 500;
+}
+.ts-aly-prop dd {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-ink);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.ts-aly-codes { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.ts-aly-codes li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  font-size: 13px;
+  color: var(--color-graphite);
+}
+.ts-aly-codes .code,
+.ts-aly-cat-group .code {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  color: var(--ts-accent);
+  white-space: nowrap;
+}
+
+.ts-aly-footnote {
+  margin: 28px 0 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--color-slate);
+  max-width: 70ch;
+}
+
+/* --- Component grid: real product photography --- */
+.ts-aly-components {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.ts-aly-component {
+  background: var(--color-canvas);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.ts-aly-component .img {
+  position: relative;
+  aspect-ratio: 4/3;
+  background: var(--color-canvas-warm);
+  border-bottom: 1px solid var(--color-hairline);
+}
+.ts-aly-component .body { padding: 22px 24px 26px; }
+.ts-aly-component .sizes {
+  font-size: 11px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--ts-accent);
+  font-weight: 500;
+}
+.ts-aly-component h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: -0.3px;
+  color: var(--color-ink);
+  margin: 6px 0 8px;
+}
+.ts-aly-component p { margin: 0; font-size: 14px; line-height: 1.55; color: var(--color-graphite); }
+
+/* --- Bracket schematics, presented as engineering drawings --- */
+.ts-aly-schem-head {
+  margin-top: 56px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--color-hairline);
+}
+.ts-aly-schem-head h3 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: -0.4px;
+  color: var(--color-ink);
+  margin: 0;
+}
+.ts-aly-schem-head p { margin: 0; font-size: 13px; color: var(--color-slate); }
+
+.ts-aly-schematics {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.ts-aly-schem {
+  background: var(--color-canvas);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.ts-aly-schem .img { position: relative; aspect-ratio: 1; background: var(--color-canvas); }
+.ts-aly-schem .meta {
+  margin-top: auto;
+  padding: 14px 18px 18px;
+  border-top: 1px solid var(--color-hairline);
+  background: var(--color-canvas-warm);
+}
+.ts-aly-schem h4 {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-ink);
+  margin: 0 0 4px;
+}
+.ts-aly-schem span {
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--color-slate);
+}
+
+/* --- Span tables --- */
+.ts-aly-spantable {
+  margin-top: 40px;
+  background: var(--color-canvas);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.ts-aly-spantable-title {
+  padding: 22px 28px;
+  background: var(--color-ink);
+  color: #FAFAF8;
+}
+.ts-aly-spantable-title h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.2px;
+  margin: 0 0 4px;
+  color: #FAFAF8;
+}
+.ts-aly-spantable-title span {
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--ts-accent);
+}
+
+.ts-aly-spantable-scroll { overflow-x: auto; }
+.ts-aly-spantable table { width: 100%; border-collapse: collapse; min-width: 560px; }
+.ts-aly-spantable thead th {
+  font-size: 12px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--color-ink);
+  padding: 14px 18px;
+  text-align: center;
+  background: var(--ts-cream-2);
+  border-bottom: 1px solid var(--color-hairline);
+}
+.ts-aly-spantable thead tr.subhead th {
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  font-weight: 400;
+  color: var(--color-slate);
+  padding: 8px 18px 12px;
+  background: var(--color-canvas-warm);
+}
+.ts-aly-spantable .w-col { text-align: left; }
+.ts-aly-spantable tbody th {
+  text-align: left;
+  padding: 13px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-ink);
+  font-variant-numeric: tabular-nums;
+  background: var(--color-canvas-warm);
+  border-bottom: 1px solid var(--color-hairline);
+}
+.ts-aly-spantable tbody td {
+  padding: 13px 18px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--color-ink);
+  font-variant-numeric: tabular-nums;
+  border-bottom: 1px solid var(--color-hairline);
+}
+.ts-aly-spantable tbody tr:last-child th,
+.ts-aly-spantable tbody tr:last-child td { border-bottom: 0; }
+.ts-aly-spantable tbody tr:hover td,
+.ts-aly-spantable tbody tr:hover th { background: var(--ts-cream-2); }
+
+/* --- Engineering & compliance --- */
+.ts-aly-eng-grid {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+.ts-aly-eng-card {
+  background: var(--color-canvas-warm);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-md);
+  padding: 32px;
+}
+.ts-aly-eng-card h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.3px;
+  color: var(--color-ink);
+  margin: 0 0 10px;
+}
+.ts-aly-eng-card .intro { font-size: 14px; line-height: 1.6; color: var(--color-graphite); margin: 0 0 18px; }
+
+.ts-aly-standards { list-style: none; margin: 0; padding: 0; }
+.ts-aly-standards li {
+  position: relative;
+  padding: 12px 0 12px 22px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-ink);
+  border-top: 1px solid var(--color-hairline);
+}
+.ts-aly-standards li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 19px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ts-accent);
+}
+
+.ts-aly-design { margin: 0; }
+.ts-aly-design > div { padding: 12px 0; border-top: 1px solid var(--color-hairline); }
+.ts-aly-design dt {
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--color-slate);
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+.ts-aly-design dd { margin: 0; font-size: 14px; line-height: 1.5; color: var(--color-ink); }
+
+.ts-aly-certificate {
+  margin: 32px 0 0;
+  padding: 32px 36px;
+  background: var(--color-ink);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--ts-accent);
+}
+.ts-aly-certificate p {
+  margin: 0 0 14px;
+  font-family: var(--font-display);
+  font-size: clamp(17px, 1.7vw, 21px);
+  line-height: 1.5;
+  letter-spacing: -0.3px;
+  color: #FAFAF8;
+}
+.ts-aly-certificate cite {
+  font-style: normal;
+  font-size: 11px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--ts-accent);
+}
+
+/* --- Full part-number catalogue (dark section) --- */
+.ts-aly-head--dark h2 { color: #FAFAF8; }
+.ts-aly-head--dark .ts-eyebrow { color: var(--ts-accent); }
+.ts-aly-head--dark p { color: rgba(255,255,255,0.7); }
+
+.ts-aly-catalogue {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px 40px;
+}
+/* Group header: a small part thumbnail so every code has something to picture */
+.ts-aly-cat-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.18);
+}
+.ts-aly-cat-head .thumb {
+  position: relative;
+  flex: 0 0 auto;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-xs);
+  background: #FAFAF8;
+  overflow: hidden;
+}
+.ts-aly-cat-group h3 {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  color: #FAFAF8;
+  margin: 0;
+}
+.ts-aly-cat-group ul { list-style: none; margin: 0; padding: 0; }
+.ts-aly-cat-group li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 14px;
+  padding: 9px 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: rgba(255,255,255,0.72);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.ts-aly-cat-group li:last-child { border-bottom: 0; }
+
+/* --- FAQ accordion --- */
+.ts-aly-faq { margin-top: 40px; border-top: 1px solid var(--color-hairline); }
+.ts-aly-faq-item { border-bottom: 1px solid var(--color-hairline); }
+.ts-aly-faq-item button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 22px 0;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-display);
+  font-size: clamp(16px, 1.6vw, 19px);
+  font-weight: 400;
+  letter-spacing: -0.2px;
+  color: var(--color-ink);
+}
+.ts-aly-faq-item button svg {
+  flex: 0 0 auto;
+  color: var(--ts-accent);
+  transition: transform var(--dur-base) var(--ease-standard);
+}
+.ts-aly-faq-item.is-open button svg { transform: rotate(180deg); }
+.ts-aly-faq-item .answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 260ms var(--ease-standard);
+}
+.ts-aly-faq-item.is-open .answer { grid-template-rows: 1fr; }
+.ts-aly-faq-item .answer > p {
+  overflow: hidden;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--color-graphite);
+  max-width: 78ch;
+}
+.ts-aly-faq-item.is-open .answer > p { padding-bottom: 24px; }
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+  .ts-aly-beams { grid-template-columns: 1fr; }
+  .ts-aly-components { grid-template-columns: repeat(2, 1fr); }
+  .ts-aly-catalogue { grid-template-columns: repeat(2, 1fr); }
+  .ts-aly-eng-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 700px) {
+  .ts-aly-components { grid-template-columns: 1fr; }
+  .ts-aly-schematics { grid-template-columns: repeat(2, 1fr); }
+  .ts-aly-catalogue { grid-template-columns: 1fr; }
+  .ts-colourbar--large { grid-template-columns: repeat(2, 1fr); }
+  .ts-aly-props { grid-template-columns: 1fr; }
+  .ts-aly-prop:nth-child(even) { padding-left: 0; border-left: 0; }
+  .ts-aly-prop:nth-child(odd) { padding-right: 0; }
+  .ts-aly-beam-body { padding: 22px; }
+  .ts-aly-eng-card { padding: 24px; }
+  .ts-aly-certificate { padding: 24px; }
+}

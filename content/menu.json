@@ -1,7 +1,7 @@
 {
   "asideEyebrow": "Our products",
   "asideH3": "One panel system for every Australian build.",
-  "asideBody": "Modular homes, walls, roofing and outdoor living — all from Australia's family-owned QuickBuilt group.",
+  "asideBody": "Modular homes, walls, roofing, structural aluminium and outdoor living — all from Australia's family-owned QuickBuilt group.",
   "categories": [
     {
       "title": "Modular Homes",
@@ -111,11 +111,11 @@
           "image": "/photos/Patio Kit.png"
         },
         {
-          "title": "Alyspan Beams",
-          "copy": "Aluminium structural patio beams.",
-          "href": "https://www.alyspan.com.au/",
-          "external": true,
-          "image": "/photos/gallery/15.jpg"
+          "title": "Alyspan® Aluminium Beams",
+          "copy": "Structural aluminium patio beams.",
+          "href": "/products/alyspan",
+          "external": false,
+          "image": "/photos/alyspan/beam-150x50.jpg"
         },
         {
           "title": "Accessories",
@@ -123,6 +123,42 @@
           "href": "https://www.patiokits.com.au/files/accessories.php",
           "external": true,
           "image": "/photos/gallery/16.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Structural Aluminium",
+      "href": "/products/alyspan",
+      "external": false,
+      "image": "/photos/alyspan/lifestyle-hero.jpg",
+      "items": [
+        {
+          "title": "Alyspan® Beams",
+          "copy": "100 x 50 & 150 x 50 in 6063-T6.",
+          "href": "/products/alyspan",
+          "external": false,
+          "image": "/photos/alyspan/beam-150x50.jpg"
+        },
+        {
+          "title": "Aluminium Posts",
+          "copy": "50mm, 65mm & 90mm structural posts.",
+          "href": "/products/alyspan",
+          "external": false,
+          "image": "/photos/alyspan/post-90.jpg"
+        },
+        {
+          "title": "Brackets & Connectors",
+          "copy": "Australian-made Smart Connectors.",
+          "href": "/products/alyspan",
+          "external": false,
+          "image": "/photos/alyspan/post-beam-connector-90.jpg"
+        },
+        {
+          "title": "Span Tables",
+          "copy": "Engineer certified to AS 1664 & AS 4055.",
+          "href": "/products/alyspan#span-tables",
+          "external": false,
+          "image": "/photos/alyspan/section-150x50.jpg"
         }
       ]
     }

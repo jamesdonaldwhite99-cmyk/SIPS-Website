@@ -1,6 +1,6 @@
 {
   "faqH2": "Frequently asked questions.",
-  "productsLead": "Insulspan, Panelspan, and our pre-engineered patio kits work together as one high-performance envelope — engineered for Australian conditions.",
+  "productsLead": "Insulspan, Panelspan, Alyspan structural aluminium and our pre-engineered patio kits work together as one high-performance envelope — engineered for Australian conditions.",
   "heroVideo": "/photos/qbs_hero.mp4",
   "nextStepPrimary": "Get a free quote",
   "applications": [
@@ -71,7 +71,7 @@
   "applicationsEyebrow": "Applications",
   "introPara2": "Unlike OSB-based SIPs that still require external cladding and additional finishing trades, our panels use pre-finished FC or MgO surfaces. The structure arrives ready to install with no extra cladding required.",
   "introPara3": "Together, they create a complete high-performance building system that outperforms traditional construction and OSB SIPs in every category: speed, cost, strength, thermal efficiency, and long-term durability.",
-  "showcaseLead": "From modular homes and fencing to wall panels, roofing and patio kits — every QuickBuilt brand is engineered, manufactured and supplied direct.",
+  "showcaseLead": "From modular homes and fencing to wall panels, roofing, structural aluminium and patio kits — every QuickBuilt brand is engineered, manufactured and supplied direct.",
   "nextStepH2": "Ready when you are.",
   "nextStepEyebrow": "Take your next step",
   "categoryShowcase": [
@@ -128,6 +128,15 @@
       "href": "/products/panelcore",
       "external": false,
       "footerLabel": "Panelcore®"
+    },
+    {
+      "kicker": "Structural Aluminium",
+      "title": "Alyspan aluminium beams & posts",
+      "copy": "ALYSPAN by Quick Built Systems is a Structural Aluminium Beam perfect for construction of residential patios, awnings and carports.",
+      "image": "/photos/alyspan/lifestyle-hero.jpg",
+      "href": "/products/alyspan",
+      "external": false,
+      "footerLabel": "Alyspan®"
     }
   ],
   "heroCtaPrimary": "Enquire Now",
@@ -147,6 +156,12 @@
       "icon": "roof",
       "label": "Insulated Roofing & Wall Panels",
       "href": "/products/insulspan",
+      "external": false
+    },
+    {
+      "icon": "aluminium",
+      "label": "Structural Aluminium",
+      "href": "/products/alyspan",
       "external": false
     },
     {
@@ -186,7 +201,7 @@
   "ctaPhoneLabel": "Speak to our team",
   "heroLead": "Revolutionising construction, one panel at a time. From the roof down to the walls, our pre-finished SIPs deliver a faster, stronger, cleaner, more energy-efficient way to build.",
   "galleryEyebrow": "Recent projects",
-  "showcaseH2": "Six product families by one Australian family.",
+  "showcaseH2": "Seven product families by one Australian family.",
   "introVideoSpeed": 2,
   "benefitsLead": "Five reasons our SIPs outperform traditional framing and OSB-based panels on every job.",
   "ctaH2": "Ready to build smarter?",

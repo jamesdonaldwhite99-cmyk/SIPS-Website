@@ -2,7 +2,7 @@
 
 ## What it does
 Marketing website for ThermaSpan, a structural insulated panel (SIPs) system by QuickBuilt Systems PTY LTD.
-Showcases three product lines (Insulspan® roofing, Panelspan® walls, Panelcore® coldroom), handles enquiries and quote requests, and provides resources for builders and architects.
+Showcases four product lines (Insulspan® roofing, Panelspan® walls, Panelcore® coldroom, Alyspan® structural aluminium), handles enquiries and quote requests, and provides resources for builders and architects.
 
 ## Who uses it
 - Builders and tradies looking for SIPs panels for homes, extensions, patios
@@ -30,10 +30,11 @@ Showcases three product lines (Insulspan® roofing, Panelspan® walls, Panelcore
 | Route | Page |
 |---|---|
 | `/` | Home — hero slideshow, intro video, products, benefits, applications, CTA |
-| `/products` | Products overview — all three product cards |
+| `/products` | Products overview — all four product cards |
 | `/products/insulspan` | Insulspan® Roofing Panels |
 | `/products/panelspan` | Panelspan® Wall Panels |
 | `/products/panelcore` | Panelcore® Coldroom Panels |
+| `/products/alyspan` | Alyspan® Structural Aluminium Beams & Posts — beam sections, complete component system, span tables, engineering compliance, full part-number catalogue, FAQ |
 | `/building-system` | Building System — how it works + video |
 | `/about` | About — story, team, video |
 | `/gallery` | Gallery — masonry grid of 20 project photos |
@@ -53,6 +54,7 @@ All user-facing copy, images, and stats are stored in JSON files under `content/
 | `content/insulspan.json` | Insulspan product page |
 | `content/panelspan.json` | Panelspan product page |
 | `content/panelcore.json` | Panelcore product page |
+| `content/alyspan.json` | Alyspan product page |
 | `content/building-system.json` | Building System |
 | `content/about.json` | About |
 | `content/gallery.json` | Gallery |
@@ -122,3 +124,48 @@ All user-facing copy, images, and stats are stored in JSON files under `content/
 - **Location:** Sydney, NSW
 - **Hours:** Mon–Fri 7:30am–4:30pm AEST
 - **ABN:** 00 000 000 000 (placeholder)
+
+---
+
+## Alyspan® — Structural Aluminium (added Aug 2026)
+
+**Why:** Quick Built Systems supplies the Alyspan aluminium beam range (its own brand, also
+stocked through Bunnings Special Orders) but it only lived on the standalone alyspan.com.au
+microsite. It was invisible on the main hub, so the group did not read as an aluminium
+supplier alongside Stratco, Metroll, Spanmor, Eurowood and Patios Wholesale.
+
+**What was built**
+
+- `/products/alyspan` — full product page. Copy is taken verbatim from alyspan.com.au, the
+  Alyspan Bunnings listings and the Ross Engineers span-table document; no source wording
+  was reworded.
+- Sections: hero → spec strip → overview → beam sections (studio photo + certified CAD
+  section + section properties + part numbers) → advantages → full-bleed banner → complete
+  component system → bracket schematics → finishes → span tables → engineering & compliance
+  → full part-number catalogue → FAQ → gated resources → CTA.
+- Imagery: real Bunnings-grade product photography (`public/photos/alyspan/`) replaces the
+  line-drawing icons used for aluminium on the Patio Kits store. The original CAD line
+  drawings are kept only where they read as engineering credentials — the beam section
+  drawings and the bracket connection schematics.
+
+**SEO**
+
+- `pageMetadata("alyspan")` via `content/seo.json`; the sitemap picks the route up
+  automatically from the `app/` walk.
+- Inline JSON-LD `@graph`: `Product` (with 6063-T6 section properties as
+  `additionalProperty`), `BreadcrumbList` and `FAQPage`.
+- Target queries: aluminium patio beams, structural aluminium beams Australia, aluminium
+  posts, patio beam span tables, 100x50 / 150x50 aluminium beam, 6063-T6, Alyspan part codes.
+- The full part-number catalogue is on-page so code searches (e.g. `AB1505080PW/P`) land here.
+- Engineer-certified span tables published as a gated PDF (`/pdfs/alyspan-span-tables.pdf`)
+  for lead capture through the existing `DownloadGate`.
+
+**Hub integration**
+
+- `content/menu.json` — new top-level "Structural Aluminium" mega-menu category; the old
+  off-site "Alyspan Beams" link now points at `/products/alyspan`.
+- `content/home.json` — added to `productIconRow` (new `Structural Aluminium Icon.png`, drawn
+  to match the existing line-art icon set) and to `categoryShowcase` as a full-width feature
+  card; heading updated to "Seven product families".
+- `app/products/page.tsx` — fourth range row, counter now derives from `products.length`.
+- `components/Footer.tsx` picks the new range up automatically from `categoryShowcase`.

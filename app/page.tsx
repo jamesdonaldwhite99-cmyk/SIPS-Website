@@ -28,6 +28,7 @@ const PRODUCT_ICON_SRC: Record<string, { src: string; alt: string }> = {
   patio:     { src: "/photos/icons-clean/Patio Kits Icon.png",                      alt: "Patio Kits" },
   fence:     { src: "/photos/icons-clean/Modular Fencing Icon.png",                 alt: "Modular Fencing" },
   retaining: { src: "/photos/icons-clean/Retaining Solutions Icon.png",             alt: "Retaining Solutions" },
+  aluminium: { src: "/photos/icons-clean/Structural Aluminium Icon.png",            alt: "Structural Aluminium" },
 };
 
 function ProductIcon({ icon }: { icon: string }) {

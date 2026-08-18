@@ -1,0 +1,789 @@
+{
+  "kicker": "Alyspan®",
+  "heroTitle": "Structural",
+  "heroTitleAccent": "Aluminium Beams.",
+  "heroLead": "ALYSPAN by Quick Built Systems is a Structural Aluminium Beam perfect for construction of residential patios, awnings and carports.",
+  "heroPhoto": "/photos/alyspan/lifestyle-hero.jpg",
+  "heroPhotoTag": "Alyspan® posts and beams — attached patio",
+  "specs": [
+    {
+      "label": "Alloy",
+      "value": "6063 – T6"
+    },
+    {
+      "label": "Beam sizes",
+      "value": "100 x 50 · 150 x 50"
+    },
+    {
+      "label": "Standards",
+      "value": "AS 1664 · AS 4055"
+    },
+    {
+      "label": "Span tables",
+      "value": "Engineer certified"
+    }
+  ],
+  "overviewEyebrow": "Your Outdoor Living Specialists",
+  "overviewH2": "A complete beam system — not just a length of extrusion.",
+  "overviewPara1": "The ALYSPAN Structural Aluminium Beam is a complete beam system comprising of beams, brackets and fixings.",
+  "overviewPara2": "The Alyspan range of beams, posts and accessories has been proudly designed in Australia by Quick Built Systems.",
+  "overviewPara3": "All structural sections comply with Australian standards for Structural Design, Aluminium Structures and Wind Loads for housing.",
+  "overviewPhoto": "/photos/alyspan/lifestyle-longspan.jpg",
+  "overviewPhotoTag": "Long spans, fewer posts — Monument finish",
+  "advantagesEyebrow": "Advantages",
+  "advantagesH2": "Why builders specify Alyspan®.",
+  "advantagesLead": "Alyspan Structural Aluminium Beams offer excellent span capabilities due to the unique design of the fluted beam profile.",
+  "advantages": [
+    {
+      "title": "Light Weight",
+      "copy": "Manufactured from aluminium Alyspan is easy to cut on site and light weight making it ideal for the \"DIY\" Home Owner or Handyman building an outdoor patio or living area."
+    },
+    {
+      "title": "Easy to Cut",
+      "copy": "Cut to length on site with standard tools — no welding, no hot works, no specialist trade required to make a beam fit."
+    },
+    {
+      "title": "Excellent Appearance",
+      "copy": "Alyspan Beams are Powder coated in a Hi-Gloss finish providing an excellent finish to the project."
+    },
+    {
+      "title": "Maintenance Free",
+      "copy": "Aluminium will not rust. The powder coated finish holds its colour in coastal and high-exposure sites with no repainting cycle."
+    },
+    {
+      "title": "Long Spans Based on Unique Beam Design",
+      "copy": "The fluted profile carries load further between posts — fewer columns, cleaner sightlines and a more open outdoor room."
+    }
+  ],
+  "beamsEyebrow": "The beams",
+  "beamsH2": "Two structural sections. Every span in the range.",
+  "beamsLead": "Alyspan is available in both 100mm x 50mm and 150mm x 50mm beam sizes at lengths to suit your application.",
+  "beams": [
+    {
+      "name": "100 x 50 ALYSPAN Beam",
+      "photo": "/photos/alyspan/beam-100x50.jpg",
+      "section": "/photos/alyspan/section-100x50.jpg",
+      "properties": [
+        {
+          "label": "Alloy",
+          "value": "6063 – T6"
+        },
+        {
+          "label": "Ixx",
+          "value": "227,424.285 mm⁴"
+        },
+        {
+          "label": "Iyy",
+          "value": "900,454.930 mm⁴"
+        },
+        {
+          "label": "Area",
+          "value": "599 mm²"
+        },
+        {
+          "label": "Weight",
+          "value": "1.635 kg/m"
+        }
+      ],
+      "codes": [
+        {
+          "desc": "Alyspan 100 x 50 6.5m – Mill",
+          "code": "AB1005065M"
+        },
+        {
+          "desc": "Alyspan 100 x 50 6.5m – Pearl White",
+          "code": "AB1005065PW"
+        }
+      ]
+    },
+    {
+      "name": "150 x 50 ALYSPAN Beam",
+      "photo": "/photos/alyspan/beam-150x50.jpg",
+      "section": "/photos/alyspan/section-150x50.jpg",
+      "properties": [
+        {
+          "label": "Alloy",
+          "value": "6063 – T6"
+        },
+        {
+          "label": "Ixx",
+          "value": "321,160.818 mm⁴"
+        },
+        {
+          "label": "Iyy",
+          "value": "2,369,265.013 mm⁴"
+        },
+        {
+          "label": "Area",
+          "value": "759 mm²"
+        },
+        {
+          "label": "Weight",
+          "value": "2.072 kg/m"
+        }
+      ],
+      "codes": [
+        {
+          "desc": "Alyspan 150 x 50 8.0m - Mill",
+          "code": "AB1505080M"
+        },
+        {
+          "desc": "Alyspan 150 x 50 8.0m – Pearl White",
+          "code": "AB1505080PW"
+        }
+      ]
+    }
+  ],
+  "beamsFootnote": "Beams available in other colours. Check for lead time and colours at time of order.",
+  "bannerPhoto": "/photos/alyspan/lifestyle-banner.jpg",
+  "systemEyebrow": "The complete system",
+  "systemH2": "Beams, posts, connectors and brackets — from one supplier.",
+  "systemLead": "The Alyspan Smart Connectors are Australian Made from quality Galvanised Steel and Powder Coated providing a quick and easy system to construct a wide range of patios and outdoor living areas.",
+  "components": [
+    {
+      "name": "Aluminium Posts",
+      "sizes": "50mm · 65mm · 90mm",
+      "copy": "Structural aluminium posts in 6.5m lengths, cut to height on site. Mill and Pearl White.",
+      "img": "/photos/alyspan/post-90.jpg"
+    },
+    {
+      "name": "Post / Beam Connectors",
+      "sizes": "65 · 90",
+      "copy": "Galvanised and powder coated connectors that lock the beam to the post head in one fixing operation.",
+      "img": "/photos/alyspan/post-beam-connector-90.jpg"
+    },
+    {
+      "name": "Beam End Caps",
+      "sizes": "100 · 150",
+      "copy": "Finish every exposed beam end with a clean, colour-matched cap.",
+      "img": "/photos/alyspan/end-cap-150.jpg"
+    },
+    {
+      "name": "Beam Connectors",
+      "sizes": "100 · 150",
+      "copy": "Join beams inline to run continuous spans across long openings.",
+      "img": "/photos/alyspan/beam-connector-100.jpg"
+    },
+    {
+      "name": "Internal Post Connectors",
+      "sizes": "65 x 65 · 90 x 90 · 70 x 50",
+      "copy": "Internal sleeve connectors that set posts out square and true at the base.",
+      "img": "/photos/alyspan/post-connector-internal.jpg"
+    },
+    {
+      "name": "Monument® Finish",
+      "sizes": "Beams · Posts · Brackets",
+      "copy": "The full range in Monument — a darker architectural finish for contemporary patios, carports and awnings.",
+      "img": "/photos/alyspan/post-90-monument.jpg"
+    }
+  ],
+  "schematics": [
+    {
+      "name": "Frame Bracket",
+      "sizes": "100 & 150 · 15° / 22°",
+      "img": "/photos/alyspan/schem-frame-bracket.jpg"
+    },
+    {
+      "name": "Apex",
+      "sizes": "100 & 150 · 22° / 15°",
+      "img": "/photos/alyspan/schem-apex.jpg"
+    },
+    {
+      "name": "Suspension Bracket",
+      "sizes": "100 & 150",
+      "img": "/photos/alyspan/schem-suspension-bracket.png"
+    },
+    {
+      "name": "Corner Bracket",
+      "sizes": "100 & 150",
+      "img": "/photos/alyspan/schem-corner-bracket.jpg"
+    }
+  ],
+  "schematicsNote": "Refer to manufacturer for further details regarding brackets and fixings.",
+  "componentsFootnote": "Brackets available in other colours. Check for lead time and colours at time of order.",
+  "finishesEyebrow": "Finishes",
+  "finishesH2": "Mill, Pearl White and Monument.",
+  "finishesLead": "Alyspan Beams are Powder coated in a Hi-Gloss finish providing an excellent finish to the project. Other Colorbond® colours available on request.",
+  "finishes": [
+    {
+      "name": "Mill",
+      "hex": "#b7bbbd"
+    },
+    {
+      "name": "Pearl White",
+      "hex": "#efeee8"
+    },
+    {
+      "name": "Monument®",
+      "hex": "#323233"
+    }
+  ],
+  "spanEyebrow": "Span tables",
+  "spanH2": "Span Tables for Case 1: Maximum Building Height = 4.8 m",
+  "spanLead": "Single Span – No Overhang. Maximum allowable span (mm) by load width W and wind classification. Wind classifications have been chosen as per AS4055.",
+  "spanFootnote": "Values in mm. Full span tables — including 600mm overhang, equal continuous span and Case 2 (Maximum Building Height = 12.0 m) — are available in the downloadable PDF below.",
+  "spanWindHeaders": [
+    "N1",
+    "N2",
+    "N3",
+    "N4",
+    "N5"
+  ],
+  "spanTables": [
+    {
+      "beam": "100 x 50 mm ALYSPAN Beam",
+      "sub": "Single Span – No Overhang · Max. Adjacent Building Height = 4.8 m",
+      "rows": [
+        {
+          "w": "1500",
+          "spans": [
+            "3700",
+            "3700",
+            "3100",
+            "2600",
+            "2200"
+          ]
+        },
+        {
+          "w": "1800",
+          "spans": [
+            "3500",
+            "3500",
+            "2900",
+            "2400",
+            "2100"
+          ]
+        },
+        {
+          "w": "2100",
+          "spans": [
+            "3300",
+            "3300",
+            "2700",
+            "2300",
+            "1900"
+          ]
+        },
+        {
+          "w": "2400",
+          "spans": [
+            "3200",
+            "3200",
+            "2600",
+            "2200",
+            "1800"
+          ]
+        },
+        {
+          "w": "2700",
+          "spans": [
+            "3000",
+            "3000",
+            "2500",
+            "2100",
+            "1700"
+          ]
+        },
+        {
+          "w": "3000",
+          "spans": [
+            "2900",
+            "2900",
+            "2400",
+            "2000",
+            "1600"
+          ]
+        },
+        {
+          "w": "3300",
+          "spans": [
+            "2800",
+            "2800",
+            "2300",
+            "1900",
+            "1500"
+          ]
+        },
+        {
+          "w": "3600",
+          "spans": [
+            "2700",
+            "2700",
+            "2300",
+            "1800",
+            "1400"
+          ]
+        },
+        {
+          "w": "3900",
+          "spans": [
+            "2700",
+            "2700",
+            "2200",
+            "1700",
+            "1300"
+          ]
+        },
+        {
+          "w": "4200",
+          "spans": [
+            "2600",
+            "2600",
+            "2100",
+            "1600",
+            "1300"
+          ]
+        },
+        {
+          "w": "4500",
+          "spans": [
+            "2500",
+            "2500",
+            "2000",
+            "1500",
+            "1200"
+          ]
+        }
+      ]
+    },
+    {
+      "beam": "150 x 50 mm ALYSPAN Beam",
+      "sub": "Single Span – No Overhang · Max. Adjacent Building Height = 4.8 m",
+      "rows": [
+        {
+          "w": "1500",
+          "spans": [
+            "5100",
+            "5100",
+            "4200",
+            "3600",
+            "3100"
+          ]
+        },
+        {
+          "w": "2000",
+          "spans": [
+            "4700",
+            "4700",
+            "3800",
+            "3300",
+            "2600"
+          ]
+        },
+        {
+          "w": "2500",
+          "spans": [
+            "4300",
+            "4300",
+            "3600",
+            "2900",
+            "2300"
+          ]
+        },
+        {
+          "w": "3000",
+          "spans": [
+            "4100",
+            "4100",
+            "3300",
+            "2600",
+            "2100"
+          ]
+        },
+        {
+          "w": "3500",
+          "spans": [
+            "3900",
+            "3900",
+            "3100",
+            "2400",
+            "1900"
+          ]
+        },
+        {
+          "w": "4000",
+          "spans": [
+            "3700",
+            "3700",
+            "2900",
+            "2300",
+            "1800"
+          ]
+        },
+        {
+          "w": "4500",
+          "spans": [
+            "3500",
+            "3500",
+            "2700",
+            "2100",
+            "1700"
+          ]
+        },
+        {
+          "w": "5000",
+          "spans": [
+            "3400",
+            "3300",
+            "2500",
+            "2000",
+            "1600"
+          ]
+        },
+        {
+          "w": "5500",
+          "spans": [
+            "3300",
+            "3100",
+            "2400",
+            "1900",
+            "1500"
+          ]
+        },
+        {
+          "w": "6000",
+          "spans": [
+            "3200",
+            "3000",
+            "2300",
+            "1800",
+            "1400"
+          ]
+        },
+        {
+          "w": "6500",
+          "spans": [
+            "3100",
+            "2900",
+            "2200",
+            "1700",
+            "1300"
+          ]
+        },
+        {
+          "w": "7000",
+          "spans": [
+            "3000",
+            "2800",
+            "2100",
+            "1600",
+            "1300"
+          ]
+        }
+      ]
+    }
+  ],
+  "engineeringEyebrow": "Engineering & compliance",
+  "engineeringH2": "Certified by practising structural engineers.",
+  "engineeringLead": "These span tables have been prepared for the use of Quickbuilt Systems ALYSPAN Structural Aluminium Beam for attached patio, awning, and carport designs only. For the purposes of these tables, roofs are deemed attached to an existing approved dwelling.",
+  "standardsTitle": "Australian Standards",
+  "standardsIntro": "The structural sections comply with the following Australian Standards.",
+  "standards": [
+    "AS 1170.0 – 2002 Structural design actions – General Principles",
+    "AS 1170.1 – 2002 Structural design actions – Permanent imposed and other actions",
+    "AS 1170.2 – 2002 Structural design actions – Wind actions",
+    "AS 4055 – 2006 Wind Loads for Housing",
+    "AS 1664 – 1997 Aluminium Structures"
+  ],
+  "designTitle": "Design parameters",
+  "design": [
+    {
+      "label": "Dead Load (DL)",
+      "value": "0.2 kPa – Only roof sheeting is allowed for."
+    },
+    {
+      "label": "Live Load (LL)",
+      "value": "(1.8/A + 0.12 ≥ 0.25) kPa where A is the roof tributary area in m²."
+    },
+    {
+      "label": "Wind classifications",
+      "value": "N1, N2, N3, N4, N5"
+    },
+    {
+      "label": "Deflection limits",
+      "value": "Dead Load: Span/300 · Wind Load: Span/300"
+    },
+    {
+      "label": "Maximum roof pitch",
+      "value": "5°"
+    },
+    {
+      "label": "Posts",
+      "value": "Minimum post size 50 x 50 x 2.5 mm, up to a maximum height of 3.0 m."
+    }
+  ],
+  "certificateQuote": "Ross Engineers, Practicing Structural Engineers, hereby certify that we have carried out computations in accordance with proper design principles, and we confirm that the design tables conform to the Building Code of Australia.",
+  "certificateAttrib": "Design Certificate · Ross Engineers, Practicing Structural Engineers",
+  "catalogueEyebrow": "Product catalogue",
+  "catalogueH2": "Every Alyspan® part number.",
+  "catalogueLead": "The full Alyspan range — beams, posts, connectors, brackets and end caps — with the product code to quote on your order.",
+  "catalogue": [
+    {
+      "group": "Beams",
+      "img": "/photos/alyspan/beam-150x50.jpg",
+      "items": [
+        {
+          "desc": "Alyspan 100 x 50 6.5m – Mill",
+          "code": "AB1005065M"
+        },
+        {
+          "desc": "Alyspan 100 x 50 6.5m – Pearl White",
+          "code": "AB1005065PW"
+        },
+        {
+          "desc": "Alyspan 150 x 50 8.0m - Mill",
+          "code": "AB1505080M"
+        },
+        {
+          "desc": "Alyspan 150 x 50 8.0m – Pearl White",
+          "code": "AB1505080PW"
+        }
+      ]
+    },
+    {
+      "group": "Beam End Caps",
+      "img": "/photos/alyspan/end-cap-150.jpg",
+      "items": [
+        {
+          "desc": "Alyspan Beam End Caps 100 – Gal",
+          "code": "ASEC100G"
+        },
+        {
+          "desc": "Alyspan Beam End Caps 100 – Pearl White",
+          "code": "ASEC100PW"
+        },
+        {
+          "desc": "Alyspan Beam End Caps 150 – Gal",
+          "code": "ASEC150G"
+        },
+        {
+          "desc": "Alyspan Beam End Caps 150 – Pearl White",
+          "code": "ASEC150PW"
+        }
+      ]
+    },
+    {
+      "group": "Post / Beam Connectors",
+      "img": "/photos/alyspan/post-beam-connector-90.jpg",
+      "items": [
+        {
+          "desc": "Alyspan Post / Beam Connectors 65 – Gal",
+          "code": "ASBC65G"
+        },
+        {
+          "desc": "Alyspan Post / Beam Connectors 65 – Pearl White",
+          "code": "ASBC65PW"
+        },
+        {
+          "desc": "Alyspan Post / Beam Connectors 90 – Gal",
+          "code": "ASBC90G"
+        },
+        {
+          "desc": "Alyspan Post / Beam Connectors 90 – Pearl White",
+          "code": "ASBC90PW"
+        }
+      ]
+    },
+    {
+      "group": "Frame Brackets",
+      "img": "/photos/alyspan/schem-frame-bracket.jpg",
+      "items": [
+        {
+          "desc": "Alyspan Frame Bracket 100 15° – Gal",
+          "code": "ASFB15100G"
+        },
+        {
+          "desc": "Alyspan Frame Bracket 100 15° – Pearl White",
+          "code": "ASFB15100PW"
+        },
+        {
+          "desc": "Alyspan Frame Bracket 150 15° – Gal",
+          "code": "ASFB15150G"
+        },
+        {
+          "desc": "Alyspan Frame Bracket 150 15° – Pearl White",
+          "code": "ASFB15150PW"
+        },
+        {
+          "desc": "Alyspan Frame Bracket 100 22° – Gal",
+          "code": "ASFB225100G"
+        },
+        {
+          "desc": "Alyspan Frame Bracket 100 22° – Pearl White",
+          "code": "ASFB225100PW"
+        },
+        {
+          "desc": "Alyspan Frame Bracket 150 22° – Gal",
+          "code": "ASFB225150G"
+        },
+        {
+          "desc": "Alyspan Frame Bracket 150 22° – Pearl White",
+          "code": "ASFB225150PW"
+        }
+      ]
+    },
+    {
+      "group": "Apex",
+      "img": "/photos/alyspan/schem-apex.jpg",
+      "items": [
+        {
+          "desc": "Alyspan Apex 100 22° / 15° – Gal",
+          "code": "ASAP22510022°/15°G"
+        },
+        {
+          "desc": "Alyspan Apex 100 22° / 15° – Pearl White",
+          "code": "ASAP22510022°/15°PW"
+        },
+        {
+          "desc": "Alyspan Apex 150 22° / 15° – Gal",
+          "code": "ASAP22515022°/15°G"
+        },
+        {
+          "desc": "Alyspan Apex 150 22° / 15° – Pearl White",
+          "code": "ASAP22515022°/15°PW"
+        }
+      ]
+    },
+    {
+      "group": "Suspension Brackets",
+      "img": "/photos/alyspan/schem-suspension-bracket.png",
+      "items": [
+        {
+          "desc": "Alyspan Suspension Bracket 100 – Gal",
+          "code": "ASSB100G"
+        },
+        {
+          "desc": "Alyspan Suspension Bracket 100 – Pearl White",
+          "code": "ASSB100PW"
+        },
+        {
+          "desc": "Alyspan Suspension Bracket 150 – Gal",
+          "code": "ASSB150G"
+        },
+        {
+          "desc": "Alyspan Suspension Bracket 150 – Pearl White",
+          "code": "ASSB150PW"
+        }
+      ]
+    },
+    {
+      "group": "Corner Brackets",
+      "img": "/photos/alyspan/schem-corner-bracket.jpg",
+      "items": [
+        {
+          "desc": "Alyspan Corner Bracket 100 – Gal",
+          "code": "ASCB100G"
+        },
+        {
+          "desc": "Alyspan Corner Bracket 100 – Pearl White",
+          "code": "ASCB100PW"
+        },
+        {
+          "desc": "Alyspan Corner Bracket 150 – Gal",
+          "code": "ASCB150G"
+        },
+        {
+          "desc": "Alyspan Corner Bracket 150 – Pearl White",
+          "code": "ASCB150PW"
+        }
+      ]
+    },
+    {
+      "group": "Aluminium Posts",
+      "img": "/photos/alyspan/post-90.jpg",
+      "items": [
+        {
+          "desc": "50mm Aluminium Post 6.5m – Mill",
+          "code": "ASAP5065M"
+        },
+        {
+          "desc": "50mm Aluminium Post 6.5m – Pearl White",
+          "code": "ASAP5065PW"
+        },
+        {
+          "desc": "65mm Aluminium Post 6.5m – Mill",
+          "code": "ASAP6565M"
+        },
+        {
+          "desc": "65mm Aluminium Post 6.5m – Pearl White",
+          "code": "ASAP6565PW"
+        },
+        {
+          "desc": "90mm Aluminium Post 6.5m – Mill",
+          "code": "ASAP9065M"
+        },
+        {
+          "desc": "90mm Aluminium Post 6.5m – Pearl White",
+          "code": "ASAP9065PW"
+        }
+      ]
+    },
+    {
+      "group": "Internal Post Connectors",
+      "img": "/photos/alyspan/post-connector-internal.jpg",
+      "items": [
+        {
+          "desc": "Alyspan Internal Post Connector 65 x 65",
+          "code": "ASPC6565"
+        },
+        {
+          "desc": "Alyspan Internal Post Connector 90 x 90",
+          "code": "ASPC9090"
+        },
+        {
+          "desc": "Alyspan Internal Post Connector 70 x 50",
+          "code": "ASPC7050"
+        }
+      ]
+    }
+  ],
+  "faqEyebrow": "Alyspan® questions",
+  "faqH2": "Specifying aluminium beams, answered.",
+  "faq": [
+    {
+      "q": "What size aluminium patio beams does Alyspan come in?",
+      "a": "Alyspan is available in both 100mm x 50mm and 150mm x 50mm beam sizes at lengths to suit your application. The 100 x 50 beam is supplied in 6.5m lengths and the 150 x 50 in 8.0m lengths, and both cut down on site."
+    },
+    {
+      "q": "What aluminium alloy are Alyspan beams made from?",
+      "a": "Both Alyspan sections are extruded from 6063 – T6 aluminium. The 100 x 50 has an area of 599 mm² and weighs 1.635 kg/m; the 150 x 50 has an area of 759 mm² and weighs 2.072 kg/m."
+    },
+    {
+      "q": "Do Alyspan beams comply with Australian Standards?",
+      "a": "All structural sections comply with Australian standards for Structural Design, Aluminium Structures and Wind Loads for housing — AS 1170.0, AS 1170.1, AS 1170.2, AS 4055 – 2006 and AS 1664 – 1997. The span tables are certified by Ross Engineers, Practicing Structural Engineers."
+    },
+    {
+      "q": "How far can an Alyspan aluminium beam span?",
+      "a": "It depends on load width and wind classification. For a single span with no overhang and a maximum adjacent building height of 4.8m, a 150 x 50 beam spans up to 5100mm in N1 and N2 at a 1500mm load width. Full span tables for overhangs, continuous spans and 12.0m building heights are in the downloadable PDF."
+    },
+    {
+      "q": "Can I cut Alyspan beams on site?",
+      "a": "Yes. Manufactured from aluminium Alyspan is easy to cut on site and light weight making it ideal for the \"DIY\" Home Owner or Handyman building an outdoor patio or living area."
+    },
+    {
+      "q": "What colours are Alyspan beams and brackets available in?",
+      "a": "Beams and posts are stocked in Mill and Pearl White, and brackets in Gal and Pearl White, with Monument also available. Beams available in other colours — check for lead time and colours at time of order."
+    },
+    {
+      "q": "Do Alyspan beams rust?",
+      "a": "No. Aluminium does not rust, and Alyspan Beams are Powder coated in a Hi-Gloss finish providing an excellent finish to the project — which is why the range is specified for coastal and high-exposure sites across Australia."
+    },
+    {
+      "q": "How do I order Alyspan aluminium beams and posts?",
+      "a": "Order direct from Quick Built Systems. Call 1300 132 787 or send us your patio, awning or carport dimensions and we'll come back with beam sizes, post centres, the full parts list and a price — supplied from our Silverdale, NSW facility."
+    }
+  ],
+  "relatedResources": {
+    "eyebrow": "Technical specifications",
+    "h2": "Want the full Alyspan® span tables?",
+    "lead": "Full span tables and technical specifications are available by downloading the below PDF — section properties, connection schematics, wind pressures, design loadings and the engineer's design certificate.",
+    "files": [
+      "alyspan-span-tables.pdf",
+      "qbs-patios-brochure.pdf",
+      "insulated-patio-install-guide.pdf",
+      "insulspan-brochure.pdf"
+    ]
+  },
+  "ctaH2": "Ready to specify Alyspan®?",
+  "ctaBody": "Send us your patio, awning or carport dimensions and we'll come back with beam sizes, post centres, the full parts list and a no-obligation price."
+}

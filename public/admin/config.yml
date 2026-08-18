@@ -130,6 +130,13 @@ collections:
                   - { name: title, label: Title, widget: string }
                   - { name: description, label: Description, widget: text }
                   - { name: ogImage, label: Social share image, widget: image, required: false }
+              - name: alyspan
+                label: Alyspan®
+                widget: object
+                fields:
+                  - { name: title, label: Title, widget: string }
+                  - { name: description, label: Description, widget: text }
+                  - { name: ogImage, label: Social share image, widget: image, required: false }
               - name: gallery
                 label: Gallery
                 widget: object
@@ -587,6 +594,184 @@ collections:
             fields:
               - { name: title, label: Title, widget: string }
               - { name: copy,  label: Copy,  widget: text }
+
+  # ── Alyspan structural aluminium page ──────────────────────
+  - name: alyspan
+    label: Alyspan® Aluminium Page
+    files:
+      - name: alyspan
+        label: Alyspan® Content
+        file: content/alyspan.json
+        format: json
+        fields:
+          - { name: kicker,          label: Kicker, widget: string }
+          - { name: heroTitle,       label: Hero title (first line),  widget: string }
+          - { name: heroTitleAccent, label: Hero title accent (second line), widget: string }
+          - { name: heroLead,        label: Hero lead paragraph,      widget: text }
+          - { name: heroPhoto,       label: Hero photo,               widget: image }
+          - { name: heroPhotoTag,    label: Hero photo caption,       widget: string }
+          - name: specs
+            label: Spec strip (4 boxes)
+            widget: list
+            fields:
+              - { name: label, label: Label, widget: string }
+              - { name: value, label: Value, widget: string }
+          - { name: overviewEyebrow,   label: Overview eyebrow,   widget: string }
+          - { name: overviewH2,        label: Overview headline,  widget: string }
+          - { name: overviewPara1,     label: Overview paragraph 1, widget: text }
+          - { name: overviewPara2,     label: Overview paragraph 2, widget: text }
+          - { name: overviewPara3,     label: Overview paragraph 3, widget: text }
+          - { name: overviewPhoto,     label: Overview photo,     widget: image }
+          - { name: overviewPhotoTag,  label: Overview photo caption, widget: string }
+          - { name: advantagesEyebrow, label: Advantages eyebrow, widget: string }
+          - { name: advantagesH2,      label: Advantages headline, widget: string }
+          - { name: advantagesLead,    label: Advantages intro,   widget: text }
+          - name: advantages
+            label: Advantages
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { name: title, label: Title, widget: string }
+              - { name: copy,  label: Copy,  widget: text }
+          - { name: beamsEyebrow, label: Beams eyebrow,  widget: string }
+          - { name: beamsH2,      label: Beams headline, widget: string }
+          - { name: beamsLead,    label: Beams intro,    widget: text }
+          - name: beams
+            label: Beam sections
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { name: name,    label: Beam name, widget: string }
+              - { name: photo,   label: Product photo, widget: image }
+              - { name: section, label: Section drawing, widget: image }
+              - name: properties
+                label: Section properties
+                widget: list
+                fields:
+                  - { name: label, label: Label, widget: string }
+                  - { name: value, label: Value, widget: string }
+              - name: codes
+                label: Product codes
+                widget: list
+                fields:
+                  - { name: desc, label: Description, widget: string }
+                  - { name: code, label: Product code, widget: string }
+          - { name: beamsFootnote, label: Beams footnote, widget: text }
+          - { name: bannerPhoto,   label: Full-width banner photo, widget: image }
+          - { name: systemEyebrow, label: System eyebrow,  widget: string }
+          - { name: systemH2,      label: System headline, widget: string }
+          - { name: systemLead,    label: System intro,    widget: text }
+          - name: components
+            label: Components (real product photos)
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { name: name,  label: Name,  widget: string }
+              - { name: sizes, label: Sizes, widget: string }
+              - { name: copy,  label: Copy,  widget: text }
+              - { name: img,   label: Photo, widget: image }
+          - name: schematics
+            label: Bracket schematics
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { name: name,  label: Name,  widget: string }
+              - { name: sizes, label: Sizes, widget: string }
+              - { name: img,   label: Drawing, widget: image }
+          - { name: schematicsNote,      label: Schematics note, widget: text }
+          - { name: componentsFootnote,  label: Components footnote, widget: text }
+          - { name: finishesEyebrow, label: Finishes eyebrow,  widget: string }
+          - { name: finishesH2,      label: Finishes headline, widget: string }
+          - { name: finishesLead,    label: Finishes intro,    widget: text }
+          - name: finishes
+            label: Finish swatches
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { name: name, label: Name, widget: string }
+              - { name: hex,  label: Colour, widget: color }
+          - { name: spanEyebrow,  label: Span tables eyebrow,  widget: string }
+          - { name: spanH2,       label: Span tables headline, widget: string }
+          - { name: spanLead,     label: Span tables intro,    widget: text }
+          - { name: spanFootnote, label: Span tables footnote, widget: text }
+          - name: spanWindHeaders
+            label: Wind classification columns
+            widget: list
+            field: { name: wind, label: Wind class, widget: string }
+          - name: spanTables
+            label: Span tables
+            widget: list
+            summary: "{{fields.beam}}"
+            fields:
+              - { name: beam, label: Beam, widget: string }
+              - { name: sub,  label: Subtitle, widget: string }
+              - name: rows
+                label: Rows
+                widget: list
+                summary: "W {{fields.w}}"
+                fields:
+                  - { name: w, label: "Load width W (mm)", widget: string }
+                  - name: spans
+                    label: Spans (one per wind class, in order)
+                    widget: list
+                    field: { name: span, label: Span (mm), widget: string }
+          - { name: engineeringEyebrow, label: Engineering eyebrow,  widget: string }
+          - { name: engineeringH2,      label: Engineering headline, widget: string }
+          - { name: engineeringLead,    label: Engineering intro,    widget: text }
+          - { name: standardsTitle,     label: Standards card title, widget: string }
+          - { name: standardsIntro,     label: Standards card intro, widget: text }
+          - name: standards
+            label: Australian Standards
+            widget: list
+            field: { name: standard, label: Standard, widget: string }
+          - { name: designTitle, label: Design parameters card title, widget: string }
+          - name: design
+            label: Design parameters
+            widget: list
+            fields:
+              - { name: label, label: Label, widget: string }
+              - { name: value, label: Value, widget: text }
+          - { name: certificateQuote,  label: Design certificate quote, widget: text }
+          - { name: certificateAttrib, label: Design certificate attribution, widget: string }
+          - { name: catalogueEyebrow, label: Catalogue eyebrow,  widget: string }
+          - { name: catalogueH2,      label: Catalogue headline, widget: string }
+          - { name: catalogueLead,    label: Catalogue intro,    widget: text }
+          - name: catalogue
+            label: Product catalogue
+            widget: list
+            summary: "{{fields.group}}"
+            fields:
+              - { name: group, label: Group name, widget: string }
+              - { name: img,   label: Part thumbnail, widget: image }
+              - name: items
+                label: Items
+                widget: list
+                summary: "{{fields.code}} — {{fields.desc}}"
+                fields:
+                  - { name: desc, label: Description, widget: string }
+                  - { name: code, label: Product code, widget: string }
+          - { name: faqEyebrow, label: FAQ eyebrow,  widget: string }
+          - { name: faqH2,      label: FAQ headline, widget: string }
+          - name: faq
+            label: FAQ
+            widget: list
+            summary: "{{fields.q}}"
+            fields:
+              - { name: q, label: Question, widget: string }
+              - { name: a, label: Answer,   widget: text }
+          - name: relatedResources
+            label: Related resources (shown at bottom of page)
+            widget: object
+            fields:
+              - { name: eyebrow, label: Section eyebrow,  widget: string }
+              - { name: h2,      label: Section headline, widget: string }
+              - { name: lead,    label: Section intro,    widget: text }
+              - name: files
+                label: Files to feature (filename only, e.g. alyspan-span-tables.pdf)
+                widget: list
+                field: { name: file, label: PDF filename, widget: string, hint: "Must match a file under /public/pdfs/. The matching entry in Resources Page is used for title, cover and description." }
+          - { name: ctaH2,   label: Closing CTA headline, widget: string }
+          - { name: ctaBody, label: Closing CTA body,     widget: text }
 
   # ── About page ─────────────────────────────────────────────
   - name: about

@@ -36,6 +36,15 @@ const products = [
     image: "/photos/product-panelcore-new.png",
     href: "/products/panelcore",
   },
+  {
+    num: "04",
+    kicker: "Alyspan®",
+    title: "Structural Aluminium Beams & Posts",
+    copy: "ALYSPAN by Quick Built Systems is a Structural Aluminium Beam perfect for construction of residential patios, awnings and carports. A complete beam system comprising of beams, brackets and fixings — designed in Australia and certified to Australian Standards.",
+    features: ["100 x 50 & 150 x 50 sections", "6063-T6 aluminium alloy", "Engineer-certified span tables", "Powder coated Hi-Gloss finish"],
+    image: "/photos/alyspan/lifestyle-hero.jpg",
+    href: "/products/alyspan",
+  },
 ];
 
 export default function ProductsPage() {
@@ -95,7 +104,7 @@ export default function ProductsPage() {
               maxWidth: "18ch",
             }}
           >
-            One system. Three product families.
+            One system. Four product families.
           </h1>
           <p
             className="hero-animate"
@@ -107,8 +116,9 @@ export default function ProductsPage() {
               margin: 0,
             }}
           >
-            Insulspan® roofing, Panelspan® walls and Panelcore® coldroom panels — engineered
-            together as one high-performance building system, or specified individually.
+            Insulspan® roofing, Panelspan® walls, Panelcore® coldroom panels and Alyspan®
+            structural aluminium — engineered together as one high-performance building
+            system, or specified individually.
           </p>
         </div>
       </section>
@@ -121,7 +131,7 @@ export default function ProductsPage() {
               <Link key={p.num} href={p.href} className="ts-range-row range-row-animate">
                 <div className="ts-range-photo">
                   <Image src={p.image} alt={p.title} fill style={{ objectFit: "cover" }} sizes="(max-width: 1024px) 100vw, 40vw" />
-                  <span className="ts-range-num">{p.num} / 03</span>
+                  <span className="ts-range-num">{p.num} / 0{products.length}</span>
                 </div>
                 <div className="ts-range-body">
                   <div className="ts-range-kicker">{p.kicker}</div>

@@ -3,7 +3,7 @@
     "titleTemplate": "%s · Quick Built Systems",
     "defaultTitle": "Quick Built Systems — Australia's Lightest, Fastest SIPs System",
     "description": "Insulspan® roofing panels, Panelspan® wall panels and Panelcore® sunroom & coldroom panels. Pre-finished SIPs engineered for Australian conditions. Family-owned, 25 years experience.",
-    "keywords": "SIPs panels, structural insulated panels, insulated roofing, Insulspan, Panelspan, Panelcore, Quick Built Systems, QuickBuilt, Australian building",
+    "keywords": "SIPs panels, structural insulated panels, insulated roofing, Insulspan, Panelspan, Panelcore, Alyspan, aluminium patio beams, structural aluminium beams, aluminium posts, patio beam span tables, Quick Built Systems, QuickBuilt, Australian building",
     "ogImage": "/photos/og-default.jpg",
     "siteName": "Quick Built Systems",
     "locale": "en_AU"
@@ -43,6 +43,11 @@
       "title": "Panelcore® Sunroom & Coldroom Panels",
       "description": "Steel-skinned insulated panels for sunrooms, enclosed outdoor living and controlled-temperature spaces — from year-round sunrooms to cold rooms and freezers.",
       "ogImage": ""
+    },
+    "alyspan": {
+      "title": "Alyspan® Structural Aluminium Beams & Posts",
+      "description": "Australian-designed structural aluminium patio beams, posts, connectors and brackets. 100x50 and 150x50 in 6063-T6, engineer-certified span tables to AS 1664 and AS 4055.",
+      "ogImage": "/photos/alyspan/lifestyle-hero.jpg"
     },
     "gallery": {
       "title": "Project Gallery",
