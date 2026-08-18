@@ -5,6 +5,7 @@
   "heroLead": "ALYSPAN by Quick Built Systems is a Structural Aluminium Beam perfect for construction of residential patios, awnings and carports.",
   "heroPhoto": "/photos/alyspan/lifestyle-hero.jpg",
   "heroPhotoTag": "Alyspan® posts and beams — attached patio",
+  "heroPhotoAlt": "Alyspan aluminium posts and beams supporting an attached patio roof",
   "specs": [
     {
       "label": "Alloy",
@@ -30,6 +31,7 @@
   "overviewPara3": "All structural sections comply with Australian standards for Structural Design, Aluminium Structures and Wind Loads for housing.",
   "overviewPhoto": "/photos/alyspan/lifestyle-longspan.jpg",
   "overviewPhotoTag": "Long spans, fewer posts — Monument finish",
+  "overviewPhotoAlt": "Alyspan Pearl White aluminium posts, beams and connectors",
   "advantagesEyebrow": "Advantages",
   "advantagesH2": "Why builders specify Alyspan®.",
   "advantagesLead": "Alyspan Structural Aluminium Beams offer excellent span capabilities due to the unique design of the fluted beam profile.",
@@ -136,6 +138,7 @@
   ],
   "beamsFootnote": "Beams available in other colours. Check for lead time and colours at time of order.",
   "bannerPhoto": "/photos/alyspan/lifestyle-banner.jpg",
+  "bannerPhotoAlt": "Attached patio built on Alyspan aluminium posts and beams",
   "systemEyebrow": "The complete system",
   "systemH2": "Beams, posts, connectors and brackets — from one supplier.",
   "systemLead": "The Alyspan Smart Connectors are Australian Made from quality Galvanised Steel and Powder Coated providing a quick and easy system to construct a wide range of patios and outdoor living areas.",
@@ -200,6 +203,7 @@
     }
   ],
   "schematicsNote": "Refer to manufacturer for further details regarding brackets and fixings.",
+  "schematicsH3": "Brackets & connections",
   "componentsFootnote": "Brackets available in other colours. Check for lead time and colours at time of order.",
   "finishesEyebrow": "Finishes",
   "finishesH2": "Mill, Pearl White and Monument.",
@@ -229,6 +233,9 @@
     "N4",
     "N5"
   ],
+  "spanColW": "W (mm)",
+  "spanColWSub": "Load width",
+  "spanColSpans": "Maximum Allowable Span (mm)",
   "spanTables": [
     {
       "beam": "100 x 50 mm ALYSPAN Beam",
@@ -739,6 +746,7 @@
   ],
   "faqEyebrow": "Alyspan® questions",
   "faqH2": "Specifying aluminium beams, answered.",
+  "faqLead": "Straight answers to the questions builders, owner-builders and certifiers ask us about aluminium patio beams.",
   "faq": [
     {
       "q": "What size aluminium patio beams does Alyspan come in?",

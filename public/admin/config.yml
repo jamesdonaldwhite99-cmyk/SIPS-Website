@@ -298,6 +298,34 @@ collections:
               - { name: q, label: Question, widget: string }
               - { name: a, label: Answer,   widget: text }
 
+  # ── Products index page ────────────────────────────────────
+  - name: products
+    label: Products Index Page
+    files:
+      - name: products
+        label: Products Index Content
+        file: content/products.json
+        format: json
+        fields:
+          - { name: heroEyebrow, label: Hero eyebrow,   widget: string }
+          - { name: heroH1,      label: Hero headline,  widget: string }
+          - { name: heroLead,    label: Hero lead text, widget: text }
+          - name: products
+            label: Product families (order sets the 01/02/03 numbering)
+            widget: list
+            summary: "{{fields.kicker}} — {{fields.title}}"
+            fields:
+              - { name: kicker, label: Brand kicker (e.g. Insulspan®), widget: string }
+              - { name: title,  label: Title, widget: string }
+              - { name: copy,   label: Description, widget: text }
+              - name: features
+                label: Feature bullets
+                widget: list
+                field: { name: feature, label: Feature, widget: string }
+              - { name: image, label: Photo, widget: image }
+              - { name: href,  label: Link, widget: string, hint: "e.g. /products/alyspan" }
+          - { name: ctaLabel, label: Row link label, widget: string }
+
   # ── Insulspan product page ─────────────────────────────────
   - name: insulspan
     label: Insulspan® Product Page
@@ -610,6 +638,7 @@ collections:
           - { name: heroLead,        label: Hero lead paragraph,      widget: text }
           - { name: heroPhoto,       label: Hero photo,               widget: image }
           - { name: heroPhotoTag,    label: Hero photo caption,       widget: string }
+          - { name: heroPhotoAlt,    label: Hero photo alt text,      widget: string, hint: "Describes the image for Google and screen readers" }
           - name: specs
             label: Spec strip (4 boxes)
             widget: list
@@ -623,6 +652,7 @@ collections:
           - { name: overviewPara3,     label: Overview paragraph 3, widget: text }
           - { name: overviewPhoto,     label: Overview photo,     widget: image }
           - { name: overviewPhotoTag,  label: Overview photo caption, widget: string }
+          - { name: overviewPhotoAlt,  label: Overview photo alt text, widget: string }
           - { name: advantagesEyebrow, label: Advantages eyebrow, widget: string }
           - { name: advantagesH2,      label: Advantages headline, widget: string }
           - { name: advantagesLead,    label: Advantages intro,   widget: text }
@@ -658,6 +688,7 @@ collections:
                   - { name: code, label: Product code, widget: string }
           - { name: beamsFootnote, label: Beams footnote, widget: text }
           - { name: bannerPhoto,   label: Full-width banner photo, widget: image }
+          - { name: bannerPhotoAlt, label: Banner photo alt text,  widget: string }
           - { name: systemEyebrow, label: System eyebrow,  widget: string }
           - { name: systemH2,      label: System headline, widget: string }
           - { name: systemLead,    label: System intro,    widget: text }
@@ -679,6 +710,7 @@ collections:
               - { name: sizes, label: Sizes, widget: string }
               - { name: img,   label: Drawing, widget: image }
           - { name: schematicsNote,      label: Schematics note, widget: text }
+          - { name: schematicsH3,        label: Schematics sub-heading, widget: string }
           - { name: componentsFootnote,  label: Components footnote, widget: text }
           - { name: finishesEyebrow, label: Finishes eyebrow,  widget: string }
           - { name: finishesH2,      label: Finishes headline, widget: string }
@@ -698,6 +730,9 @@ collections:
             label: Wind classification columns
             widget: list
             field: { name: wind, label: Wind class, widget: string }
+          - { name: spanColW,     label: "Span table — W column heading", widget: string }
+          - { name: spanColWSub,  label: "Span table — W column sub-heading", widget: string }
+          - { name: spanColSpans, label: "Span table — spans column heading", widget: string }
           - name: spanTables
             label: Span tables
             widget: list
@@ -752,6 +787,7 @@ collections:
                   - { name: code, label: Product code, widget: string }
           - { name: faqEyebrow, label: FAQ eyebrow,  widget: string }
           - { name: faqH2,      label: FAQ headline, widget: string }
+          - { name: faqLead,    label: FAQ intro,    widget: text }
           - name: faq
             label: FAQ
             widget: list

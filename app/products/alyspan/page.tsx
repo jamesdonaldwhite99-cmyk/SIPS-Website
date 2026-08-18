@@ -133,7 +133,7 @@ export default function AlyspanPage() {
               </div>
             </div>
             <div className="ts-product-hero-photo">
-              <Image src={data.heroPhoto} alt="Alyspan aluminium posts and beams supporting an attached patio roof" fill style={{ objectFit: "cover" }} priority sizes="60vw" />
+              <Image src={data.heroPhoto} alt={data.heroPhotoAlt} fill style={{ objectFit: "cover" }} priority sizes="60vw" />
               <span className="ts-photo-tag">{data.heroPhotoTag}</span>
             </div>
           </div>
@@ -174,7 +174,7 @@ export default function AlyspanPage() {
               </div>
             </div>
             <div className="ts-intro-photo overview-animate">
-              <Image src={data.overviewPhoto} alt="Alyspan Pearl White aluminium posts, beams and connectors" fill style={{ objectFit: "cover" }} sizes="50vw" />
+              <Image src={data.overviewPhoto} alt={data.overviewPhotoAlt} fill style={{ objectFit: "cover" }} sizes="50vw" />
               <span className="ts-photo-tag">{data.overviewPhotoTag}</span>
             </div>
           </div>
@@ -254,7 +254,7 @@ export default function AlyspanPage() {
 
       {/* Full-bleed banner */}
       <div className="ts-image-banner">
-        <Image src={data.bannerPhoto} alt="Attached patio built on Alyspan aluminium posts and beams" fill style={{ objectFit: "cover" }} sizes="100vw" />
+        <Image src={data.bannerPhoto} alt={data.bannerPhotoAlt} fill style={{ objectFit: "cover" }} sizes="100vw" />
       </div>
 
       {/* The complete system */}
@@ -284,7 +284,7 @@ export default function AlyspanPage() {
           </div>
 
           <div className="ts-aly-schem-head">
-            <h3>Brackets &amp; connections</h3>
+            <h3>{data.schematicsH3}</h3>
             <p>{data.schematicsNote}</p>
           </div>
           <div className="ts-aly-schematics">
@@ -346,14 +346,14 @@ export default function AlyspanPage() {
                 <table>
                   <thead>
                     <tr>
-                      <th scope="col" className="w-col">W (mm)</th>
+                      <th scope="col" className="w-col">{data.spanColW}</th>
                       {data.spanWindHeaders.map((h) => (
                         <th scope="col" key={h}>{h}</th>
                       ))}
                     </tr>
                     <tr className="subhead">
-                      <th scope="col" className="w-col">Load width</th>
-                      <th scope="col" colSpan={data.spanWindHeaders.length}>Maximum Allowable Span (mm)</th>
+                      <th scope="col" className="w-col">{data.spanColWSub}</th>
+                      <th scope="col" colSpan={data.spanWindHeaders.length}>{data.spanColSpans}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -458,7 +458,7 @@ export default function AlyspanPage() {
               <div className="ts-eyebrow">{data.faqEyebrow}</div>
               <h2>{data.faqH2}</h2>
             </div>
-            <p>Straight answers to the questions builders, owner-builders and certifiers ask us about aluminium patio beams.</p>
+            <p>{data.faqLead}</p>
           </div>
           <div className="ts-aly-faq">
             {data.faq.map((f, i) => (

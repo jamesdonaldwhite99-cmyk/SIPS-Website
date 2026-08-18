@@ -1,0 +1,60 @@
+{
+  "heroEyebrow": "Our products",
+  "heroH1": "One system. Four product families.",
+  "heroLead": "Insulspan® roofing, Panelspan® walls, Panelcore® coldroom panels and Alyspan® structural aluminium — engineered together as one high-performance building system, or specified individually.",
+  "products": [
+    {
+      "kicker": "Insulspan®",
+      "title": "Insulated Roofing Panels",
+      "copy": "Long-span structural roofing panels with high-performance insulation built in. Three architectural profiles: Monospan, Corrugated, and Corro/Corro. Eliminates purlins, sarking, bulk insulation and plasterboard in one install.",
+      "features": [
+        "Up to 8.1m clear span",
+        "50–150mm core thickness",
+        "BAL 29 compliant",
+        "10-year warranty"
+      ],
+      "image": "/photos/product-insulspan-new.png",
+      "href": "/products/insulspan"
+    },
+    {
+      "kicker": "Panelspan®",
+      "title": "Structural Insulated Wall Panels",
+      "copy": "Pre-finished FC or MgO cladding bonded to a high-density EPS core. Steel Skin, FC/FC and MgO/MgO finishes available. Reach lock-up in days with no external cladding required.",
+      "features": [
+        "FRL 90/90/90 fire rating",
+        "8-Star NatHERS performance",
+        "MgO/MgO or FC/FC faces",
+        "Pre-finished ready to paint"
+      ],
+      "image": "/photos/product-panelspan-new.png",
+      "href": "/products/panelspan"
+    },
+    {
+      "kicker": "Panelcore®",
+      "title": "Sunroom & Coldroom Panels",
+      "copy": "Steel-skinned insulated panels for sunrooms, enclosed outdoor living, cold storage and any controlled-temperature space. Cam-lock joining creates an airtight, seamless envelope that stays comfortable year-round.",
+      "features": [
+        "Steel Colorbond skins",
+        "Insulated foam core",
+        "Warm in winter, cool in summer",
+        "Sunroom to deep-freeze rated"
+      ],
+      "image": "/photos/product-panelcore-new.png",
+      "href": "/products/panelcore"
+    },
+    {
+      "kicker": "Alyspan®",
+      "title": "Structural Aluminium Beams & Posts",
+      "copy": "ALYSPAN by Quick Built Systems is a Structural Aluminium Beam perfect for construction of residential patios, awnings and carports. A complete beam system comprising of beams, brackets and fixings — designed in Australia and certified to Australian Standards.",
+      "features": [
+        "100 x 50 & 150 x 50 sections",
+        "6063-T6 aluminium alloy",
+        "Engineer-certified span tables",
+        "Powder coated Hi-Gloss finish"
+      ],
+      "image": "/photos/alyspan/lifestyle-hero.jpg",
+      "href": "/products/alyspan"
+    }
+  ],
+  "ctaLabel": "Explore →"
+}

@@ -5,47 +5,11 @@ import Link from "next/link";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import data from "@/content/products.json";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const products = [
-  {
-    num: "01",
-    kicker: "Insulspan®",
-    title: "Insulated Roofing Panels",
-    copy: "Long-span structural roofing panels with high-performance insulation built in. Three architectural profiles: Monospan, Corrugated, and Corro/Corro. Eliminates purlins, sarking, bulk insulation and plasterboard in one install.",
-    features: ["Up to 8.1m clear span", "50–150mm core thickness", "BAL 29 compliant", "10-year warranty"],
-    image: "/photos/product-insulspan-new.png",
-    href: "/products/insulspan",
-  },
-  {
-    num: "02",
-    kicker: "Panelspan®",
-    title: "Structural Insulated Wall Panels",
-    copy: "Pre-finished FC or MgO cladding bonded to a high-density EPS core. Steel Skin, FC/FC and MgO/MgO finishes available. Reach lock-up in days with no external cladding required.",
-    features: ["FRL 90/90/90 fire rating", "8-Star NatHERS performance", "MgO/MgO or FC/FC faces", "Pre-finished ready to paint"],
-    image: "/photos/product-panelspan-new.png",
-    href: "/products/panelspan",
-  },
-  {
-    num: "03",
-    kicker: "Panelcore®",
-    title: "Sunroom & Coldroom Panels",
-    copy: "Steel-skinned insulated panels for sunrooms, enclosed outdoor living, cold storage and any controlled-temperature space. Cam-lock joining creates an airtight, seamless envelope that stays comfortable year-round.",
-    features: ["Steel Colorbond skins", "Insulated foam core", "Warm in winter, cool in summer", "Sunroom to deep-freeze rated"],
-    image: "/photos/product-panelcore-new.png",
-    href: "/products/panelcore",
-  },
-  {
-    num: "04",
-    kicker: "Alyspan®",
-    title: "Structural Aluminium Beams & Posts",
-    copy: "ALYSPAN by Quick Built Systems is a Structural Aluminium Beam perfect for construction of residential patios, awnings and carports. A complete beam system comprising of beams, brackets and fixings — designed in Australia and certified to Australian Standards.",
-    features: ["100 x 50 & 150 x 50 sections", "6063-T6 aluminium alloy", "Engineer-certified span tables", "Powder coated Hi-Gloss finish"],
-    image: "/photos/alyspan/lifestyle-hero.jpg",
-    href: "/products/alyspan",
-  },
-];
+const products = data.products;
 
 export default function ProductsPage() {
   const pageRef = useRef<HTMLDivElement>(null);
@@ -90,7 +54,7 @@ export default function ProductsPage() {
             <span className="sep">/</span>
             <span>Products</span>
           </div>
-          <div className="ts-eyebrow hero-animate" style={{ color: "var(--ts-accent)", marginTop: 16 }}>Our products</div>
+          <div className="ts-eyebrow hero-animate" style={{ color: "var(--ts-accent)", marginTop: 16 }}>{data.heroEyebrow}</div>
           <h1
             className="hero-animate"
             style={{
@@ -104,7 +68,7 @@ export default function ProductsPage() {
               maxWidth: "18ch",
             }}
           >
-            One system. Four product families.
+            {data.heroH1}
           </h1>
           <p
             className="hero-animate"
@@ -116,9 +80,7 @@ export default function ProductsPage() {
               margin: 0,
             }}
           >
-            Insulspan® roofing, Panelspan® walls, Panelcore® coldroom panels and Alyspan®
-            structural aluminium — engineered together as one high-performance building
-            system, or specified individually.
+            {data.heroLead}
           </p>
         </div>
       </section>
@@ -127,11 +89,11 @@ export default function ProductsPage() {
       <section className="ts-section">
         <div className="ts-container">
           <div className="ts-range-list">
-            {products.map((p) => (
-              <Link key={p.num} href={p.href} className="ts-range-row range-row-animate">
+            {products.map((p, i) => (
+              <Link key={p.href} href={p.href} className="ts-range-row range-row-animate">
                 <div className="ts-range-photo">
                   <Image src={p.image} alt={p.title} fill style={{ objectFit: "cover" }} sizes="(max-width: 1024px) 100vw, 40vw" />
-                  <span className="ts-range-num">{p.num} / 0{products.length}</span>
+                  <span className="ts-range-num">{`0${i + 1}`} / 0{products.length}</span>
                 </div>
                 <div className="ts-range-body">
                   <div className="ts-range-kicker">{p.kicker}</div>
@@ -144,7 +106,7 @@ export default function ProductsPage() {
                   </ul>
                 </div>
                 <div className="ts-range-action">
-                  <span className="ts-range-link">Explore →</span>
+                  <span className="ts-range-link">{data.ctaLabel}</span>
                 </div>
               </Link>
             ))}
