@@ -3795,6 +3795,23 @@ a { color: inherit; }
   margin-top: 2px;
 }
 
+/* The enquiry size check. Deliberately NOT styled as an error: the enquiry is welcome either way,
+   it just takes a different route, so this reads as advice rather than a rejection. Mirrors the
+   same block on patiokits.com.au. */
+.qb-sizecheck {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border: 1px solid #ffe0a3;
+  background: #fff8ec;
+  border-radius: 8px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: #6b4400;
+}
+.qb-sizecheck p { margin: 0 0 6px; }
+.qb-sizecheck p:last-child { margin-bottom: 0; }
+.qb-sizecheck__fix { font-weight: 600; }
+
 .ts-form-inputs {
   display: grid;
   grid-template-columns: 1fr 1fr;

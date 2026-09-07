@@ -7,6 +7,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import data from "@/content/contact.json";
 import PlacesAutocomplete from "@/components/PlacesAutocomplete";
+import { checkEnquirySize, parseStyle } from "@/lib/patio/enquiry";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -342,6 +343,15 @@ export default function ContactPage() {
 
   // An arbor has no roof → hide roof panel + accessories, keep only beam/post.
   const isArbor = form.patioStyle === "Arbor";
+
+  /* CAN WE ACTUALLY QUOTE THIS? Checked as it is typed.
+     Five of the nine styles above are gables, and a gable is bound by sizes a flat roof never was:
+     its sheets run ridge to eave, so a narrow one asks for a sheet we do not roll. Those enquiries
+     were reaching the patio webhook, failing the automatic pricing for exactly that reason, and
+     being quoted by hand. The check is shared with the patio site — see lib/patio/enquiry.ts. */
+  const sizeCheck = checkEnquirySize(
+    parseStyle(form.patioStyle), Number(form.patioWidth), Number(form.patioLength)
+  );
   // Slimline (non-insulated) roofs don't offer downlights or fan brackets.
   const isSlimline = form.roofType === "Slimline (non-insulated)";
 
@@ -387,12 +397,22 @@ export default function ContactPage() {
     setError("");
 
     try {
-      const targetWebhook = isPatioSubmission && data.patioWebhookUrl
+      /* A SIZE WE CANNOT PRICE MUST NOT GO DOWN THE PRICING PIPELINE.
+         "patio-quote" routes to the quote service, which prices the kit and files the job — and
+         enforces the same structural limits, so an oversize or too-narrow gable was rejected there
+         and finished up quoted by hand with nothing to say why. Sent as a custom enquiry instead,
+         with the reasons attached, it arrives labelled and ready for a designer. */
+      const needsCustom = isPatioSubmission && !sizeCheck.ok;
+      const targetWebhook = isPatioSubmission && !needsCustom && data.patioWebhookUrl
         ? data.patioWebhookUrl
         : data.webhookUrl;
-      const formType = isPatioSubmission ? "patio-quote" : "contact-enquiry";
+      const formType = !isPatioSubmission
+        ? "contact-enquiry"
+        : needsCustom ? "patio-enquiry-custom" : "patio-quote";
 
       const basePayload = {
+        needsCustomDesign: needsCustom,
+        customDesignReasons: needsCustom ? sizeCheck.reasons : undefined,
         name: form.name,
         email: form.email,
         phone: form.phone,
@@ -704,6 +724,20 @@ export default function ContactPage() {
                         <span style={{ display: "block", marginTop: 4, fontSize: 12, color: "var(--color-graphite)" }}>How far the roof sheets project out (front to back).</span>
                       </div>
                     </div>
+
+                    {/* Said beside the fields that caused it, not as a submit error further down.
+                        It never blocks: an oversize patio is still a real enquiry, it just goes to
+                        a designer rather than into the automatic pricing. */}
+                    {!sizeCheck.ok && (
+                      <div className="qb-sizecheck" role="status">
+                        {sizeCheck.reasons.map((r) => <p key={r}>{r}</p>)}
+                        <p className="qb-sizecheck__fix">
+                          {sizeCheck.suggestion
+                            ? `The nearest size we build as a standard kit is about ${sizeCheck.suggestion}. Change it and we can price it straight away, or send it as it is and one of our designers will quote it for you.`
+                            : "Send it as it is and one of our designers will quote it for you, or adjust the size and we can price it straight away."}
+                        </p>
+                      </div>
+                    )}
                   </div>
 
                   {!isArbor && (

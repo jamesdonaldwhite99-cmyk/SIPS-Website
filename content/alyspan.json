@@ -89,12 +89,12 @@
       ],
       "codes": [
         {
-          "desc": "Alyspan 100 x 50 6.5m – Mill",
-          "code": "AB1005065M"
+          "desc": "Alyspan 100 x 50 6.0m – Mill",
+          "code": "AB1005060M"
         },
         {
-          "desc": "Alyspan 100 x 50 6.5m – Pearl White",
-          "code": "AB1005065PW"
+          "desc": "Alyspan 100 x 50 6.0m – Pearl White",
+          "code": "AB1005060PW"
         }
       ]
     },
@@ -530,12 +530,12 @@
       "img": "/photos/alyspan/beam-150x50.jpg",
       "items": [
         {
-          "desc": "Alyspan 100 x 50 6.5m – Mill",
-          "code": "AB1005065M"
+          "desc": "Alyspan 100 x 50 6.0m – Mill",
+          "code": "AB1005060M"
         },
         {
-          "desc": "Alyspan 100 x 50 6.5m – Pearl White",
-          "code": "AB1005065PW"
+          "desc": "Alyspan 100 x 50 6.0m – Pearl White",
+          "code": "AB1005060PW"
         },
         {
           "desc": "Alyspan 150 x 50 8.0m - Mill",
@@ -750,7 +750,7 @@
   "faq": [
     {
       "q": "What size aluminium patio beams does Alyspan come in?",
-      "a": "Alyspan is available in both 100mm x 50mm and 150mm x 50mm beam sizes at lengths to suit your application. The 100 x 50 beam is supplied in 6.5m lengths and the 150 x 50 in 8.0m lengths, and both cut down on site."
+      "a": "Alyspan is available in both 100mm x 50mm and 150mm x 50mm beam sizes at lengths to suit your application. The 100 x 50 beam is supplied in 6.0m lengths and the 150 x 50 in 8.0m lengths, and both cut down on site."
     },
     {
       "q": "What aluminium alloy are Alyspan beams made from?",
