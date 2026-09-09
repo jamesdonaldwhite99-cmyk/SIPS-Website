@@ -44,6 +44,27 @@ const nextConfig = {
   async redirects() {
     return [
       ...alyspanRedirects,
+
+      /* STAFF SHORTCUTS — an address people can remember, pointing at the tool.
+       *
+       * The delivery-docket page lives on the accounts service, because that is where the invoice
+       * ledger and the docket store are. It is NOT copied onto this site: the page reads held
+       * invoices, suppliers and amounts, and a marketing site is the wrong place for a page that
+       * needs the accounts secret to be useful — the secret would sit in public HTML on an indexed
+       * domain. A redirect gives staff the short address without moving any of that here.
+       *
+       * The service hands over its token once and remembers the device for 90 days, so this plain
+       * link is all anyone needs after the first visit. */
+      {
+        source: '/pods',
+        destination: `${process.env.ACCOUNTS_SERVICE_URL || 'https://accounts-payable-ya88.onrender.com'}/accounts/pods`,
+        statusCode: 302,
+      },
+      {
+        source: '/dockets',
+        destination: `${process.env.ACCOUNTS_SERVICE_URL || 'https://accounts-payable-ya88.onrender.com'}/accounts/pods`,
+        statusCode: 302,
+      },
       {
         source: '/files/contact_us.php',
         destination: '/contact',
