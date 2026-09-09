@@ -55,16 +55,15 @@ const nextConfig = {
        *
        * The service hands over its token once and remembers the device for 90 days, so this plain
        * link is all anyone needs after the first visit. */
-      {
-        source: '/pods',
+      /* SINGULAR AND PLURAL BOTH, because people type what they say.
+         Only /pods and /dockets were mapped, so /pod — the first thing anyone actually types —
+         returned the site's 404. A shortcut that has to be spelled exactly right is not a
+         shortcut. */
+      ...['/pods', '/pod', '/dockets', '/docket', '/delivery-dockets'].map((source) => ({
+        source,
         destination: `${process.env.ACCOUNTS_SERVICE_URL || 'https://accounts-payable-ya88.onrender.com'}/accounts/pods`,
         statusCode: 302,
-      },
-      {
-        source: '/dockets',
-        destination: `${process.env.ACCOUNTS_SERVICE_URL || 'https://accounts-payable-ya88.onrender.com'}/accounts/pods`,
-        statusCode: 302,
-      },
+      })),
       {
         source: '/files/contact_us.php',
         destination: '/contact',
