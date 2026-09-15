@@ -588,24 +588,34 @@ export default function ContactPage() {
           <div className="ts-selfserve">
             <div className="ts-selfserve-text">
               <div className="ts-eyebrow">Faster than a form</div>
-              <h2>Some of this you can price right now</h2>
+              <h2>Price it yourself, right now</h2>
               <p>
                 No callback and no obligation — answer a few questions and see a delivered price on
                 screen, with drawings you can hand to a builder.
               </p>
             </div>
             <div className="ts-selfserve-links">
-              {DESIGNERS.filter((d) => d.tag === "Live").map((d) => (
+              {/* ALL FOUR, not just the finished ones. Someone on this page is telling us what they
+                  want to build, and leaving fencing and kit homes out made it look as though we do
+                  not do them. The two still in development say so on the badge and go to the
+                  product site rather than a half-built tool. */}
+              {DESIGNERS.map((d) => (
                 <a key={d.id} href={designerHref(d.id)} className="ts-selfserve-link"
                    rel={designerIsExternal(d.id) ? "noopener" : undefined}>
-                  <span className="name">{d.name}</span>
-                  <span className="cta">{d.cta}</span>
+                  <span className="ts-selfserve-thumb">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={d.photo} alt={d.photoAlt} loading="lazy" />
+                  </span>
+                  <span className="ts-selfserve-body">
+                    <span className="name">{d.name}</span>
+                    <span className="cta">{d.cta}</span>
+                  </span>
+                  {d.tag !== "Live" && <span className="ts-selfserve-soon">Soon</span>}
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" width="18" height="18">
                     <path d="M5 12h14M13 5l7 7-7 7" />
                   </svg>
                 </a>
               ))}
-              <Link href="/design" className="ts-selfserve-all">See all our design tools</Link>
             </div>
           </div>
         </div>

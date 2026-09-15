@@ -5501,3 +5501,46 @@ a { color: inherit; }
 @media (max-width: 860px) {
   .ts-selfserve { grid-template-columns: 1fr; padding: 28px 24px; gap: 22px; }
 }
+
+/* Photo beside each tool. The image is whatever menu.json already uses for that product, so a patio
+   looks the same here as it does in the mega-menu — except steel floors, which has its own. */
+.ts-design-photo {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--ts-cream-inset);
+  margin-bottom: 20px;
+}
+.ts-design-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* The contact-page rows become a two-column grid once there are four of them — a single column of
+   four tall rows pushed the form itself below the fold. */
+.ts-selfserve-links { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.ts-selfserve-link { padding: 10px 14px 10px 10px; }
+.ts-selfserve-thumb {
+  width: 54px;
+  height: 44px;
+  flex: none;
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--ts-cream-inset);
+}
+.ts-selfserve-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ts-selfserve-body { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+.ts-selfserve-body .name { font-weight: 600; font-size: 14.5px; }
+.ts-selfserve-body .cta { font-size: 12.5px; color: var(--color-slate); margin-left: 0; }
+.ts-selfserve-soon {
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--color-slate);
+  border: 1px solid var(--color-hairline);
+  border-radius: 100px;
+  padding: 3px 7px;
+  margin-left: auto;
+  white-space: nowrap;
+}
+.ts-selfserve-link svg { margin-left: 6px; }
+@media (max-width: 860px) { .ts-selfserve-links { grid-template-columns: 1fr; } }

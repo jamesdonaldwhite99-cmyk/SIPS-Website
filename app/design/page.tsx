@@ -61,6 +61,10 @@ export default function DesignHubPage() {
               const target = designerHref(t.id);
               return (
                 <article key={t.name} className="ts-design-card">
+                  <div className="ts-design-photo">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={t.photo} alt={t.photoAlt} loading="lazy" />
+                  </div>
                   <div className="ts-design-card-head">
                     <h2>{t.name}</h2>
                     <span className={`ts-design-tag${t.tag === "Live" ? " is-live" : ""}`}>{t.tag}</span>

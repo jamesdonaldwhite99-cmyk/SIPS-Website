@@ -27,11 +27,18 @@ export interface Designer {
   blurb: string;
   points: string[];
   cta: string;
+  /** Shown beside the tool wherever it is offered. Taken from what menu.json already uses for that
+      product, so a patio looks like a patio everywhere on the site — except steel floors, which now
+      has real photography of its own. */
+  photo: string;
+  photoAlt: string;
 }
 
 export const DESIGNERS: Designer[] = [
   {
     id: 'patio',
+    photo: '/photos/Patio Kit.png',
+    photoAlt: 'A Quick Built insulated patio kit installed over an outdoor living area',
     name: 'Patio kits',
     zonePath: '/design/patio',
     live: 'https://www.patiokits.com.au/designer',
@@ -45,6 +52,8 @@ export const DESIGNERS: Designer[] = [
   },
   {
     id: 'steel-floor',
+    photo: '/photos/steel-floors/hero-frame-and-decking.jpg',
+    photoAlt: 'A steel floor frame on site with hardwood decking being laid over the joists',
     name: 'Steel floors',
     zonePath: '/design/steel-floor',
     live: 'https://www.quickbuilthomes.com.au/steel-floor',
@@ -58,6 +67,8 @@ export const DESIGNERS: Designer[] = [
   },
   {
     id: 'fence',
+    photo: '/photos/010a6725-enhanced-nr-2.jpg',
+    photoAlt: 'A Quick Built modular acoustic fence along a residential boundary',
     name: 'Fencing',
     zonePath: '/design/fence',
     live: 'https://www.quickbuiltfencing.com.au',
@@ -71,6 +82,8 @@ export const DESIGNERS: Designer[] = [
   },
   {
     id: 'home',
+    photo: '/photos/Building system.jpg',
+    photoAlt: 'A Quick Built modular home built from structural insulated panels',
     name: 'Kit homes',
     zonePath: '/design/home',
     live: 'https://www.quickbuilthomes.com.au',
