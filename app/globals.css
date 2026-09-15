@@ -5440,9 +5440,13 @@ a { color: inherit; }
 /* The 3D sits on white — it is a line drawing, and the warm card ground muddies it. */
 .ts-sf-hero-dwg { background: #fff; }
 
-/* COLOUR-MATCHED, NOT CUT OUT. Transparency was the wrong tool here: the parts are themselves
-   near-white, so knocking the backdrop out left a white object floating on the warm card, and a grey
-   plinth behind it only drew a box around the problem. The images are now flattened onto #FAFAF8 —
-   the exact --color-canvas-warm the cards use — so the tile has no edge to see. Keep the two in step:
-   change the card ground and these have to be re-exported to match. */
+/* COLOUR-MATCHED, NOT CUT OUT. Transparency was the wrong tool: these are line drawings whose steel
+   is a white FILL described by dark outlines, so knocking out the backdrop left a white rectangle on
+   a coloured card — indistinguishable from the backdrop it replaced.
+   Both the ground inside the images and the card behind them are now plain WHITE. The warm
+   --color-canvas-warm the other cards use read as beige against these drawings; white is the ground
+   the parts were drawn on and the only one they disappear into. The hairline border is what keeps
+   the card a card without a fill to do it. Keep the two in step — the white is baked into the PNGs,
+   so changing this rule means re-exporting them. */
 .ts-sf-kit-photo { background: transparent; }
+.ts-sf-kit-item { background: #fff; }
