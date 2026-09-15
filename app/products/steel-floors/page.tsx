@@ -26,11 +26,23 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import data from "@/content/steel-floors.json";
+import { designerHref, designerIsExternal } from "@/lib/designers";
 
 gsap.registerPlugin(ScrollTrigger);
 
-/** Where the steel floor calculator lives. Same-origin once the design zone is rewritten. */
-const DESIGNER = "/design/steel-floor";
+/* The calculator's address comes from lib/designers.ts, which knows whether the zone is live. This
+   file used to hardcode "/design/steel-floor" — a rewrite that does not exist until the zone's env
+   var is set, so every "Price your floor" button 404d (James, 16 Sep 2026). */
+const DESIGNER = designerHref("steel-floor");
+const DESIGNER_EXTERNAL = designerIsExternal("steel-floor");
+
+/** Renders an <a> while the tool lives on another domain, a <Link> once the zone is local. */
+function DesignerLink({ className, children }: { className: string; children: React.ReactNode }) {
+  if (DESIGNER_EXTERNAL) {
+    return <a href={DESIGNER} className={className} rel="noopener">{children}</a>;
+  }
+  return <Link href={DESIGNER} className={className}>{children}</Link>;
+}
 
 export default function SteelFloorsPage() {
   const pageRef = useRef<HTMLDivElement>(null);
@@ -111,12 +123,12 @@ export default function SteelFloorsPage() {
               </h1>
               <p className="lead hero-animate">{data.heroLead}</p>
               <div className="actions hero-animate">
-                <Link href={DESIGNER} className="ts-btn ts-btn--primary">
+                <DesignerLink className="ts-btn ts-btn--primary">
                   Price your floor
                   <svg className="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M5 12h14M13 5l7 7-7 7" />
                   </svg>
-                </Link>
+                </DesignerLink>
                 <a href="#on-site" className="ts-btn ts-btn--ghost-on-dark">See it built</a>
               </div>
             </div>
@@ -153,12 +165,12 @@ export default function SteelFloorsPage() {
               <p className="overview-animate">{data.overviewPara2}</p>
               <p className="overview-animate">{data.overviewPara3}</p>
               <div className="ts-cta-row overview-animate">
-                <Link href={DESIGNER} className="ts-btn ts-btn--dark">
+                <DesignerLink className="ts-btn ts-btn--dark">
                   Price your floor
                   <svg className="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M5 12h14M13 5l7 7-7 7" />
                   </svg>
-                </Link>
+                </DesignerLink>
               </div>
             </div>
             <div className="ts-intro-photo overview-animate">
@@ -196,12 +208,12 @@ export default function SteelFloorsPage() {
                 <li>What goes on top</li>
                 <li>How to reach you</li>
               </ol>
-              <Link href={DESIGNER} className="ts-btn ts-btn--primary">
+              <DesignerLink className="ts-btn ts-btn--primary">
                 Start
                 <svg className="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14M13 5l7 7-7 7" />
                 </svg>
-              </Link>
+              </DesignerLink>
             </div>
           </div>
         </div>
@@ -352,12 +364,12 @@ export default function SteelFloorsPage() {
               <a href="tel:1300132787" className="phone">1300 132 787</a>
               <p className="hours">Mon–Fri · 7:30am – 4:30pm AEST</p>
               <div className="actions">
-                <Link href={DESIGNER} className="ts-btn ts-btn--primary">
+                <DesignerLink className="ts-btn ts-btn--primary">
                   Price your floor
                   <svg className="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M5 12h14M13 5l7 7-7 7" />
                   </svg>
-                </Link>
+                </DesignerLink>
                 <Link href="/contact" className="ts-btn ts-btn--ghost-on-dark">Talk to us</Link>
               </div>
             </div>

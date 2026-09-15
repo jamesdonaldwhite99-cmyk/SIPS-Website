@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, useCallback } from "react";
 import Link from "next/link";
+import { DESIGNERS, designerHref, designerIsExternal } from "@/lib/designers";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -575,6 +576,40 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
+
+      {/* PRICE IT YOURSELF, BEFORE THE FORM.
+          Someone on this page is usually asking for a number they could have in two minutes. That
+          costs them a wait and costs us an estimator, and the ones who do come through the form
+          arrive better qualified when they have already seen a spec and a price. Deliberately ABOVE
+          the form rather than inside it, so it can never interfere with lead capture — the form is
+          untouched. Only tools that are actually live are offered. */}
+      <section className="ts-section" style={{ paddingBottom: 0 }}>
+        <div className="ts-container">
+          <div className="ts-selfserve">
+            <div className="ts-selfserve-text">
+              <div className="ts-eyebrow">Faster than a form</div>
+              <h2>Some of this you can price right now</h2>
+              <p>
+                No callback and no obligation — answer a few questions and see a delivered price on
+                screen, with drawings you can hand to a builder.
+              </p>
+            </div>
+            <div className="ts-selfserve-links">
+              {DESIGNERS.filter((d) => d.tag === "Live").map((d) => (
+                <a key={d.id} href={designerHref(d.id)} className="ts-selfserve-link"
+                   rel={designerIsExternal(d.id) ? "noopener" : undefined}>
+                  <span className="name">{d.name}</span>
+                  <span className="cta">{d.cta}</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" width="18" height="18">
+                    <path d="M5 12h14M13 5l7 7-7 7" />
+                  </svg>
+                </a>
+              ))}
+              <Link href="/design" className="ts-selfserve-all">See all our design tools</Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Main form */}
       <section className="ts-section">

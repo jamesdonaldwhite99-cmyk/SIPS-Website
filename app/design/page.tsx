@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { DESIGNERS, designerHref, designerIsExternal } from "@/lib/designers";
 
 /**
  * One front door for every calculator we own.
@@ -21,64 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: "/design" },
 };
 
-interface Tool {
-  name: string;
-  tag: string;
-  copy: string;
-  points: string[];
-  href: string;
-  live: string;
-  /** true once the zone is rewritten on this domain — see ZONES in next.config.mjs. */
-  zoned: boolean;
-  cta: string;
-}
-
-const TOOLS: Tool[] = [
-  {
-    name: "Patio kits",
-    tag: "Live",
-    copy:
-      "Size it, pick the roof and the colours, and see a delivered price for your postcode. Plan, elevation and a 3D view as you go.",
-    points: ["Nine styles", "Delivered price by postcode", "Plans and 3D"],
-    href: "/design/patio",
-    live: "https://www.patiokits.com.au/designer",
-    zoned: false,
-    cta: "Design a patio",
-  },
-  {
-    name: "Steel floors",
-    tag: "Live",
-    copy:
-      "Five questions and a delivered price for an engineered subfloor — bearers, joists, posts and piers, cut to length and labelled to the plan.",
-    points: ["Spans to 5,500mm", "Bill of materials", "Pier setout drawing"],
-    href: "/design/steel-floor",
-    live: "https://www.quickbuilthomes.com.au/steel-floor",
-    zoned: false,
-    cta: "Price a floor",
-  },
-  {
-    name: "Fencing",
-    tag: "Coming soon",
-    copy:
-      "Draw your fence line, drag the corners, and watch the panels, posts and channels price as you go. In final testing.",
-    points: ["Draw the run", "Live pricing", "Acoustic and retaining"],
-    href: "/design/fence",
-    live: "https://www.quickbuiltfencing.com.au",
-    zoned: false,
-    cta: "See fencing",
-  },
-  {
-    name: "Kit homes",
-    tag: "Coming soon",
-    copy:
-      "Lay out a home, move the walls and openings, and see what it does to the price. In development with our design team.",
-    points: ["Floor plans", "Elevations", "Indicative pricing"],
-    href: "/design/home",
-    live: "https://www.quickbuilthomes.com.au",
-    zoned: false,
-    cta: "See kit homes",
-  },
-];
 
 const Arrow = () => (
   <svg className="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -113,16 +56,16 @@ export default function DesignHubPage() {
       <section className="ts-section">
         <div className="ts-container">
           <div className="ts-design-grid">
-            {TOOLS.map((t) => {
-              const external = !t.zoned;
-              const target = t.zoned ? t.href : t.live;
+            {DESIGNERS.map((t) => {
+              const external = designerIsExternal(t.id);
+              const target = designerHref(t.id);
               return (
                 <article key={t.name} className="ts-design-card">
                   <div className="ts-design-card-head">
                     <h2>{t.name}</h2>
                     <span className={`ts-design-tag${t.tag === "Live" ? " is-live" : ""}`}>{t.tag}</span>
                   </div>
-                  <p className="ts-design-copy">{t.copy}</p>
+                  <p className="ts-design-copy">{t.blurb}</p>
                   <ul className="ts-design-points">
                     {t.points.map((p) => <li key={p}>{p}</li>)}
                   </ul>
