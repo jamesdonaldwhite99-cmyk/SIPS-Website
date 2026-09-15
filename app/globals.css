@@ -5440,13 +5440,9 @@ a { color: inherit; }
 /* The 3D sits on white — it is a line drawing, and the warm card ground muddies it. */
 .ts-sf-hero-dwg { background: #fff; }
 
-/* THE PARTS ARE THEMSELVES NEAR-WHITE, which is why they read as "a white background" even with the
-   backdrop knocked out. Measured: corners fully transparent, no rectangular block survived, opaque
-   regions fill only 46-89% of their own bounding box with zero full columns — so what is left is the
-   part, not a backdrop, and taking more white would take the component with it.
-   A white object needs a ground to sit on. This gives each one a soft neutral plinth, so the part
-   reads as a photographed component rather than a pale smudge on the warm card. */
-.ts-sf-kit-photo {
-  background: var(--ts-cream-inset);
-  border-radius: var(--radius-md);
-}
+/* COLOUR-MATCHED, NOT CUT OUT. Transparency was the wrong tool here: the parts are themselves
+   near-white, so knocking the backdrop out left a white object floating on the warm card, and a grey
+   plinth behind it only drew a box around the problem. The images are now flattened onto #FAFAF8 —
+   the exact --color-canvas-warm the cards use — so the tile has no edge to see. Keep the two in step:
+   change the card ground and these have to be re-exported to match. */
+.ts-sf-kit-photo { background: transparent; }
