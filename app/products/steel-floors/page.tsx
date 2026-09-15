@@ -3,16 +3,26 @@
 /**
  * Steel floors — product page.
  *
- * DRAWING-LED, DELIBERATELY. There is no steel floor photography in public/photos yet, and a product
- * page built around missing images is worse than one built around none. It is also the competitive
- * point: Spantec publishes no spans and no prices anywhere on their site, so the strongest thing we
- * can put on a page is our actual engineering — a real section, the real span table, and a link to a
- * calculator that returns a delivered figure on screen. Swap the section drawing for site
- * photography when we have it; the layout has a slot for it.
+ * PHOTOGRAPHY AND DRAWING, EACH DOING ITS OWN JOB. The first cut of this page was drawing-only
+ * because there was no steel floor photography in the repo; James supplied a folder of site photos
+ * on 15 Sep 2026, so the hero is now a real frame half-decked with the crew on it, and the section
+ * drawing has moved down to sit beside the price card where it answers a different question — the
+ * photos show what it looks like, the drawing shows how it goes together.
+ *
+ * NO ENGINEERING DATA IS PUBLISHED HERE, and that is a commercial decision rather than an oversight
+ * (James, 15 Sep 2026). An earlier cut printed the full joist span table, the member sections and
+ * the post height limits, on the reasoning that Spantec publishes none of it and we could compete by
+ * being open. The counter-argument won: in this market those tables ARE the product, and handing a
+ * direct competitor our spans, sections and load pairings costs more than the openness gains.
+ *
+ * So the page sells the outcome — a kit cut to length, labelled, priced on screen — and the numbers
+ * live behind the calculator. If you are adding to this page, keep it that way: no sections, no
+ * spans, no centres, no grades, no kPa. The drawing names the PARTS, never their specification.
  */
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import data from "@/content/steel-floors.json";
@@ -24,8 +34,8 @@ const DESIGNER = "/design/steel-floor";
 
 /**
  * Section through the frame — bearer on a post, joists over, boards on top.
- * Drawn to the real proportions of a 150 x 60 bearer, a 140 x 50 joist and a 65mm post, so it reads
- * as a drawing rather than an illustration.
+ * Drawn to realistic proportions so it reads as a drawing rather than an illustration. It names the
+ * parts and never their sizes — see the note at the top of this file.
  */
 function FrameSection() {
   const INK = "#1f2933";
@@ -35,7 +45,7 @@ function FrameSection() {
      of the joists. */
   return (
     <svg viewBox="0 0 660 380" role="img"
-         aria-label="Section through a steel floor frame: decking over joists, joists over a bearer, bearer on an SHS post and base plate"
+         aria-label="Section through a steel floor frame: decking over joists, joists over a bearer, bearer on a steel post and base plate"
          style={{ width: "100%", height: "auto", display: "block" }}>
       {/* Decking boards */}
       {Array.from({ length: 9 }, (_, i) => (
@@ -51,7 +61,7 @@ function FrameSection() {
               fill="none" stroke={INK} strokeWidth={1.9} />
       ))}
       <line x1={452} y1={104} x2={486} y2={104} stroke={THIN} strokeWidth={0.7} />
-      <text x={492} y={108} fontSize={11} fill={THIN} fontFamily="ui-monospace, monospace">JOISTS @ 450 crs</text>
+      <text x={492} y={108} fontSize={11} fill={THIN} fontFamily="ui-monospace, monospace">JOISTS</text>
 
       {/* Bearer — heaviest line, it carries everything above */}
       <rect x={58} y={130} width={412} height={26} rx={2} fill="none" stroke={INK} strokeWidth={2.6} />
@@ -66,7 +76,7 @@ function FrameSection() {
         </g>
       ))}
       <line x1={429} y1={230} x2={486} y2={230} stroke={THIN} strokeWidth={0.7} />
-      <text x={492} y={234} fontSize={11} fill={THIN} fontFamily="ui-monospace, monospace">65 SHS POST</text>
+      <text x={492} y={234} fontSize={11} fill={THIN} fontFamily="ui-monospace, monospace">STEEL POST</text>
       <line x1={448} y1={311} x2={486} y2={311} stroke={THIN} strokeWidth={0.7} />
       <text x={492} y={315} fontSize={11} fill={THIN} fontFamily="ui-monospace, monospace">BASE PLATE</text>
 
@@ -115,17 +125,13 @@ export default function SteelFloorsPage() {
         scrollTrigger: { trigger: ".ts-sf-kit", start: "top 82%", once: true },
         y: 30, opacity: 0, duration: 0.65, stagger: 0.07, ease: "power2.out",
       });
-      gsap.from(".span-animate", {
-        scrollTrigger: { trigger: ".ts-sf-spans", start: "top 82%", once: true },
-        y: 30, opacity: 0, duration: 0.7, stagger: 0.12, ease: "power2.out",
-      });
       gsap.from(".step-card", {
         scrollTrigger: { trigger: ".ts-sf-steps", start: "top 82%", once: true },
         y: 26, opacity: 0, duration: 0.6, stagger: 0.08, ease: "power2.out",
       });
-      gsap.from(".eng-animate", {
-        scrollTrigger: { trigger: ".ts-sf-engineering", start: "top 80%", once: true },
-        y: 26, opacity: 0, duration: 0.7, stagger: 0.09, ease: "power2.out",
+      gsap.from(".gallery-item", {
+        scrollTrigger: { trigger: ".ts-sf-gallery", start: "top 85%", once: true },
+        y: 24, opacity: 0, duration: 0.6, stagger: 0.05, ease: "power2.out",
       });
     }, pageRef);
     return () => ctx.revert();
@@ -144,13 +150,8 @@ export default function SteelFloorsPage() {
                 name: "Quick Built Steel Floor and Deck Frames",
                 brand: { "@type": "Brand", name: "Quick Built Systems" },
                 manufacturer: { "@type": "Organization", name: "Quick Built Systems PTY LTD" },
-                material: "Roll-formed galvanised steel, G300 and G550",
+                material: "Roll-formed galvanised steel",
                 description: data.heroLead,
-                additionalProperty: data.spanRows.map((r) => ({
-                  "@type": "PropertyValue",
-                  name: `${r.size} maximum joist span, 1.5 kPa, 0.8mm G300`,
-                  value: `${r.spans[0]}mm`,
-                })),
               },
               {
                 "@type": "FAQPage",
@@ -190,12 +191,12 @@ export default function SteelFloorsPage() {
                     <path d="M5 12h14M13 5l7 7-7 7" />
                   </svg>
                 </Link>
-                <a href="#span-tables" className="ts-btn ts-btn--ghost-on-dark">View span tables</a>
+                <a href="#on-site" className="ts-btn ts-btn--ghost-on-dark">See it built</a>
               </div>
             </div>
-            <div className="ts-sf-hero-dwg hero-animate">
-              <FrameSection />
-              <span className="ts-photo-tag">Section through the frame</span>
+            <div className="ts-product-hero-photo hero-animate">
+              <Image src={data.heroPhoto} alt={data.heroPhotoAlt} fill style={{ objectFit: "cover" }} priority sizes="60vw" />
+              <span className="ts-photo-tag">{data.heroPhotoTag}</span>
             </div>
           </div>
         </div>
@@ -234,7 +235,20 @@ export default function SteelFloorsPage() {
                 </Link>
               </div>
             </div>
-            <div className="ts-sf-pricecard overview-animate">
+            <div className="ts-intro-photo overview-animate">
+              <Image src={data.overviewPhoto} alt={data.overviewPhotoAlt} fill style={{ objectFit: "cover" }} sizes="50vw" />
+              <span className="ts-photo-tag">{data.overviewPhotoTag}</span>
+            </div>
+          </div>
+
+          {/* The drawing now earns its own place rather than standing in for a photograph: the
+              photos show what it looks like, this shows how it is put together. */}
+          <div className="ts-sf-section-row">
+            <div className="ts-sf-hero-dwg">
+              <FrameSection />
+              <span className="ts-photo-tag">Section through the frame</span>
+            </div>
+            <div className="ts-sf-pricecard">
               <span className="ts-eyebrow">No callback required</span>
               <p className="ts-sf-pricecard-lead">{data.heroPriceNote}</p>
               <ol className="ts-sf-pricecard-list">
@@ -279,6 +293,13 @@ export default function SteelFloorsPage() {
         </div>
       </section>
 
+      {/* The one photograph that shows all three layers at once — bare joists, sheeting part-laid,
+          finished hardwood beyond. It does more work than any diagram could, so it runs full width. */}
+      <div className="ts-image-banner">
+        <Image src={data.layersPhoto} alt={data.layersPhotoAlt} fill style={{ objectFit: "cover" }} sizes="100vw" />
+        <span className="ts-photo-tag">{data.layersPhotoTag}</span>
+      </div>
+
       {/* What's in the kit */}
       <section className="ts-section ts-divider-top">
         <div className="ts-container">
@@ -302,43 +323,6 @@ export default function SteelFloorsPage() {
         </div>
       </section>
 
-      {/* Span tables */}
-      <section id="span-tables" className="ts-section ts-divider-top ts-sf-spans" style={{ background: "var(--ts-cream-2)" }}>
-        <div className="ts-container">
-          <div className="ts-section-head span-animate">
-            <div>
-              <div className="ts-eyebrow">{data.spanEyebrow}</div>
-              <h2>{data.spanH2}</h2>
-            </div>
-            <p>{data.spanLead}</p>
-          </div>
-          <div className="ts-aly-spantable span-animate">
-            <div className="ts-aly-spantable-title">
-              <h3>Maximum single joist span</h3>
-              <span>millimetres, at 450mm centres</span>
-            </div>
-            <div className="ts-aly-spantable-scroll">
-              <table>
-                <thead>
-                  <tr>
-                    <th scope="col" className="w-col">{data.spanColHead}</th>
-                    {data.spanHeaders.map((h, i) => <th key={i} scope="col">{h}</th>)}
-                  </tr>
-                </thead>
-                <tbody>
-                  {data.spanRows.map((r, i) => (
-                    <tr key={i}>
-                      <th scope="row" className="w-col">{r.size}</th>
-                      {r.spans.map((s, j) => <td key={j}>{s}</td>)}
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <p className="ts-aly-footnote span-animate">{data.spanFootnote}</p>
-        </div>
-      </section>
 
       {/* Surfaces */}
       <section className="ts-section ts-divider-top">
@@ -384,29 +368,24 @@ export default function SteelFloorsPage() {
         </div>
       </section>
 
-      {/* Engineering */}
-      <section className="ts-section ts-divider-top ts-sf-engineering">
+
+      {/* On site */}
+      <section id="on-site" className="ts-section ts-divider-top">
         <div className="ts-container">
-          <div className="ts-section-head eng-animate">
+          <div className="ts-section-head">
             <div>
-              <div className="ts-eyebrow">{data.engineeringEyebrow}</div>
-              <h2>{data.engineeringH2}</h2>
+              <div className="ts-eyebrow">{data.galleryEyebrow}</div>
+              <h2>{data.galleryH2}</h2>
             </div>
-            <p>{data.engineeringLead}</p>
+            <p>{data.galleryLead}</p>
           </div>
-          <div className="ts-aly-eng-grid">
-            <div className="ts-aly-eng-card eng-animate">
-              <h3>{data.standardsTitle}</h3>
-              <ul className="ts-aly-standards">
-                {data.standards.map((s, i) => <li key={i}>{s}</li>)}
-              </ul>
-            </div>
-            <div className="ts-aly-eng-card eng-animate">
-              <h3>{data.designTitle}</h3>
-              <ul className="ts-aly-design">
-                {data.design.map((s, i) => <li key={i}>{s}</li>)}
-              </ul>
-            </div>
+          <div className="ts-sf-gallery">
+            {data.gallery.map((g, i) => (
+              <figure key={i} className="ts-sf-gallery-item gallery-item">
+                <Image src={g.src} alt={g.alt} fill style={{ objectFit: "cover" }}
+                       sizes="(max-width: 760px) 100vw, (max-width: 1080px) 50vw, 25vw" />
+              </figure>
+            ))}
           </div>
         </div>
       </section>

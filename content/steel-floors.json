@@ -4,115 +4,235 @@
   "heroTitleAccent": "deck frames",
   "heroLead": "Engineered, cut to length and labelled to your plan. A subfloor that arrives as a kit, goes together like one, and will not twist, shrink or feed termites for as long as the house stands.",
   "heroPriceNote": "Answer five questions and see a delivered price on screen.",
-
   "specs": [
-    { "label": "Joist spans to", "value": "5,500mm" },
-    { "label": "Floor heights to", "value": "3,600mm" },
-    { "label": "Steel", "value": "G300 / G550 galvanised" },
-    { "label": "Wind classification", "value": "N1 – N4" }
+    {
+      "label": "Built for",
+      "value": "Decks, floors, mezzanines"
+    },
+    {
+      "label": "Every member",
+      "value": "Cut and labelled"
+    },
+    {
+      "label": "Finish",
+      "value": "Galvanised or colour"
+    },
+    {
+      "label": "Your price",
+      "value": "On screen, in minutes"
+    }
   ],
-
   "overviewEyebrow": "What it is",
   "overviewH2": "The frame under the floor, engineered before it leaves us",
   "overviewPara1": "A steel floor frame does the job of bearers and joists, in roll-formed galvanised steel instead of timber. Posts stand on base plates, bearers sit on the posts, joists span between the bearers, and your flooring or decking goes straight over the top.",
   "overviewPara2": "Every member is rolled to its exact cut length, punched where it needs to be, and marked with the number it carries on the plan. There is no cutting list to work through on site and nothing to trim — the pieces are the lengths they are because the design says so.",
   "overviewPara3": "It suits a deck, a granny flat, a room addition, an upper floor or a mezzanine. Anywhere a subfloor has to be flat, stay flat, and be quick to stand.",
-
   "advantagesEyebrow": "Why steel",
   "advantagesH2": "What it does that timber cannot",
   "advantagesLead": "None of this is a preference. These are the properties of the material, and they are the reason a steel subfloor is specified.",
   "advantages": [
-    { "title": "Termites have no interest in it", "copy": "There is nothing in a galvanised steel frame for a termite to eat. No treatment to re-apply, no inspection regime for the frame itself, and no barrier to maintain around it." },
-    { "title": "It does not warp, shrink or twist", "copy": "Steel is dimensionally stable. A floor that is flat when it is built is flat in ten years — no cupped joists, no shrinkage gaps opening in the decking, no squeaks from timber moving against a fixing." },
-    { "title": "It will not burn", "copy": "Steel is non-combustible. In a bushfire-prone area that matters to a subfloor more than almost anywhere else, because the underside of a raised floor is exactly where embers collect." },
-    { "title": "It will not rot", "copy": "Damp ground, poor drainage and a low subfloor are where timber bearers fail first. Galvanised steel is unaffected by the moisture that ends a timber frame." },
-    { "title": "Longer spans, fewer holes to dig", "copy": "A 200 x 60 joist spans 5,500mm. Longer spans mean fewer bearer lines, which means fewer piers, which means fewer footings to excavate, set and pay for." }
+    {
+      "title": "Termites have no interest in it",
+      "copy": "There is nothing in a galvanised steel frame for a termite to eat. No treatment to re-apply, no inspection regime for the frame itself, and no barrier to maintain around it."
+    },
+    {
+      "title": "It does not warp, shrink or twist",
+      "copy": "Steel is dimensionally stable. A floor that is flat when it is built is flat in ten years — no cupped joists, no shrinkage gaps opening in the decking, no squeaks from timber moving against a fixing."
+    },
+    {
+      "title": "It will not burn",
+      "copy": "Steel is non-combustible. In a bushfire-prone area that matters to a subfloor more than almost anywhere else, because the underside of a raised floor is exactly where embers collect."
+    },
+    {
+      "title": "It will not rot",
+      "copy": "Damp ground, poor drainage and a low subfloor are where timber bearers fail first. Galvanised steel is unaffected by the moisture that ends a timber frame."
+    },
+    {
+      "title": "Fewer holes to dig",
+      "copy": "Steel spans further than the timber equivalent, so the frame needs fewer bearer lines — which means fewer piers, and fewer footings to excavate, set and pay for."
+    }
   ],
-
   "kitEyebrow": "What arrives",
   "kitH2": "A kit, not a pile of steel",
   "kitLead": "Every piece is counted, cut and labelled against the plan that comes with it. What is on the truck is what is on the drawing.",
   "kit": [
-    { "name": "Bearers", "detail": "140 x 50, 150 x 60 or 200 x 60, single or doubled where the span calls for it. Rolled to length." },
-    { "name": "Joists", "detail": "125 x 50 to 200 x 60, at 450mm centres or tighter. Cut to the exact clear span." },
-    { "name": "End caps", "detail": "Four or eight hole, matched to the joist. Pre-punched at the setdown where you ask for it." },
-    { "name": "Posts", "detail": "65 x 65 x 2.0 SHS, supplied in 8,000mm lengths and nested so nothing is wasted." },
-    { "name": "Base plates and anchors", "detail": "A bottom connector plate per pier, with two masonry screw anchors each." },
-    { "name": "Connectors and fixings", "detail": "Post-to-bearer connectors, and the tek screws to suit — counted, not estimated." }
+    {
+      "name": "Bearers",
+      "detail": "Sized to your span and rolled to length, doubled where the design calls for it."
+    },
+    {
+      "name": "Joists",
+      "detail": "Cut to the exact clear span and set out at the centres your surface needs."
+    },
+    {
+      "name": "End caps",
+      "detail": "Matched to the joist and pre-punched at the setdown where you ask for it."
+    },
+    {
+      "name": "Posts",
+      "detail": "Galvanised SHS, nested in stock lengths so nothing is wasted."
+    },
+    {
+      "name": "Base plates and anchors",
+      "detail": "A connector plate per pier, with the masonry anchors to suit."
+    },
+    {
+      "name": "Connectors and fixings",
+      "detail": "Post-to-bearer connectors and the screws to match — counted, not estimated."
+    }
   ],
-  "kitFootnote": "Footings, bracing, balustrading and the floor surface itself are not part of the steel supply. The quote says so, item by item.",
-
-  "spanEyebrow": "Span tables",
-  "spanH2": "Our numbers, published",
-  "spanLead": "Maximum single joist span in millimetres, at 450mm centres. Read the row for the section and the column for the load and the steel. These are the figures the calculator uses — there is no second set.",
-  "spanColHead": "Joist section",
-  "spanHeaders": [
-    "1.5 kPa · 0.8mm G300",
-    "1.5 kPa · 1.0mm G550",
-    "2.0 kPa · 0.8mm G300",
-    "2.0 kPa · 1.0mm G550"
-  ],
-  "spanRows": [
-    { "size": "125 x 50", "spans": ["2,800", "3,800", "2,700", "3,310"] },
-    { "size": "140 x 50", "spans": ["3,600", "4,200", "3,400", "3,900"] },
-    { "size": "150 x 60", "spans": ["4,000", "4,600", "3,500", "4,100"] },
-    { "size": "200 x 60", "spans": ["5,000", "5,500", "4,500", "5,000"] }
-  ],
-  "spanFootnote": "1.5 kPa is a floor up to one storey; 2.0 kPa is greater than one storey. The two are a published pair with the floor height and cannot be mixed. Posts are 65 x 65 x 2.0 SHS to a maximum height of 3,600mm. Above 900mm finished floor level angled subfloor bracing is required, and above 1,000mm the NCC requires balustrading — neither is included in the steel supply.",
-
+  "kitFootnote": "Footings, subfloor bracing, balustrading and the floor surface itself are not part of the steel supply. Your quote lists what is included and what is not, item by item.",
   "surfacesEyebrow": "On top",
   "surfacesH2": "What the frame is designed to carry",
   "surfacesLead": "The surface changes the framing. Tell us what is going down and the joist centres come back to suit it, rather than you finding out afterwards.",
   "surfaces": [
-    { "group": "Inside", "items": ["Particleboard flooring — YELLOWtongue 19mm", "Particleboard flooring — REDtongue 22mm", "Scyon Secura 19mm and 22mm", "Compressed fibre cement 25mm, for wet areas and tile", "Hebel Power Floor 75mm"] },
-    { "group": "Outside", "items": ["Hardwood decking 19mm — merbau, spotted gum", "Cypress 21mm", "Treated pine 22mm", "Heavy section 32mm", "Composite decking", "Compressed fibre cement 19mm"] }
+    {
+      "group": "Inside",
+      "items": [
+        "Particleboard flooring — YELLOWtongue 19mm",
+        "Particleboard flooring — REDtongue 22mm",
+        "Scyon Secura 19mm and 22mm",
+        "Compressed fibre cement 25mm, for wet areas and tile",
+        "Hebel Power Floor 75mm"
+      ]
+    },
+    {
+      "group": "Outside",
+      "items": [
+        "Hardwood decking 19mm — merbau, spotted gum",
+        "Cypress 21mm",
+        "Treated pine 22mm",
+        "Heavy section 32mm",
+        "Composite decking",
+        "Compressed fibre cement 19mm"
+      ]
+    }
   ],
-  "surfacesNote": "19mm treated pine is not enough at standard centres — 22mm is. A diagonal board layout needs the framing closer again. The calculator applies both automatically and tells you when it has.",
-
+  "surfacesNote": "Thinner boards and a diagonal layout both need the framing closer together. We allow for it when we price your floor and tell you when we have.",
   "processEyebrow": "How it works",
   "processH2": "Five questions to a price",
   "processLead": "Most suppliers take your drawing and ring you back. We would rather show you the number first.",
   "process": [
-    { "step": "01", "title": "Tell us where", "copy": "The address sets your wind classification and what delivery costs. It is the only site question we ask." },
-    { "step": "02", "title": "Tell us what", "copy": "Freestanding or attached to the house, and whether a room or a deck is going on top." },
-    { "step": "03", "title": "Tell us how big", "copy": "Shape, length, depth, and how high the floor sits above the ground." },
-    { "step": "04", "title": "See the price", "copy": "The frame is solved against the span tables and priced on screen — sections, bearer lines, pier count and a delivered figure." },
-    { "step": "05", "title": "We confirm it", "copy": "Send photos of the site and the access route and we firm the quote up, with drawings, a bill of materials and a cutting schedule." }
+    {
+      "step": "01",
+      "title": "Tell us where",
+      "copy": "The address sets your wind classification and what delivery costs. It is the only site question we ask."
+    },
+    {
+      "step": "02",
+      "title": "Tell us what",
+      "copy": "Freestanding or attached to the house, and whether a room or a deck is going on top."
+    },
+    {
+      "step": "03",
+      "title": "Tell us how big",
+      "copy": "Shape, length, depth, and how high the floor sits above the ground."
+    },
+    {
+      "step": "04",
+      "title": "See the price",
+      "copy": "The frame is solved against the span tables and priced on screen — sections, bearer lines, pier count and a delivered figure."
+    },
+    {
+      "step": "05",
+      "title": "We confirm it",
+      "copy": "Send photos of the site and the access route and we firm the quote up, with drawings, a bill of materials and a cutting schedule."
+    }
   ],
-
-  "engineeringEyebrow": "Engineering and compliance",
-  "engineeringH2": "What is covered, and what is not",
-  "engineeringLead": "A quote is not an engineering certificate, and we would rather be plain about the line between them than leave you to find it on site.",
-  "standardsTitle": "What we provide",
-  "standards": [
-    "Member sizes, cut lengths and quantities solved against the supplier's published span tables",
-    "A structural layout, a section, a 3D view and a pier setout dimensioned from a single datum",
-    "A bill of materials and a cutting schedule, with every member marked to the drawing",
-    "Members labelled for assembly, so the frame goes together in the order the plan shows"
-  ],
-  "designTitle": "By others",
-  "design": [
-    "Site-specific structural engineering and certification",
-    "Footing size, depth and reinforcement",
-    "Angled subfloor bracing above 900mm finished floor level",
-    "Balustrading above 1,000mm, to the NCC",
-    "Council approval, and the floor surface itself"
-  ],
-
   "faqEyebrow": "Common questions",
   "faqH2": "Before you ask us",
   "faqLead": "The questions that come up most often, answered the way we would answer them on the phone.",
   "faq": [
-    { "q": "Can I build it myself?", "a": "Yes, and most people do. Every member arrives cut to length and labelled to match the plan, so the work on site is positioning and fixing rather than measuring and cutting. You will need a way to unload steel." },
-    { "q": "Do I need an engineer?", "a": "The frame is solved against published span tables, which is not the same as site-specific certification. Footings, bracing and anything unusual about your site need an engineer. Your certifier will tell you what they want to see." },
-    { "q": "How high can the floor be?", "a": "Posts are 65 x 65 x 2.0 SHS to 3,600mm. Above about 2,700mm a larger post is indicated and we will refer it before quoting. Above 900mm you need subfloor bracing, and above 1,000mm a balustrade." },
-    { "q": "What if my deck is not a rectangle?", "a": "Describe the parts, or send a sketch. L-shapes, T-shapes, steps and set-downs are all normal — the calculator handles a rectangle on screen and we work the rest through with you." },
-    { "q": "Can I attach it to the house?", "a": "Usually. What matters is the wall. Some substrates cannot carry the load and need a line of posts instead, which is why we ask what the wall is made of and want a photo of it." },
-    { "q": "How long does it take?", "a": "Steel is rolled to your lengths, so it is made to order. Tell us when you need it on site and we will tell you whether that works before you commit." },
-    { "q": "Can I have it in a colour?", "a": "Standard supply is galvanised zinc. Powder coating is available but has to be nominated up front — it changes the price and the lead time." },
-    { "q": "What about a beam that will not fit down the side of my house?", "a": "Tell us the longest length that can physically reach the work area. Bearers longer than that are supplied in sections and joined over a pier, by design rather than by improvisation." }
+    {
+      "q": "Can I build it myself?",
+      "a": "Yes, and most people do. Every member arrives cut to length and labelled to match the plan, so the work on site is positioning and fixing rather than measuring and cutting. You will need a way to unload steel."
+    },
+    {
+      "q": "Do I need an engineer?",
+      "a": "The frame is solved against the manufacturer's published design tables, which is not the same as site-specific certification. Footings, bracing and anything unusual about your site need an engineer. Your certifier will tell you what they want to see."
+    },
+    {
+      "q": "How high can the floor be?",
+      "a": "Most raised floors are well within what the system handles. Past a certain height a larger post is needed and we will confirm it before quoting. Subfloor bracing and, higher again, a balustrade become a requirement — we will tell you which apply to your job."
+    },
+    {
+      "q": "What if my deck is not a rectangle?",
+      "a": "Describe the parts, or send a sketch. L-shapes, T-shapes, steps and set-downs are all normal — the calculator handles a rectangle on screen and we work the rest through with you."
+    },
+    {
+      "q": "Can I attach it to the house?",
+      "a": "Usually. What matters is the wall. Some substrates cannot carry the load and need a line of posts instead, which is why we ask what the wall is made of and want a photo of it."
+    },
+    {
+      "q": "How long does it take?",
+      "a": "Steel is rolled to your lengths, so it is made to order. Tell us when you need it on site and we will tell you whether that works before you commit."
+    },
+    {
+      "q": "Can I have it in a colour?",
+      "a": "Standard supply is galvanised zinc. Powder coating is available but has to be nominated up front — it changes the price and the lead time."
+    },
+    {
+      "q": "What about a beam that will not fit down the side of my house?",
+      "a": "Tell us the longest length that can physically reach the work area. Bearers longer than that are supplied in sections and joined over a pier, by design rather than by improvisation."
+    }
   ],
-
   "ctaH2": "Price your floor now",
-  "ctaBody": "Five questions, a delivered price on screen, and drawings you can hand to a builder. No obligation and no waiting for a callback."
+  "ctaBody": "Five questions, a delivered price on screen, and drawings you can hand to a builder. No obligation and no waiting for a callback.",
+  "heroPhoto": "/photos/steel-floors/hero-frame-and-decking.jpg",
+  "heroPhotoAlt": "A Quick Built steel floor frame on site, half of it already decked in hardwood, with the crew laying boards over the exposed joists",
+  "heroPhotoTag": "Frame standing, decking going down",
+  "sectionEyebrow": "How it goes together",
+  "sectionH2": "Bearer, joist, board",
+  "sectionLead": "Posts on base plates, bearers across the posts, joists between the bearers, and your surface straight over the top. Every piece cut to the length the drawing gives it.",
+  "layersPhoto": "/photos/steel-floors/layers-joists-sheeting-decking.jpg",
+  "layersPhotoAlt": "The same floor showing all three layers at once: bare steel joists, particleboard sheeting part-laid over them, and finished hardwood decking beyond",
+  "layersPhotoTag": "Joists, sheeting, finished deck",
+  "overviewPhoto": "/photos/steel-floors/raised-floor-on-piers.jpg",
+  "overviewPhotoAlt": "A raised steel floor frame standing on adjustable piers with concrete footings, steps fitted, and wall panels stacked ready on the completed platform",
+  "overviewPhotoTag": "Raised floor on piers",
+  "galleryEyebrow": "On site",
+  "galleryH2": "Floors we have built",
+  "galleryLead": "Real jobs, photographed as they were built. Decks, raised floors and the platforms our homes sit on.",
+  "gallery": [
+    {
+      "src": "/photos/steel-floors/site-01.jpg",
+      "alt": "A Quick Built steel floor frame on site"
+    },
+    {
+      "src": "/photos/steel-floors/site-02.jpg",
+      "alt": "A Quick Built steel floor frame on site"
+    },
+    {
+      "src": "/photos/steel-floors/site-03.jpg",
+      "alt": "A Quick Built steel floor frame on site"
+    },
+    {
+      "src": "/photos/steel-floors/site-04.jpg",
+      "alt": "A Quick Built steel floor frame on site"
+    },
+    {
+      "src": "/photos/steel-floors/site-05.jpg",
+      "alt": "A Quick Built steel floor frame on site"
+    },
+    {
+      "src": "/photos/steel-floors/site-06.jpg",
+      "alt": "A Quick Built steel floor frame on site"
+    },
+    {
+      "src": "/photos/steel-floors/site-07.jpg",
+      "alt": "A Quick Built steel floor frame on site"
+    },
+    {
+      "src": "/photos/steel-floors/site-08.jpg",
+      "alt": "A Quick Built steel floor frame on site"
+    },
+    {
+      "src": "/photos/steel-floors/site-09.jpg",
+      "alt": "A Quick Built steel floor frame on site"
+    },
+    {
+      "src": "/photos/steel-floors/site-10.jpg",
+      "alt": "A Quick Built steel floor frame on site"
+    }
+  ]
 }

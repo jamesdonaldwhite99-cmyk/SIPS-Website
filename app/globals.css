@@ -5384,3 +5384,40 @@ a { color: inherit; }
   .ts-design-grid { grid-template-columns: 1fr; }
   .ts-design-card { padding: 28px 24px; }
 }
+
+/* Steel floors — photography additions.
+   The section drawing and the price card now share a row under the overview, and the site photos
+   run as a four-up grid. */
+.ts-sf-section-row {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+.ts-sf-section-row .ts-sf-hero-dwg { margin: 0; }
+.ts-sf-section-row .ts-sf-pricecard { align-self: stretch; display: flex; flex-direction: column; }
+.ts-sf-section-row .ts-sf-pricecard .ts-btn { margin-top: auto; align-self: flex-start; }
+
+.ts-sf-gallery {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.ts-sf-gallery-item {
+  position: relative;
+  margin: 0;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--ts-cream-inset);
+}
+
+@media (max-width: 1080px) {
+  .ts-sf-section-row { grid-template-columns: 1fr; }
+  .ts-sf-gallery { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .ts-sf-gallery { grid-template-columns: 1fr 1fr; gap: 10px; }
+}
