@@ -5422,13 +5422,17 @@ a { color: inherit; }
   .ts-sf-gallery { grid-template-columns: 1fr 1fr; gap: 10px; }
 }
 
-/* Kit cards carry the actual part, photographed on white with the background cut out, so the card
-   reads as a parts catalogue entry rather than a bullet point. `contain` because the parts are
-   different shapes and must not be cropped. */
+/* Kit cards carry the actual part, background knocked out, so the card reads as a parts catalogue
+   entry rather than a bullet point.
+   The source screenshots had white backgrounds and wildly different aspect ratios — 2.15 for the
+   bearer and joist, 0.40 for the connector — which at a fixed height rendered one part four times
+   the width of another. They are now flood-filled transparent and composited onto one 4:3 canvas
+   with the longest side at 90%, so the five read as a set. The band matches that ratio, so nothing
+   letterboxes. */
 .ts-sf-kit-photo {
   position: relative;
   width: 100%;
-  height: 130px;
+  aspect-ratio: 4 / 3;
   margin-bottom: 18px;
 }
 .ts-sf-kit-item { padding-top: 26px; }
