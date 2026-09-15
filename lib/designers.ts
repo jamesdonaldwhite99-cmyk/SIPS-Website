@@ -23,6 +23,16 @@ export interface Designer {
    * here and a matching `basePath` in the zone's own next.config. Until then links go to `live`.
    */
   zoned: boolean;
+  /**
+   * All four are live. The fence planner and the house designer were marked "Coming soon" from the
+   * repo — a WIP comment on one and an env gate on the other — when in production both are complete
+   * and serving (James, 16 Sep 2026). Check the deployed URL, not the config, before marking
+   * anything unfinished.
+   *
+   * Both do carry `noindex, nofollow`, so Google will not surface them. That governs SEARCH, not
+   * whether we link to them, and linking from here is exactly how someone finds a tool that is
+   * deliberately unlisted.
+   */
   tag: 'Live' | 'Coming soon';
   blurb: string;
   points: string[];
@@ -71,14 +81,14 @@ export const DESIGNERS: Designer[] = [
     photoAlt: 'A Quick Built modular acoustic fence along a residential boundary',
     name: 'Fencing',
     zonePath: '/design/fence',
-    live: 'https://www.quickbuiltfencing.com.au',
+    live: 'https://www.quickbuiltfencing.com.au/planner',
     zoned: false,
-    tag: 'Coming soon',
+    tag: 'Live',
     blurb:
       'Draw your fence line, drag the corners, and watch the panels, posts and channels price as ' +
-      'you go. In final testing.',
+      'you go. Acoustic and retaining, priced as you draw.',
     points: ['Draw the run', 'Live pricing', 'Acoustic and retaining'],
-    cta: 'See fencing',
+    cta: 'Plan a fence',
   },
   {
     id: 'home',
@@ -86,14 +96,14 @@ export const DESIGNERS: Designer[] = [
     photoAlt: 'A Quick Built modular home built from structural insulated panels',
     name: 'Kit homes',
     zonePath: '/design/home',
-    live: 'https://www.quickbuilthomes.com.au',
+    live: 'https://www.quickbuilthomes.com.au/designer',
     zoned: false,
-    tag: 'Coming soon',
+    tag: 'Live',
     blurb:
-      'Lay out a home, move the walls and openings, and see what it does to the price. In ' +
-      'development with our design team.',
-    points: ['Floor plans', 'Elevations', 'Indicative pricing'],
-    cta: 'See kit homes',
+      'Lay out a home, move the walls and the openings, and see what each change does to the ' +
+      'price. Floor plans and elevations as you go.',
+    points: ['Floor plans', 'Elevations', 'Price as you design'],
+    cta: 'Design a home',
   },
 ];
 
