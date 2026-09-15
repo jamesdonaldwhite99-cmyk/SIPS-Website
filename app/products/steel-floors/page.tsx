@@ -32,76 +32,6 @@ gsap.registerPlugin(ScrollTrigger);
 /** Where the steel floor calculator lives. Same-origin once the design zone is rewritten. */
 const DESIGNER = "/design/steel-floor";
 
-/**
- * Section through the frame — bearer on a post, joists over, boards on top.
- * Drawn to realistic proportions so it reads as a drawing rather than an illustration. It names the
- * parts and never their sizes — see the note at the top of this file.
- */
-function FrameSection() {
-  const INK = "#1f2933";
-  const THIN = "#8a929b";
-  /* The drawing occupies x 58..470 and the annotation column starts at 492, so a leader never
-     crosses a member. Labels were right-aligned over the frame on the first cut and printed on top
-     of the joists. */
-  return (
-    <svg viewBox="0 0 660 380" role="img"
-         aria-label="Section through a steel floor frame: decking over joists, joists over a bearer, bearer on a steel post and base plate"
-         style={{ width: "100%", height: "auto", display: "block" }}>
-      {/* Decking boards */}
-      {Array.from({ length: 9 }, (_, i) => (
-        <rect key={i} x={68 + i * 45} y={64} width={39} height={14} rx={1.5}
-              fill="none" stroke={INK} strokeWidth={1.4} />
-      ))}
-      <line x1={470} y1={71} x2={486} y2={71} stroke={THIN} strokeWidth={0.7} />
-      <text x={492} y={75} fontSize={11} fill={THIN} fontFamily="ui-monospace, monospace">DECKING</text>
-
-      {/* Joists, cut through — the row of boxes */}
-      {Array.from({ length: 8 }, (_, i) => (
-        <rect key={i} x={80 + i * 50} y={84} width={22} height={40} rx={2}
-              fill="none" stroke={INK} strokeWidth={1.9} />
-      ))}
-      <line x1={452} y1={104} x2={486} y2={104} stroke={THIN} strokeWidth={0.7} />
-      <text x={492} y={108} fontSize={11} fill={THIN} fontFamily="ui-monospace, monospace">JOISTS</text>
-
-      {/* Bearer — heaviest line, it carries everything above */}
-      <rect x={58} y={130} width={412} height={26} rx={2} fill="none" stroke={INK} strokeWidth={2.6} />
-      <line x1={470} y1={143} x2={486} y2={143} stroke={THIN} strokeWidth={0.7} />
-      <text x={492} y={147} fontSize={11} fill={THIN} fontFamily="ui-monospace, monospace">BEARER</text>
-
-      {/* Posts and base plates */}
-      {[110, 264, 418].map((x) => (
-        <g key={x}>
-          <rect x={x - 11} y={156} width={22} height={150} rx={1.5} fill="none" stroke={INK} strokeWidth={2.2} />
-          <rect x={x - 30} y={306} width={60} height={9} rx={1.5} fill={INK} />
-        </g>
-      ))}
-      <line x1={429} y1={230} x2={486} y2={230} stroke={THIN} strokeWidth={0.7} />
-      <text x={492} y={234} fontSize={11} fill={THIN} fontFamily="ui-monospace, monospace">STEEL POST</text>
-      <line x1={448} y1={311} x2={486} y2={311} stroke={THIN} strokeWidth={0.7} />
-      <text x={492} y={315} fontSize={11} fill={THIN} fontFamily="ui-monospace, monospace">BASE PLATE</text>
-
-      {/* Ground */}
-      <line x1={24} y1={315} x2={478} y2={315} stroke={INK} strokeWidth={2} />
-      {Array.from({ length: 22 }, (_, i) => (
-        <line key={i} x1={26 + i * 21} y1={315} x2={16 + i * 21} y2={327} stroke={THIN} strokeWidth={1} />
-      ))}
-
-      {/* Dimension: pier spacing */}
-      <line x1={110} y1={352} x2={264} y2={352} stroke={THIN} strokeWidth={0.9} />
-      <line x1={110} y1={347} x2={110} y2={357} stroke={THIN} strokeWidth={1.2} />
-      <line x1={264} y1={347} x2={264} y2={357} stroke={THIN} strokeWidth={1.2} />
-      <text x={187} y={345} fontSize={11} fill={THIN} textAnchor="middle" fontFamily="ui-monospace, monospace">PIER SPACING</text>
-
-      {/* Dimension: floor height */}
-      <line x1={40} y1={156} x2={40} y2={315} stroke={THIN} strokeWidth={0.9} />
-      <line x1={35} y1={156} x2={45} y2={156} stroke={THIN} strokeWidth={1.2} />
-      <line x1={35} y1={315} x2={45} y2={315} stroke={THIN} strokeWidth={1.2} />
-      <text x={30} y={236} fontSize={11} fill={THIN} textAnchor="middle" fontFamily="ui-monospace, monospace"
-            transform="rotate(-90 30 236)">FLOOR HEIGHT</text>
-    </svg>
-  );
-}
-
 export default function SteelFloorsPage() {
   const pageRef = useRef<HTMLDivElement>(null);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
@@ -124,10 +54,6 @@ export default function SteelFloorsPage() {
       gsap.from(".kit-card", {
         scrollTrigger: { trigger: ".ts-sf-kit", start: "top 82%", once: true },
         y: 30, opacity: 0, duration: 0.65, stagger: 0.07, ease: "power2.out",
-      });
-      gsap.from(".step-card", {
-        scrollTrigger: { trigger: ".ts-sf-steps", start: "top 82%", once: true },
-        y: 26, opacity: 0, duration: 0.6, stagger: 0.08, ease: "power2.out",
       });
       gsap.from(".gallery-item", {
         scrollTrigger: { trigger: ".ts-sf-gallery", start: "top 85%", once: true },
@@ -241,12 +167,24 @@ export default function SteelFloorsPage() {
             </div>
           </div>
 
-          {/* The drawing now earns its own place rather than standing in for a photograph: the
-              photos show what it looks like, this shows how it is put together. */}
+          {/* The photos show what a finished floor looks like; this shows that every one of them was
+              modelled first. It is the real export from the design engine, not a picture of one. */}
+          <div className="ts-section-head" style={{ marginTop: "72px" }}>
+            <div>
+              <div className="ts-eyebrow">{data.modelEyebrow}</div>
+              <h2>{data.modelH2}</h2>
+            </div>
+            <p>{data.modelLead}</p>
+          </div>
           <div className="ts-sf-section-row">
             <div className="ts-sf-hero-dwg">
-              <FrameSection />
-              <span className="ts-photo-tag">Section through the frame</span>
+              {/* The real isometric the design software produces, exported straight from the floor
+                  engine — not an illustration of one. Replaced a hand-drawn section that was simply
+                  wrong (James, 15 Sep 2026). */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={data.modelImg} alt={data.modelAlt} loading="lazy"
+                   style={{ width: "100%", height: "auto", display: "block" }} />
+              <span className="ts-photo-tag">{data.modelTag}</span>
             </div>
             <div className="ts-sf-pricecard">
               <span className="ts-eyebrow">No callback required</span>
@@ -313,6 +251,10 @@ export default function SteelFloorsPage() {
           <div className="ts-sf-kit">
             {data.kit.map((k, i) => (
               <article key={i} className="ts-sf-kit-item kit-card">
+                <div className="ts-sf-kit-photo">
+                  <Image src={k.img} alt={k.alt} fill style={{ objectFit: "contain" }}
+                         sizes="(max-width: 760px) 90vw, 30vw" />
+                </div>
                 <span className="ts-sf-kit-num">{`0${i + 1}`}</span>
                 <h3>{k.name}</h3>
                 <p>{k.detail}</p>
@@ -346,27 +288,6 @@ export default function SteelFloorsPage() {
         </div>
       </section>
 
-      {/* How it works */}
-      <section className="ts-section ts-divider-top ts-sf-steps" style={{ background: "var(--ts-cream-2)" }}>
-        <div className="ts-container">
-          <div className="ts-section-head">
-            <div>
-              <div className="ts-eyebrow">{data.processEyebrow}</div>
-              <h2>{data.processH2}</h2>
-            </div>
-            <p>{data.processLead}</p>
-          </div>
-          <ol className="ts-sf-steps-grid">
-            {data.process.map((s, i) => (
-              <li key={i} className="ts-sf-step step-card">
-                <span className="ts-sf-step-num">{s.step}</span>
-                <h3>{s.title}</h3>
-                <p>{s.copy}</p>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
 
 
       {/* On site */}

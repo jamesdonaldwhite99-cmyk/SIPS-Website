@@ -57,28 +57,34 @@
   "kitLead": "Every piece is counted, cut and labelled against the plan that comes with it. What is on the truck is what is on the drawing.",
   "kit": [
     {
-      "name": "Bearers",
-      "detail": "Sized to your span and rolled to length, doubled where the design calls for it."
-    },
-    {
-      "name": "Joists",
-      "detail": "Cut to the exact clear span and set out at the centres your surface needs."
+      "name": "Bearers and joists",
+      "img": "/photos/steel-floors/part-bearer-joist.png",
+      "alt": "Roll-formed steel bearer and joist profiles",
+      "detail": "The frame itself. Sized to your span, rolled to exact length, and marked with the number it carries on the plan."
     },
     {
       "name": "End caps",
-      "detail": "Matched to the joist and pre-punched at the setdown where you ask for it."
+      "img": "/photos/steel-floors/part-end-cap.png",
+      "alt": "Pressed steel end cap that closes the end of a joist",
+      "detail": "Close the end of every joist and tie it to the bearer. Pre-punched at the setdown where you ask for it."
     },
     {
-      "name": "Posts",
-      "detail": "Galvanised SHS, nested in stock lengths so nothing is wasted."
+      "name": "Post to bearer connectors",
+      "img": "/photos/steel-floors/part-post-bearer-connector.png",
+      "alt": "Steel channel connector that joins a post to the bearer above it",
+      "detail": "Join each post to the bearer above it. Posts come in stock lengths, nested so nothing is wasted."
     },
     {
-      "name": "Base plates and anchors",
-      "detail": "A connector plate per pier, with the masonry anchors to suit."
+      "name": "Base plates",
+      "img": "/photos/steel-floors/part-base-plate.png",
+      "alt": "Steel bottom connector plate that sits between post and footing",
+      "detail": "Sit between the post and the footing, with the masonry anchors to fix them down."
     },
     {
-      "name": "Connectors and fixings",
-      "detail": "Post-to-bearer connectors and the screws to match — counted, not estimated."
+      "name": "Fixings",
+      "img": "/photos/steel-floors/part-tek-screw.png",
+      "alt": "Hex head self-drilling tek screw",
+      "detail": "Self-drilling tek screws throughout — counted against the frame, not estimated."
     }
   ],
   "kitFootnote": "Footings, subfloor bracing, balustrading and the floor surface itself are not part of the steel supply. Your quote lists what is included and what is not, item by item.",
@@ -109,36 +115,6 @@
     }
   ],
   "surfacesNote": "Thinner boards and a diagonal layout both need the framing closer together. We allow for it when we price your floor and tell you when we have.",
-  "processEyebrow": "How it works",
-  "processH2": "Five questions to a price",
-  "processLead": "Most suppliers take your drawing and ring you back. We would rather show you the number first.",
-  "process": [
-    {
-      "step": "01",
-      "title": "Tell us where",
-      "copy": "The address sets your wind classification and what delivery costs. It is the only site question we ask."
-    },
-    {
-      "step": "02",
-      "title": "Tell us what",
-      "copy": "Freestanding or attached to the house, and whether a room or a deck is going on top."
-    },
-    {
-      "step": "03",
-      "title": "Tell us how big",
-      "copy": "Shape, length, depth, and how high the floor sits above the ground."
-    },
-    {
-      "step": "04",
-      "title": "See the price",
-      "copy": "The frame is solved against the span tables and priced on screen — sections, bearer lines, pier count and a delivered figure."
-    },
-    {
-      "step": "05",
-      "title": "We confirm it",
-      "copy": "Send photos of the site and the access route and we firm the quote up, with drawings, a bill of materials and a cutting schedule."
-    }
-  ],
   "faqEyebrow": "Common questions",
   "faqH2": "Before you ask us",
   "faqLead": "The questions that come up most often, answered the way we would answer them on the phone.",
@@ -234,5 +210,11 @@
       "src": "/photos/steel-floors/site-10.jpg",
       "alt": "A Quick Built steel floor frame on site"
     }
-  ]
+  ],
+  "modelEyebrow": "Engineered and designed",
+  "modelH2": "You see the frame before it is made",
+  "modelLead": "Every floor is modelled before a length of steel is cut. This is the same 3D the design software produces for your job — the frame you will be standing on, drawn from the dimensions you give us.",
+  "modelImg": "/photos/steel-floors/frame-3d.svg",
+  "modelAlt": "A 3D view of a Quick Built steel floor frame: bearers on posts with joists spanning between them",
+  "modelTag": "Engineered and designed for your job"
 }
