@@ -37,9 +37,48 @@ const alyspanRedirects = [
   },
 ];
 
+/* THE DESIGN ZONES.
+ *
+ * Every calculator we own lives in a different repo on a different domain: the patio designer on
+ * patiokits.com.au, the steel floor and home designers on quickbuilthomes.com.au, the fence planner
+ * on quickbuiltfencing.com.au. A customer who wants to price two products changes brand halfway
+ * through, and quickbuiltsystems.com.au — the parent site — had no calculator at all.
+ *
+ * These are REWRITES, not redirects: the URL stays on quickbuiltsystems.com.au and this site serves
+ * the other app's response. That is Next's multi-zone pattern, and it is why each tool can stay in
+ * its own repo with its own engine, its own prices and its own deploy. Nothing moves.
+ *
+ * TWO THINGS HAVE TO BE TRUE for a zone to work, and both live in the ZONE's config, not here:
+ *   1. The zone sets `basePath: '/design/<path>'`, so the browser asks for
+ *      /design/<path>/_next/... rather than /_next/..., which would collide with this site's own
+ *      assets and 404. This is the step that is easy to forget and impossible to miss once it is
+ *      wrong — the page arrives unstyled.
+ *   2. The zone keeps its own domain working, and sets a canonical pointing at the
+ *      quickbuiltsystems URL, so the two do not compete as duplicates.
+ *
+ * A zone only appears here once its URL is set. Until then /design links out to the live domain
+ * instead, so the hub is useful before the plumbing is finished — turn one on by setting its env.
+ */
+const ZONES = [
+  { path: 'patio', url: process.env.ZONE_PATIO_URL, route: '/designer' },
+  { path: 'steel-floor', url: process.env.ZONE_HOMES_URL, route: '/steel-floor' },
+  { path: 'fence', url: process.env.ZONE_FENCING_URL, route: '/planner' },
+  { path: 'home', url: process.env.ZONE_HOMES_URL, route: '/designer' },
+];
+
+const zoneRewrites = ZONES.filter((z) => z.url).flatMap((z) => [
+  { source: `/design/${z.path}`, destination: `${z.url}${z.route}` },
+  { source: `/design/${z.path}/:path*`, destination: `${z.url}${z.route}/:path*` },
+  /* The zone's own assets, under its prefix, so they never collide with this site's /_next. */
+  { source: `/design/${z.path}/_next/:path*`, destination: `${z.url}/design/${z.path}/_next/:path*` },
+]);
+
 const nextConfig = {
   images: {
     unoptimized: true,
+  },
+  async rewrites() {
+    return zoneRewrites;
   },
   async redirects() {
     return [

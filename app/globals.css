@@ -5169,3 +5169,218 @@ a { color: inherit; }
   .ts-aly-eng-card { padding: 24px; }
   .ts-aly-certificate { padding: 24px; }
 }
+
+/* ---------------------------------------------------------------- steel floors
+   Drawing-led rather than photo-led: there is no steel floor photography yet, and the competitive
+   point is that we publish spans and a price where the market leader publishes neither. Only the
+   pieces with no existing equivalent are defined here — the hero drawing frame, the price card,
+   the kit grid, the surface lists and the numbered steps. Everything else reuses the product-page
+   classes the other four products already use. */
+
+.ts-sf-hero-dwg {
+  position: relative;
+  background: #FAFAF8;
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-md);
+  padding: 34px 30px 30px;
+  display: flex;
+  align-items: center;
+}
+
+/* The "no callback required" card, beside the overview copy. It is the whole argument against the
+   competitor's flow, so it sits at the top of the page rather than in a footer. */
+.ts-sf-pricecard {
+  background: var(--color-ink);
+  color: #FAFAF8;
+  border-radius: var(--radius-md);
+  padding: 34px;
+  align-self: start;
+}
+.ts-sf-pricecard .ts-eyebrow { color: var(--ts-accent); }
+.ts-sf-pricecard-lead {
+  font-family: var(--font-display);
+  font-size: 22px;
+  line-height: 1.35;
+  letter-spacing: -0.3px;
+  margin: 12px 0 22px;
+  color: #FAFAF8;
+}
+.ts-sf-pricecard-list {
+  list-style: none;
+  counter-reset: sfstep;
+  margin: 0 0 26px;
+  padding: 0;
+}
+.ts-sf-pricecard-list li {
+  counter-increment: sfstep;
+  position: relative;
+  padding: 11px 0 11px 34px;
+  font-size: 14.5px;
+  border-top: 1px solid rgba(250, 250, 248, 0.16);
+  color: rgba(250, 250, 248, 0.88);
+}
+.ts-sf-pricecard-list li::before {
+  content: counter(sfstep);
+  position: absolute;
+  left: 0;
+  top: 11px;
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 12px;
+  color: var(--ts-accent);
+}
+
+.ts-sf-kit {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.ts-sf-kit-item {
+  position: relative;
+  background: var(--color-canvas-warm);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-md);
+  padding: 30px 28px 28px;
+}
+.ts-sf-kit-num {
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 12px;
+  color: var(--ts-accent);
+  letter-spacing: 1px;
+}
+.ts-sf-kit-item h3 {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 500;
+  letter-spacing: -0.3px;
+  color: var(--color-ink);
+  margin: 8px 0 8px;
+}
+.ts-sf-kit-item p { font-size: 14px; line-height: 1.6; color: var(--color-graphite); margin: 0; }
+
+.ts-sf-surfaces {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.ts-sf-surface-group {
+  background: var(--color-canvas-warm);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-md);
+  padding: 32px;
+}
+.ts-sf-surface-group h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.3px;
+  color: var(--color-ink);
+  margin: 0 0 6px;
+}
+.ts-sf-surface-group ul { list-style: none; margin: 0; padding: 0; }
+.ts-sf-surface-group li {
+  padding: 12px 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-ink);
+  border-top: 1px solid var(--color-hairline);
+}
+
+.ts-sf-steps-grid {
+  margin-top: 48px;
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+}
+.ts-sf-step { border-top: 2px solid var(--color-ink); padding-top: 18px; }
+.ts-sf-step-num {
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 12px;
+  color: var(--ts-accent);
+  letter-spacing: 1px;
+}
+.ts-sf-step h3 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.3px;
+  color: var(--color-ink);
+  margin: 8px 0 8px;
+}
+.ts-sf-step p { font-size: 14px; line-height: 1.6; color: var(--color-graphite); margin: 0; }
+
+@media (max-width: 1080px) {
+  .ts-sf-steps-grid { grid-template-columns: repeat(2, 1fr); }
+  .ts-sf-kit { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 760px) {
+  .ts-sf-steps-grid,
+  .ts-sf-kit,
+  .ts-sf-surfaces { grid-template-columns: 1fr; }
+  .ts-sf-pricecard { padding: 28px 24px; }
+  .ts-sf-hero-dwg { padding: 24px 18px 20px; }
+}
+
+/* ---------------------------------------------------------------- design hub */
+.ts-design-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.ts-design-card {
+  background: var(--color-canvas-warm);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-md);
+  padding: 34px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.ts-design-card-head { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+.ts-design-card h2 {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: -0.4px;
+  color: var(--color-ink);
+  margin: 0;
+}
+.ts-design-tag {
+  font-size: 10.5px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  padding: 4px 9px;
+  border-radius: 100px;
+  border: 1px solid var(--color-hairline);
+  color: var(--color-slate);
+  white-space: nowrap;
+}
+.ts-design-tag.is-live { color: var(--ts-accent); border-color: var(--ts-accent); }
+.ts-design-copy { font-size: 15px; line-height: 1.65; color: var(--color-graphite); margin: 0 0 18px; }
+.ts-design-points { list-style: none; margin: 0 0 26px; padding: 0; width: 100%; }
+.ts-design-points li {
+  position: relative;
+  padding: 10px 0 10px 22px;
+  font-size: 14px;
+  color: var(--color-ink);
+  border-top: 1px solid var(--color-hairline);
+}
+.ts-design-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 17px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ts-accent);
+}
+.ts-design-card .ts-btn { margin-top: auto; }
+
+@media (max-width: 860px) {
+  .ts-design-grid { grid-template-columns: 1fr; }
+  .ts-design-card { padding: 28px 24px; }
+}

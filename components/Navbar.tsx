@@ -11,6 +11,10 @@ const categories = menuData.categories;
 const navItems = [
   { id: "home", label: "Home", href: "/" },
   { id: "products", label: "Products", dropdown: true },
+  /* The calculators, which until now lived only on the three sibling domains and had no way in from
+     the parent site at all. Sits straight after Products because it is what someone does once they
+     have decided which product they want. */
+  { id: "design", label: "Design", href: "/design" },
   { id: "about", label: "About", href: "/about" },
   { id: "gallery", label: "Gallery", href: "/gallery" },
   { id: "resources", label: "Resources", href: "/resources" },

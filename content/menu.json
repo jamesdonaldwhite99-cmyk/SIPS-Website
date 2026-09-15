@@ -127,6 +127,35 @@
       ]
     },
     {
+      "title": "Steel Floors",
+      "href": "/products/steel-floors",
+      "external": false,
+      "image": "/photos/010a7268-hdr-2.jpg",
+      "items": [
+        {
+          "title": "Steel Floor & Deck Frames",
+          "copy": "Engineered bearers and joists, cut to length.",
+          "href": "/products/steel-floors",
+          "external": false,
+          "image": "/photos/gallery/05.jpg"
+        },
+        {
+          "title": "Span Tables",
+          "copy": "Published joist spans for every section.",
+          "href": "/products/steel-floors#span-tables",
+          "external": false,
+          "image": "/photos/gallery/07.jpg"
+        },
+        {
+          "title": "Price Your Floor",
+          "copy": "Five questions to a delivered price.",
+          "href": "/design/steel-floor",
+          "external": false,
+          "image": "/photos/gallery/09.jpg"
+        }
+      ]
+    },
+    {
       "title": "Structural Aluminium",
       "href": "/products/alyspan",
       "external": false,
