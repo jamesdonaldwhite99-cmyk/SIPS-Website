@@ -142,8 +142,8 @@
         {
           "title": "Price Your Floor",
           "copy": "Five questions to a delivered price.",
-          "href": "/design/steel-floor",
-          "external": false,
+          "href": "https://www.quickbuilthomes.com.au/steel-floor",
+          "external": true,
           "image": "/photos/gallery/09.jpg"
         }
       ]
