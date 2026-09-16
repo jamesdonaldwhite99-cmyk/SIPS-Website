@@ -22,7 +22,7 @@ export default function robots(): MetadataRoute.Robots {
         // crawlable for image SEO. The staff shortcuts are 302s onto the accounts
         // service — there is nothing here for a crawler to have, and no reason for
         // an internal tool to turn up in a search result for our own brand.
-        disallow: ["/pdfs/", "/team-dashboard", "/team", "/staff-dashboard", "/staff", "/dashboard", "/hub", "/pods", "/dockets"],
+        disallow: ["/pdfs/", "/team-dashboard", "/team", "/command", "/command-centre", "/numbers", "/staff-dashboard", "/staff", "/dashboard", "/hub", "/pods", "/dockets"],
       },
     ],
     sitemap: `${BASE_URL}/sitemap.xml`,

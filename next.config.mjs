@@ -127,6 +127,24 @@ const nextConfig = {
        *
        * Singular, plural and the words people actually say, for the same reason /pod was added
        * beside /pods: a shortcut you have to spell exactly right is not a shortcut. */
+      /* THE COMMAND CENTRE — the owner's numbers, on an address worth remembering.
+       *
+       * Only appears once COMMAND_CENTRE_URL is set, the same rule the design zones follow: a
+       * shortcut to nowhere is worse than no shortcut. It is a 302 for the same reason /pods and
+       * /team-dashboard are — that app lives in its own repo with its own deploy, and copying it here
+       * would put the owner's figures on a public marketing domain.
+       *
+       * It does NOT need a gate of its own: the Command Centre puts everything behind Microsoft
+       * sign-in in its own middleware, and its dev bypass cannot be satisfied on a deployed copy.
+       * This only shortens the address; it does not widen who can read it. */
+      ...(process.env.COMMAND_CENTRE_URL
+        ? ['/command', '/command-centre', '/commandcentre', '/numbers'].map((source) => ({
+          source,
+          destination: process.env.COMMAND_CENTRE_URL,
+          statusCode: 302,
+        }))
+        : []),
+
       /* TEAM, not staff — the word the business actually uses for itself. /staff-dashboard is kept
          working rather than retired: it has been handed out, and a shortcut that 404s after somebody
          has written it down is worse than an extra line here. */
