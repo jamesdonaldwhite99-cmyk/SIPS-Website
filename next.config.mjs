@@ -103,6 +103,35 @@ const nextConfig = {
         destination: `${process.env.ACCOUNTS_SERVICE_URL || 'https://accounts-payable-ya88.onrender.com'}/accounts/pods`,
         statusCode: 302,
       })),
+
+      /* THE STAFF DASHBOARD — quickbuiltsystems.com.au/staff-dashboard.
+       *
+       * One address staff can remember, on the domain they already know, landing on the hub that
+       * lists every tool in the accounts service with a live count beside each one.
+       *
+       * A REDIRECT, NOT A REWRITE, and the reason is measured rather than stylistic. The hub builds
+       * its tiles from root-absolute links — 15 of them, across /orders, /bills, /accounts,
+       * /bunnings, /intake, /pod, /delivery, /completed, /health, /selfcheck and /orders.json.
+       * Served through a Next rewrite the page itself would render fine, and every single link on it
+       * would then resolve against quickbuiltsystems.com.au and 404. A 302 hands the browser to the
+       * service, so the address bar and the links on the page agree about which host they are on.
+       *
+       * It is also why the hub is not COPIED onto this site — the same reason the docket shortcut
+       * above gives. These screens read the live order ledger and show customer names and delivery
+       * addresses. They need the accounts token to be worth anything, and a public marketing domain
+       * is the wrong place to keep that.
+       *
+       * No token is needed in the link: the hub answers an unauthenticated visitor with a password
+       * box rather than a locked door, and remembers the device afterwards. Next forwards the query
+       * string anyway, so an older ?token= link still works.
+       *
+       * Singular, plural and the words people actually say, for the same reason /pod was added
+       * beside /pods: a shortcut you have to spell exactly right is not a shortcut. */
+      ...['/staff-dashboard', '/staff-dashboards', '/staffdashboard', '/staff', '/dashboard', '/hub'].map((source) => ({
+        source,
+        destination: `${process.env.ACCOUNTS_SERVICE_URL || 'https://accounts-payable-ya88.onrender.com'}/hub`,
+        statusCode: 302,
+      })),
       {
         source: '/files/contact_us.php',
         destination: '/contact',
