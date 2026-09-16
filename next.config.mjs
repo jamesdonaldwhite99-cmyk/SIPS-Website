@@ -127,7 +127,11 @@ const nextConfig = {
        *
        * Singular, plural and the words people actually say, for the same reason /pod was added
        * beside /pods: a shortcut you have to spell exactly right is not a shortcut. */
-      ...['/staff-dashboard', '/staff-dashboards', '/staffdashboard', '/staff', '/dashboard', '/hub'].map((source) => ({
+      /* TEAM, not staff — the word the business actually uses for itself. /staff-dashboard is kept
+         working rather than retired: it has been handed out, and a shortcut that 404s after somebody
+         has written it down is worse than an extra line here. */
+      ...['/team-dashboard', '/team-dashboards', '/teamdashboard', '/team',
+        '/staff-dashboard', '/staff-dashboards', '/staffdashboard', '/staff', '/dashboard', '/hub'].map((source) => ({
         source,
         destination: `${process.env.ACCOUNTS_SERVICE_URL || 'https://accounts-payable-ya88.onrender.com'}/hub`,
         statusCode: 302,
