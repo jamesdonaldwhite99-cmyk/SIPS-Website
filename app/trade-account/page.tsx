@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import TradeAccountForm from "@/components/trade-account/TradeAccountForm";
+import { tradeAccountEnabled } from "@/lib/tradeAccount";
 
 export const metadata: Metadata = {
   title: "Apply for a Trade Account | Quick Built Systems",
@@ -23,7 +24,15 @@ export default function TradeAccountPage() {
       <section className="ts-section">
         <div className="ts-container">
           <div className="ts-quote-grid">
-            <TradeAccountForm />
+            {tradeAccountEnabled() ? (
+              <TradeAccountForm />
+            ) : (
+              <div className="qb-ta-done">
+                <span className="num">Coming soon</span>
+                <h2>Online applications open shortly</h2>
+                <p>In the meantime, call <a href="tel:1300132787">1300 132 787</a> or email <a href="mailto:accounts@quickbuiltsystems.com.au">accounts@quickbuiltsystems.com.au</a> and we&rsquo;ll send you the application form.</p>
+              </div>
+            )}
             <p className="qb-ta-footnote">
               Your details are sent securely to Quick Built Systems and used to assess this application and manage your account, as set out
               in our <a href="/privacy-policy">Privacy Policy</a>. Prefer paper? Call <a href="tel:1300132787">1300 132 787</a> and we&rsquo;ll send the printable form.

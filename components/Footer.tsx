@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import galleryData from "@/content/gallery.json";
 import homeData from "@/content/home.json";
+import { tradeAccountEnabled } from "@/lib/tradeAccount";
 
 const galleryImages = galleryData.images.slice(0, 20);
 const footerProducts = homeData.categoryShowcase;
@@ -80,7 +81,7 @@ export default function Footer() {
               <li><a href="tel:1300132787">1300 132 787</a></li>
               <li><a href="mailto:sales@quickbuiltsystems.com.au">sales@quickbuiltsystems.com.au</a></li>
               <li><Link href="/contact">Contact us</Link></li>
-              <li><Link href="/trade-account">Apply for a trade account</Link></li>
+              {tradeAccountEnabled() && <li><Link href="/trade-account">Apply for a trade account</Link></li>}
               <li>Sydney, NSW</li>
               <li>Mon–Fri 7:30–4:30 AEST</li>
             </ul>

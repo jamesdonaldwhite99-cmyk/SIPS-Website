@@ -12,6 +12,13 @@
  */
 
 export const CONSENT_VERSION = "consents-2026-09-a";
+
+/**
+ * Is the online application switched on? Only once Vercel has both settings — otherwise the form
+ * would let someone complete all seven steps and fail at the last. Server-side only (reads env).
+ * After setting CREDIT_SERVICE_URL and CREDIT_SITE_SECRET in Vercel, redeploy for this to flip.
+ */
+export const tradeAccountEnabled = () => Boolean(process.env.CREDIT_SERVICE_URL && process.env.CREDIT_SITE_SECRET);
 export const TERMS_EDITION = "April 2026 Edition";
 export const TERMS_PDF = "/pdfs/qbs-terms-2026-04.pdf";
 
