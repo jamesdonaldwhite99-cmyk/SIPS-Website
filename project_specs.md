@@ -169,3 +169,43 @@ supplier alongside Stratco, Metroll, Spanmor, Eurowood and Patios Wholesale.
   card; heading updated to "Seven product families".
 - `app/products/page.tsx` — fourth range row, counter now derives from `products.length`.
 - `components/Footer.tsx` picks the new range up automatically from `categoryShowcase`.
+
+---
+
+## Trade account application — `/trade-account` (added Sep 2026)
+
+**What it does.** Trade customers apply online for a QBS 30-day trading account and sign it
+electronically. The application is the April 2026 paper form (application + declaration + Terms of
+Trade), made fillable. Submitting it starts a public-source credit check in the QBS credit service;
+James reviews and decides in the Command Centre. The Deed of Guarantee stays on paper, signed in
+front of a witness, and is emailed to the guarantors only after approval.
+
+**Who uses it.** Builders and trade customers applying for credit. Linked from the footer.
+
+**Pages & flow (public).** `/trade-account` — one page, seven steps:
+1 Business → 2 Directors / partners / proprietor → 3 Contacts, bank, accountant → 4 Trade references
+→ 5 Guarantors → 6 Declaration (Terms tick, credit-check consent, e-signing consent, signature) →
+7 Review & submit → confirmation with the application reference.
+
+**Data.** Nothing is stored by this site or in the browser (no localStorage). The form posts to
+`/api/account`, a thin forwarder that adds a shared secret and sends it to the credit service
+(`automations/qbs-credit-service`, mounted in the accounts service on Render). That service
+validates again (it is the master copy of the rules), encrypts, stores, emails the applicant their
+signed copy, and runs the check. `/api/account` logs only the reference and outcome — never the body
+(it holds dates of birth and licence numbers). `/api/account/abn` pre-fills the business from ABN
+Lookup through the same service, so the ABR GUID stays server-side.
+
+**Files.**
+- `app/trade-account/page.tsx`, `components/trade-account/*` (one component per file)
+- `lib/tradeAccount.ts` — field rules, ABN/ACN checksums, and the consent wording + `CONSENT_VERSION`,
+  which must match `qbs-credit-service/src/consents.js` (the service refuses any other version)
+- `app/api/account/route.ts`, `app/api/account/abn/route.ts`
+- `public/pdfs/qbs-terms-2026-04.pdf` — the exact Terms file every signing record fingerprints;
+  byte-identical to `qbs-credit-service/assets/terms-2026-04.pdf`
+
+**Env (Vercel).** `CREDIT_SERVICE_URL` (e.g. `https://<accounts service>/credit`),
+`CREDIT_SITE_SECRET` (same value as on the service).
+
+**Done when.** `tsc` passes; the page works at phone and desktop widths; missing starred fields are
+blocked on every step; the ABN pre-fills; a submission reaches the service and returns a reference;
+nothing personal appears in logs.
