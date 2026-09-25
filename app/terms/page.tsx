@@ -4,7 +4,7 @@ import terms from "@/content/terms.json";
 
 export const metadata: Metadata = {
   title: "Terms & Conditions of Trade | Quick Built Systems",
-  description: "Quick Built Systems Pty Limited Terms and Conditions of Trade.",
+  description: "Quick Built Systems Pty Ltd Terms and Conditions of Trade.",
 };
 
 /** A lettered sub-clause line, e.g. "(a) interest accrues…". */

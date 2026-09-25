@@ -1,5 +1,5 @@
 {
-  "company": "Quick Built Systems Pty Limited",
+  "company": "Quick Built Systems Pty Ltd",
   "docTitle": "Terms and Conditions of Trade",
   "edition": "April 2026 Edition",
   "sections": [
@@ -22,7 +22,7 @@
         "2.1 These Terms apply to all quotations and offers made by the Company and all orders accepted by the Company.",
         "2.2 By placing an order, the Customer is deemed to have accepted these Terms.",
         "2.3 These Terms prevail over any inconsistent terms proposed by the Customer unless expressly agreed in writing by an authorised officer of the Company.",
-        "2.4 If there is any inconsistency between these Terms and any quotation, drawing, specification, plan, correspondence or other document, these Terms prevail unless the Company expressly states otherwise in writing."
+        "2.4 If there is any inconsistency between these Terms and any quotation, drawing, specification, plan, correspondence or other document (including any figure stated on the account application form), these Terms prevail unless the Company expressly states otherwise in writing."
       ]
     },
     {
@@ -53,7 +53,7 @@
         "5.3 Discounted pricing is conditional upon timely payment. If payment is late, the full list price applies.",
         "5.4 The Customer must not withhold, deduct, set off or retain any amount owing to the Company.",
         "5.5 If the Customer fails to pay any amount by the due date:",
-        "(a) interest accrues at 3% above the Westpac Overdraft Business Rate, calculated daily; and",
+        "(a) interest accrues on the overdue amount at 3% per annum above the Westpac Overdraft Business Rate, calculated daily from the due date until payment in full; and",
         "(b) the Customer must pay all costs incurred by the Company in recovering overdue amounts, including legal costs on a solicitor-and-own-client basis and debt collection fees.",
         "5.6 A certificate signed by a responsible officer of the Company stating the amount due is prima facie evidence of that amount.",
         "5.7 The Company may apply any payment received from the Customer towards any outstanding amount in any order it determines."
@@ -162,7 +162,7 @@
         "14.3 The Customer must not disclose, share, distribute or provide any engineering or system details to any third party except:",
         "(a) the project certifier;",
         "(b) the project engineer;",
-        "(c) the builder engaged to construct the project using the Company’s system;",
+        "(c) the builder engaged to construct the project using the Company’s system; and",
         "(d) relevant authorities requiring the information for statutory approval.",
         "14.4 The Customer must not:",
         "(a) provide engineering or system details for the purpose of obtaining alternative pricing, quotations or construction services;",
