@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 };
 
 const c: TradeConfig = {
+  leadWhat: "patios, rooms and panel builds",
   applyHref: "/trade-account",
   proof: [
     "Insulated roof and wall panels made in Silverdale NSW",

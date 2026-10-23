@@ -5868,3 +5868,16 @@ a { color: inherit; }
 .qbt-terms > div { background: #fff; border: 1px solid rgba(0,0,0,0.08); border-radius: 12px; padding: 18px 20px; }
 .qbt-terms dt { font-weight: 600; color: var(--color-ink); margin: 0 0 6px; }
 .qbt-terms dd { margin: 0; font-size: 15px; line-height: 1.55; color: var(--color-graphite); }
+
+/* Trade page: jobs sent your way */
+.qbt-leads-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center }
+.qbt-leads-photo { position: relative; aspect-ratio: 4 / 3; border-radius: 4px; overflow: hidden }
+.qbt-leads-copy h2 { font-family: var(--font-display); font-size: clamp(30px, 3.4vw, 46px); font-weight: 400; letter-spacing: -1px; color: #fff; margin: 14px 0 14px }
+.qbt-leads-copy > p { font-size: 17px; line-height: 1.6; color: rgba(255,255,255,0.75); margin: 0 0 28px; max-width: 520px }
+.qbt-leads-steps { list-style: none; padding: 0; margin: 0 0 32px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px }
+.qbt-leads-steps li { border-top: 1px solid rgba(255,255,255,0.2); padding-top: 14px; display: flex; flex-direction: column; gap: 4px }
+.qbt-leads-steps .n { color: var(--ts-accent); font-size: 13px; font-weight: 600 }
+.qbt-leads-steps strong { color: #fff; font-weight: 600; font-size: 15px }
+.qbt-leads-steps li > span:last-child { color: rgba(255,255,255,0.65); font-size: 14px; line-height: 1.5 }
+@media (max-width: 900px) { .qbt-leads-grid { grid-template-columns: 1fr; gap: 28px } }
+@media (max-width: 560px) { .qbt-leads-steps { grid-template-columns: 1fr } }

@@ -8,12 +8,15 @@
  * and approval switches on trade pricing in the Quick Built app. Trade percentages are never published. */
 import Image from "next/image";
 import Link from "next/link";
+import LeadsBand from "./LeadsBand";
 
 export const APPLY_URL = "https://www.quickbuiltsystems.com.au/trade-account";
 const TERMS = "https://www.quickbuiltsystems.com.au/pdfs/qbs-terms-2026-04.pdf";
 
 export interface TradeConfig {
   applyHref?: string;
+  /** What homeowners design on this site, for the leads pitch ("patios", "homes and cabins"). */
+  leadWhat: string;
   proof: string[];
   benefits: { title: string; caption: string; image: string }[];
   resourcesHeading?: string;
@@ -47,6 +50,8 @@ export default function TradeJoin({ c }: { c: TradeConfig }) {
           </div>
         </div>
       </section>
+
+      <LeadsBand what={c.leadWhat} applyHref={apply} />
 
       {/* Trade network */}
       <section className="ts-section ts-divider-top">
