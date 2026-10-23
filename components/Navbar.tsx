@@ -18,6 +18,7 @@ const navItems = [
   { id: "about", label: "About", href: "/about" },
   { id: "gallery", label: "Gallery", href: "/gallery" },
   { id: "resources", label: "Resources", href: "/resources" },
+  { id: "trade", label: "Trade", href: "/trade" },
   { id: "contact", label: "Contact", href: "/contact" },
 ];
 
