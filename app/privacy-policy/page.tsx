@@ -3,10 +3,10 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy | Quick Built Systems",
   description:
-    "How Quick Built Systems Pty Ltd collects, uses, stores and shares your personal information, in line with the Australian Privacy Act 1988.",
+    "How Quick Built Systems Pty Limited collects, uses, stores and shares your personal information, in line with the Australian Privacy Act 1988.",
 };
 
-const LAST_UPDATED = "7 July 2026";
+const LAST_UPDATED = "23 October 2026";
 
 // A string renders as a paragraph; a string[] renders as a bullet list.
 type Block = string | string[];
@@ -26,6 +26,8 @@ const SECTIONS: Section[] = [
         "Anything else you choose to include in your message",
       ],
       "We also automatically collect basic technical and usage data when you visit our sites (see section 4, Cookies and tracking).",
+      "If you use the Quick Built app, we also keep your sign-in email, your business name and ABN if you apply for trade pricing, your orders, quotes, invoices and deliveries, and a notification token if you turn notifications on.",
+      "Card payments are handled by Stripe. We never see or keep your full card number.",
     ],
   },
   {
@@ -63,6 +65,7 @@ const SECTIONS: Section[] = [
         "Phone-call and email-click tracking",
       ],
       "These tools may set cookies and collect data such as your IP address, device and browser type, and the pages you view. You can control or block cookies through your browser settings.",
+      "The Quick Built app has no advertising trackers or analytics, and none of the tools above run when one of our website pages is opened inside the app.",
     ],
   },
   {
@@ -70,10 +73,14 @@ const SECTIONS: Section[] = [
     blocks: [
       "We do not sell your personal information, and we do not pass your details to external installers or other businesses. We share it only with the providers that help us run our business:",
       [
-        "Capsule CRM — where we store and manage your enquiry",
-        "Make.com — our form and automation provider, which passes your form submission into our systems",
-        "Google and Meta — for the analytics and advertising tools above",
-        "Microsoft Outlook — to receive and respond to your enquiry",
+        "Capsule CRM: where we store and manage your enquiry",
+        "Make.com: our form and automation provider, which passes your form submission into our systems",
+        "Microsoft 365: our email and file storage",
+        "Xero: our quotes, invoices and payments",
+        "Stripe: card payments",
+        "Mainfreight: delivery of your order",
+        "Render and Vercel: hosting for our own systems and the app",
+        "Google and Meta: the website analytics and advertising tools above (websites only)",
       ],
     ],
   },
@@ -86,25 +93,27 @@ const SECTIONS: Section[] = [
   {
     heading: "7. How we store and secure it",
     blocks: [
-      "We take reasonable steps to protect your information from misuse, loss, and unauthorised access, including storing it in secure, access-controlled systems such as Capsule CRM. No method of transmission or storage is completely secure, but we work to protect your information.",
+      "We take reasonable steps to protect your information from misuse, loss and unauthorised access. Every connection to our sites and app is encrypted; customer, staff and location records are encrypted on our server; customers sign in to the app with a one-time code rather than a password; staff use personal PINs on registered phones; access is limited to the people who need it; and our records are backed up, encrypted, every night. No method of storage or transmission is completely secure, but we work to protect your information.",
     ],
   },
   {
     heading: "8. Overseas disclosure",
     blocks: [
       "Some of the providers we use store data outside Australia — including the United Kingdom, the United States and the European Union (for example Capsule CRM, Make.com, Google and Meta). By using our sites and submitting an enquiry, you consent to your information being handled by these providers overseas.",
+      "Our main server (Render) is also outside Australia.",
     ],
   },
   {
     heading: "9. How long we keep it",
     blocks: [
-      "We keep your information only for as long as we need it for the purposes above. We generally retain lead and customer records for up to 7 years to meet our legal and tax record-keeping obligations, after which we securely delete or de-identify it.",
+      "We keep your information only for as long as we need it for the purposes above. Quotes, invoices and job records are kept for 7 years to meet tax law. Enquiries that did not go ahead are kept for up to 7 years, then securely deleted or de-identified.",
     ],
   },
   {
     heading: "10. Accessing, correcting or deleting your information",
     blocks: [
       "You can ask us to access, correct, or delete the personal information we hold about you. Email us at sales@quickbuiltsystems.com.au and we will respond within a reasonable time. There is no charge to make a request.",
+      "In the Quick Built app you can see and change your details under Me, and delete your account there at any time. Records we must keep by law (such as invoices) stay with us.",
     ],
   },
   {
@@ -123,7 +132,7 @@ const SECTIONS: Section[] = [
   {
     heading: "13. Contact us",
     blocks: [
-      "Quick Built Systems Pty Ltd (ABN 63 167 322 116), 21 Econo Place, Silverdale NSW 2752. Email: sales@quickbuiltsystems.com.au.",
+      "Quick Built Systems Pty Limited (ABN 63 167 322 116), 21 Econo Place, Silverdale NSW 2752. Email: sales@quickbuiltsystems.com.au.",
     ],
   },
 ];
@@ -141,7 +150,7 @@ export default function PrivacyPolicyPage() {
         </p>
 
         <p style={{ fontSize: 15.5, lineHeight: 1.7, color: "var(--color-ink-soft)", margin: "0 0 12px" }}>
-          Quick Built Systems Pty Ltd (ABN 63 167 322 116) (&ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;)
+          Quick Built Systems Pty Limited (ABN 63 167 322 116) (&ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;)
           respects your privacy. This policy explains how we collect, use, store and share your personal
           information, and your rights under the Australian Privacy Act 1988 and the Australian Privacy
           Principles (APPs).
@@ -173,7 +182,7 @@ export default function PrivacyPolicyPage() {
         ))}
 
         <p style={{ color: "var(--color-stone)", fontSize: 13, marginTop: 40, paddingTop: 24, borderTop: "1px solid var(--color-hairline)" }}>
-          © {new Date().getFullYear()} Quick Built Systems Pty Ltd. All rights reserved.
+          © {new Date().getFullYear()} Quick Built Systems Pty Limited. All rights reserved.
         </p>
       </div>
     </section>
