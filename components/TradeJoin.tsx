@@ -1,6 +1,7 @@
-/* "Join the Quick Built family": the trade page, laid out like Quick Built Fencing's Specifiers &
- * Trade page (proof strip, trade network cards, resources, a dark application band, project tiles,
- * closing call). Each site passes its own photos, proof points and resources (app/trade/page.tsx).
+/* "Join the Quick Built family": the trade page, in the same order as Quick Built Fencing's Specifiers &
+ * Trade page (James, 23 Oct 2026: "follow same layout as fencing"): proof strip, trade network cards,
+ * the technical pack download (once James approves each pack), what's inside, a dark application band,
+ * project tiles, closing call. Each site passes its own photos, proof points and resources (app/trade/page.tsx).
  *
  * Every Apply button goes to the one online application (quickbuiltsystems.com.au/trade-account):
  * the ABN and credit checks run as it is sent, it lands on the Command Centre's Credit tab for James,
@@ -18,8 +19,8 @@ export interface TradeConfig {
   resourcesHeading?: string;
   resources: { title: string; caption: string; href: string; image: string; external?: boolean }[];
   gallery: { label: string; caption: string; image: string }[];
-  /** A named trade customer's own words, only once they have agreed to it being published. */
-  testimonial?: { quote: string; name: string; business: string };
+  /** The technical pack (PDF in /public/pdfs). Left out until James approves that site's pack. */
+  pack?: { href: string; cover: string; title: string; lead: string; contents: string[]; pages: string; size: string };
 }
 
 const Check = () => (
@@ -31,23 +32,7 @@ export const Arrow = () => (
 const h2: React.CSSProperties = { fontFamily: "var(--font-display)", fontSize: "clamp(28px, 3vw, 40px)", fontWeight: 400, letterSpacing: "-1px", color: "var(--color-ink)", margin: "14px 0 12px" };
 const lead: React.CSSProperties = { fontSize: 16, lineHeight: 1.6, color: "var(--color-graphite)", maxWidth: 640, margin: "0 0 34px" };
 
-const STEPS: [string, string][] = [
-  ["Apply online", "About ten minutes: your business, its directors, three trade references and the credit limit you would like."],
-  ["We check it", "Your ABN and a credit check run automatically the moment you send it."],
-  ["We review it", "We usually assess applications within two business days and let you know either way."],
-  ["You're set up", "Trade pricing as soon as you are approved. If we ask for a personal guarantee, your 30-day account opens once the signed guarantee is back."],
-];
 const NEED = ["Your ABN and business details", "Directors' names, addresses and dates of birth", "Three trade references", "The 30-day credit limit you would like"];
-/* The account terms in plain words (competitor pages that convert spell these out; 23 Oct 2026 research).
-   Only what the application and the Terms of Trade already say: no minimum spend is published. */
-const TERMS_PLAIN: [string, string][] = [
-  ["Who can apply", "ABN-registered businesses: builders, installers, contractors and the trades."],
-  ["What it costs", "Nothing. Applying is free and there is no obligation."],
-  ["Your prices", "Trade pricing on your orders from the day you are approved."],
-  ["30-day account", "Up to a limit we agree with you, after a credit check."],
-  ["Who signs", "A director, partner or sole trader. We may ask for a personal guarantee."],
-];
-
 export default function TradeJoin({ c }: { c: TradeConfig }) {
   const apply = c.applyHref || APPLY_URL;
   return (
@@ -77,37 +62,30 @@ export default function TradeJoin({ c }: { c: TradeConfig }) {
               </div>
             ))}
           </div>
-          <div style={{ marginTop: 34, display: "flex", gap: 12, flexWrap: "wrap" }}>
-            <a href={apply} className="ts-btn ts-btn--dark">Apply for a trade account<Arrow /></a>
-            <a href="tel:1300132787" className="ts-btn ts-btn--ghost">Call 1300 132 787</a>
-          </div>
+          <div style={{ marginTop: 34 }}><a href={apply} className="ts-btn ts-btn--dark">Apply for a trade account<Arrow /></a></div>
         </div>
       </section>
 
-      {/* How it works, and the account in plain words */}
-      <section className="ts-section ts-divider-top" style={{ background: "var(--ts-cream-2)" }}>
-        <div className="ts-container">
-          <div className="ts-eyebrow">How it works</div>
-          <h2 style={{ ...h2, margin: "14px 0 30px" }}>From application to trade prices.</h2>
-          <ol className="qbt-steps">
-            {STEPS.map(([t, d], i) => (
-              <li key={t}><span className="qbt-step-num">{i + 1}</span><span><strong>{t}</strong><span>{d}</span></span></li>
-            ))}
-          </ol>
-          <h3 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(22px, 2.2vw, 28px)", fontWeight: 400, color: "var(--color-ink)", margin: "44px 0 18px" }}>The account, plainly.</h3>
-          <dl className="qbt-terms">
-            {TERMS_PLAIN.map(([t, d]) => (<div key={t}><dt>{t}</dt><dd>{d}</dd></div>))}
-          </dl>
-        </div>
-      </section>
-
-      {c.testimonial ? (
-        <section className="ts-section ts-divider-top">
+      {/* Technical pack: free download, as on Fencing */}
+      {c.pack ? (
+        <section className="ts-section ts-divider-top" style={{ background: "var(--ts-cream-2)" }}>
           <div className="ts-container">
-            <figure style={{ maxWidth: 760, margin: "0 auto", textAlign: "center" }}>
-              <blockquote style={{ fontFamily: "var(--font-display)", fontSize: "clamp(20px, 2.4vw, 28px)", lineHeight: 1.45, color: "var(--color-ink)", margin: "0 0 18px" }}>&ldquo;{c.testimonial.quote}&rdquo;</blockquote>
-              <figcaption style={{ fontSize: 15, color: "var(--color-graphite)" }}><strong>{c.testimonial.name}</strong>, {c.testimonial.business}</figcaption>
-            </figure>
+            <div className="qbt-pack">
+              <div className="qbt-pack-cover">
+                <Image src={c.pack.cover} alt={`Cover of the ${c.pack.title}`} fill style={{ objectFit: "contain" }} sizes="360px" />
+                <span className="qbt-pack-badge">PDF</span>
+              </div>
+              <div className="qbt-pack-text">
+                <div className="ts-eyebrow">Technical pack</div>
+                <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(24px, 2.8vw, 34px)", fontWeight: 400, letterSpacing: "-0.5px", color: "var(--color-ink)", margin: "14px 0 14px" }}>{c.pack.title}</h2>
+                <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--color-graphite)", margin: "0 0 20px" }}>{c.pack.lead}</p>
+                <ul className="qbt-pack-list">
+                  {c.pack.contents.map((x) => <li key={x}><span className="qbt-pack-check" style={{ color: "var(--ts-accent)" }}><Check /></span>{x}</li>)}
+                </ul>
+                <div className="qbt-pack-meta"><span className="qbt-pack-chip">PDF</span><span className="qbt-pack-chip">{c.pack.pages}</span><span className="qbt-pack-chip">{c.pack.size}</span></div>
+                <div style={{ marginTop: 22 }}><a href={c.pack.href} className="ts-btn ts-btn--primary" target="_blank" rel="noopener">Download the pack<Arrow /></a></div>
+              </div>
+            </div>
           </div>
         </section>
       ) : null}
@@ -116,7 +94,7 @@ export default function TradeJoin({ c }: { c: TradeConfig }) {
       {c.resources.length ? (
         <section className="ts-section ts-divider-top">
           <div className="ts-container">
-            <div className="ts-eyebrow">For the trade</div>
+            <div className="ts-eyebrow">What&apos;s inside</div>
             <h2 style={{ ...h2, margin: "14px 0 34px" }}>{c.resourcesHeading || "Everything you need to quote and build."}</h2>
             <div className="qbt-inside">
               {c.resources.map((r, i) => {
