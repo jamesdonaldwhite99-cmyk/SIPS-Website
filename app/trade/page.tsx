@@ -20,7 +20,7 @@ const c: TradeConfig = {
   benefits: [
     { title: "Trade pricing and terms", caption: "Your own trade prices across our panels, kits and accessories, and a 30-day account up to a limit we agree with you.", image: "/photos/010A7505.jpg" },
     { title: "Straight to the factory", caption: "Estimating, design and technical help from the people who make the panels, on 1300 132 787.", image: "/photos/Building system.jpg" },
-    { title: "The Quick Built app", caption: "Track every order from deposit to delivery, see your invoices and statement, and price jobs at your trade rates.", image: "/photos/House.jpeg" },
+    { title: "The Quick Built app (coming soon)", caption: "Coming soon: track every order from deposit to delivery, see your invoices and statement, and price jobs at your trade rates.", image: "/photos/House.jpeg" },
   ],
   resources: [
     { title: "The building system", caption: "How the panels go together, from footings to roof.", href: "/building-system", image: "/photos/Building system.jpg" },
@@ -31,7 +31,7 @@ const c: TradeConfig = {
     { label: "Roofing", caption: "Insulated roof panels", image: "/photos/Insulspan Image.jpg" },
     { label: "Cold rooms", caption: "Commercial cold rooms", image: "/photos/Coldroom Commercial 1.jpg" },
     { label: "Homes", caption: "SIPs kit homes", image: "/photos/House.jpeg" },
-    { label: "Commercial", caption: "Panels for commercial builds", image: "/photos/010a7287.jpg" },
+    { label: "Modular fencing", caption: "Acoustic modular fencing", image: "/photos/010a7287.jpg" },
   ],
 };
 
