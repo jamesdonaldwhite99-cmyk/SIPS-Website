@@ -5669,3 +5669,202 @@ a { color: inherit; }
 .qb-ta-done a { color: var(--color-ink); }
 .qb-ta-footnote { margin-top: 40px; font-size: 13px; line-height: 1.6; color: var(--color-slate); }
 .qb-ta-footnote a { color: inherit; }
+
+/* Trade page sections (components/TradeJoin.tsx), the same look as Fencing's Specifiers & Trade page. */
+.qbt-proof {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+.qbt-proof-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.qbt-proof-check {
+  flex: 0 0 auto;
+  margin-top: 2px;
+}
+.qbt-proof-item p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--color-ink);
+  font-weight: 500;
+}
+.qbt-inside {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.qbt-inside-card {
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-canvas);
+  display: flex;
+  flex-direction: column;
+}
+.qbt-inside-cover {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: #1a1a1a;
+}
+.qbt-inside-body {
+  padding: 18px 18px 20px;
+}
+.qbt-inside-body h3 {
+  margin: 0 0 8px;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+.qbt-inside-body p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--color-graphite);
+}
+.qbt-apps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.qbt-app-tile {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #1a1a1a;
+}
+.qbt-app-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 4px;
+  padding: 16px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.66) 0%, rgba(0, 0, 0, 0.1) 55%, rgba(0, 0, 0, 0) 100%);
+  color: #fff;
+}
+.qbt-app-overlay .label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ts-accent);
+}
+.qbt-app-overlay .caption {
+  font-size: 13.5px;
+  line-height: 1.35;
+}
+@media (max-width: 900px) {
+  .qbt-proof { grid-template-columns: repeat(2, 1fr); }
+  .qbt-inside { grid-template-columns: repeat(2, 1fr); }
+  .qbt-apps { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .qbt-proof { grid-template-columns: 1fr; }
+  .qbt-inside { grid-template-columns: 1fr; }
+}
+/* Spec pack download band */
+.qbt-pack {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.qbt-pack-cover {
+  position: relative;
+  aspect-ratio: 595 / 842;
+  width: 100%;
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 30px 60px -32px rgba(0, 0, 0, 0.45);
+}
+.qbt-pack-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--ts-accent);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 4px 9px;
+  border-radius: 4px;
+}
+.qbt-pack-list {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+.qbt-pack-list li {
+  display: flex;
+  gap: 11px;
+  align-items: flex-start;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--color-ink);
+}
+.qbt-pack-check { flex: 0 0 auto; margin-top: 1px; }
+.qbt-pack-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.qbt-pack-chip {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-graphite);
+  background: var(--ts-cream-2);
+  border: 1px solid var(--color-hairline);
+  padding: 5px 11px;
+  border-radius: 999px;
+}
+/* Trade sign-up (exclusive form) */
+.qbt-signup {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 44px;
+  align-items: center;
+}
+.qbt-signup-card {
+  background: var(--color-canvas);
+  border-radius: var(--radius-md);
+  padding: 30px;
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 900px) {
+  .qbt-pack { grid-template-columns: 260px 1fr; gap: 32px; }
+  .qbt-signup { grid-template-columns: 1fr; gap: 28px; }
+}
+@media (max-width: 560px) {
+  .qbt-pack { grid-template-columns: 1fr; gap: 24px; }
+  .qbt-pack-cover { max-width: 260px; margin-inline: auto; }
+  .qbt-signup-card { padding: 22px; }
+}
+.qbt-steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.qbt-steps li { display: flex; gap: 14px; align-items: flex-start; background: var(--color-canvas); border: 1px solid var(--color-hairline); border-radius: var(--radius-md); padding: 20px; }
+.qbt-steps li strong { display: block; font-size: 17px; color: var(--color-ink); margin-bottom: 4px; }
+.qbt-steps li span span { display: block; font-size: 15px; line-height: 1.5; color: var(--color-graphite); }
+.qbt-step-num { flex: 0 0 34px; height: 34px; border-radius: 50%; background: var(--ts-accent); color: #fff; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+.qbt-need { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.qbt-need li { display: flex; gap: 10px; align-items: flex-start; font-size: 15px; color: var(--color-ink); }
+.qbt-link-card { text-decoration: none; color: inherit; transition: transform .2s ease, box-shadow .2s ease; }
+.qbt-link-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.08); }
+@media (max-width: 900px) { .qbt-steps { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .qbt-steps { grid-template-columns: 1fr; } }
+
+/* Trade page: the account in plain words */
+.qbt-terms { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin: 0; }
+.qbt-terms > div { background: #fff; border: 1px solid rgba(0,0,0,0.08); border-radius: 12px; padding: 18px 20px; }
+.qbt-terms dt { font-weight: 600; color: var(--color-ink); margin: 0 0 6px; }
+.qbt-terms dd { margin: 0; font-size: 15px; line-height: 1.55; color: var(--color-graphite); }
