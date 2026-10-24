@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import InstallerQuestion from "@/components/lead/InstallerQuestion";
+import { installerFields, useInstaller } from "@/lib/installer";
 
 type Resource = {
   title: string;
@@ -48,6 +50,7 @@ export default function DownloadGate({ resource, webhookUrl, onClose }: Props) {
   const [phone, setPhone] = useState("");
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
+  const installer = useInstaller();
   const hpRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -93,6 +96,7 @@ export default function DownloadGate({ resource, webhookUrl, onClose }: Props) {
       phone: phone.trim(),
       resourceTitle: resource.title,
       resourceFile: resource.href,
+      ...installerFields(installer.choice, installer.at),
       hp: hpRef.current?.value || "",
       submittedAt: new Date().toISOString(),
     };
@@ -129,7 +133,7 @@ export default function DownloadGate({ resource, webhookUrl, onClose }: Props) {
         <div className="ts-gate-eyebrow">Resource access</div>
         <h2 className="ts-gate-title">Almost there.</h2>
         <p className="ts-gate-lead">
-          Enter your details to download <strong>{resource.title}</strong>. We&apos;ll never share your information — just keep you updated on new specifications and project resources.
+          Enter your details to download <strong>{resource.title}</strong>. We&apos;ll never share your information (unless you ask for an installer below) — just keep you updated on new specifications and project resources.
         </p>
 
         <div className="ts-gate-file">
@@ -184,6 +188,8 @@ export default function DownloadGate({ resource, webhookUrl, onClose }: Props) {
               />
             </label>
           </div>
+
+          <InstallerQuestion choice={installer.choice} onPick={installer.pick} />
 
           {error && <div className="ts-gate-error">{error}</div>}
 

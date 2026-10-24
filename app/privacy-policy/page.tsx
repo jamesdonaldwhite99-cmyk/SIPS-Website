@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     "How Quick Built Systems Pty Limited collects, uses, stores and shares your personal information, in line with the Australian Privacy Act 1988.",
 };
 
-const LAST_UPDATED = "23 October 2026";
+const LAST_UPDATED = "25 October 2026";
 
 // A string renders as a paragraph; a string[] renders as a bullet list.
 type Block = string | string[];
@@ -71,7 +71,7 @@ const SECTIONS: Section[] = [
   {
     heading: "5. Who we share it with",
     blocks: [
-      "We do not sell your personal information, and we do not pass your details to external installers or other businesses. We share it only with the providers that help us run our business:",
+      "We do not sell your personal information, and we do not pass your details to external installers or other businesses unless you ask us to. If you ask for an installer on one of our forms, we pass your details to one approved Quick Built installer for that job, and only for that job. Otherwise we share it only with the providers that help us run our business:",
       [
         "Capsule CRM: where we store and manage your enquiry",
         "Make.com: our form and automation provider, which passes your form submission into our systems",

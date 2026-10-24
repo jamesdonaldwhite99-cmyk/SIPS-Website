@@ -9,6 +9,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import data from "@/content/contact.json";
 import PlacesAutocomplete from "@/components/PlacesAutocomplete";
 import { checkEnquirySize, parseStyle } from "@/lib/patio/enquiry";
+import { INSTALLER_OPTIONS, INSTALLER_QUESTION, installerFields, useInstaller } from "@/lib/installer";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -274,6 +275,7 @@ export default function ContactPage() {
   });
   const [photos, setPhotos] = useState<Attachment[]>([]);
   const [imgBusy, setImgBusy] = useState(false);
+  const installer = useInstaller();
 
   // Detect patio interest
   useEffect(() => {
@@ -469,6 +471,7 @@ export default function ContactPage() {
           formType,
           ...basePayload,
           ...patioPayload,
+          ...installerFields(installer.choice, installer.at),
           hp: hpRef.current?.value || "",
           submittedAt: new Date().toISOString(),
         }),
@@ -1019,6 +1022,29 @@ export default function ContactPage() {
                     <label htmlFor="postcode">Postcode *</label>
                     <input id="postcode" type="text" inputMode="numeric" placeholder="e.g. 2752" value={form.postcode} onChange={(e) => setForm((f) => ({ ...f, postcode: e.target.value }))} required />
                   </div>
+                </div>
+              </div>
+
+              {/* 04 — Installer (optional; a Yes is their consent to be passed on: lib/installer.ts) */}
+              <div className="ts-form-group">
+                <div className="legend">
+                  <span className="num">04</span>
+                  <span className="name">{INSTALLER_QUESTION}</span>
+                </div>
+                <div className="ts-choice-grid two">
+                  {INSTALLER_OPTIONS.map((o) => (
+                    <Choice
+                      key={o.value}
+                      type="radio"
+                      name="needsInstaller"
+                      value={o.value}
+                      checked={installer.choice === o.value}
+                      onChange={() => installer.pick(o.value)}
+                    >
+                      {o.label}
+                      {o.note && <small>{o.note}</small>}
+                    </Choice>
+                  ))}
                 </div>
               </div>
 
