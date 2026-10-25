@@ -112,6 +112,8 @@ const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const pastDate = (s: string) => /^\d{4}-\d{2}-\d{2}$/.test(s) && Date.parse(`${s}T00:00:00Z`) < Date.now() && s > "1900-01-01";
 const adult = (dob: string) => pastDate(dob) && (Date.now() - Date.parse(`${dob}T00:00:00Z`)) / (365.25 * 864e5) >= 18;
 const filled = (s: string) => String(s || "").trim().length > 0;
+/** An Australian mobile: 04xx xxx xxx, or +61 4xx xxx xxx. */
+export const validMobile = (s: string) => /^(?:04\d{8}|614\d{8})$/.test(digits(s));
 
 export type Errors = Record<string, string>;
 
@@ -130,6 +132,7 @@ export function stepErrors(step: number, a: Application): Errors {
     if (b.entityType === "company" && !filled(b.acn) && !(validAbn(b.abn) && validAcn(digits(b.abn).slice(2)))) e["business.acn"] = "A company must give its ACN.";
     if (!pastDate(b.dateEstablished)) e["business.dateEstablished"] = "Enter a date in the past.";
     if (!EMAIL.test(b.email.trim())) e["business.email"] = "Enter a valid email.";
+    if (!validMobile(b.registeredMobile)) e["business.registeredMobile"] = filled(b.registeredMobile) ? "Enter a mobile number, e.g. 0412 345 678." : "Required.";
     if (!filled(b.natureOfBusiness)) e["business.natureOfBusiness"] = "Required.";
     if (!filled(b.yearsTrading) || !(Number(b.yearsTrading) >= 0)) e["business.yearsTrading"] = "Required.";
     if (!(Number(digits(b.creditLimit)) > 0)) e["business.creditLimit"] = "Enter the limit you need.";

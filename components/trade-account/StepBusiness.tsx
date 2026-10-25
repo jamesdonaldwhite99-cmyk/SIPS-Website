@@ -79,7 +79,7 @@ export default function StepBusiness({ app, errors, update }: StepProps) {
         <Field required label="Email (accounts)" name="email" type="email" autoComplete="email" value={b.email} onChange={set("email")} error={errors["business.email"]} hint="Your signed copy is sent here" />
         <Field full label="Registered address" name="registeredAddress" autoComplete="street-address" value={b.registeredAddress} onChange={set("registeredAddress")} error={errors["business.registeredAddress"]} />
         <Field label="Phone" name="registeredPhone" type="tel" autoComplete="tel" value={b.registeredPhone} onChange={set("registeredPhone")} />
-        <Field label="Mobile" name="registeredMobile" type="tel" value={b.registeredMobile} onChange={set("registeredMobile")} />
+        <Field required label="Mobile" name="registeredMobile" type="tel" autoComplete="tel" placeholder="0412 345 678" value={b.registeredMobile} onChange={set("registeredMobile")} error={errors["business.registeredMobile"]} />
         <Field full label="Trading address (if different)" name="tradingAddress" value={b.tradingAddress} onChange={set("tradingAddress")} />
         <Field label="Trading phone" name="tradingPhone" type="tel" value={b.tradingPhone} onChange={set("tradingPhone")} />
         <Field label="Trading mobile" name="tradingMobile" type="tel" value={b.tradingMobile} onChange={set("tradingMobile")} />
