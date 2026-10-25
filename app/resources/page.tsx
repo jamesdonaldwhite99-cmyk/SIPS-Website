@@ -6,7 +6,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import data from "@/content/resources.json";
-import DownloadGate, { hasStoredAccess } from "@/components/DownloadGate";
+import DownloadGate from "@/components/DownloadGate";
 import PageHero from "@/components/PageHero";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -19,8 +19,6 @@ export default function ResourcesPage() {
 
   const handleDownloadClick = (e: React.MouseEvent, r: Resource) => {
     e.preventDefault();
-    // Remember-me temporarily disabled for testing — always show the form
-    void hasStoredAccess;
     setActiveResource(r);
   };
 

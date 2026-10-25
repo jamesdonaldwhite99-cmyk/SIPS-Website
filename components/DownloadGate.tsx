@@ -50,11 +50,14 @@ export default function DownloadGate({ resource, webhookUrl, onClose }: Props) {
   const [phone, setPhone] = useState("");
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
+  // Saved details from a download in the last 30 days: skip the form (James, 26 Oct 2026).
+  const [returning, setReturning] = useState<StoredAccess | null>(null);
   const installer = useInstaller();
   const hpRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (!resource) return;
+    setReturning(hasStoredAccess());
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
     };
@@ -78,6 +81,29 @@ export default function DownloadGate({ resource, webhookUrl, onClose }: Props) {
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
+  };
+
+  // A returning visitor: one click, no form. The post is marked `repeat` so the service only adds a line to their
+  // Capsule record (no new task, email or auto-reply). It never holds up the download.
+  const downloadAgain = (who: StoredAccess) => {
+    fetch("/api/lead", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      keepalive: true,
+      body: JSON.stringify({
+        formType: "resource-download",
+        name: who.name,
+        email: who.email,
+        phone: who.phone,
+        resourceTitle: resource.title,
+        resourceFile: resource.href,
+        repeat: true,
+        hp: "",
+        submittedAt: new Date().toISOString(),
+      }),
+    }).catch(() => {});
+    triggerDownload(resource.href);
+    onClose();
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -131,9 +157,13 @@ export default function DownloadGate({ resource, webhookUrl, onClose }: Props) {
         </button>
 
         <div className="ts-gate-eyebrow">Resource access</div>
-        <h2 className="ts-gate-title">Almost there.</h2>
+        <h2 className="ts-gate-title">{returning ? `Welcome back${returning.name ? `, ${returning.name.split(" ")[0]}` : ""}.` : "Almost there."}</h2>
         <p className="ts-gate-lead">
-          Enter your details to download <strong>{resource.title}</strong>. We&apos;ll never share your information (unless you ask for an installer below) — just keep you updated on new specifications and project resources.
+          {returning ? (
+            <>Your download of <strong>{resource.title}</strong> is ready.</>
+          ) : (
+            <>Enter your details to download <strong>{resource.title}</strong>. We&apos;ll never share your information (unless you ask for an installer below) — just keep you updated on new specifications and project resources.</>
+          )}
         </p>
 
         <div className="ts-gate-file">
@@ -149,6 +179,22 @@ export default function DownloadGate({ resource, webhookUrl, onClose }: Props) {
           </div>
         </div>
 
+        {returning ? (
+          <div className="ts-gate-form">
+            <button type="button" className="ts-btn ts-btn--primary ts-gate-submit" onClick={() => downloadAgain(returning)}>
+              Download now
+              <svg className="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
+              </svg>
+            </button>
+            <p className="ts-gate-fineprint">
+              Not {returning.name ? returning.name.split(" ")[0] : "you"}?{" "}
+              <button type="button" onClick={() => setReturning(null)} style={{ background: "none", border: 0, padding: 0, color: "inherit", font: "inherit", textDecoration: "underline", cursor: "pointer" }}>
+                Use different details
+              </button>
+            </p>
+          </div>
+        ) : (
         <form className="ts-gate-form" onSubmit={handleSubmit}>
           {/* Honeypot — hidden from people; bots fill it and are filtered server-side. Do not remove. */}
           <input ref={hpRef} type="text" name="hp" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: "1px", height: "1px", opacity: 0 }} />
@@ -206,6 +252,7 @@ export default function DownloadGate({ resource, webhookUrl, onClose }: Props) {
             By downloading you agree to be contacted by QuickBuilt Systems about your project.
           </p>
         </form>
+        )}
       </div>
     </div>
   );

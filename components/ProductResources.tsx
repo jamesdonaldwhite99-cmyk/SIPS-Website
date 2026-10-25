@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import resourcesData from "@/content/resources.json";
-import DownloadGate, { hasStoredAccess } from "@/components/DownloadGate";
+import DownloadGate from "@/components/DownloadGate";
 
 type ResourceItem = (typeof resourcesData.resources)[number];
 
@@ -36,8 +36,6 @@ export default function ProductResources({
 
   const handleClick = (e: React.MouseEvent, r: ResourceItem) => {
     e.preventDefault();
-    // Remember-me temporarily disabled for testing — always show the form
-    void hasStoredAccess;
     setActiveResource(r);
   };
 
