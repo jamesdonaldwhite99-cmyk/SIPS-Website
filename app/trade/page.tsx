@@ -25,7 +25,7 @@ const c: TradeConfig = {
   resources: [
     { title: "The building system", caption: "How the panels go together, from footings to roof.", href: "/building-system", image: "/photos/Building system.jpg" },
     { title: "Products", caption: "Insulspan, Panelspan, Panelcore and Alyspan: sizes, finishes and uses.", href: "/products", image: "/photos/Insulspan Image.jpg" },
-    { title: "Resources", caption: "Brochures, guides and technical documents.", href: "/resources", image: "/photos/010a7308-hdr.jpg" },
+    { title: "Trade guide and resources", caption: "Download the trade guide, plus brochures, guides and technical documents.", href: "/resources", image: "/photos/010a7308-hdr.jpg" },
   ],
   gallery: [
     { label: "Roofing", caption: "Insulated roof panels", image: "/photos/Insulspan Image.jpg" },

@@ -3,6 +3,15 @@
   "heroPhoto": "/photos/010a7287.jpg",
   "resources": [
     {
+      "kicker": "Trade guide",
+      "title": "Insulated Panels Trade Guide",
+      "copy": "For builders, roofers and installers: jobs sent your way, trade pricing and a 30-day account, plus where to find the data sheets, engineering, bushfire guidance and warranty.",
+      "fileType": "PDF",
+      "fileSize": "5.2 MB",
+      "cover": "/photos/resources/qbs-insulated-panels-trade-guide-cover.png",
+      "href": "/pdfs/qbs-insulated-panels-trade-guide.pdf"
+    },
+    {
       "kicker": "Brochure",
       "title": "Insulspan® Brochure",
       "copy": "Full product overview for the Insulspan® insulated roofing panel range — profiles, thicknesses, colour options and applications.",
@@ -37,6 +46,15 @@
       "fileSize": "410 KB",
       "cover": "/photos/resources/insulspan-ceiling-fans-install-guide-cover.png",
       "href": "/pdfs/insulspan-ceiling-fans-install-guide.pdf"
+    },
+    {
+      "kicker": "Install guide",
+      "title": "Suspended Ceilings under Insulspan® Roof Panels",
+      "copy": "How to hang a suspended ceiling under an Insulspan insulated roof panel: the layout, the fixings and the steps, wall to wall.",
+      "fileType": "PDF",
+      "fileSize": "610 KB",
+      "cover": "/photos/resources/insulspan-suspended-ceilings-install-guide-cover.png",
+      "href": "/pdfs/insulspan-suspended-ceilings-install-guide.pdf"
     },
     {
       "kicker": "Install guide",
