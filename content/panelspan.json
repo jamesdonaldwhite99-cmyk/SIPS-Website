@@ -67,16 +67,16 @@
       }
     ],
     "lead": "Traditional OSB-based SIPs are an improvement on stick framing — but they still require external cladding, extra trades, and additional finishing. Panelspan® arrives pre-finished and ready to install.",
-    "panelspanImageAlt": "Panelspan® panel layers — 10mm MgO or 6mm FC face, EPS-FR core, 10mm MgO or 9mm FC reverse face",
+    "panelspanImageAlt": "Panelspan® panel layers — 10mm MagnaClad (MgO) external face, EPS-FR core, 10mm MagnaLiner (MgO) internal face",
     "osbImage": "/photos/OSB SIPS.png"
   },
   "overviewEyebrow": "Overview",
   "kicker": "Panelspan®",
-  "heroLead": "Pre-finished FC or MgO cladding bonded to a high-density EPS core. No external cladding required — just lock the panels together and reach lock-up in days.",
+  "heroLead": "MagnaClad, our own 10mm MgO board, bonded to a high-density EPS core as standard. No external cladding required — just lock the panels together and reach lock-up in days.",
   "specs": [
     {
-      "label": "Core thickness",
-      "value": "90–115mm"
+      "label": "Panel thickness",
+      "value": "95–140mm"
     },
     {
       "label": "Wall height",
@@ -91,7 +91,7 @@
       "value": "8 Star"
     }
   ],
-  "overviewPara1": "Panelspan® structural insulated wall panels combine a high-density EPS core with pre-finished fibre cement (FC) or magnesium oxide (MgO) faces — eliminating the need for separate cladding, sarking, or internal lining trades.",
+  "overviewPara1": "Panelspan® structural insulated wall panels combine a high-density EPS core with magnesium oxide (MgO) faces: 10mm MagnaClad with a shiplap edge outside and 10mm MagnaLiner inside as standard — eliminating the need for separate cladding, sarking, or internal lining trades.",
   "heroPhoto": "/photos/product-panelspan-new.png",
   "overviewPhoto": "/photos/panelspan-lifestyle.jpg",
   "overviewPara2": "Each panel interlocks precisely on site, creating a fully insulated, structurally strong wall in a fraction of the time of traditional framing. Available in three systems: Steel Skin, FC/FC and MgO/MgO.",
@@ -124,7 +124,7 @@
   ],
   "technicalSpecs": {
     "rValueUnit": "m²K/W",
-    "fireIndicesTitle": "Duragroove Early Fire Hazard Indices",
+    "fireIndicesTitle": "MagnaClad (MgO) board fire classification",
     "eyebrow": "Technical specifications",
     "h2": "Built to perform — verified to standard.",
     "weightGroups": [
@@ -170,42 +170,34 @@
     ],
     "fireIndices": [
       {
-        "label": "Ignition Index",
-        "value": "0"
+        "label": "Reaction to fire, EN 13501-1:2018",
+        "value": "Class A1"
       },
       {
-        "label": "Spread of Flame",
-        "value": "0"
-      },
-      {
-        "label": "Heat Evolved Index",
-        "value": "0"
-      },
-      {
-        "label": "Smoke Developed Index",
-        "value": "0–1"
+        "label": "Test report",
+        "value": "Intertek 240125004SHF-004"
       }
     ],
     "construction": [
       {
         "title": "External Walls",
         "items": [
-          "9mm Duragroove external cladding (or 10mm MgO for premium fire / acoustic performance)",
-          "6mm Duraliner internal cladding (or 10mm MgO for premium fire / acoustic performance)",
+          "10mm MagnaClad (MgO) external cladding, shiplap edge",
+          "10mm MagnaLiner (MgO) internal cladding, recessed edge",
           "Expanded Polystyrene (EPS-FR) core including flame retardant additive"
         ]
       },
       {
         "title": "Internal Walls",
         "items": [
-          "6mm Duraliner internal and external cladding (or 10mm MgO for premium spec)",
+          "MagnaLiner (MgO) lining",
           "Expanded Polystyrene (EPS-FR) core including flame retardant additive"
         ]
       }
     ],
     "rValues": [
       {
-        "thickness": "90mm",
+        "thickness": "90/95mm",
         "value": "2.20"
       },
       {
