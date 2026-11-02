@@ -157,7 +157,7 @@ export default function InsulspanPage() {
         </div>
       </section>
 
-      {/* Span tables (Insulspan brochure, page 2) */}
+      {/* Span table: Ross Engineers drawing 22-1204-ST, Table 3 (James 3 Nov 2026: "follow the engineering", not the brochure) */}
       <section id="span-tables" className="ts-section ts-divider-top">
         <div className="ts-container">
           <div className="ts-section-head">
@@ -169,8 +169,8 @@ export default function InsulspanPage() {
           </div>
           <div className="ts-aly-spantable qb-ins-spantable">
             <div className="ts-aly-spantable-title">
-              <h3>Insulspan roof panel</h3>
-              <span>Single span · patios less than 3 m high</span>
+              <h3>{data.spanTable.title}</h3>
+              <span>{data.spanTable.subtitle}</span>
             </div>
             <div className="ts-aly-spantable-scroll">
               <table>
@@ -178,14 +178,12 @@ export default function InsulspanPage() {
                   <tr>
                     <th scope="col" className="w-col">Wind class</th>
                     <th scope="col" className="w-col">Open sides</th>
-                    <th scope="col">Serv. kPa</th>
-                    <th scope="col">Str. kPa</th>
                     {data.spanTable.thicknessHeaders.map((h) => (
                       <th scope="col" key={h}>{h}</th>
                     ))}
                   </tr>
                   <tr className="subhead">
-                    <th scope="col" className="w-col" colSpan={4}>Roof pressures</th>
+                    <th scope="col" className="w-col" colSpan={2}></th>
                     <th scope="col" colSpan={data.spanTable.thicknessHeaders.length}>Maximum span (mm) by panel thickness</th>
                   </tr>
                 </thead>
@@ -197,8 +195,6 @@ export default function InsulspanPage() {
                           {ri === 0 ? (<>{g.wind}<small>{g.windNote}</small></>) : <span className="sr-only">{g.wind}</span>}
                         </th>
                         <td className="w-col" style={{ textAlign: "left" }}>{r.sides}</td>
-                        <td className="press">{r.serv}</td>
-                        <td className="press">{r.str}</td>
                         {r.spans.map((v, k) => (
                           <td key={k}>{v}</td>
                         ))}

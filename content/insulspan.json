@@ -7,7 +7,7 @@
   "advantages": [
     {
       "title": "Long spans",
-      "copy": "Up to 8.1 m clear, so fewer posts and cleaner lines."
+      "copy": "Up to 5.7 m clear on an open patio, so fewer posts and cleaner lines."
     },
     {
       "title": "Quick install",
@@ -95,7 +95,7 @@
   "specs": [
     {
       "label": "Span",
-      "value": "Up to 8.1 m"
+      "value": "Up to 5.7 m"
     },
     {
       "label": "Thickness",
@@ -118,7 +118,7 @@
       "value": "10 years"
     }
   ],
-  "overviewPara1": "Insulspan is a three-in-one insulated roof panel: a Colorbond top skin, an EPS-FR foam core and a 0.5 mm Surfmist steel underside that is your finished ceiling. Single spans run up to 8.1 m with no purlins.",
+  "overviewPara1": "Insulspan is a three-in-one insulated roof panel: a Colorbond top skin, an EPS-FR foam core and a 0.5 mm Surfmist steel underside that is your finished ceiling. Engineered single spans run up to 5.7 m with no purlins.",
   "heroPhoto": "/photos/product-insulspan-new.png",
   "overviewPhoto": "/photos/insulspan-overview.jpg",
   "overviewPara2": "Designed for Australian conditions, Insulspan insulated roof panels remove the need for purlins, beams, trusses, mesh, sarking, bulk insulation and plasterboard, and cut the number of trades you need on site.",
@@ -126,168 +126,69 @@
   "heroTitle": "Insulspan®",
   "spanTable": {
     "eyebrow": "Span tables",
-    "h2": "Recommended single spans for patios less than 3 m high.",
-    "lead": "Maximum single span (mm) by wind classification, number of open sides and panel thickness. Confirm the panel for your site with our team.",
-    "footnote": "Values in mm; roof pressures in kPa (serviceability / strength). Wind classification as per AS 4055:2012. Valid for Monospan (Trimdeck) and Corrugated 0.42 BMT top sheets with a 0.5 mm BMT underskin. Source: the Insulspan brochure, page 2.",
+    "h2": "Engineered single spans for open patios.",
+    "lead": "Maximum Insulspan roof panel span (mm) by wind classification and panel thickness, from the Ross Engineers patio engineering. It covers open patios, open on 3 sides. For a partly enclosed patio, or a size the table does not list, talk to our team before you order.",
+    "title": "Insulspan roof panel",
+    "subtitle": "Single span · open patios (open on 3 sides)",
+    "footnote": "Source: Ross Engineers, Residential Patio Roof Details for Open Patios (Awning Details), drawing 22-1204-ST, revision A, 12 March 2024, Table 3: Roof Panel Span, Insulspan. Values in mm. Wind classifications as defined in AS 4055-2012. The design is for open patios only (open on 3 sides); for a partially enclosed or blocked patio, refer to us and consult an engineer. Maximum adjacent building height 4.8 m. The engineering does not list a 50 mm panel in N4 (W61), shown as a dash.",
     "thicknessHeaders": [
       "50mm",
       "75mm",
-      "100mm",
-      "125mm"
+      "100mm"
     ],
     "groups": [
       {
         "wind": "N1",
-        "windNote": "W40N",
+        "windNote": "W34",
         "rows": [
           {
             "sides": "3 sides open",
-            "serv": "0.50",
-            "str": "0.86",
             "spans": [
-              "5100",
-              "6400",
-              "7800",
-              "8100"
-            ]
-          },
-          {
-            "sides": "2 sides open",
-            "serv": "0.56",
-            "str": "0.96",
-            "spans": [
-              "4500",
-              "5400",
-              "6200",
-              "7000"
-            ]
-          },
-          {
-            "sides": "1 side open",
-            "serv": "0.67",
-            "str": "1.15",
-            "spans": [
-              "4100",
               "5100",
               "5700",
-              "6400"
+              "5700"
             ]
           }
         ]
       },
       {
         "wind": "N2",
-        "windNote": "W40N",
+        "windNote": "W40",
         "rows": [
           {
             "sides": "3 sides open",
-            "serv": "0.50",
-            "str": "1.19",
             "spans": [
               "5100",
-              "6400",
-              "7800",
-              "8100"
-            ]
-          },
-          {
-            "sides": "2 sides open",
-            "serv": "0.56",
-            "str": "1.32",
-            "spans": [
-              "4500",
-              "5400",
-              "6200",
-              "7000"
-            ]
-          },
-          {
-            "sides": "1 side open",
-            "serv": "0.67",
-            "str": "1.59",
-            "spans": [
-              "4100",
-              "5100",
-              "5700",
-              "6400"
+              "5300",
+              "5300"
             ]
           }
         ]
       },
       {
         "wind": "N3",
-        "windNote": "W50N",
+        "windNote": "W50",
         "rows": [
           {
             "sides": "3 sides open",
-            "serv": "0.76",
-            "str": "1.86",
             "spans": [
-              "4900",
-              "5900",
-              "6900",
-              "7700"
-            ]
-          },
-          {
-            "sides": "2 sides open",
-            "serv": "0.85",
-            "str": "2.07",
-            "spans": [
-              "3600",
-              "4300",
-              "5000",
-              "5600"
-            ]
-          },
-          {
-            "sides": "1 side open",
-            "serv": "1.02",
-            "str": "2.48",
-            "spans": [
-              "3300",
-              "3900",
-              "4500",
-              "4500"
+              "4000",
+              "4000",
+              "4000"
             ]
           }
         ]
       },
       {
         "wind": "N4",
-        "windNote": "W61N",
+        "windNote": "W61",
         "rows": [
           {
             "sides": "3 sides open",
-            "serv": "1.13",
-            "str": "2.77",
             "spans": [
-              "4000",
-              "4800",
-              "5600",
-              "6300"
-            ]
-          },
-          {
-            "sides": "2 sides open",
-            "serv": "1.26",
-            "str": "3.08",
-            "spans": [
-              "2900",
-              "3500",
-              "4100",
-              "4600"
-            ]
-          },
-          {
-            "sides": "1 side open",
-            "serv": "1.51",
-            "str": "3.70",
-            "spans": [
-              "2700",
-              "3100",
-              "3700",
-              "4200"
+              "–",
+              "3300",
+              "3300"
             ]
           }
         ]
@@ -385,7 +286,7 @@
     },
     {
       "q": "How far can an Insulspan panel span?",
-      "a": "Up to 8.1 m as a single span: a 125 mm panel in N1 or N2 with 3 sides open. Spans drop with higher wind classes and fewer open sides; for example a 100 mm panel spans 5,600 mm in N4 with 3 sides open. The full table is on this page."
+      "a": "Up to 5.7 m as a single span on an open patio (open on 3 sides): a 75 mm or 100 mm panel in N1. Spans drop as the wind class rises: 5.3 m in N2, 4.0 m in N3 and 3.3 m in N4 for a 75 or 100 mm panel. These come from the Ross Engineers patio engineering, drawing 22-1204-ST. For a partly enclosed patio, or a size the table does not list, talk to us first. The full table is on this page."
     },
     {
       "q": "What thicknesses and R values are there?",
@@ -413,13 +314,13 @@
     },
     {
       "q": "Where can I buy Insulspan?",
-      "a": "Direct from us on 1300 132 787 or sales@quickbuiltsystems.com.au for panels made to your job, as a complete DIY patio kit at patiokits.com.au, where the patio designer prices your size for your postcode, or as an Insulspan patio kit through Bunnings."
+      "a": "Direct from us on 1300 132 787 or sales@quickbuiltsystems.com.au for panels made to your job, as a complete DIY patio kit at patiokits.com.au, where the patio designer prices your size for your postcode, or as an Insulspan patio kit ordered through any Bunnings as a special order. Only a few Bunnings stores keep them in stock, so ask your local store."
     }
   ],
   "whereToBuy": {
     "eyebrow": "Where to buy",
-    "h2": "Buy Insulspan direct, as a kit, or at Bunnings.",
-    "lead": "This page is the Insulspan specification. Panels for your own design come direct from us; ready-made patio kits are sold online at patiokits.com.au and through Bunnings.",
+    "h2": "Buy Insulspan direct, as a kit, or through Bunnings.",
+    "lead": "This page is the Insulspan specification. Panels for your own design come direct from us; ready-made patio kits are sold online at patiokits.com.au and can be ordered through any Bunnings as a special order.",
     "options": [
       {
         "kicker": "Direct from the factory",
@@ -452,9 +353,9 @@
         ]
       },
       {
-        "kicker": "In store",
+        "kicker": "Special order",
         "title": "Bunnings",
-        "copy": "Insulspan attached and flyover patio kits are also sold through Bunnings.",
+        "copy": "Insulspan attached and flyover patio kits can be ordered through any Bunnings as a special order. Only a few stores keep them in stock, so ask your local Bunnings.",
         "links": []
       }
     ],
