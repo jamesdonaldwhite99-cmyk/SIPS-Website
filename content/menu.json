@@ -12,14 +12,14 @@
         {
           "title": "Cabins",
           "copy": "Backyard cabins, ready to live in.",
-          "href": "https://www.quickbuilthomes.com.au/files/backyard-cabins.php",
+          "href": "https://www.quickbuilthomes.com.au/cabins",
           "external": true,
           "image": "/photos/gallery/10.jpg"
         },
         {
           "title": "Granny Flats",
           "copy": "Modular kit homes & granny flats.",
-          "href": "https://www.quickbuilthomes.com.au/files/modular-kit-home-comparison.php",
+          "href": "https://www.quickbuilthomes.com.au/granny-flats",
           "external": true,
           "image": "/photos/gallery/11.jpg"
         },
@@ -48,14 +48,14 @@
         {
           "title": "Commercial Wall Solutions",
           "copy": "Large-scale modular walls.",
-          "href": "https://www.quickbuiltfencing.com.au/files/commercial-overview.php",
+          "href": "https://www.quickbuiltfencing.com.au/sectors",
           "external": true,
           "image": "/photos/gallery/19.jpg"
         },
         {
           "title": "Retaining Solutions",
           "copy": "Modular retaining wall systems.",
-          "href": "https://www.quickbuiltfencing.com.au/files/product-retainline.php",
+          "href": "https://www.quickbuiltfencing.com.au/products/retainline",
           "external": true,
           "image": "/photos/gallery/12.jpg"
         }
@@ -120,7 +120,7 @@
         {
           "title": "Accessories",
           "copy": "Downlights, fans, skylights & more.",
-          "href": "https://www.patiokits.com.au/files/accessories.php",
+          "href": "https://www.patiokits.com.au/accessories",
           "external": true,
           "image": "/photos/gallery/16.jpg"
         }

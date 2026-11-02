@@ -44,7 +44,7 @@ export default function Footer() {
                 return (
                   <li key={p.title}>
                     {p.external ? (
-                      <a href={p.href} target="_blank" rel="noopener noreferrer">{label}</a>
+                      <a href={p.href} target="_blank" rel="noopener">{label}</a>
                     ) : (
                       <Link href={p.href}>{label}</Link>
                     )}
@@ -106,9 +106,9 @@ export default function Footer() {
         <div className="ts-footer-bar">
           <div>© {year} Quick Built Systems · ABN 63 167 322 116 · <Link href="/privacy-policy">Privacy Policy</Link> · <Link href="/terms">Terms &amp; Conditions</Link></div>
           <div className="sister">
-            <a href="https://www.quickbuilthomes.com.au/" target="_blank" rel="noopener noreferrer">Quick Built Homes</a>
-            <a href="https://www.quickbuiltfencing.com.au/" target="_blank" rel="noopener noreferrer">Quick Built Fencing</a>
-            <a href="https://www.patiokits.com.au/" target="_blank" rel="noopener noreferrer">Patio Kits</a>
+            <a href="https://www.quickbuilthomes.com.au/" target="_blank" rel="noopener">Quick Built Homes</a>
+            <a href="https://www.quickbuiltfencing.com.au/" target="_blank" rel="noopener">Quick Built Fencing</a>
+            <a href="https://www.patiokits.com.au/" target="_blank" rel="noopener">Patio Kits</a>
           </div>
         </div>
       </div>

@@ -26,8 +26,11 @@ type MenuItem = { title: string; copy: string; href: string; external: boolean; 
 
 function MenuLink({ item, onClick, className, children }: { item: { href: string; external: boolean }; onClick?: () => void; className?: string; children: React.ReactNode }) {
   if (item.external) {
+    // "noopener" only, never "noreferrer": noreferrer strips the referrer, so a visit we send to the
+    // homes, fencing or patio site shows up there as Direct instead of a quickbuiltsystems.com.au
+    // referral, and the referral that used to convert best disappears from their reports.
     return (
-      <a href={item.href} target="_blank" rel="noopener noreferrer" className={className} onClick={onClick}>
+      <a href={item.href} target="_blank" rel="noopener" className={className} onClick={onClick}>
         {children}
       </a>
     );
