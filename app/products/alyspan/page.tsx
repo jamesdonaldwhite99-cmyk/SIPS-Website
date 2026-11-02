@@ -6,6 +6,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import data from "@/content/alyspan.json";
+import bunningsStocked from "@/content/bunnings-stocked.json";
 import ProductResources from "@/components/ProductResources";
 import WhereToBuy from "@/components/WhereToBuy";
 import SisterSites from "@/components/SisterSites";
@@ -462,7 +463,7 @@ export default function AlyspanPage() {
         </div>
       </section>
 
-      <WhereToBuy data={data.whereToBuy} />
+      <WhereToBuy data={data.whereToBuy} stocked={bunningsStocked} />
 
       {/* Contact: alyspan.com.au/files/contact.php lands on this page, so it answers what that page did */}
       <section id="contact" className="ts-section ts-divider-top" style={{ background: "var(--ts-cream-2)" }}>

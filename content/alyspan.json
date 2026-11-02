@@ -550,7 +550,7 @@
     },
     {
       "q": "Where can I buy Alyspan?",
-      "a": "Direct from us in full 6.0 m and 8.0 m beam lengths and 6.5 m posts, on 1300 132 787 or sales@quickbuiltsystems.com.au. Shorter beams, posts and connectors, and complete patio kits built on Alyspan, are at patiokits.com.au, and can be ordered through any Bunnings as a special order. Only a few Bunnings stores keep them in stock, so ask your local store."
+      "a": "Direct from us in full 6.0 m and 8.0 m beam lengths and 6.5 m posts, on 1300 132 787 or sales@quickbuiltsystems.com.au. Shorter beams, posts and connectors, and complete patio kits built on Alyspan, are at patiokits.com.au. Six Bunnings stores keep a small core range in stock: Bennetts Green, West Gosford, Alexandria and Leppington in NSW, and Melton East and Maribyrnong in VIC. They carry 100 x 50 and 150 x 50 beams at 3.0 m, 67 x 67 posts at 2.4 m and 90 x 90 posts at 3.0 m, beam end caps, beam joiners and post/beam connectors, in Monument and Pearl White. Everything else, including other lengths and colours, can be ordered through any Bunnings as a special order, or direct from us."
     },
     {
       "q": "How do I order Alyspan aluminium beams and posts?",
@@ -2562,7 +2562,7 @@
   "whereToBuy": {
     "eyebrow": "Where to buy",
     "h2": "Buy Alyspan direct, online, or through Bunnings.",
-    "lead": "This page is the Alyspan specification. Full lengths and the whole parts range come direct from us; shorter lengths and complete patio kits are sold online at patiokits.com.au and can be ordered through any Bunnings as a special order.",
+    "lead": "This page is the Alyspan specification. Full lengths and the whole parts range come direct from us; shorter lengths and complete patio kits are sold online at patiokits.com.au. Six Bunnings stores keep a small core range in stock, and any Bunnings can special order the rest.",
     "options": [
       {
         "kicker": "Direct",
@@ -2595,9 +2595,9 @@
         ]
       },
       {
-        "kicker": "Special order",
+        "kicker": "In store or special order",
         "title": "Bunnings",
-        "copy": "Alyspan beams, posts and connectors, and patio kits built on Alyspan, can be ordered through any Bunnings as a special order. Only a few stores keep them in stock, so ask your local Bunnings.",
+        "copy": "Six Bunnings stores keep a small core Alyspan range in stock, listed below. Everything else, including other lengths and colours and patio kits built on Alyspan, can be ordered through any Bunnings as a special order.",
         "links": []
       }
     ],

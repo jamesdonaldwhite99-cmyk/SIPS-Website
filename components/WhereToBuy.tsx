@@ -2,9 +2,11 @@ import Link from "next/link";
 
 export type BuyOption = { kicker: string; title: string; copy: string; links: { label: string; href: string }[] };
 export type WhereToBuyData = { eyebrow: string; h2: string; lead: string; options: BuyOption[]; leadTime: string };
+/** Stores that keep a small range on the shelf (content/bunnings-stocked.json). */
+export type StockedRange = { kicker: string; title: string; lead: string; stores: { name: string; state: string }[]; colours: string[]; range: string[] };
 
 /** Where a brand can be bought: direct, patiokits.com.au and Bunnings, with the lead time under it. */
-export default function WhereToBuy({ data, id = "where-to-buy" }: { data: WhereToBuyData; id?: string }) {
+export default function WhereToBuy({ data, stocked, id = "where-to-buy" }: { data: WhereToBuyData; stocked?: StockedRange; id?: string }) {
   return (
     <section id={id} className="ts-section ts-divider-top">
       <div className="ts-container">
@@ -38,6 +40,31 @@ export default function WhereToBuy({ data, id = "where-to-buy" }: { data: WhereT
             </article>
           ))}
         </div>
+        {stocked && (
+          <div className="qb-buy-stocked">
+            <div className="kicker">{stocked.kicker}</div>
+            <h3>{stocked.title}</h3>
+            <p>{stocked.lead}</p>
+            <div className="qb-buy-stocked-cols">
+              <div>
+                <h4>Stores</h4>
+                <ul>
+                  {stocked.stores.map((st) => (
+                    <li key={st.name}>Bunnings {st.name} <span>{st.state}</span></li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h4>In stock, in {stocked.colours.join(" and ")}</h4>
+                <ul>
+                  {stocked.range.map((r) => (
+                    <li key={r}>{r}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        )}
         <p className="qb-buy-leadtime">{data.leadTime}</p>
       </div>
     </section>

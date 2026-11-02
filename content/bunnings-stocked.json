@@ -1,0 +1,24 @@
+{
+  "_source": "Copied 3 Nov 2026 from automations/accounts-payable/bunnings/reference/stocked-range.json: Xero sales invoices to the six stocked stores, 1 Jan to 3 Nov 2026 (67 invoices). James, 3 Nov 2026: \"they carry small number of alyspan products\". Everything else, Insulspan included, is a Bunnings special order. Update both files together.",
+  "kicker": "In stock at six Bunnings stores",
+  "title": "The Alyspan core range on the shelf",
+  "lead": "These six Bunnings stores keep a small core Alyspan range in stock. Everything else, including other lengths and colours, can be ordered through any Bunnings as a special order, or direct from us.",
+  "stores": [
+    { "name": "Bennetts Green", "state": "NSW" },
+    { "name": "West Gosford", "state": "NSW" },
+    { "name": "Alexandria", "state": "NSW" },
+    { "name": "Leppington", "state": "NSW" },
+    { "name": "Melton East", "state": "VIC" },
+    { "name": "Maribyrnong", "state": "VIC" }
+  ],
+  "colours": ["Monument", "Pearl White"],
+  "range": [
+    "100 x 50 beams, 3.0 m",
+    "150 x 50 beams, 3.0 m",
+    "67 x 67 posts, 2.4 m",
+    "90 x 90 posts, 3.0 m",
+    "Beam end caps, 100 mm and 150 mm",
+    "Beam joiners, 100 mm and 150 mm",
+    "Post / beam connectors, 65 and 90"
+  ]
+}

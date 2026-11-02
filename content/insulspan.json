@@ -314,13 +314,13 @@
     },
     {
       "q": "Where can I buy Insulspan?",
-      "a": "Direct from us on 1300 132 787 or sales@quickbuiltsystems.com.au for panels made to your job, as a complete DIY patio kit at patiokits.com.au, where the patio designer prices your size for your postcode, or as an Insulspan patio kit ordered through any Bunnings as a special order. Only a few Bunnings stores keep them in stock, so ask your local store."
+      "a": "Direct from us on 1300 132 787 or sales@quickbuiltsystems.com.au for panels made to your job, as a complete DIY patio kit at patiokits.com.au, where the patio designer prices your size for your postcode, or as an Insulspan patio kit ordered through Bunnings. Insulspan is not kept in store, but any Bunnings can special order it."
     }
   ],
   "whereToBuy": {
     "eyebrow": "Where to buy",
     "h2": "Buy Insulspan direct, as a kit, or through Bunnings.",
-    "lead": "This page is the Insulspan specification. Panels for your own design come direct from us; ready-made patio kits are sold online at patiokits.com.au and can be ordered through any Bunnings as a special order.",
+    "lead": "This page is the Insulspan specification. Panels for your own design come direct from us; ready-made patio kits are sold online at patiokits.com.au. Insulspan is not kept in store at Bunnings, but any Bunnings can special order it.",
     "options": [
       {
         "kicker": "Direct from the factory",
@@ -355,7 +355,7 @@
       {
         "kicker": "Special order",
         "title": "Bunnings",
-        "copy": "Insulspan attached and flyover patio kits can be ordered through any Bunnings as a special order. Only a few stores keep them in stock, so ask your local Bunnings.",
+        "copy": "Insulspan is not kept in store, but any Bunnings can special order an Insulspan attached or flyover patio kit. You can also buy direct from us or online at patiokits.com.au.",
         "links": []
       }
     ],
