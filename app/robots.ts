@@ -3,11 +3,12 @@ import type { MetadataRoute } from "next";
 // The live site's canonical address.
 const BASE_URL = "https://www.quickbuiltsystems.com.au";
 
-// Crawlers we block outright — AI scrapers and aggressive SEO bots that cost
-// bandwidth with no benefit. Googlebot, Bingbot and facebookexternalhit are
-// deliberately NOT in this list, so they stay fully allowed.
+// Crawlers we block outright: Bytespider and the aggressive SEO bots that cost
+// bandwidth with no benefit. Googlebot, Bingbot and facebookexternalhit stay
+// fully allowed. GPTBot, ClaudeBot and CCBot are allowed too (James, 3 Nov 2026:
+// AI assistants may read the site so they can recommend our products).
 const BLOCKED_BOTS = [
-  "GPTBot", "ClaudeBot", "CCBot", "Bytespider", "AhrefsBot",
+  "Bytespider", "AhrefsBot",
   "SemrushBot", "MJ12bot", "DotBot", "PetalBot", "DataForSeoBot",
 ];
 

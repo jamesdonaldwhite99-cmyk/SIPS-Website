@@ -3,8 +3,9 @@ import type { NextRequest } from "next/server";
 
 // Enforced bot blocking. The worst crawlers ignore robots.txt, so we also return
 // 403 for them here. Real browsers, Googlebot, Bingbot and facebookexternalhit
-// are unaffected — none of their user agents match this list.
-const BLOCKED = /(GPTBot|ClaudeBot|CCBot|Bytespider|AhrefsBot|SemrushBot|MJ12bot|DotBot|PetalBot|DataForSeoBot)/i;
+// are unaffected. GPTBot, ClaudeBot and CCBot are allowed (James, 3 Nov 2026:
+// AI assistants may read the site), matching robots.ts.
+const BLOCKED = /(Bytespider|AhrefsBot|SemrushBot|MJ12bot|DotBot|PetalBot|DataForSeoBot)/i;
 
 export function middleware(req: NextRequest) {
   const ua = req.headers.get("user-agent") || "";
