@@ -550,7 +550,7 @@
     },
     {
       "q": "Where can I buy Alyspan?",
-      "a": "Direct from us in full 6.0 m and 8.0 m beam lengths and 6.5 m posts, on 1300 132 787 or sales@quickbuiltsystems.com.au. Shorter beams, posts and connectors, and complete patio kits built on Alyspan, are at patiokits.com.au and through Bunnings."
+      "a": "Direct from us in full 6.0 m and 8.0 m beam lengths and 6.5 m posts, on 1300 132 787 or sales@quickbuiltsystems.com.au. Shorter beams, posts and connectors, and complete patio kits built on Alyspan, are at patiokits.com.au, and can be ordered through any Bunnings as a special order. Only a few Bunnings stores keep them in stock, so ask your local store."
     },
     {
       "q": "How do I order Alyspan aluminium beams and posts?",
@@ -2561,8 +2561,8 @@
   "contactLead": "Beam sizes, post centres, a parts list or a price for your patio, awning or carport: call, email or send us your dimensions.",
   "whereToBuy": {
     "eyebrow": "Where to buy",
-    "h2": "Buy Alyspan direct, online, or at Bunnings.",
-    "lead": "This page is the Alyspan specification. Full lengths and the whole parts range come direct from us; shorter lengths and complete patio kits are sold online at patiokits.com.au and through Bunnings.",
+    "h2": "Buy Alyspan direct, online, or through Bunnings.",
+    "lead": "This page is the Alyspan specification. Full lengths and the whole parts range come direct from us; shorter lengths and complete patio kits are sold online at patiokits.com.au and can be ordered through any Bunnings as a special order.",
     "options": [
       {
         "kicker": "Direct",
@@ -2595,9 +2595,9 @@
         ]
       },
       {
-        "kicker": "In store",
+        "kicker": "Special order",
         "title": "Bunnings",
-        "copy": "Alyspan beams, posts and connectors, and patio kits built on Alyspan, are also sold through Bunnings.",
+        "copy": "Alyspan beams, posts and connectors, and patio kits built on Alyspan, can be ordered through any Bunnings as a special order. Only a few stores keep them in stock, so ask your local Bunnings.",
         "links": []
       }
     ],
