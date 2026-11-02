@@ -1,12 +1,9 @@
-import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 import PageHero from "@/components/PageHero";
 import TradeJoin, { type TradeConfig } from "@/components/TradeJoin";
 
-export const metadata: Metadata = {
-  title: "Trade accounts: join the Quick Built family | Quick Built Systems",
-  description: "Trade pricing and 30-day accounts for builders and trades using Quick Built insulated panels. Apply online in about ten minutes.",
-  alternates: { canonical: "https://www.quickbuiltsystems.com.au/trade" },
-};
+export const metadata = pageMetadata("trade", "/trade");
 
 const c: TradeConfig = {
   leadWhat: "patios, rooms and panel builds",
@@ -38,6 +35,7 @@ const c: TradeConfig = {
 export default function TradePage() {
   return (
     <div>
+      <JsonLd data={breadcrumbJsonLd([{ label: "Trade", href: "/trade" }])} />
       <PageHero crumb="Trade" eyebrow="For builders and trades" h1="Join the Quick Built family"
         lead="Trade pricing and 30-day accounts for builders, installers and the trades who order with us regularly."
         photo="/photos/panelspan-lifestyle.jpg" />

@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { readdirSync } from "fs";
 import { join } from "path";
+import { tradeAccountEnabled } from "@/lib/tradeAccount";
 
 // The live site's canonical address. Used to build the full URLs Google needs.
 const BASE_URL = "https://www.quickbuiltsystems.com.au";
@@ -30,11 +31,13 @@ function findRoutes(dir: string, basePath = ""): string[] {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = findRoutes(join(process.cwd(), "app"));
+  // /trade-account is a "coming soon" page (noindex) until the online application is switched on.
+  const hidden = new Set(tradeAccountEnabled() ? [] : ["/trade-account"]);
+  const routes = findRoutes(join(process.cwd(), "app")).filter((r) => !hidden.has(r)).sort();
 
   return routes.map((route) => ({
     url: `${BASE_URL}${route}`,
     changeFrequency: "weekly",
-    priority: route === "/" ? 1 : 0.8,
+    priority: route === "/" ? 1 : route.startsWith("/products") ? 0.9 : 0.7,
   }));
 }

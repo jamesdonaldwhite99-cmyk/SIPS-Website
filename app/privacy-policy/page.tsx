@@ -1,10 +1,7 @@
-import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy | Quick Built Systems",
-  description:
-    "How Quick Built Systems Pty Limited collects, uses, stores and shares your personal information, in line with the Australian Privacy Act 1988.",
-};
+export const metadata = pageMetadata("privacy", "/privacy-policy");
 
 const LAST_UPDATED = "25 October 2026";
 
@@ -140,6 +137,7 @@ const SECTIONS: Section[] = [
 export default function PrivacyPolicyPage() {
   return (
     <section className="ts-section">
+      <JsonLd data={breadcrumbJsonLd([{ label: "Privacy Policy", href: "/privacy-policy" }])} />
       <div className="ts-container" style={{ maxWidth: 820 }}>
         <p style={{ color: "var(--color-stone)", fontSize: 14, letterSpacing: "0.02em", marginBottom: 8 }}>
           Legal

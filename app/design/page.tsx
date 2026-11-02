@@ -1,5 +1,6 @@
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 import Link from "next/link";
-import type { Metadata } from "next";
 import { DESIGNERS, designerHref, designerIsExternal } from "@/lib/designers";
 
 /**
@@ -15,12 +16,7 @@ import { DESIGNERS, designerHref, designerIsExternal } from "@/lib/designers";
  * yet — a hub that 404s is worse than one that links out.
  */
 
-export const metadata: Metadata = {
-  title: "Design and price your project — Quick Built Systems",
-  description:
-    "Price a patio, a steel floor, a fence or a kit home yourself. Real engineering, a delivered price on screen, and drawings you can hand to a builder.",
-  alternates: { canonical: "/design" },
-};
+export const metadata = pageMetadata("design", "/design");
 
 
 const Arrow = () => (
@@ -32,6 +28,7 @@ const Arrow = () => (
 export default function DesignHubPage() {
   return (
     <div>
+      <JsonLd data={breadcrumbJsonLd([{ label: "Design", href: "/design" }])} />
       <section className="ts-product-hero">
         <div className="ts-container">
           <div className="ts-product-hero-text" style={{ maxWidth: "820px" }}>

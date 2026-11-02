@@ -5,8 +5,11 @@ import Navbar from "@/components/Navbar";
 import PreFooter from "@/components/PreFooter";
 import Footer from "@/components/Footer";
 import seo from "@/content/seo.json";
+import JsonLd from "@/components/JsonLd";
+import { SITE_URL, organizationJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
     default: seo.site.defaultTitle,
     template: seo.site.titleTemplate,
@@ -53,6 +56,7 @@ fbq('track', 'PageView');`}
         {/* End Meta Pixel Code */}
       </head>
       <body>
+        <JsonLd data={organizationJsonLd()} />
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe

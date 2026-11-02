@@ -1,5 +1,13 @@
-import { pageMetadata } from "@/lib/seo";
-export const metadata = pageMetadata("about");
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata("about", "/about");
+
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return children;
+  return (
+    <>
+      <JsonLd data={breadcrumbJsonLd([{ label: "About", href: "/about" }])} />
+      {children}
+    </>
+  );
 }

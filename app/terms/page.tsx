@@ -1,11 +1,9 @@
-import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 import PageHero from "@/components/PageHero";
 import terms from "@/content/terms.json";
 
-export const metadata: Metadata = {
-  title: "Terms & Conditions of Trade | Quick Built Systems",
-  description: "Quick Built Systems Pty Ltd Terms and Conditions of Trade.",
-};
+export const metadata = pageMetadata("terms", "/terms");
 
 /** A lettered sub-clause line, e.g. "(a) interest accrues…". */
 const isSubClause = (s: string) => /^\([a-z]\)/.test(s.trim());
@@ -20,6 +18,7 @@ const isAclNotice = (s: string) => s.includes("guarantees that cannot be exclude
 export default function TermsPage() {
   return (
     <div>
+      <JsonLd data={breadcrumbJsonLd([{ label: "Terms & Conditions", href: "/terms" }])} />
       <PageHero
         crumb="Terms & Conditions"
         eyebrow="Legal"

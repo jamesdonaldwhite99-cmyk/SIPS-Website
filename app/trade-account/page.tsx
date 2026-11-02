@@ -1,19 +1,24 @@
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import TradeAccountForm from "@/components/trade-account/TradeAccountForm";
 import { tradeAccountEnabled } from "@/lib/tradeAccount";
 
-export const metadata: Metadata = {
-  title: "Apply for a Trade Account | Quick Built Systems",
-  description:
-    "Apply online for a Quick Built Systems 30-day trading account. Complete and sign the application in about ten minutes; we usually assess it within two business days.",
-  alternates: { canonical: "https://www.quickbuiltsystems.com.au/trade-account" },
-};
+/** Indexed only once the online application is switched on (lib/tradeAccount); until then it is a
+ *  "coming soon" page, kept out of the sitemap and out of search results. */
+export function generateMetadata(): Metadata {
+  return {
+    ...pageMetadata("trade_account", "/trade-account"),
+    ...(tradeAccountEnabled() ? {} : { robots: { index: false, follow: true } }),
+  };
+}
 
 /** /trade-account — the online 30-day trading account application (see project_specs.md). */
 export default function TradeAccountPage() {
   return (
     <div>
+      <JsonLd data={breadcrumbJsonLd([{ label: "Trade account", href: "/trade-account" }])} />
       <PageHero
         crumb="Trade account"
         eyebrow="For builders and trade customers"

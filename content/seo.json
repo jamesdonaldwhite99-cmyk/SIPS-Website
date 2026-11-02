@@ -1,73 +1,98 @@
 {
   "site": {
-    "titleTemplate": "%s · Quick Built Systems",
-    "defaultTitle": "Quick Built Systems — Australia's Lightest, Fastest SIPs System",
-    "description": "Insulspan® roofing panels, Panelspan® wall panels and Panelcore® sunroom & coldroom panels. Pre-finished SIPs engineered for Australian conditions. Family-owned, 25 years experience.",
-    "keywords": "SIPs panels, structural insulated panels, insulated roofing, Insulspan, Panelspan, Panelcore, Alyspan, aluminium patio beams, structural aluminium beams, aluminium posts, patio beam span tables, Quick Built Systems, QuickBuilt, Australian building",
+    "titleTemplate": "%s | Quick Built Systems",
+    "defaultTitle": "Insulated Roof and Wall Panels | Quick Built Systems",
+    "description": "Insulspan roof panels, Panelspan wall panels, Panelcore panels and Alyspan aluminium beams, made and supplied from Silverdale NSW. Call 1300 132 787.",
+    "keywords": "Insulspan, Alyspan, Panelspan, Panelcore, insulated roof panels, insulated wall panels, aluminium patio beams, aluminium posts, patio beam span tables, steel floor frames, Quick Built Systems",
     "ogImage": "/photos/og-default.jpg",
     "siteName": "Quick Built Systems",
     "locale": "en_AU"
   },
   "pages": {
     "home": {
-      "title": "Australia's Lightest, Fastest SIPs System",
-      "description": "Insulspan®, Panelspan® and Panelcore® — a complete pre-finished SIPs building system engineered for Australian conditions.",
+      "title": "Insulated Roof and Wall Panels | Quick Built Systems",
+      "description": "Insulspan roof panels, Panelspan wall panels, Panelcore panels and Alyspan aluminium beams, made and supplied from Silverdale NSW. Call 1300 132 787.",
       "ogImage": ""
     },
     "about": {
-      "title": "About Quick Built Systems",
-      "description": "Family owned, third-generation Australian manufacturer with 25 years of modular and SIPs experience.",
+      "title": "About Us: Family Owned Panel Maker | Quick Built Systems",
+      "description": "A third generation family business with 25 years in the trade, making insulated roof and wall panels and aluminium patio beams in Silverdale NSW.",
       "ogImage": ""
     },
     "building_system": {
-      "title": "Building System",
-      "description": "How the Quick Built Systems SIPs system works — Insulspan® roof and Panelspan® walls installed in days.",
+      "title": "How the Insulated Panel System Works | Quick Built Systems",
+      "description": "How Insulspan roof panels and Panelspan wall panels install together as one system, from footings to roof, in days rather than weeks.",
       "ogImage": ""
     },
     "products": {
-      "title": "Products",
-      "description": "Insulspan® roofing, Panelspan® wall panels, Panelcore® sunroom & coldroom panels and pre-engineered patio kits.",
+      "title": "Insulated Panels and Aluminium Beams | Quick Built Systems",
+      "description": "Insulspan roofing, Panelspan walls, Panelcore sunroom and coldroom panels, Alyspan aluminium beams and steel floor frames. Specs, sizes and finishes.",
       "ogImage": ""
     },
     "insulspan": {
-      "title": "Insulspan® Insulated Roofing Panels",
-      "description": "Structural insulated roofing panels with up to 8.1m clear span, pre-finished interior soffit, BAL-29 rated.",
+      "title": "Insulspan Insulated Roof Panels | Quick Built Systems",
+      "description": "Insulspan insulated roof panels: spans to 8.1 m, 50 to 125 mm thick, R1.39 to R3.48, BAL-29, Surfmist underside. Span tables, colours and guides.",
       "ogImage": ""
     },
     "panelspan": {
-      "title": "Panelspan® Wall Panels",
-      "description": "Pre-finished structural wall panels with FC or MgO surfaces — no extra cladding required.",
+      "title": "Panelspan Insulated Wall Panels | Quick Built Systems",
+      "description": "Panelspan wall panels: 10 mm MagnaClad MgO outside and MagnaLiner inside, bonded to an EPS core. No separate cladding, lock-up in days.",
       "ogImage": ""
     },
     "panelcore": {
-      "title": "Panelcore® Sunroom & Coldroom Panels",
-      "description": "Steel-skinned insulated panels for sunrooms, enclosed outdoor living and controlled-temperature spaces — from year-round sunrooms to cold rooms and freezers.",
+      "title": "Panelcore Sunroom and Coldroom Panels | Quick Built Systems",
+      "description": "Panelcore steel-skinned insulated panels for sunrooms, enclosed outdoor living, cool rooms and freezers. Cam-locked, airtight and quick to install.",
       "ogImage": ""
     },
     "alyspan": {
-      "title": "Alyspan® Structural Aluminium Beams & Posts",
-      "description": "Australian-designed structural aluminium patio beams, posts, connectors and brackets. 100x50 and 150x50 in 6063-T6, engineer-certified span tables to AS 1664 and AS 4055.",
+      "title": "Alyspan Aluminium Beams and Posts | Quick Built Systems",
+      "description": "Alyspan 100x50 and 150x50 aluminium beams in 6063-T6, posts, connectors and brackets. Full span tables certified by Ross Engineers to AS 1664 and AS 4055.",
       "ogImage": "/photos/alyspan/lifestyle-hero.jpg"
     },
     "gallery": {
-      "title": "Project Gallery",
-      "description": "Homes, extensions, patios, commercial builds and coldrooms built with Quick Built Systems SIPs panels.",
+      "title": "Project Gallery: Homes and Patios | Quick Built Systems",
+      "description": "Homes, extensions, patios, fencing, commercial builds and coldrooms built with Quick Built insulated panels, roofing and patio kits.",
       "ogImage": ""
     },
     "contact": {
-      "title": "Contact Us",
-      "description": "Request a quote, ask a question, or get technical support — our Sydney team is ready to help.",
+      "title": "Contact Us: Quotes and Technical Help | Quick Built Systems",
+      "description": "Ask for a quote or technical help on 1300 132 787 or sales@quickbuiltsystems.com.au. Tell us about your project and we reply within 24 hours.",
       "ogImage": ""
     },
     "resources": {
-      "title": "Resources",
-      "description": "Specifications, install guides, brochures, warranty and NCC compliance information.",
+      "title": "Brochures, Install Guides and Specs | Quick Built Systems",
+      "description": "Download Quick Built brochures, install guides, span tables, engineering specifications, warranty and NCC compliance documents.",
       "ogImage": ""
     },
     "steel_floors": {
-      "title": "Steel Floor & Deck Frames — Engineered Subfloor Kits",
-      "description": "Galvanised steel bearers and joists cut to length and labelled to your plan. Joist spans to 5,500mm, floor heights to 3,600mm. Answer five questions and see a delivered price on screen.",
+      "title": "Steel Floor and Deck Frames | Quick Built Systems",
+      "description": "Galvanised steel bearers and joists cut to length and labelled to your plan. Joist spans to 5,500 mm, floor heights to 3,600 mm. See a price on screen.",
       "ogImage": "/photos/010a7268-hdr-2.jpg"
+    },
+    "design": {
+      "title": "Design and Price Your Project Online | Quick Built Systems",
+      "description": "Price a patio, a steel floor, a fence or a kit home yourself. Real engineering, a delivered price on screen and drawings you can hand to a builder.",
+      "ogImage": ""
+    },
+    "trade": {
+      "title": "Trade Accounts for Builders | Quick Built Systems",
+      "description": "Trade pricing and 30-day accounts for builders and trades using Quick Built insulated panels. Apply online in about ten minutes.",
+      "ogImage": ""
+    },
+    "trade_account": {
+      "title": "Apply for a Trade Account | Quick Built Systems",
+      "description": "Apply online for a Quick Built Systems 30-day trading account. Complete and sign it in about ten minutes; we usually assess it within two business days.",
+      "ogImage": ""
+    },
+    "terms": {
+      "title": "Terms and Conditions of Trade | Quick Built Systems",
+      "description": "Quick Built Systems Pty Ltd Terms and Conditions of Trade, April 2026 Edition.",
+      "ogImage": ""
+    },
+    "privacy": {
+      "title": "Privacy Policy | Quick Built Systems",
+      "description": "How Quick Built Systems Pty Limited collects, uses, stores and shares your personal information, in line with the Australian Privacy Act 1988.",
+      "ogImage": ""
     }
   }
 }

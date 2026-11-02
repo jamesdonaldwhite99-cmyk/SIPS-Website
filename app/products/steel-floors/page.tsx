@@ -84,14 +84,6 @@ export default function SteelFloorsPage() {
             "@context": "https://schema.org",
             "@graph": [
               {
-                "@type": "Product",
-                name: "Quick Built Steel Floor and Deck Frames",
-                brand: { "@type": "Brand", name: "Quick Built Systems" },
-                manufacturer: { "@type": "Organization", name: "Quick Built Systems PTY LTD" },
-                material: "Roll-formed galvanised steel",
-                description: data.heroLead,
-              },
-              {
                 "@type": "FAQPage",
                 mainEntity: data.faq.map((f) => ({
                   "@type": "Question",

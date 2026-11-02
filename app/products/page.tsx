@@ -6,6 +6,8 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import data from "@/content/products.json";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd } from "@/lib/seo";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -49,6 +51,7 @@ export default function ProductsPage() {
         }}
       >
         <div className="ts-container">
+          <JsonLd data={breadcrumbJsonLd([{ label: "Products", href: "/products" }])} />
           <div className="ts-breadcrumbs hero-animate" style={{ color: "rgba(255,255,255,0.55)" }}>
             <Link href="/" style={{ color: "inherit", opacity: 0.7 }}>Home</Link>
             <span className="sep">/</span>

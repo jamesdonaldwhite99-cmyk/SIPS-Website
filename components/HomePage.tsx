@@ -255,7 +255,7 @@ export default function HomePage() {
                 );
                 const isExternal = "external" in p && (p as { external?: boolean }).external;
                 return isExternal ? (
-                  <a key={i} href={p.href} target="_blank" rel="noopener noreferrer" className="ts-product-iconitem icon-animate">
+                  <a key={i} href={p.href} target="_blank" rel="noopener" className="ts-product-iconitem icon-animate">
                     {inner}
                   </a>
                 ) : (
@@ -309,7 +309,7 @@ export default function HomePage() {
                   key={c.kicker}
                   href={c.href}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener"
                   className="ts-showcase-card showcase-card-animate"
                   data-index={i}
                 >
@@ -346,7 +346,7 @@ export default function HomePage() {
                     <path d="M5 12h14M13 5l7 7-7 7" />
                   </svg>
                 </Link>
-                <a href="https://www.quickbuilthomes.com.au/" target="_blank" rel="noopener noreferrer" className="ts-btn ts-btn--ghost">
+                <a href="https://www.quickbuilthomes.com.au/" target="_blank" rel="noopener" className="ts-btn ts-btn--ghost">
                   View our Building Systems
                 </a>
               </div>
