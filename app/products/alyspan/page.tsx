@@ -7,12 +7,19 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import data from "@/content/alyspan.json";
 import ProductResources from "@/components/ProductResources";
+import WhereToBuy from "@/components/WhereToBuy";
+import SisterSites from "@/components/SisterSites";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function AlyspanPage() {
   const pageRef = useRef<HTMLDivElement>(null);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  // Span table picker: the eight certified tables (Ross Engineers), chosen by three questions.
+  const [spanCase, setSpanCase] = useState(1);
+  const [spanType, setSpanType] = useState("Single Span");
+  const [overhang, setOverhang] = useState("No overhang");
+  const current = data.spanCases.find((c) => c.case === spanCase && c.span === spanType && c.overhang === overhang) ?? data.spanCases[0];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -43,10 +50,6 @@ export default function AlyspanPage() {
         scrollTrigger: { trigger: ".ts-colourbar", start: "top 85%", once: true },
         y: 16, opacity: 0, duration: 0.5, stagger: 0.05, ease: "power2.out",
       });
-      gsap.from(".aly-table-animate", {
-        scrollTrigger: { trigger: ".ts-aly-spans", start: "top 82%", once: true },
-        y: 30, opacity: 0, duration: 0.7, stagger: 0.12, ease: "power2.out",
-      });
       gsap.from(".eng-animate", {
         scrollTrigger: { trigger: ".ts-aly-engineering", start: "top 80%", once: true },
         y: 26, opacity: 0, duration: 0.7, stagger: 0.09, ease: "power2.out",
@@ -57,53 +60,6 @@ export default function AlyspanPage() {
 
   return (
     <div ref={pageRef}>
-      {/* Structured data — helps Google surface the product, its specs and the FAQs */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@graph": [
-              {
-                "@type": "Product",
-                name: "Alyspan® Structural Aluminium Beam",
-                brand: { "@type": "Brand", name: "Alyspan" },
-                manufacturer: { "@type": "Organization", name: "Quick Built Systems PTY LTD" },
-                material: "Aluminium 6063-T6",
-                description: data.heroLead,
-                image: [
-                  "https://www.quickbuiltsystems.com.au/photos/alyspan/beam-100x50.jpg",
-                  "https://www.quickbuiltsystems.com.au/photos/alyspan/beam-150x50.jpg",
-                ],
-                additionalProperty: data.beams.flatMap((b) =>
-                  b.properties.map((p) => ({
-                    "@type": "PropertyValue",
-                    name: `${b.name} — ${p.label}`,
-                    value: p.value,
-                  }))
-                ),
-              },
-              {
-                "@type": "BreadcrumbList",
-                itemListElement: [
-                  { "@type": "ListItem", position: 1, name: "Home", item: "https://www.quickbuiltsystems.com.au/" },
-                  { "@type": "ListItem", position: 2, name: "Products", item: "https://www.quickbuiltsystems.com.au/products" },
-                  { "@type": "ListItem", position: 3, name: "Alyspan®", item: "https://www.quickbuiltsystems.com.au/products/alyspan" },
-                ],
-              },
-              {
-                "@type": "FAQPage",
-                mainEntity: data.faq.map((f) => ({
-                  "@type": "Question",
-                  name: f.q,
-                  acceptedAnswer: { "@type": "Answer", text: f.a },
-                })),
-              },
-            ],
-          }),
-        }}
-      />
-
       {/* Product Hero */}
       <section className="ts-product-hero">
         <div className="ts-container">
@@ -114,7 +70,7 @@ export default function AlyspanPage() {
                 <span className="sep">/</span>
                 <Link href="/products">Products</Link>
                 <span className="sep">/</span>
-                <span>Alyspan®</span>
+                <span>Alyspan</span>
               </div>
               <div className="kicker hero-animate">{data.kicker}</div>
               <h1 className="hero-animate">
@@ -336,11 +292,41 @@ export default function AlyspanPage() {
             <p>{data.spanLead}</p>
           </div>
 
-          {data.spanTables.map((t, i) => (
-            <div key={i} className="ts-aly-spantable aly-table-animate">
+          <div className="qb-span-picker" role="group" aria-label="Choose a span table">
+            <fieldset>
+              <legend>Adjacent building height</legend>
+              <div className="qb-seg">
+                {[{ v: 1, l: "Up to 4.8 m (Case 1)" }, { v: 2, l: "Up to 12.0 m (Case 2)" }].map((o) => (
+                  <button key={o.v} type="button" aria-pressed={spanCase === o.v} onClick={() => setSpanCase(o.v)}>{o.l}</button>
+                ))}
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>Span</legend>
+              <div className="qb-seg">
+                {["Single Span", "Equal Continuous Span"].map((o) => (
+                  <button key={o} type="button" aria-pressed={spanType === o} onClick={() => setSpanType(o)}>{o === "Single Span" ? "Single span" : "Equal continuous span"}</button>
+                ))}
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>Overhang</legend>
+              <div className="qb-seg">
+                {["No overhang", "Up to 600 mm overhang"].map((o) => (
+                  <button key={o} type="button" aria-pressed={overhang === o} onClick={() => setOverhang(o)}>{o}</button>
+                ))}
+              </div>
+            </fieldset>
+          </div>
+          <p className="qb-span-help">{data.spanHelp}</p>
+
+          {/* All eight tables are in the HTML (so search engines and AI assistants can read every one);
+              the picker only shows the chosen one. */}
+          {data.spanCases.map((c) => c.tables.map((t) => (
+            <div key={`${c.case}-${c.span}-${c.overhang}-${t.beam}`} className="ts-aly-spantable" hidden={c !== current}>
               <div className="ts-aly-spantable-title">
                 <h3>{t.beam}</h3>
-                <span>{t.sub}</span>
+                <span>{`Case ${c.case} · ${c.span === "Single Span" ? "Single span" : "Equal continuous span"} · ${c.overhang} · max. adjacent building height ${c.height} m`}</span>
               </div>
               <div className="ts-aly-spantable-scroll">
                 <table>
@@ -360,8 +346,8 @@ export default function AlyspanPage() {
                     {t.rows.map((r, j) => (
                       <tr key={j}>
                         <th scope="row" className="w-col">{r.w}</th>
-                        {r.spans.map((s, k) => (
-                          <td key={k}>{s}</td>
+                        {r.spans.map((v, k) => (
+                          <td key={k}>{v}</td>
                         ))}
                       </tr>
                     ))}
@@ -369,7 +355,7 @@ export default function AlyspanPage() {
                 </table>
               </div>
             </div>
-          ))}
+          )))}
           <p className="ts-aly-footnote">{data.spanFootnote}</p>
         </div>
       </section>
@@ -476,12 +462,55 @@ export default function AlyspanPage() {
         </div>
       </section>
 
+      <WhereToBuy data={data.whereToBuy} />
+
+      {/* Contact: alyspan.com.au/files/contact.php lands on this page, so it answers what that page did */}
+      <section id="contact" className="ts-section ts-divider-top" style={{ background: "var(--ts-cream-2)" }}>
+        <div className="ts-container">
+          <div className="ts-section-head">
+            <div>
+              <div className="ts-eyebrow">Contact</div>
+              <h2>{data.contactH2}</h2>
+            </div>
+            <p>{data.contactLead}</p>
+          </div>
+          <div className="qb-contact-grid">
+            <div className="qb-contact-item">
+              <div className="label">Phone</div>
+              <a className="value" href="tel:1300132787">1300 132 787</a>
+            </div>
+            <div className="qb-contact-item">
+              <div className="label">Email</div>
+              <a className="value" href="mailto:sales@quickbuiltsystems.com.au">sales@quickbuiltsystems.com.au</a>
+            </div>
+            <div className="qb-contact-item">
+              <div className="label">Address</div>
+              <div className="value">21 Econo Place<br />Silverdale NSW 2752</div>
+            </div>
+            <div className="qb-contact-item">
+              <div className="label">Hours</div>
+              <div className="value">Mon to Fri<br />7:30am to 4:30pm AEST</div>
+            </div>
+          </div>
+          <div className="ts-cta-row" style={{ marginTop: 28 }}>
+            <Link href="/contact" className="ts-btn ts-btn--dark">
+              Send us your dimensions
+              <svg className="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14M13 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <ProductResources
         eyebrow={data.relatedResources.eyebrow}
         h2={data.relatedResources.h2}
         lead={data.relatedResources.lead}
         files={data.relatedResources.files}
       />
+
+      <SisterSites />
 
       {/* CTA */}
       <section className="ts-cta-strip">

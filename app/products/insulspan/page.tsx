@@ -7,6 +7,9 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import data from "@/content/insulspan.json";
 import ProductResources from "@/components/ProductResources";
+import ProductFaq from "@/components/ProductFaq";
+import WhereToBuy from "@/components/WhereToBuy";
+import SisterSites from "@/components/SisterSites";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -60,7 +63,7 @@ export default function InsulspanPage() {
                 <span className="sep">/</span>
                 <Link href="/products">Products</Link>
                 <span className="sep">/</span>
-                <span>Insulspan®</span>
+                <span>Insulspan</span>
               </div>
               <div className="kicker hero-animate">{data.kicker}</div>
               <h1 className="hero-animate">
@@ -75,11 +78,11 @@ export default function InsulspanPage() {
                     <path d="M5 12h14M13 5l7 7-7 7" />
                   </svg>
                 </Link>
-                <Link href="/resources" className="ts-btn ts-btn--ghost-on-dark">Download specs</Link>
+                <a href="#span-tables" className="ts-btn ts-btn--ghost-on-dark">View span tables</a>
               </div>
             </div>
             <div className="ts-product-hero-photo">
-              <Image src={data.heroPhoto} alt={data.kicker} fill style={{ objectFit: "cover" }} priority sizes="60vw" />
+              <Image src={data.heroPhoto} alt="Insulspan insulated roof panel patio with a Surfmist ceiling and downlights" fill style={{ objectFit: "cover" }} priority sizes="60vw" />
               <span className="ts-photo-tag">{data.heroPhotoTag}</span>
             </div>
           </div>
@@ -89,7 +92,7 @@ export default function InsulspanPage() {
       {/* Spec strip */}
       <div className="ts-product-specstrip">
         <div className="ts-container">
-          <div className="ts-product-specstrip-grid">
+          <div className="ts-product-specstrip-grid qb-specstrip-6">
             {data.specs.map((s, i) => (
               <div key={i} className="ts-product-specstrip-item spec-item">
                 <div className="label">{s.label}</div>
@@ -135,7 +138,7 @@ export default function InsulspanPage() {
               <div className="ts-eyebrow">Profiles</div>
               <h2>Three architectural profiles.</h2>
             </div>
-            <p>Three Insulspan® roof profiles — each engineered with the same long-span structural core. Choose the look that fits your build.</p>
+            <p>Three Insulspan® roof profiles, each with the same long-span structural core and span table. Choose the look that fits your build.</p>
           </div>
           <div className="ts-profiles-grid">
             {data.profiles.map((p, i) => (
@@ -150,6 +153,123 @@ export default function InsulspanPage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Span tables (Insulspan brochure, page 2) */}
+      <section id="span-tables" className="ts-section ts-divider-top">
+        <div className="ts-container">
+          <div className="ts-section-head">
+            <div>
+              <div className="ts-eyebrow">{data.spanTable.eyebrow}</div>
+              <h2>{data.spanTable.h2}</h2>
+            </div>
+            <p>{data.spanTable.lead}</p>
+          </div>
+          <div className="ts-aly-spantable qb-ins-spantable">
+            <div className="ts-aly-spantable-title">
+              <h3>Insulspan roof panel</h3>
+              <span>Single span · patios less than 3 m high</span>
+            </div>
+            <div className="ts-aly-spantable-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col" className="w-col">Wind class</th>
+                    <th scope="col" className="w-col">Open sides</th>
+                    <th scope="col">Serv. kPa</th>
+                    <th scope="col">Str. kPa</th>
+                    {data.spanTable.thicknessHeaders.map((h) => (
+                      <th scope="col" key={h}>{h}</th>
+                    ))}
+                  </tr>
+                  <tr className="subhead">
+                    <th scope="col" className="w-col" colSpan={4}>Roof pressures</th>
+                    <th scope="col" colSpan={data.spanTable.thicknessHeaders.length}>Maximum span (mm) by panel thickness</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {data.spanTable.groups.map((g) =>
+                    g.rows.map((r, ri) => (
+                      <tr key={`${g.wind}-${ri}`} className={ri === 0 ? "group-start" : undefined}>
+                        <th scope="row" className="w-col wind">
+                          {ri === 0 ? (<>{g.wind}<small>{g.windNote}</small></>) : <span className="sr-only">{g.wind}</span>}
+                        </th>
+                        <td className="w-col" style={{ textAlign: "left" }}>{r.sides}</td>
+                        <td className="press">{r.serv}</td>
+                        <td className="press">{r.str}</td>
+                        {r.spans.map((v, k) => (
+                          <td key={k}>{v}</td>
+                        ))}
+                      </tr>
+                    ))
+                  )}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <p className="ts-aly-footnote">{data.spanTable.footnote}</p>
+        </div>
+      </section>
+
+      {/* Technical specifications (Insulspan brochure, page 2) */}
+      <section className="ts-section ts-divider-top" style={{ background: "var(--ts-cream-2)" }}>
+        <div className="ts-container">
+          <div className="ts-section-head">
+            <div>
+              <div className="ts-eyebrow">{data.technicalSpecs.eyebrow}</div>
+              <h2>{data.technicalSpecs.h2}</h2>
+            </div>
+            <p>{data.technicalSpecs.lead}</p>
+          </div>
+          <div className="qb-tech-grid">
+            <div className="ts-aly-eng-card">
+              <h3>{data.technicalSpecs.construction.title}</h3>
+              <ul className="ts-aly-standards">
+                {data.technicalSpecs.construction.items.map((c) => (
+                  <li key={c}>{c}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="ts-aly-eng-card">
+              <h3>By panel thickness</h3>
+              <table className="qb-tech-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Thickness</th>
+                    <th scope="col">{data.technicalSpecs.weightsTitle} ({data.technicalSpecs.weightsUnit})</th>
+                    <th scope="col">R value ({data.technicalSpecs.rValueUnit})</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {data.technicalSpecs.thicknessHeaders.map((t, i) => (
+                    <tr key={t}>
+                      <td>{t}</td>
+                      <td>{data.technicalSpecs.weights[i]}</td>
+                      <td>R{data.technicalSpecs.rValues[i]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="ts-aly-eng-card">
+              <h3>{data.technicalSpecs.acoustic.title}</h3>
+              <p className="qb-tech-big">{data.technicalSpecs.acoustic.value}</p>
+              <p className="qb-tech-note">{data.technicalSpecs.acoustic.note}</p>
+            </div>
+            <div className="ts-aly-eng-card">
+              <h3>{data.technicalSpecs.fire.title}</h3>
+              <dl className="ts-aly-design">
+                {data.technicalSpecs.fire.items.map((f) => (
+                  <div key={f.label}>
+                    <dt>{f.label}</dt>
+                    <dd>{f.value}</dd>
+                  </div>
+                ))}
+              </dl>
+              <p className="qb-tech-note">{data.technicalSpecs.fire.note}</p>
+            </div>
           </div>
         </div>
       </section>
@@ -189,9 +309,9 @@ export default function InsulspanPage() {
           <div className="ts-section-head">
             <div>
               <div className="ts-eyebrow">Colours</div>
-              <h2>Available in 11 Colorbond® colours.</h2>
+              <h2>{data.colourSwatches.length} Colorbond® top colours. A Surfmist ceiling.</h2>
             </div>
-            <p>All Insulspan® profiles are available in the full Colorbond® range — choose a colour to match your roof, fascia, or architectural scheme.</p>
+            <p>{data.coloursNote}</p>
           </div>
           <div className="ts-colourbar">
             {data.colourSwatches.map((s, i) => (
@@ -204,6 +324,8 @@ export default function InsulspanPage() {
         </div>
       </section>
 
+      <WhereToBuy data={data.whereToBuy} />
+
       <ProductResources
         eyebrow={data.relatedResources.eyebrow}
         h2={data.relatedResources.h2}
@@ -211,13 +333,17 @@ export default function InsulspanPage() {
         files={data.relatedResources.files}
       />
 
+      <ProductFaq eyebrow={data.faqEyebrow} h2={data.faqH2} lead={data.faqLead} faqs={data.faq} />
+
+      <SisterSites />
+
       {/* CTA */}
       <section className="ts-cta-strip">
         <div className="ts-container">
           <div className="inner">
             <div>
               <h2>Ready to specify Insulspan®?</h2>
-              <p>Get a no-obligation quote with panel specs, span tables, and install timeline for your project.</p>
+              <p>Get a no-obligation quote with the panel, span and lead time for your project.</p>
             </div>
             <div className="ts-cta-card">
               <span className="ts-eyebrow">Speak to our team</span>

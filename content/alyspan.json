@@ -1,7 +1,7 @@
 {
-  "kicker": "Alyspan®",
-  "heroTitle": "Structural",
-  "heroTitleAccent": "Aluminium Beams.",
+  "kicker": "Structural aluminium",
+  "heroTitle": "Alyspan®",
+  "heroTitleAccent": "Aluminium Beams and Posts.",
   "heroLead": "ALYSPAN by Quick Built Systems is a Structural Aluminium Beam perfect for construction of residential patios, awnings and carports.",
   "heroPhoto": "/photos/alyspan/lifestyle-hero.jpg",
   "heroPhotoTag": "Alyspan® posts and beams — attached patio",
@@ -223,9 +223,9 @@
     }
   ],
   "spanEyebrow": "Span tables",
-  "spanH2": "Span Tables for Case 1: Maximum Building Height = 4.8 m",
-  "spanLead": "Single Span – No Overhang. Maximum allowable span (mm) by load width W and wind classification. Wind classifications have been chosen as per AS4055.",
-  "spanFootnote": "Values in mm. Full span tables — including 600mm overhang, equal continuous span and Case 2 (Maximum Building Height = 12.0 m) — are available in the downloadable PDF below.",
+  "spanH2": "Every certified Alyspan span table.",
+  "spanLead": "Maximum allowable span (mm) by load width W and wind classification (AS 4055), for the 100 x 50 and 150 x 50 beams. Choose the adjacent building height, single or equal continuous span, and overhang.",
+  "spanFootnote": "Values in mm. Case 1: minimum awning height 2.4 m, maximum adjacent building height 4.8 m. Case 2: minimum awning height 2.4 m, maximum adjacent building height 12.0 m. For attached patios, awnings and carports only, roof pitch up to 5°, posts at least 50 x 50 x 2.5 mm and up to 3.0 m high. Source: Alyspan span tables by Ross Engineers (PDF below).",
   "spanWindHeaders": [
     "N1",
     "N2",
@@ -236,250 +236,6 @@
   "spanColW": "W (mm)",
   "spanColWSub": "Load width",
   "spanColSpans": "Maximum Allowable Span (mm)",
-  "spanTables": [
-    {
-      "beam": "100 x 50 mm ALYSPAN Beam",
-      "sub": "Single Span – No Overhang · Max. Adjacent Building Height = 4.8 m",
-      "rows": [
-        {
-          "w": "1500",
-          "spans": [
-            "3700",
-            "3700",
-            "3100",
-            "2600",
-            "2200"
-          ]
-        },
-        {
-          "w": "1800",
-          "spans": [
-            "3500",
-            "3500",
-            "2900",
-            "2400",
-            "2100"
-          ]
-        },
-        {
-          "w": "2100",
-          "spans": [
-            "3300",
-            "3300",
-            "2700",
-            "2300",
-            "1900"
-          ]
-        },
-        {
-          "w": "2400",
-          "spans": [
-            "3200",
-            "3200",
-            "2600",
-            "2200",
-            "1800"
-          ]
-        },
-        {
-          "w": "2700",
-          "spans": [
-            "3000",
-            "3000",
-            "2500",
-            "2100",
-            "1700"
-          ]
-        },
-        {
-          "w": "3000",
-          "spans": [
-            "2900",
-            "2900",
-            "2400",
-            "2000",
-            "1600"
-          ]
-        },
-        {
-          "w": "3300",
-          "spans": [
-            "2800",
-            "2800",
-            "2300",
-            "1900",
-            "1500"
-          ]
-        },
-        {
-          "w": "3600",
-          "spans": [
-            "2700",
-            "2700",
-            "2300",
-            "1800",
-            "1400"
-          ]
-        },
-        {
-          "w": "3900",
-          "spans": [
-            "2700",
-            "2700",
-            "2200",
-            "1700",
-            "1300"
-          ]
-        },
-        {
-          "w": "4200",
-          "spans": [
-            "2600",
-            "2600",
-            "2100",
-            "1600",
-            "1300"
-          ]
-        },
-        {
-          "w": "4500",
-          "spans": [
-            "2500",
-            "2500",
-            "2000",
-            "1500",
-            "1200"
-          ]
-        }
-      ]
-    },
-    {
-      "beam": "150 x 50 mm ALYSPAN Beam",
-      "sub": "Single Span – No Overhang · Max. Adjacent Building Height = 4.8 m",
-      "rows": [
-        {
-          "w": "1500",
-          "spans": [
-            "5100",
-            "5100",
-            "4200",
-            "3600",
-            "3100"
-          ]
-        },
-        {
-          "w": "2000",
-          "spans": [
-            "4700",
-            "4700",
-            "3800",
-            "3300",
-            "2600"
-          ]
-        },
-        {
-          "w": "2500",
-          "spans": [
-            "4300",
-            "4300",
-            "3600",
-            "2900",
-            "2300"
-          ]
-        },
-        {
-          "w": "3000",
-          "spans": [
-            "4100",
-            "4100",
-            "3300",
-            "2600",
-            "2100"
-          ]
-        },
-        {
-          "w": "3500",
-          "spans": [
-            "3900",
-            "3900",
-            "3100",
-            "2400",
-            "1900"
-          ]
-        },
-        {
-          "w": "4000",
-          "spans": [
-            "3700",
-            "3700",
-            "2900",
-            "2300",
-            "1800"
-          ]
-        },
-        {
-          "w": "4500",
-          "spans": [
-            "3500",
-            "3500",
-            "2700",
-            "2100",
-            "1700"
-          ]
-        },
-        {
-          "w": "5000",
-          "spans": [
-            "3400",
-            "3300",
-            "2500",
-            "2000",
-            "1600"
-          ]
-        },
-        {
-          "w": "5500",
-          "spans": [
-            "3300",
-            "3100",
-            "2400",
-            "1900",
-            "1500"
-          ]
-        },
-        {
-          "w": "6000",
-          "spans": [
-            "3200",
-            "3000",
-            "2300",
-            "1800",
-            "1400"
-          ]
-        },
-        {
-          "w": "6500",
-          "spans": [
-            "3100",
-            "2900",
-            "2200",
-            "1700",
-            "1300"
-          ]
-        },
-        {
-          "w": "7000",
-          "spans": [
-            "3000",
-            "2800",
-            "2100",
-            "1600",
-            "1300"
-          ]
-        }
-      ]
-    }
-  ],
   "engineeringEyebrow": "Engineering & compliance",
   "engineeringH2": "Certified by practising structural engineers.",
   "engineeringLead": "These span tables have been prepared for the use of Quickbuilt Systems ALYSPAN Structural Aluminium Beam for attached patio, awning, and carport designs only. For the purposes of these tables, roofs are deemed attached to an existing approved dwelling.",
@@ -517,10 +273,14 @@
     {
       "label": "Posts",
       "value": "Minimum post size 50 x 50 x 2.5 mm, up to a maximum height of 3.0 m."
+    },
+    {
+      "label": "Design gust wind speeds (ULS)",
+      "value": "N1 34 m/s · N2 40 · N3 50 · N4 61 · N5 74 m/s (non-cyclonic regions A and B)"
     }
   ],
   "certificateQuote": "Ross Engineers, Practicing Structural Engineers, hereby certify that we have carried out computations in accordance with proper design principles, and we confirm that the design tables conform to the Building Code of Australia.",
-  "certificateAttrib": "Design Certificate · Ross Engineers, Practicing Structural Engineers",
+  "certificateAttrib": "Design Certificate, 29 August 2014 · Ross Engineers, Practicing Structural Engineers",
   "catalogueEyebrow": "Product catalogue",
   "catalogueH2": "Every Alyspan® part number.",
   "catalogueLead": "The full Alyspan range — beams, posts, connectors, brackets and end caps — with the product code to quote on your order.",
@@ -758,11 +518,19 @@
     },
     {
       "q": "Do Alyspan beams comply with Australian Standards?",
-      "a": "All structural sections comply with Australian standards for Structural Design, Aluminium Structures and Wind Loads for housing — AS 1170.0, AS 1170.1, AS 1170.2, AS 4055 – 2006 and AS 1664 – 1997. The span tables are certified by Ross Engineers, Practicing Structural Engineers."
+      "a": "All structural sections comply with the Australian standards for structural design, aluminium structures and wind loads for housing: AS 1170.0, AS 1170.1, AS 1170.2, AS 4055-2006 and AS 1664-1997. The span tables are certified by Ross Engineers, Practicing Structural Engineers."
     },
     {
       "q": "How far can an Alyspan aluminium beam span?",
-      "a": "It depends on load width and wind classification. For a single span with no overhang and a maximum adjacent building height of 4.8m, a 150 x 50 beam spans up to 5100mm in N1 and N2 at a 1500mm load width. Full span tables for overhangs, continuous spans and 12.0m building heights are in the downloadable PDF."
+      "a": "It depends on load width, wind classification and how the beam is set out. For a single span with no overhang next to a building up to 4.8 m high, a 150 x 50 beam spans up to 5,100 mm in N1 and N2 at a 1,500 mm load width; as an equal continuous span it reaches 6,900 mm in N1. Every certified table is on this page."
+    },
+    {
+      "q": "Which Alyspan span table should I use?",
+      "a": "Use Case 1 when the building the patio attaches to is up to 4.8 m high, and Case 2 when it is up to 12.0 m. Then pick single span (one beam between two posts) or equal continuous span (one beam over three or more posts), and whether the beam overhangs the end post by up to 600 mm. W is the width of roof the beam carries."
+    },
+    {
+      "q": "Can Alyspan span tables be used for a freestanding patio?",
+      "a": "No. The certified tables are for attached patio, awning and carport designs only, with the roof deemed attached to an existing approved dwelling, a roof pitch up to 5° and posts up to 3.0 m high. Ask us for anything outside that."
     },
     {
       "q": "Can I cut Alyspan beams on site?",
@@ -770,28 +538,2069 @@
     },
     {
       "q": "What colours are Alyspan beams and brackets available in?",
-      "a": "Beams and posts are stocked in Mill and Pearl White, and brackets in Gal and Pearl White, with Monument also available. Beams available in other colours — check for lead time and colours at time of order."
+      "a": "Beams and posts are stocked in Mill and Pearl White, and brackets in Gal and Pearl White, with Monument also available. Other colours are available; check the lead time and colours at time of order."
     },
     {
       "q": "Do Alyspan beams rust?",
-      "a": "No. Aluminium does not rust, and Alyspan Beams are Powder coated in a Hi-Gloss finish providing an excellent finish to the project — which is why the range is specified for coastal and high-exposure sites across Australia."
+      "a": "No. Aluminium does not rust, and Alyspan beams are powder coated in a Hi-Gloss finish, so there is no repainting cycle."
+    },
+    {
+      "q": "How long does Alyspan take to arrive?",
+      "a": "Alyspan beams, posts and connectors are bought in, so allow about 2 weeks, plus about a week for freight. Insulspan roof panels are made to order: allow about 4 weeks, plus about a week for freight."
+    },
+    {
+      "q": "Where can I buy Alyspan?",
+      "a": "Direct from us in full 6.0 m and 8.0 m beam lengths and 6.5 m posts, on 1300 132 787 or sales@quickbuiltsystems.com.au. Shorter beams, posts and connectors, and complete patio kits built on Alyspan, are at patiokits.com.au and through Bunnings."
     },
     {
       "q": "How do I order Alyspan aluminium beams and posts?",
-      "a": "Order direct from Quick Built Systems. Call 1300 132 787 or send us your patio, awning or carport dimensions and we'll come back with beam sizes, post centres, the full parts list and a price — supplied from our Silverdale, NSW facility."
+      "a": "Call 1300 132 787 or email sales@quickbuiltsystems.com.au with your patio, awning or carport dimensions and we will come back with beam sizes, post centres, the full parts list and a price, supplied from Silverdale NSW."
     }
   ],
   "relatedResources": {
-    "eyebrow": "Technical specifications",
-    "h2": "Want the full Alyspan® span tables?",
-    "lead": "Full span tables and technical specifications are available by downloading the below PDF — section properties, connection schematics, wind pressures, design loadings and the engineer's design certificate.",
+    "eyebrow": "Downloads",
+    "h2": "Alyspan span tables and guides.",
+    "lead": "The full Ross Engineers span tables as a PDF: section properties, connection schematics, wind pressures, design loadings and the engineer's design certificate, plus the patio brochure and install guide.",
     "files": [
       "alyspan-span-tables.pdf",
-      "qbs-patios-brochure.pdf",
       "insulated-patio-install-guide.pdf",
+      "qbs-patios-brochure.pdf",
       "insulspan-brochure.pdf"
     ]
   },
   "ctaH2": "Ready to specify Alyspan®?",
-  "ctaBody": "Send us your patio, awning or carport dimensions and we'll come back with beam sizes, post centres, the full parts list and a no-obligation price."
+  "ctaBody": "Send us your patio, awning or carport dimensions and we'll come back with beam sizes, post centres, the full parts list and a no-obligation price.",
+  "spanCases": [
+    {
+      "case": 1,
+      "height": "4.8",
+      "span": "Single Span",
+      "overhang": "No overhang",
+      "tables": [
+        {
+          "beam": "100 x 50 mm Alyspan beam",
+          "rows": [
+            {
+              "w": "1500",
+              "spans": [
+                "3700",
+                "3700",
+                "3100",
+                "2600",
+                "2200"
+              ]
+            },
+            {
+              "w": "1800",
+              "spans": [
+                "3500",
+                "3500",
+                "2900",
+                "2400",
+                "2100"
+              ]
+            },
+            {
+              "w": "2100",
+              "spans": [
+                "3300",
+                "3300",
+                "2700",
+                "2300",
+                "1900"
+              ]
+            },
+            {
+              "w": "2400",
+              "spans": [
+                "3200",
+                "3200",
+                "2600",
+                "2200",
+                "1800"
+              ]
+            },
+            {
+              "w": "2700",
+              "spans": [
+                "3000",
+                "3000",
+                "2500",
+                "2100",
+                "1700"
+              ]
+            },
+            {
+              "w": "3000",
+              "spans": [
+                "2900",
+                "2900",
+                "2400",
+                "2000",
+                "1600"
+              ]
+            },
+            {
+              "w": "3300",
+              "spans": [
+                "2800",
+                "2800",
+                "2300",
+                "1900",
+                "1500"
+              ]
+            },
+            {
+              "w": "3600",
+              "spans": [
+                "2700",
+                "2700",
+                "2300",
+                "1800",
+                "1400"
+              ]
+            },
+            {
+              "w": "3900",
+              "spans": [
+                "2700",
+                "2700",
+                "2200",
+                "1700",
+                "1300"
+              ]
+            },
+            {
+              "w": "4200",
+              "spans": [
+                "2600",
+                "2600",
+                "2100",
+                "1600",
+                "1300"
+              ]
+            },
+            {
+              "w": "4500",
+              "spans": [
+                "2500",
+                "2500",
+                "2000",
+                "1500",
+                "1200"
+              ]
+            }
+          ]
+        },
+        {
+          "beam": "150 x 50 mm Alyspan beam",
+          "rows": [
+            {
+              "w": "1500",
+              "spans": [
+                "5100",
+                "5100",
+                "4200",
+                "3600",
+                "3100"
+              ]
+            },
+            {
+              "w": "2000",
+              "spans": [
+                "4700",
+                "4700",
+                "3800",
+                "3300",
+                "2600"
+              ]
+            },
+            {
+              "w": "2500",
+              "spans": [
+                "4300",
+                "4300",
+                "3600",
+                "2900",
+                "2300"
+              ]
+            },
+            {
+              "w": "3000",
+              "spans": [
+                "4100",
+                "4100",
+                "3300",
+                "2600",
+                "2100"
+              ]
+            },
+            {
+              "w": "3500",
+              "spans": [
+                "3900",
+                "3900",
+                "3100",
+                "2400",
+                "1900"
+              ]
+            },
+            {
+              "w": "4000",
+              "spans": [
+                "3700",
+                "3700",
+                "2900",
+                "2300",
+                "1800"
+              ]
+            },
+            {
+              "w": "4500",
+              "spans": [
+                "3500",
+                "3500",
+                "2700",
+                "2100",
+                "1700"
+              ]
+            },
+            {
+              "w": "5000",
+              "spans": [
+                "3400",
+                "3300",
+                "2500",
+                "2000",
+                "1600"
+              ]
+            },
+            {
+              "w": "5500",
+              "spans": [
+                "3300",
+                "3100",
+                "2400",
+                "1900",
+                "1500"
+              ]
+            },
+            {
+              "w": "6000",
+              "spans": [
+                "3200",
+                "3000",
+                "2300",
+                "1800",
+                "1400"
+              ]
+            },
+            {
+              "w": "6500",
+              "spans": [
+                "3100",
+                "2900",
+                "2200",
+                "1700",
+                "1300"
+              ]
+            },
+            {
+              "w": "7000",
+              "spans": [
+                "3000",
+                "2800",
+                "2100",
+                "1600",
+                "1300"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case": 1,
+      "height": "4.8",
+      "span": "Single Span",
+      "overhang": "Up to 600 mm overhang",
+      "tables": [
+        {
+          "beam": "100 x 50 mm Alyspan beam",
+          "rows": [
+            {
+              "w": "1500",
+              "spans": [
+                "3300",
+                "3300",
+                "2800",
+                "2500",
+                "2200"
+              ]
+            },
+            {
+              "w": "1800",
+              "spans": [
+                "3100",
+                "3100",
+                "2700",
+                "2300",
+                "2100"
+              ]
+            },
+            {
+              "w": "2100",
+              "spans": [
+                "3000",
+                "3000",
+                "2600",
+                "2300",
+                "2000"
+              ]
+            },
+            {
+              "w": "2400",
+              "spans": [
+                "2900",
+                "2900",
+                "2500",
+                "2200",
+                "1900"
+              ]
+            },
+            {
+              "w": "2700",
+              "spans": [
+                "2800",
+                "2800",
+                "2400",
+                "2100",
+                "1800"
+              ]
+            },
+            {
+              "w": "3000",
+              "spans": [
+                "2700",
+                "2700",
+                "2300",
+                "2100",
+                "1700"
+              ]
+            },
+            {
+              "w": "3300",
+              "spans": [
+                "2600",
+                "2600",
+                "2300",
+                "2000",
+                "1600"
+              ]
+            },
+            {
+              "w": "3600",
+              "spans": [
+                "2600",
+                "2600",
+                "2200",
+                "1900",
+                "1500"
+              ]
+            },
+            {
+              "w": "3900",
+              "spans": [
+                "2500",
+                "2500",
+                "2200",
+                "1800",
+                "1500"
+              ]
+            },
+            {
+              "w": "4200",
+              "spans": [
+                "2500",
+                "2500",
+                "2100",
+                "1800",
+                "1400"
+              ]
+            },
+            {
+              "w": "4500",
+              "spans": [
+                "2400",
+                "2400",
+                "2100",
+                "1700",
+                "1400"
+              ]
+            }
+          ]
+        },
+        {
+          "beam": "150 x 50 mm Alyspan beam",
+          "rows": [
+            {
+              "w": "1500",
+              "spans": [
+                "4500",
+                "4500",
+                "3800",
+                "3200",
+                "2900"
+              ]
+            },
+            {
+              "w": "2000",
+              "spans": [
+                "4100",
+                "4100",
+                "3400",
+                "3000",
+                "2600"
+              ]
+            },
+            {
+              "w": "2500",
+              "spans": [
+                "3800",
+                "3800",
+                "3200",
+                "2800",
+                "2500"
+              ]
+            },
+            {
+              "w": "3000",
+              "spans": [
+                "3600",
+                "3600",
+                "3000",
+                "2600",
+                "2200"
+              ]
+            },
+            {
+              "w": "3500",
+              "spans": [
+                "3400",
+                "3400",
+                "2900",
+                "2500",
+                "2100"
+              ]
+            },
+            {
+              "w": "4000",
+              "spans": [
+                "3300",
+                "3300",
+                "2800",
+                "2400",
+                "1900"
+              ]
+            },
+            {
+              "w": "4500",
+              "spans": [
+                "3200",
+                "3200",
+                "2700",
+                "2200",
+                "1800"
+              ]
+            },
+            {
+              "w": "5000",
+              "spans": [
+                "3100",
+                "3100",
+                "2600",
+                "2100",
+                "1700"
+              ]
+            },
+            {
+              "w": "5500",
+              "spans": [
+                "3000",
+                "3000",
+                "2500",
+                "2000",
+                "1600"
+              ]
+            },
+            {
+              "w": "6000",
+              "spans": [
+                "2900",
+                "2900",
+                "2400",
+                "1900",
+                "1500"
+              ]
+            },
+            {
+              "w": "6500",
+              "spans": [
+                "2900",
+                "2900",
+                "2300",
+                "1800",
+                "1500"
+              ]
+            },
+            {
+              "w": "7000",
+              "spans": [
+                "2800",
+                "2800",
+                "2200",
+                "1800",
+                "1400"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case": 1,
+      "height": "4.8",
+      "span": "Equal Continuous Span",
+      "overhang": "No overhang",
+      "tables": [
+        {
+          "beam": "100 x 50 mm Alyspan beam",
+          "rows": [
+            {
+              "w": "1500",
+              "spans": [
+                "4900",
+                "4600",
+                "3600",
+                "2800",
+                "2300"
+              ]
+            },
+            {
+              "w": "1800",
+              "spans": [
+                "4700",
+                "4200",
+                "3200",
+                "2600",
+                "2000"
+              ]
+            },
+            {
+              "w": "2100",
+              "spans": [
+                "4400",
+                "3900",
+                "3000",
+                "2400",
+                "1900"
+              ]
+            },
+            {
+              "w": "2400",
+              "spans": [
+                "4200",
+                "3600",
+                "2600",
+                "2200",
+                "1700"
+              ]
+            },
+            {
+              "w": "2700",
+              "spans": [
+                "4100",
+                "3400",
+                "2500",
+                "2000",
+                "1600"
+              ]
+            },
+            {
+              "w": "3000",
+              "spans": [
+                "3900",
+                "3200",
+                "2400",
+                "1900",
+                "1500"
+              ]
+            },
+            {
+              "w": "3300",
+              "spans": [
+                "3700",
+                "3000",
+                "2300",
+                "1800",
+                "1400"
+              ]
+            },
+            {
+              "w": "3600",
+              "spans": [
+                "3600",
+                "2900",
+                "2200",
+                "1700",
+                "1300"
+              ]
+            },
+            {
+              "w": "3900",
+              "spans": [
+                "3400",
+                "2800",
+                "2100",
+                "1600",
+                "1300"
+              ]
+            },
+            {
+              "w": "4200",
+              "spans": [
+                "3300",
+                "2700",
+                "2000",
+                "1600",
+                "1200"
+              ]
+            },
+            {
+              "w": "4500",
+              "spans": [
+                "3200",
+                "2600",
+                "1900",
+                "1500",
+                "1200"
+              ]
+            }
+          ]
+        },
+        {
+          "beam": "150 x 50 mm Alyspan beam",
+          "rows": [
+            {
+              "w": "1500",
+              "spans": [
+                "6900",
+                "6100",
+                "4700",
+                "3800",
+                "3000"
+              ]
+            },
+            {
+              "w": "2000",
+              "spans": [
+                "6200",
+                "5300",
+                "4100",
+                "3200",
+                "2600"
+              ]
+            },
+            {
+              "w": "2500",
+              "spans": [
+                "5700",
+                "4700",
+                "3600",
+                "2900",
+                "2300"
+              ]
+            },
+            {
+              "w": "3000",
+              "spans": [
+                "5200",
+                "4300",
+                "3300",
+                "2600",
+                "2100"
+              ]
+            },
+            {
+              "w": "3500",
+              "spans": [
+                "4800",
+                "3900",
+                "3000",
+                "2400",
+                "1900"
+              ]
+            },
+            {
+              "w": "4000",
+              "spans": [
+                "4500",
+                "3700",
+                "2800",
+                "2200",
+                "1700"
+              ]
+            },
+            {
+              "w": "4500",
+              "spans": [
+                "4200",
+                "3500",
+                "2600",
+                "2100",
+                "1600"
+              ]
+            },
+            {
+              "w": "5000",
+              "spans": [
+                "4000",
+                "3300",
+                "2500",
+                "1900",
+                "1500"
+              ]
+            },
+            {
+              "w": "5500",
+              "spans": [
+                "3800",
+                "3100",
+                "2300",
+                "1800",
+                "1400"
+              ]
+            },
+            {
+              "w": "6000",
+              "spans": [
+                "3600",
+                "3000",
+                "2200",
+                "1700",
+                "1300"
+              ]
+            },
+            {
+              "w": "6500",
+              "spans": [
+                "3500",
+                "2800",
+                "2100",
+                "1600",
+                "1300"
+              ]
+            },
+            {
+              "w": "7000",
+              "spans": [
+                "3300",
+                "2700",
+                "2000",
+                "1600",
+                "1200"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case": 1,
+      "height": "4.8",
+      "span": "Equal Continuous Span",
+      "overhang": "Up to 600 mm overhang",
+      "tables": [
+        {
+          "beam": "100 x 50 mm Alyspan beam",
+          "rows": [
+            {
+              "w": "1500",
+              "spans": [
+                "4200",
+                "4200",
+                "3600",
+                "2900",
+                "2300"
+              ]
+            },
+            {
+              "w": "1800",
+              "spans": [
+                "4000",
+                "4000",
+                "3300",
+                "2600",
+                "2100"
+              ]
+            },
+            {
+              "w": "2100",
+              "spans": [
+                "3800",
+                "3800",
+                "3000",
+                "2400",
+                "1900"
+              ]
+            },
+            {
+              "w": "2400",
+              "spans": [
+                "3700",
+                "3700",
+                "2800",
+                "2300",
+                "1800"
+              ]
+            },
+            {
+              "w": "2700",
+              "spans": [
+                "3600",
+                "3400",
+                "2700",
+                "2100",
+                "1700"
+              ]
+            },
+            {
+              "w": "3000",
+              "spans": [
+                "3500",
+                "3300",
+                "2500",
+                "2000",
+                "1600"
+              ]
+            },
+            {
+              "w": "3300",
+              "spans": [
+                "3400",
+                "3100",
+                "2400",
+                "1900",
+                "1500"
+              ]
+            },
+            {
+              "w": "3600",
+              "spans": [
+                "3300",
+                "3000",
+                "2300",
+                "1800",
+                "1400"
+              ]
+            },
+            {
+              "w": "3900",
+              "spans": [
+                "3200",
+                "2800",
+                "2200",
+                "1700",
+                "1400"
+              ]
+            },
+            {
+              "w": "4200",
+              "spans": [
+                "3200",
+                "2700",
+                "2100",
+                "1700",
+                "1300"
+              ]
+            },
+            {
+              "w": "4500",
+              "spans": [
+                "3100",
+                "2600",
+                "2000",
+                "1600",
+                "1300"
+              ]
+            }
+          ]
+        },
+        {
+          "beam": "150 x 50 mm Alyspan beam",
+          "rows": [
+            {
+              "w": "1500",
+              "spans": [
+                "5700",
+                "5700",
+                "4800",
+                "3800",
+                "3100"
+              ]
+            },
+            {
+              "w": "2000",
+              "spans": [
+                "5200",
+                "5200",
+                "4100",
+                "3300",
+                "2700"
+              ]
+            },
+            {
+              "w": "2500",
+              "spans": [
+                "4800",
+                "4700",
+                "3700",
+                "2900",
+                "2400"
+              ]
+            },
+            {
+              "w": "3000",
+              "spans": [
+                "4600",
+                "4300",
+                "3300",
+                "2700",
+                "2100"
+              ]
+            },
+            {
+              "w": "3500",
+              "spans": [
+                "4400",
+                "4000",
+                "3100",
+                "2400",
+                "2000"
+              ]
+            },
+            {
+              "w": "4000",
+              "spans": [
+                "4200",
+                "3700",
+                "2900",
+                "2300",
+                "1800"
+              ]
+            },
+            {
+              "w": "4500",
+              "spans": [
+                "4100",
+                "3500",
+                "2700",
+                "2100",
+                "1700"
+              ]
+            },
+            {
+              "w": "5000",
+              "spans": [
+                "3900",
+                "3300",
+                "2500",
+                "2000",
+                "1600"
+              ]
+            },
+            {
+              "w": "5500",
+              "spans": [
+                "3800",
+                "3100",
+                "2400",
+                "1900",
+                "1500"
+              ]
+            },
+            {
+              "w": "6000",
+              "spans": [
+                "3700",
+                "3000",
+                "2300",
+                "1800",
+                "1400"
+              ]
+            },
+            {
+              "w": "6500",
+              "spans": [
+                "3500",
+                "2900",
+                "2200",
+                "1700",
+                "1400"
+              ]
+            },
+            {
+              "w": "7000",
+              "spans": [
+                "3400",
+                "2800",
+                "2100",
+                "1700",
+                "1300"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case": 2,
+      "height": "12.0",
+      "span": "Single Span",
+      "overhang": "No overhang",
+      "tables": [
+        {
+          "beam": "100 x 50 mm Alyspan beam",
+          "rows": [
+            {
+              "w": "1500",
+              "spans": [
+                "3500",
+                "3500",
+                "3200",
+                "2900",
+                "2600"
+              ]
+            },
+            {
+              "w": "1800",
+              "spans": [
+                "3300",
+                "3300",
+                "3000",
+                "2700",
+                "2500"
+              ]
+            },
+            {
+              "w": "2100",
+              "spans": [
+                "3100",
+                "3100",
+                "2900",
+                "2600",
+                "2300"
+              ]
+            },
+            {
+              "w": "2400",
+              "spans": [
+                "3000",
+                "3000",
+                "2700",
+                "2500",
+                "2200"
+              ]
+            },
+            {
+              "w": "2700",
+              "spans": [
+                "2900",
+                "2900",
+                "2600",
+                "2400",
+                "2100"
+              ]
+            },
+            {
+              "w": "3000",
+              "spans": [
+                "2800",
+                "2800",
+                "2500",
+                "2300",
+                "2000"
+              ]
+            },
+            {
+              "w": "3300",
+              "spans": [
+                "2700",
+                "2700",
+                "2400",
+                "2200",
+                "1900"
+              ]
+            },
+            {
+              "w": "3600",
+              "spans": [
+                "2600",
+                "2600",
+                "2400",
+                "2200",
+                "1800"
+              ]
+            },
+            {
+              "w": "3900",
+              "spans": [
+                "2500",
+                "2500",
+                "2300",
+                "2100",
+                "1800"
+              ]
+            },
+            {
+              "w": "4200",
+              "spans": [
+                "2500",
+                "2500",
+                "2300",
+                "2000",
+                "1700"
+              ]
+            },
+            {
+              "w": "4500",
+              "spans": [
+                "2400",
+                "2400",
+                "2200",
+                "2000",
+                "1600"
+              ]
+            }
+          ]
+        },
+        {
+          "beam": "150 x 50 mm Alyspan beam",
+          "rows": [
+            {
+              "w": "1500",
+              "spans": [
+                "4800",
+                "4800",
+                "4400",
+                "4000",
+                "3600"
+              ]
+            },
+            {
+              "w": "2000",
+              "spans": [
+                "4400",
+                "4400",
+                "4000",
+                "3600",
+                "3300"
+              ]
+            },
+            {
+              "w": "2500",
+              "spans": [
+                "4100",
+                "4100",
+                "3700",
+                "3400",
+                "3000"
+              ]
+            },
+            {
+              "w": "3000",
+              "spans": [
+                "3800",
+                "3800",
+                "3500",
+                "3200",
+                "2700"
+              ]
+            },
+            {
+              "w": "3500",
+              "spans": [
+                "3600",
+                "3600",
+                "3300",
+                "3000",
+                "2500"
+              ]
+            },
+            {
+              "w": "4000",
+              "spans": [
+                "3500",
+                "3500",
+                "3200",
+                "2800",
+                "2300"
+              ]
+            },
+            {
+              "w": "4500",
+              "spans": [
+                "3300",
+                "3300",
+                "3100",
+                "2700",
+                "2200"
+              ]
+            },
+            {
+              "w": "5000",
+              "spans": [
+                "3200",
+                "3200",
+                "2900",
+                "2500",
+                "2100"
+              ]
+            },
+            {
+              "w": "5500",
+              "spans": [
+                "3100",
+                "3100",
+                "2900",
+                "2400",
+                "2000"
+              ]
+            },
+            {
+              "w": "6000",
+              "spans": [
+                "3000",
+                "3000",
+                "2800",
+                "2300",
+                "1900"
+              ]
+            },
+            {
+              "w": "6500",
+              "spans": [
+                "2900",
+                "2900",
+                "2700",
+                "2200",
+                "1800"
+              ]
+            },
+            {
+              "w": "7000",
+              "spans": [
+                "2900",
+                "2900",
+                "2500",
+                "2100",
+                "1700"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case": 2,
+      "height": "12.0",
+      "span": "Single Span",
+      "overhang": "Up to 600 mm overhang",
+      "tables": [
+        {
+          "beam": "100 x 50 mm Alyspan beam",
+          "rows": [
+            {
+              "w": "1500",
+              "spans": [
+                "3200",
+                "3200",
+                "2900",
+                "2700",
+                "2500"
+              ]
+            },
+            {
+              "w": "1800",
+              "spans": [
+                "3000",
+                "3000",
+                "2800",
+                "2600",
+                "2400"
+              ]
+            },
+            {
+              "w": "2100",
+              "spans": [
+                "2900",
+                "2900",
+                "2700",
+                "2500",
+                "2300"
+              ]
+            },
+            {
+              "w": "2400",
+              "spans": [
+                "2800",
+                "2800",
+                "2600",
+                "2400",
+                "2200"
+              ]
+            },
+            {
+              "w": "2700",
+              "spans": [
+                "2700",
+                "2700",
+                "2500",
+                "2300",
+                "2100"
+              ]
+            },
+            {
+              "w": "3000",
+              "spans": [
+                "2600",
+                "2600",
+                "2400",
+                "2200",
+                "2100"
+              ]
+            },
+            {
+              "w": "3300",
+              "spans": [
+                "2500",
+                "2500",
+                "2300",
+                "2100",
+                "2000"
+              ]
+            },
+            {
+              "w": "3600",
+              "spans": [
+                "2500",
+                "2500",
+                "2300",
+                "2100",
+                "2000"
+              ]
+            },
+            {
+              "w": "3900",
+              "spans": [
+                "2400",
+                "2400",
+                "2300",
+                "2100",
+                "1900"
+              ]
+            },
+            {
+              "w": "4200",
+              "spans": [
+                "2400",
+                "2400",
+                "2200",
+                "2100",
+                "1800"
+              ]
+            },
+            {
+              "w": "4500",
+              "spans": [
+                "2300",
+                "2300",
+                "2200",
+                "2000",
+                "1800"
+              ]
+            }
+          ]
+        },
+        {
+          "beam": "150 x 50 mm Alyspan beam",
+          "rows": [
+            {
+              "w": "1500",
+              "spans": [
+                "4300",
+                "4300",
+                "3900",
+                "3600",
+                "3300"
+              ]
+            },
+            {
+              "w": "2000",
+              "spans": [
+                "3900",
+                "3900",
+                "3600",
+                "3300",
+                "3000"
+              ]
+            },
+            {
+              "w": "2500",
+              "spans": [
+                "3600",
+                "3600",
+                "3300",
+                "3100",
+                "2800"
+              ]
+            },
+            {
+              "w": "3000",
+              "spans": [
+                "3400",
+                "3400",
+                "3200",
+                "2900",
+                "2700"
+              ]
+            },
+            {
+              "w": "3500",
+              "spans": [
+                "3300",
+                "3300",
+                "3000",
+                "2800",
+                "2600"
+              ]
+            },
+            {
+              "w": "4000",
+              "spans": [
+                "3100",
+                "3100",
+                "2900",
+                "2700",
+                "2500"
+              ]
+            },
+            {
+              "w": "4500",
+              "spans": [
+                "3000",
+                "3000",
+                "2800",
+                "2600",
+                "2300"
+              ]
+            },
+            {
+              "w": "5000",
+              "spans": [
+                "2900",
+                "2900",
+                "2700",
+                "2500",
+                "2200"
+              ]
+            },
+            {
+              "w": "5500",
+              "spans": [
+                "2900",
+                "2900",
+                "2700",
+                "2500",
+                "2100"
+              ]
+            },
+            {
+              "w": "6000",
+              "spans": [
+                "2800",
+                "2800",
+                "2600",
+                "2400",
+                "2000"
+              ]
+            },
+            {
+              "w": "6500",
+              "spans": [
+                "2700",
+                "2700",
+                "2500",
+                "2300",
+                "1900"
+              ]
+            },
+            {
+              "w": "7000",
+              "spans": [
+                "2700",
+                "2700",
+                "2500",
+                "2200",
+                "1800"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case": 2,
+      "height": "12.0",
+      "span": "Equal Continuous Span",
+      "overhang": "No overhang",
+      "tables": [
+        {
+          "beam": "100 x 50 mm Alyspan beam",
+          "rows": [
+            {
+              "w": "1500",
+              "spans": [
+                "4700",
+                "4700",
+                "4300",
+                "3500",
+                "2900"
+              ]
+            },
+            {
+              "w": "1800",
+              "spans": [
+                "4400",
+                "4400",
+                "3900",
+                "3200",
+                "2700"
+              ]
+            },
+            {
+              "w": "2100",
+              "spans": [
+                "4200",
+                "4200",
+                "3600",
+                "3000",
+                "2400"
+              ]
+            },
+            {
+              "w": "2400",
+              "spans": [
+                "4000",
+                "4000",
+                "3300",
+                "2800",
+                "2300"
+              ]
+            },
+            {
+              "w": "2700",
+              "spans": [
+                "3800",
+                "3800",
+                "3100",
+                "2600",
+                "2100"
+              ]
+            },
+            {
+              "w": "3000",
+              "spans": [
+                "3700",
+                "3600",
+                "3000",
+                "2400",
+                "2000"
+              ]
+            },
+            {
+              "w": "3300",
+              "spans": [
+                "3600",
+                "3400",
+                "2800",
+                "2300",
+                "1900"
+              ]
+            },
+            {
+              "w": "3600",
+              "spans": [
+                "3500",
+                "3300",
+                "2700",
+                "2200",
+                "1800"
+              ]
+            },
+            {
+              "w": "3900",
+              "spans": [
+                "3400",
+                "3100",
+                "2600",
+                "2100",
+                "1700"
+              ]
+            },
+            {
+              "w": "4200",
+              "spans": [
+                "3300",
+                "3000",
+                "2500",
+                "2000",
+                "1600"
+              ]
+            },
+            {
+              "w": "4500",
+              "spans": [
+                "3200",
+                "2900",
+                "2400",
+                "1900",
+                "1600"
+              ]
+            }
+          ]
+        },
+        {
+          "beam": "150 x 50 mm Alyspan beam",
+          "rows": [
+            {
+              "w": "1500",
+              "spans": [
+                "6500",
+                "6500",
+                "5700",
+                "4700",
+                "3900"
+              ]
+            },
+            {
+              "w": "2000",
+              "spans": [
+                "5900",
+                "5900",
+                "4900",
+                "4100",
+                "3400"
+              ]
+            },
+            {
+              "w": "2500",
+              "spans": [
+                "5500",
+                "5300",
+                "4400",
+                "3600",
+                "3000"
+              ]
+            },
+            {
+              "w": "3000",
+              "spans": [
+                "5100",
+                "4800",
+                "4000",
+                "3300",
+                "2700"
+              ]
+            },
+            {
+              "w": "3500",
+              "spans": [
+                "4900",
+                "4400",
+                "3600",
+                "3000",
+                "2500"
+              ]
+            },
+            {
+              "w": "4000",
+              "spans": [
+                "4700",
+                "4100",
+                "3400",
+                "2800",
+                "2300"
+              ]
+            },
+            {
+              "w": "4500",
+              "spans": [
+                "4400",
+                "3900",
+                "3200",
+                "2600",
+                "2100"
+              ]
+            },
+            {
+              "w": "5000",
+              "spans": [
+                "4200",
+                "3700",
+                "3000",
+                "2500",
+                "2000"
+              ]
+            },
+            {
+              "w": "5500",
+              "spans": [
+                "4000",
+                "3500",
+                "2900",
+                "2300",
+                "1900"
+              ]
+            },
+            {
+              "w": "6000",
+              "spans": [
+                "3800",
+                "3300",
+                "2700",
+                "2200",
+                "1800"
+              ]
+            },
+            {
+              "w": "6500",
+              "spans": [
+                "3700",
+                "3200",
+                "2600",
+                "2100",
+                "1700"
+              ]
+            },
+            {
+              "w": "7000",
+              "spans": [
+                "3500",
+                "3100",
+                "2500",
+                "2000",
+                "1600"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "case": 2,
+      "height": "12.0",
+      "span": "Equal Continuous Span",
+      "overhang": "Up to 600 mm overhang",
+      "tables": [
+        {
+          "beam": "100 x 50 mm Alyspan beam",
+          "rows": [
+            {
+              "w": "1500",
+              "spans": [
+                "4000",
+                "4000",
+                "3700",
+                "3400",
+                "3000"
+              ]
+            },
+            {
+              "w": "1800",
+              "spans": [
+                "3800",
+                "3800",
+                "3500",
+                "3300",
+                "2700"
+              ]
+            },
+            {
+              "w": "2100",
+              "spans": [
+                "3600",
+                "3600",
+                "3400",
+                "3000",
+                "2500"
+              ]
+            },
+            {
+              "w": "2400",
+              "spans": [
+                "3500",
+                "3500",
+                "3300",
+                "2800",
+                "2300"
+              ]
+            },
+            {
+              "w": "2700",
+              "spans": [
+                "3400",
+                "3400",
+                "3200",
+                "2700",
+                "2200"
+              ]
+            },
+            {
+              "w": "3000",
+              "spans": [
+                "3300",
+                "3300",
+                "3000",
+                "2500",
+                "2100"
+              ]
+            },
+            {
+              "w": "3300",
+              "spans": [
+                "3200",
+                "3200",
+                "2900",
+                "2400",
+                "2000"
+              ]
+            },
+            {
+              "w": "3600",
+              "spans": [
+                "3100",
+                "3100",
+                "2700",
+                "2300",
+                "1900"
+              ]
+            },
+            {
+              "w": "3900",
+              "spans": [
+                "3100",
+                "3100",
+                "2600",
+                "2200",
+                "1800"
+              ]
+            },
+            {
+              "w": "4200",
+              "spans": [
+                "3000",
+                "3000",
+                "2500",
+                "2100",
+                "1700"
+              ]
+            },
+            {
+              "w": "4500",
+              "spans": [
+                "3000",
+                "3000",
+                "2400",
+                "2000",
+                "1700"
+              ]
+            }
+          ]
+        },
+        {
+          "beam": "150 x 50 mm Alyspan beam",
+          "rows": [
+            {
+              "w": "1500",
+              "spans": [
+                "5400",
+                "5400",
+                "5000",
+                "4500",
+                "4000"
+              ]
+            },
+            {
+              "w": "2000",
+              "spans": [
+                "4900",
+                "4900",
+                "4500",
+                "4100",
+                "3400"
+              ]
+            },
+            {
+              "w": "2500",
+              "spans": [
+                "4600",
+                "4600",
+                "4200",
+                "3700",
+                "3000"
+              ]
+            },
+            {
+              "w": "3000",
+              "spans": [
+                "4400",
+                "4400",
+                "4000",
+                "3300",
+                "2800"
+              ]
+            },
+            {
+              "w": "3500",
+              "spans": [
+                "4200",
+                "4200",
+                "3700",
+                "3100",
+                "2500"
+              ]
+            },
+            {
+              "w": "4000",
+              "spans": [
+                "4000",
+                "4000",
+                "3400",
+                "2900",
+                "2400"
+              ]
+            },
+            {
+              "w": "4500",
+              "spans": [
+                "3900",
+                "3900",
+                "3200",
+                "2700",
+                "2200"
+              ]
+            },
+            {
+              "w": "5000",
+              "spans": [
+                "3700",
+                "3700",
+                "3100",
+                "2500",
+                "2100"
+              ]
+            },
+            {
+              "w": "5500",
+              "spans": [
+                "3600",
+                "3500",
+                "2900",
+                "2400",
+                "2000"
+              ]
+            },
+            {
+              "w": "6000",
+              "spans": [
+                "3600",
+                "3400",
+                "2800",
+                "2300",
+                "1900"
+              ]
+            },
+            {
+              "w": "6500",
+              "spans": [
+                "3500",
+                "3200",
+                "2700",
+                "2200",
+                "1800"
+              ]
+            },
+            {
+              "w": "7000",
+              "spans": [
+                "3400",
+                "3100",
+                "2600",
+                "2100",
+                "1700"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "spanHelp": "W is the load width: the width of roof each beam carries. Single span is one beam between two posts; equal continuous span is one beam running over three or more posts at equal centres.",
+  "contactH2": "Talk to us about Alyspan.",
+  "contactLead": "Beam sizes, post centres, a parts list or a price for your patio, awning or carport: call, email or send us your dimensions.",
+  "whereToBuy": {
+    "eyebrow": "Where to buy",
+    "h2": "Buy Alyspan direct, online, or at Bunnings.",
+    "lead": "This page is the Alyspan specification. Full lengths and the whole parts range come direct from us; shorter lengths and complete patio kits are sold online at patiokits.com.au and through Bunnings.",
+    "options": [
+      {
+        "kicker": "Direct",
+        "title": "Quick Built Systems",
+        "copy": "6.0 m and 8.0 m beams, 6.5 m posts and every bracket and finish in the catalogue below, with a parts list and price for your design.",
+        "links": [
+          {
+            "label": "Contact us",
+            "href": "#contact"
+          },
+          {
+            "label": "1300 132 787",
+            "href": "tel:1300132787"
+          }
+        ]
+      },
+      {
+        "kicker": "Online",
+        "title": "Patio Kits",
+        "copy": "Alyspan beams, posts and connectors in Monument and Pearl White, plus patio and arbor kits built on Alyspan. Design a patio and see a delivered price.",
+        "links": [
+          {
+            "label": "Shop Alyspan beams",
+            "href": "https://www.patiokits.com.au/shop/aluminium-beams"
+          },
+          {
+            "label": "Design your patio",
+            "href": "https://www.patiokits.com.au/designer"
+          }
+        ]
+      },
+      {
+        "kicker": "In store",
+        "title": "Bunnings",
+        "copy": "Alyspan beams, posts and connectors, and patio kits built on Alyspan, are also sold through Bunnings.",
+        "links": []
+      }
+    ],
+    "leadTime": "Lead time: Alyspan is bought in, so allow about 2 weeks, plus about a week for freight."
+  }
 }

@@ -2,9 +2,10 @@
 
 // alyspan.com.au is being retired into this site. Its DNS points here, so every
 // request arriving on that host is sent to the matching page below and the old
-// domain keeps no content of its own. Contact and Terms have real equivalents
-// here, so they go page-for-page rather than all landing on the product page —
-// a redirect to an unrelated page gets treated as a soft 404 and passes nothing.
+// domain keeps no content of its own. Terms has a real equivalent here and goes
+// page-for-page. Contact lands on the Alyspan page, which carries
+// its own contact section (phone, email, address, hours), so the old page's
+// visitors still find Alyspan. A redirect to an unrelated page is a soft 404.
 //
 // Keep alyspan.com.au renewed. When the registration lapses these redirects die
 // and the rankings they carry go with them.
@@ -15,7 +16,9 @@ const ALYSPAN_PAGES = {
   '/': '/products/alyspan',
   '/files/products.php': '/products/alyspan',
   '/files/specifications.php': '/products/alyspan',
-  '/files/contact.php': '/contact',
+  // The Alyspan page has its own contact section, so the old contact page lands there, matching
+  // the Alyspan Redirect project (vercel.json) that will actually serve alyspan.com.au.
+  '/files/contact.php': '/products/alyspan',
   '/files/terms-and-conditions.php': '/terms',
 };
 
