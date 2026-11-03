@@ -13,10 +13,10 @@ const showcase = homeData.categoryShowcase;
 
 const benefits = [
   { num: "01", icon: "light", title: "Lightweight", copy: "High-density EPS core in a slim panel — easier to handle, easier to install, no heavy lifting gear required." },
-  { num: "02", icon: "fast", title: "Quick to install", copy: "Pre-cut, pre-finished, locks together on site. Reach lock-up in as little as 3–4 days." },
+  { num: "02", icon: "fast", title: "Quick to install", copy: "Pre-cut, ready to paint, locks together on site. Reach lock-up in as little as 3–4 days." },
   { num: "03", icon: "insulated", title: "Fully insulated", copy: "Insulation built in. Supports 8-Star energy ratings and reduces thermal bridging across the envelope." },
   { num: "04", icon: "spans", title: "Long spans", copy: "Engineered for long structural spans — fewer support beams, cleaner architectural lines." },
-  { num: "05", icon: "clean", title: "Easy to clean", copy: "Pre-finished FC and MgO surfaces — moisture stable, no warping, low maintenance for the life of the build." },
+  { num: "05", icon: "clean", title: "Easy to clean", copy: "Ready-to-paint FC and MgO surfaces — moisture stable, no warping, low maintenance for the life of the build." },
 ];
 
 const applications = homeData.applications;

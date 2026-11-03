@@ -1,5 +1,5 @@
 {
-  "systemPara1": "Used together, Insulspan® roofing and Panelspan® walls create an airtight, pre-finished building envelope that outperforms traditional construction in every metric.",
+  "systemPara1": "Used together, Insulspan® roofing and Panelspan® walls create an airtight, ready-to-paint building envelope that outperforms traditional construction in every metric.",
   "heroH1": "One system. Roof to wall.",
   "systemPara2": "No thermal bridging. No condensation risk. No multiple trades walking over each other's work. Just a precise, factory-engineered system delivered on time.",
   "steps": [
@@ -26,10 +26,10 @@
     {
       "num": "05",
       "title": "Ready to finish",
-      "copy": "Pre-finished FC and MgO surfaces are ready for paint or render. No additional cladding, sarking, or lining trades needed."
+      "copy": "FC and MgO surfaces are ready for paint or render. No additional cladding, sarking, or lining trades needed."
     }
   ],
-  "processLead": "Every Quick Built Systems project follows the same precise workflow — custom-engineered panels arrive on site pre-cut, pre-finished and ready to install.",
+  "processLead": "Every Quick Built Systems project follows the same precise workflow — custom-engineered panels arrive on site pre-cut, ready to install and ready to paint.",
   "performanceStats": [
     {
       "label": "Lock-up time",

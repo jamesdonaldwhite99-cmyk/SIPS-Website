@@ -227,7 +227,7 @@ export default function PanelspanPage() {
               <div className="ts-eyebrow">Advantages</div>
               <h2>Why builders choose Panelspan®.</h2>
             </div>
-            <p>Pre-finished walls that perform better and install faster than any alternative.</p>
+            <p>Ready-to-paint walls that perform better and install faster than any alternative.</p>
           </div>
           <div className="ts-advantages-grid">
             {data.advantages.map((a, i) => (
