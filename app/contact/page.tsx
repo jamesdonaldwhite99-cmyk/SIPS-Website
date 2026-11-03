@@ -241,6 +241,20 @@ async function fileToDownscaledImage(file: File): Promise<Attachment> {
   return { filename: `${baseName}.jpg`, contentType: "image/jpeg", data: dataUrl.split(",")[1] || "" };
 }
 
+/* PLANS AS PDFs (James, 4 Nov 2026: Rob Hughes's dimensioned drawings were PDFs and this form silently kept only images,
+   so they never reached us). A PDF goes as it is, up to 2.5 MB (base64 adds a third; the site's request limit is about 4.5 MB in all). */
+const MAX_PDF_BYTES = 2.5 * 1024 * 1024;
+async function fileToPdf(file: File): Promise<Attachment> {
+  const dataUrl = await new Promise<string>((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result as string);
+    reader.onerror = () => reject(new Error("read failed"));
+    reader.readAsDataURL(file);
+  });
+  return { filename: file.name, contentType: "application/pdf", data: dataUrl.split(",")[1] || "" };
+}
+const isPdf = (f: File) => f.type === "application/pdf" || /\.pdf$/i.test(f.name);
+
 export default function ContactPage() {
   const pageRef = useRef<HTMLDivElement>(null);
   const hpRef = useRef<HTMLInputElement>(null);
@@ -315,9 +329,13 @@ export default function ContactPage() {
   const addPhotos = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(e.target.files || []);
     e.target.value = ""; // allow re-selecting the same file after removal
-    const imageFiles = files.filter((f) => f.type.startsWith("image/"));
+    const imageFiles = files.filter((f) => f.type.startsWith("image/") || isPdf(f));
     if (files.length && !imageFiles.length) {
-      setError("Please choose image files (JPG, PNG, HEIC or similar).");
+      setError("Please choose photos (JPG, PNG, HEIC) or PDF plans.");
+      return;
+    }
+    if (imageFiles.some((f) => isPdf(f) && f.size > MAX_PDF_BYTES)) {
+      setError("That PDF is over 2.5 MB. Please email your plans to sales@quickbuiltsystems.com.au instead.");
       return;
     }
     if (!imageFiles.length) return;
@@ -333,7 +351,7 @@ export default function ContactPage() {
     setError("");
     setImgBusy(true);
     try {
-      const processed = await Promise.all(imageFiles.slice(0, room).map((f) => fileToDownscaledImage(f)));
+      const processed = await Promise.all(imageFiles.slice(0, room).map((f) => (isPdf(f) ? fileToPdf(f) : fileToDownscaledImage(f))));
       setPhotos((p) => [...p, ...processed]);
     } catch {
       setError("One of those images couldn't be added. Please try another file.");
@@ -681,13 +699,13 @@ export default function ContactPage() {
                     <label>Add photos <span style={{ color: "var(--color-slate)", fontWeight: 400 }}>(optional · up to {MAX_PHOTOS})</span></label>
                     {photos.length < MAX_PHOTOS && (
                       <label className={`ts-upload${imgBusy ? " is-busy" : ""}`}>
-                        <input type="file" accept="image/*" multiple onChange={addPhotos} hidden disabled={imgBusy} />
+                        <input type="file" accept="image/*,application/pdf,.pdf" multiple onChange={addPhotos} hidden disabled={imgBusy} />
                         <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                           <path d="M12 16V4M7 9l5-5 5 5" />
                         </svg>
                         <span className="ts-upload-main">{imgBusy ? "Processing…" : photos.length ? "Add more photos" : "Upload site photos, sketches or plans"}</span>
-                        <span className="ts-upload-sub">Tap to choose or take photos · JPG, PNG or HEIC</span>
+                        <span className="ts-upload-sub">Tap to choose or take photos · JPG, PNG, HEIC or PDF plans</span>
                       </label>
                     )}
                     {photos.length > 0 && (
@@ -695,7 +713,9 @@ export default function ContactPage() {
                         {photos.map((ph, i) => (
                           <div key={i} className="ts-upload-thumb">
                             {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img src={`data:${ph.contentType};base64,${ph.data}`} alt={ph.filename} />
+                            {ph.contentType === "application/pdf"
+                              ? <span style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100%", fontSize: 12, padding: 6, textAlign: "center", wordBreak: "break-all" }}>PDF · {ph.filename}</span>
+                              : <img src={`data:${ph.contentType};base64,${ph.data}`} alt={ph.filename} />}
                             <button type="button" onClick={() => removePhoto(i)} aria-label={`Remove ${ph.filename}`}>×</button>
                           </div>
                         ))}
