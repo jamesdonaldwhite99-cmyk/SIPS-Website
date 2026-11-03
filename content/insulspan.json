@@ -315,6 +315,26 @@
     {
       "q": "Where can I buy Insulspan?",
       "a": "Direct from us on 1300 132 787 or sales@quickbuiltsystems.com.au for panels made to your job, as a complete DIY patio kit at patiokits.com.au, where the patio designer prices your size for your postcode, or as an Insulspan patio kit ordered through Bunnings. Insulspan is not kept in store, but any Bunnings can special order it."
+    },
+    {
+      "q": "What about wind classes above N4, or cyclonic sites?",
+      "a": "Our documents cover N1 to N4 with engineering. Sites above N4, and cyclonic sites in wind Regions C and D, are engineered per project and priced with the job."
+    },
+    {
+      "q": "How many beams and posts will I need?",
+      "a": "It depends on the spans. The panel span table on this page sets how far apart the beams can be for your wind class and panel thickness, and the beam span tables set the post spacing."
+    },
+    {
+      "q": "What is the plastic film on the underside?",
+      "a": "Pull it off once the panels are up and in place."
+    },
+    {
+      "q": "Can Insulspan be joined to another brand's roof panels?",
+      "a": "No. We cannot join our panels to another brand's panels, such as an existing patio roof from another maker. The roof has to be our system."
+    },
+    {
+      "q": "Can you add an acoustic layer, such as ply, under the panels?",
+      "a": "No, we don't do this. The panel is the roof, the insulation and the ceiling in one."
     }
   ],
   "whereToBuy": {
