@@ -120,6 +120,7 @@ export default function InsulspanPage() {
                     <path d="M5 12h14M13 5l7 7-7 7" />
                   </svg>
                 </Link>
+                <Link href="/products/insulspan/projects" className="ts-btn ts-btn--ghost">See Insulspan projects</Link>
               </div>
             </div>
             <div className="ts-intro-photo overview-animate">

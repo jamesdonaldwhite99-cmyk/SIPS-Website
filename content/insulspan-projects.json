@@ -1,0 +1,166 @@
+{
+  "_source": "Jobs and photos moved from insulspan.com.au (projects pages and project brochures, read 4 Nov 2026). Only what those pages said is used here; nothing is added.",
+  "heroEyebrow": "Insulspan projects",
+  "heroH1": "Insulspan roofs we've supplied.",
+  "heroLead": "Patios, cabanas, carports, a garage workshop and horse stables, all roofed with Insulspan insulated roof panels made by Quick Built Systems in Silverdale, NSW.",
+  "heroPhoto": "/photos/insulspan-projects/chapman-insulated-panel-patio-0.jpg",
+  "projects": [
+    {
+      "id": "brisbane-corro-corro-patio",
+      "title": "Corro / Corro patio, Brisbane",
+      "builder": "Chapman Builders",
+      "use": "Patio",
+      "profile": "Corro / Corro",
+      "copy": "A Corro / Corro Insulspan patio, corrugated on top and underneath, for a modern look inside and out. The long spans keep the outdoor room open with no support beams, and the insulated panels keep it cooler in summer and warmer in winter. Ceiling fans and pendant lights hang from the panels.",
+      "photos": [
+        {
+          "src": "/photos/insulspan-projects/chapman-insulated-panel-patio-0.jpg",
+          "alt": "Corro / Corro Insulspan patio in Brisbane with ceiling fans and pendant lights"
+        },
+        {
+          "src": "/photos/insulspan-projects/chapman-insulated-panel-patio-2.jpg",
+          "alt": "Corrugated underside of an Insulspan patio roof with ceiling fans"
+        }
+      ]
+    },
+    {
+      "id": "putney-cabana",
+      "title": "Cabana, Putney, Sydney",
+      "builder": "Allscape Landscaping",
+      "use": "Cabana",
+      "copy": "The owners wanted to extend their entertaining area out into the backyard and use it all year, rain or shine. An Insulspan roof keeps the cabana cooler in summer and warmer in winter, unlike a single sheet of corrugated roofing.",
+      "photos": [
+        {
+          "src": "/photos/insulspan-projects/cabana-insulated-roofing-panels-3.jpg",
+          "alt": "Outdoor dining under an Insulspan cabana roof in Putney, Sydney"
+        }
+      ]
+    },
+    {
+      "id": "sydney-carport",
+      "title": "Insulated carport, Sydney",
+      "use": "Carport",
+      "profile": "Corrugated",
+      "copy": "The owners wanted an insulated carport that spans a long way, so there are no support beams in the way. Corrugated Insulspan panels keep it cooler, are easy to clean, and are light enough to go up fast.",
+      "photos": [
+        {
+          "src": "/photos/insulspan-projects/carport-insulated-panels-sydney-2.jpg",
+          "alt": "Insulspan insulated carport roof attached to a Sydney home"
+        }
+      ]
+    },
+    {
+      "id": "sydney-garage-workshop",
+      "title": "Garage workshop, Sydney",
+      "use": "Garage and workshop",
+      "profile": "Corrugated",
+      "copy": "A garage that doubles as a workshop, where insulation was essential. Insulspan roof panels on top and Panelspan structural insulated wall panels around it.",
+      "photos": [
+        {
+          "src": "/photos/insulspan-projects/workshop-garage-insulated-panels-front.jpg",
+          "alt": "Garage workshop with an Insulspan roof and Panelspan insulated walls"
+        },
+        {
+          "src": "/photos/insulspan-projects/workshop-garage-insulated-panels-side.jpg",
+          "alt": "Side wall of the insulated panel garage workshop"
+        },
+        {
+          "src": "/photos/insulspan-projects/workshop-garage-insulated-panels-back.jpg",
+          "alt": "Rear of the insulated panel garage workshop"
+        }
+      ],
+      "link": {
+        "label": "See Panelspan wall panels",
+        "href": "/products/panelspan"
+      }
+    },
+    {
+      "id": "flat-ceiling-patio",
+      "title": "Patio with a flat ceiling",
+      "use": "Patio",
+      "copy": "Chosen for its long spans and insulation. With plenty of sun on this site, the Insulspan roof makes the outdoor area usable on summer days, and the flat ceiling has no beams to clean around.",
+      "photos": [
+        {
+          "src": "/photos/insulspan-projects/project-pollard-insulated-roof-patio-2.jpg",
+          "alt": "Insulspan patio roof with a flat ceiling above a garden"
+        },
+        {
+          "src": "/photos/insulspan-projects/project-pollard-insulated-roof-patio-3.jpg",
+          "alt": "Insulspan patio roof seen from the garden"
+        }
+      ]
+    },
+    {
+      "id": "sydney-patio-kit",
+      "title": "Patio kit, Sydney",
+      "use": "Patio kit",
+      "copy": "A complete Insulspan patio kit with beams, posts, flashings and all accessories, delivered for the owner to build.",
+      "quote": "Thank you for your material. Great job done by each one of your team in delivering the product intact and as I requested. This hot Summer went sooo cool with the insulated roof that we bought from Quick Built.",
+      "photos": [
+        {
+          "src": "/photos/insulspan-projects/sydney-insulated-patio-kit-3.jpg",
+          "alt": "Insulspan patio kit roof over a Sydney courtyard"
+        },
+        {
+          "src": "/photos/insulspan-projects/sydney-insulated-patio-kit-2.jpg",
+          "alt": "Insulspan patio kit attached to a two-storey home"
+        }
+      ]
+    },
+    {
+      "id": "horse-stables",
+      "title": "Horse stables roof",
+      "use": "Rural building",
+      "copy": "Insulspan roof panels going onto a large stable building.",
+      "photos": [
+        {
+          "src": "/photos/insulspan-projects/Insulspan_roofing_installing.jpg",
+          "alt": "Insulspan roof panels being installed on a horse stable building"
+        },
+        {
+          "src": "/photos/insulspan-projects/Stable_Insulspan_roofing.jpg",
+          "alt": "Underside of Insulspan roof panels on the stable frame"
+        }
+      ]
+    },
+    {
+      "id": "rural-patio",
+      "title": "Patio on a rural property",
+      "use": "Patio",
+      "copy": "An Insulspan patio roof over the deck of a rural home.",
+      "photos": [
+        {
+          "src": "/photos/insulspan-projects/3Q5A7146-patio-insulated.jpg",
+          "alt": "Insulspan roof over the deck of a rural home"
+        }
+      ]
+    },
+    {
+      "id": "flyover-carport",
+      "title": "Large flyover carport",
+      "use": "Carport",
+      "copy": "A large flyover roof built with Insulspan panels.",
+      "photos": [
+        {
+          "src": "/photos/insulspan-projects/20210526_140038-large-flyover.jpg",
+          "alt": "Large flyover carport roofed with Insulspan insulated panels"
+        }
+      ]
+    },
+    {
+      "id": "poolside-alfresco",
+      "title": "Alfresco beside the pool",
+      "use": "Alfresco",
+      "copy": "An Insulspan alfresco roof beside the pool.",
+      "photos": [
+        {
+          "src": "/photos/insulspan-projects/20210524_135930-beautiful-alfresco.jpg",
+          "alt": "Insulspan alfresco roof beside a swimming pool"
+        }
+      ]
+    }
+  ],
+  "ctaH2": "Planning an Insulspan roof?",
+  "ctaBody": "Tell us the size and where it's going, and we'll come back with the panel, span and a price.",
+  "ctaPhone": "1300 132 787"
+}

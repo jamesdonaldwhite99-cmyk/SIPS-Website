@@ -5980,3 +5980,20 @@ a { color: inherit; }
 @media (max-width: 560px) {
   .qb-seg button { padding: 8px 12px; font-size: 13px; }
 }
+
+/* Insulspan projects (/products/insulspan/projects): the jobs moved from insulspan.com.au. */
+.qb-proj-back { margin: 0 0 28px; font-size: 15px; }
+.qb-proj-back a { color: var(--color-graphite); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--ts-accent); }
+.qb-proj-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+.qb-proj-card { display: flex; flex-direction: column; border: 1px solid var(--color-hairline); border-radius: var(--radius-md); overflow: hidden; background: var(--color-canvas); scroll-margin-top: 96px; }
+.qb-proj-photo { position: relative; aspect-ratio: 3 / 2; background: var(--ts-cream-2); }
+.qb-proj-thumbs { display: flex; gap: 6px; padding: 6px 6px 0; }
+.qb-proj-thumb { position: relative; flex: 1; aspect-ratio: 3 / 2; max-width: 33%; border-radius: var(--radius-xs); overflow: hidden; background: var(--ts-cream-2); }
+.qb-proj-body { padding: 22px 24px 26px; }
+.qb-proj-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.qb-proj-tags span { font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--color-slate); border: 1px solid var(--color-hairline); border-radius: var(--radius-full); padding: 4px 10px; }
+.qb-proj-body h2 { font-size: 22px; font-weight: 500; letter-spacing: -0.3px; color: var(--color-ink); margin: 0 0 10px; }
+.qb-proj-body p { font-size: 15px; line-height: 1.6; color: var(--color-graphite); margin: 0; }
+.qb-proj-body blockquote { margin: 14px 0 0; padding-left: 14px; border-left: 3px solid var(--ts-accent); font-size: 15px; line-height: 1.6; color: var(--color-ink-soft); font-style: italic; }
+.qb-proj-link { display: inline-block; margin-top: 14px; font-size: 14px; font-weight: 600; color: var(--color-ink); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--ts-accent); }
+@media (max-width: 900px) { .qb-proj-grid { grid-template-columns: 1fr; } }
