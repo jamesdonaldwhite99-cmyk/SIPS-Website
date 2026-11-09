@@ -3464,7 +3464,7 @@ a { color: inherit; }
 
 .ts-resource-cover {
   position: relative;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 210 / 297;
   overflow: hidden;
   background: var(--ts-cream-2);
   flex-shrink: 0;
