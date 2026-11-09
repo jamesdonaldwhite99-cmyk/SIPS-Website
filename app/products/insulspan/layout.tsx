@@ -21,7 +21,7 @@ const product = {
   image: [absoluteUrl(data.heroPhoto), absoluteUrl(data.overviewPhoto), absoluteUrl(data.bannerPhoto)],
   color: data.colourSwatches.map((s) => s.name.replace(/[®™]/g, "")).join(", "),
   additionalProperty: [
-    { "@type": "PropertyValue", name: "Maximum single span", value: "5,700 mm" },
+    { "@type": "PropertyValue", name: "Maximum single span", value: "8,100 mm" },
     { "@type": "PropertyValue", name: "Bushfire attack level", value: "BAL-29" },
     { "@type": "PropertyValue", name: "Underside", value: "0.5 mm steel, Surfmist" },
     { "@type": "PropertyValue", name: "Profiles", value: data.profiles.map((p) => p.name).join(", ") },

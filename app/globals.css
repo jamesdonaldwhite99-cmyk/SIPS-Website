@@ -5975,7 +5975,7 @@ a { color: inherit; }
 }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 .ts-aly-spantable[hidden] { display: none; }
-.qb-ins-spantable table { min-width: 520px; }
+.qb-ins-spantable table { min-width: 780px; }
 .qb-ins-spantable td, .qb-ins-spantable th { white-space: nowrap; }
 @media (max-width: 560px) {
   .qb-seg button { padding: 8px 12px; font-size: 13px; }
