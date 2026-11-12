@@ -21,6 +21,9 @@ export const metadata: Metadata = {
     locale: seo.site.locale,
     ...(seo.site.ogImage ? { images: [{ url: seo.site.ogImage }] } : {}),
   },
+  // Meta business verification for the Quick Built Homes portfolio (12 Nov 2026). Never remove:
+  // it keeps the domain, business verification and the Human Agent app review valid.
+  other: { "facebook-domain-verification": "1yb6p9ryrozlmn5vpd5q795lsshw1w" },
 };
 
 export default function RootLayout({
