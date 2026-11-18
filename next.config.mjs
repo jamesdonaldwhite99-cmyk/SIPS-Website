@@ -1,3 +1,5 @@
+import { readFileSync } from 'node:fs';
+
 /** @type {import('next').NextConfig} */
 
 // alyspan.com.au is being retired into this site. Its DNS points here, so every
@@ -39,6 +41,21 @@ const alyspanRedirects = [
     statusCode: 301,
   },
 ];
+
+// insulspan.com.au is retired into this site the same way (James, 18 Nov 2026: hosting moved off
+// Thomas Marsden). Its domain is already on this Vercel project, so once its DNS points here every
+// old page goes to its closest new one. The map is the one built for the Insulspan Redirect repo
+// from Search Console traffic; the last rule catches anything else. Keep insulspan.com.au renewed.
+const INSULSPAN_HOST = '(www\\.)?insulspan\\.com\\.au';
+const insulspanMap = JSON.parse(
+  readFileSync(new URL('./content/insulspan-redirects.json', import.meta.url), 'utf8'),
+).redirects;
+const insulspanRedirects = insulspanMap.map(({ source, destination }) => ({
+  source,
+  has: [{ type: 'host', value: INSULSPAN_HOST }],
+  destination,
+  statusCode: 301,
+}));
 
 /* THE DESIGN ZONES.
  *
@@ -86,6 +103,7 @@ const nextConfig = {
   async redirects() {
     return [
       ...alyspanRedirects,
+      ...insulspanRedirects,
 
       /* STAFF SHORTCUTS — an address people can remember, pointing at the tool.
        *
