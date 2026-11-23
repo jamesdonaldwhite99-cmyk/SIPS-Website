@@ -4,6 +4,7 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import Link from "next/link";
 import { DESIGNERS, designerHref, designerIsExternal } from "@/lib/designers";
 import Image from "next/image";
+import BookCall from "@/components/BookCall";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import data from "@/content/contact.json";
@@ -259,6 +260,9 @@ export default function ContactPage() {
   const pageRef = useRef<HTMLDivElement>(null);
   const hpRef = useRef<HTMLInputElement>(null);
   const [submitted, setSubmitted] = useState(false);
+  /* The call booking after sending, except for a plain patio kit quote (James, 23 Nov 2026: booking on all sites,
+     "not plain patio kits unless large"); a custom or oversize patio still gets it. */
+  const [offerCall, setOfferCall] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
 
@@ -519,6 +523,7 @@ export default function ContactPage() {
         }
       }
 
+      setOfferCall(!(isPatioSubmission && !needsCustom));
       setSubmitted(true);
     } catch {
       setError("Something went wrong. Please try again or call us on 1300 132 787.");
@@ -529,7 +534,7 @@ export default function ContactPage() {
 
   if (submitted) {
     return (
-      <div style={{ minHeight: "60vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
+      <div style={{ minHeight: "60vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: offerCall ? "120px 0 40px" : undefined }}>
         <div style={{ textAlign: "center", maxWidth: 520, padding: "0 40px" }}>
           <div style={{ width: 64, height: 64, borderRadius: "50%", background: "var(--ts-cream-2)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 24px" }}>
             <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="var(--ts-accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -544,6 +549,7 @@ export default function ContactPage() {
           </p>
           <Link href="/" className="ts-btn ts-btn--dark">Back to home</Link>
         </div>
+        {offerCall && <div style={{ width: "100%", padding: "40px 16px 0" }}><BookCall compact /></div>}
       </div>
     );
   }
@@ -1095,6 +1101,11 @@ export default function ContactPage() {
             </form>
           </div>
         </div>
+      </section>
+
+      {/* Book a call with James (components/BookCall.tsx). Hides itself until the site has the booking key. */}
+      <section className="ts-section" style={{ background: "var(--color-canvas-warm, var(--ts-cream-2))" }}>
+        <div className="ts-container"><BookCall /></div>
       </section>
     </div>
   );

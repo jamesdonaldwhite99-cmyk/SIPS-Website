@@ -1,0 +1,38 @@
+/* Book a call (components/BookCall.tsx). Uses the site's own tokens from app/globals.css. */
+.bc { max-width: 760px; margin: 0 auto; padding: 40px 0; scroll-margin-top: 96px; }
+.bc h2 { font-family: var(--font-display); font-size: clamp(28px, 3vw, 40px); font-weight: 400; letter-spacing: -1px; margin: 8px 0 12px; }
+.bc__lead { font-size: 16px; line-height: 1.6; color: var(--color-graphite); margin: 0 0 24px; }
+.bc__muted { color: var(--color-slate); font-size: 14px; }
+.bc__error { color: #c0392b; font-size: 14px; margin: 8px 0; }
+.bc__step { margin: 0 0 24px; }
+.bc__label { font-weight: 600; font-size: 15px; margin: 0 0 10px; }
+.bc__days, .bc__times { display: flex; flex-wrap: wrap; gap: 8px; }
+.bc__chip {
+  border: 1px solid var(--color-hairline-soft); background: var(--color-canvas); color: var(--color-ink);
+  border-radius: 999px; padding: 9px 16px; font-size: 14px; cursor: pointer; min-height: 40px;
+}
+.bc__chip:hover { border-color: var(--color-ink); }
+.bc__chip.is-on { background: var(--color-ink); color: var(--color-canvas); border-color: var(--color-ink); }
+.bc__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 16px; margin: 0 0 16px; }
+.bc__grid label { display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: var(--color-graphite); }
+.bc__grid input, .bc__grid select, .bc__grid textarea {
+  font: inherit; font-size: 16px; color: var(--color-ink); padding: 10px 12px;
+  border: 1px solid var(--color-hairline-soft); border-radius: 8px; background: var(--color-canvas);
+}
+.bc__full { grid-column: 1 / -1; }
+.bc--done { text-align: left; }
+.bc--done p { font-size: 16px; line-height: 1.6; color: var(--color-graphite); }
+.bc--compact { padding-top: 16px; }
+@media (max-width: 640px) {
+  .bc__grid { grid-template-columns: 1fr; }
+}
+.bc--split { display: grid; gap: 24px; max-width: 1120px; }
+.bc__photo img { width: 100%; height: auto; border-radius: 12px; display: block; }
+@media (min-width: 900px) {
+  .bc--split { grid-template-columns: minmax(0, 1fr) 420px; gap: 48px; align-items: start; }
+  .bc__photo { order: 2; position: sticky; top: 110px; }
+  .bc__main { order: 1; }
+}
+@media (max-width: 899px) {
+  .bc__photo img { max-height: 260px; object-fit: cover; }
+}
