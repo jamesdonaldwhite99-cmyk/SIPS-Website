@@ -193,6 +193,12 @@ const FULL_COLOURS: Colour[] = [
   { name: "Monument", hex: "#323233" }, { name: "Night Sky", hex: "#1B1B1B" },
   { name: "Pearl White", hex: "#EDE9E0" }, { name: "Dover White", hex: "#F1EEE2" },
 ];
+// Roof panel (Insulspan top skin) colours: only these six from 2027, the
+// Selection Steel UniCote coils for the 1 m machine (Off White, Gull Grey,
+// Slate Grey, Basal, Monolith, Ebony), shown by their Colorbond equivalents.
+// James, 24 Nov 2026. FULL_COLOURS stays for the beam/post "other colour" list.
+const ROOF_COLOURS: Colour[] = ["Surfmist", "Shale Grey", "Woodland Grey", "Basalt", "Monument", "Night Sky"]
+  .map((n) => FULL_COLOURS.find((c) => c.name === n)!);
 const BEAMPOST_COLOURS: Colour[] = [
   { name: "Pearl White", hex: "#EDE9E0" }, { name: "Monument", hex: "#323233" },
 ];
@@ -861,7 +867,7 @@ export default function ContactPage() {
                       <div className="legend">
                         <span className="name" style={{ fontSize: 16 }}>Roof panel colour <span style={{ fontWeight: 400, color: "var(--color-graphite)", fontSize: 13 }}>(Colorbond®)</span></span>
                       </div>
-                      <ColourGrid options={FULL_COLOURS} value={form.panelColour} onChange={(v) => setForm((f) => ({ ...f, panelColour: v }))} />
+                      <ColourGrid options={ROOF_COLOURS} value={form.panelColour} onChange={(v) => setForm((f) => ({ ...f, panelColour: v }))} />
                     </div>
                   )}
 

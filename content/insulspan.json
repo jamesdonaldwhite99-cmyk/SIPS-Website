@@ -48,48 +48,28 @@
   "heroLead": "Structural strength and insulation in one panel. Insulspan replaces purlins, beams, trusses, sarking, bulk insulation and plasterboard with a single install, and the underside is a finished Surfmist ceiling.",
   "colourSwatches": [
     {
-      "name": "Classic Cream™",
-      "hex": "#e6dcc4"
-    },
-    {
       "name": "Surfmist®",
       "hex": "#e2e2d6"
-    },
-    {
-      "name": "Dune®",
-      "hex": "#9c9a8d"
     },
     {
       "name": "Shale Grey™",
       "hex": "#aab0aa"
     },
     {
-      "name": "Windspray®",
-      "hex": "#727878"
+      "name": "Woodland Grey®",
+      "hex": "#4B4E48"
     },
     {
-      "name": "Wallaby®",
-      "hex": "#7e7c70"
+      "name": "Basalt®",
+      "hex": "#585A5C"
     },
     {
-      "name": "Gully®",
-      "hex": "#5e564a"
+      "name": "Monument®",
+      "hex": "#323233"
     },
     {
-      "name": "Jasper®",
-      "hex": "#6f5e4f"
-    },
-    {
-      "name": "Bluegum®",
-      "hex": "#7d8b8c"
-    },
-    {
-      "name": "Pale Eucalypt®",
-      "hex": "#73796b"
-    },
-    {
-      "name": "Cottage Green®",
-      "hex": "#34433a"
+      "name": "Night Sky®",
+      "hex": "#1B1B1B"
     }
   ],
   "specs": [
