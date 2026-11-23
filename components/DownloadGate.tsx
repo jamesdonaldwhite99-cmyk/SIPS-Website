@@ -83,9 +83,29 @@ export default function DownloadGate({ resource, webhookUrl, onClose }: Props) {
     document.body.removeChild(a);
   };
 
+  /* Trade documents (/trade-docs/, lib/tradeDocs.ts) open only with the access cookie, which the server gives
+     to anyone who has left a name and email here. False, with the reason shown, when it cannot be given. */
+  const isTradeDoc = resource.href.startsWith("/trade-docs/");
+  const grantTrade = async (who: { name: string; email: string }) => {
+    try {
+      const res = await fetch("/api/trade-access", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: who.name, email: who.email, hp: hpRef.current?.value || "" }),
+      });
+      if (res.ok) return true;
+    } catch {
+      /* falls through to the message below */
+    }
+    setReturning(null);
+    setError("Sorry, the trade documents are not available right now. Call us on 1300 132 787 or email sales@quickbuiltsystems.com.au and we will send them.");
+    return false;
+  };
+
   // A returning visitor: one click, no form. The post is marked `repeat` so the service only adds a line to their
   // Capsule record (no new task, email or auto-reply). It never holds up the download.
-  const downloadAgain = (who: StoredAccess) => {
+  const downloadAgain = async (who: StoredAccess) => {
+    if (isTradeDoc && !(await grantTrade(who))) return;
     fetch("/api/lead", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -138,6 +158,7 @@ export default function DownloadGate({ resource, webhookUrl, onClose }: Props) {
         STORAGE_KEY,
         JSON.stringify({ name: payload.name, email: payload.email, phone: payload.phone, savedAt: Date.now() } as StoredAccess)
       );
+      if (isTradeDoc && !(await grantTrade({ name: payload.name, email: payload.email }))) return;
       triggerDownload(resource.href);
       onClose();
     } catch {

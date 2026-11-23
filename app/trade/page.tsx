@@ -19,6 +19,22 @@ const c: TradeConfig = {
     { title: "Straight to the factory", caption: "Estimating, design and technical help from the people who make the panels, on 1300 132 787.", image: "/photos/Building system.jpg" },
     { title: "The Quick Built app (coming soon)", caption: "Coming soon: track every order from deposit to delivery, see your invoices and statement, and price jobs at your trade rates.", image: "/photos/House.jpeg" },
   ],
+  pack: {
+    href: "/trade-docs/qbs-insulated-panels-trade-guide.pdf",
+    cover: "/photos/resources/qbs-insulated-panels-trade-guide-cover.png",
+    title: "Insulated Panels Trade Guide",
+    lead: "Why trade with Quick Built, then every document we publish for the trade, each with its own cover, what it is, when you need it and a link to download it.",
+    contents: [
+      "Insulspan, Panelspan and Panelcore brochures and the Insulspan data sheet",
+      "Wind classification guide and patio roof engineering (22-1204-ST)",
+      "Queensland Form 15, patio cover beam and Alyspan span tables",
+      "Bushfire guidance for insulated roof and wall panels",
+      "Install guides for attached and flyover Insulspan roofs",
+      "10-year limited warranty, storage and handling",
+    ],
+    pages: "8 pages",
+    size: "5.2 MB",
+  },
   resources: [
     { title: "The building system", caption: "How the panels go together, from footings to roof.", href: "/building-system", image: "/photos/Building system.jpg" },
     { title: "Products", caption: "Insulspan, Panelspan, Panelcore and Alyspan: sizes, finishes and uses.", href: "/products", image: "/photos/Insulspan Image.jpg" },

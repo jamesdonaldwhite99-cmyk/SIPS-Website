@@ -94,6 +94,11 @@ const zoneRewrites = ZONES.filter((z) => z.url).flatMap((z) => [
 ]);
 
 const nextConfig = {
+  /* The trade documents are read from trade-docs/ at request time (app/trade-docs/[file]/route.ts),
+     outside public/ so nothing serves them without the trade cookie. This ships them with that route. */
+  experimental: {
+    outputFileTracingIncludes: { "/trade-docs/[file]": ["./trade-docs/**/*"] },
+  },
   images: {
     unoptimized: true,
   },
@@ -102,6 +107,10 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // The trade guide moved out of public/ behind the details form (lib/tradeDocs.ts, 24 Nov 2026); the guide's
+      // own links print /pdfs/trade/<file>, served from the same gate.
+      { source: "/pdfs/qbs-insulated-panels-trade-guide.pdf", destination: "/trade-docs/qbs-insulated-panels-trade-guide.pdf", permanent: true },
+      { source: "/pdfs/trade/:file", destination: "/trade-docs/:file", permanent: true },
       ...alyspanRedirects,
       ...insulspanRedirects,
 

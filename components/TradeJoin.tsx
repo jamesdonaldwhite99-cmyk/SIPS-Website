@@ -9,6 +9,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import LeadsBand from "./LeadsBand";
+import TradePackButton from "./TradePackButton";
 
 export const APPLY_URL = "https://www.quickbuiltsystems.com.au/trade-account";
 const TERMS = "https://www.quickbuiltsystems.com.au/pdfs/qbs-terms-2026-04.pdf";
@@ -22,7 +23,7 @@ export interface TradeConfig {
   resourcesHeading?: string;
   resources: { title: string; caption: string; href: string; image: string; external?: boolean }[];
   gallery: { label: string; caption: string; image: string }[];
-  /** The technical pack (PDF in /public/pdfs). Left out until James approves that site's pack. */
+  /** The trade guide (approved 24 Nov 2026). Served from /trade-docs/ behind the details form (lib/tradeDocs.ts). */
   pack?: { href: string; cover: string; title: string; lead: string; contents: string[]; pages: string; size: string };
 }
 
@@ -71,7 +72,7 @@ export default function TradeJoin({ c }: { c: TradeConfig }) {
         </div>
       </section>
 
-      {/* Technical pack: free download, as on Fencing */}
+      {/* Trade guide: download behind the details form, as on Fencing */}
       {c.pack ? (
         <section className="ts-section ts-divider-top" style={{ background: "var(--ts-cream-2)" }}>
           <div className="ts-container">
@@ -81,14 +82,14 @@ export default function TradeJoin({ c }: { c: TradeConfig }) {
                 <span className="qbt-pack-badge">PDF</span>
               </div>
               <div className="qbt-pack-text">
-                <div className="ts-eyebrow">Technical pack</div>
+                <div className="ts-eyebrow">Trade guide</div>
                 <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(24px, 2.8vw, 34px)", fontWeight: 400, letterSpacing: "-0.5px", color: "var(--color-ink)", margin: "14px 0 14px" }}>{c.pack.title}</h2>
                 <p style={{ fontSize: 16, lineHeight: 1.6, color: "var(--color-graphite)", margin: "0 0 20px" }}>{c.pack.lead}</p>
                 <ul className="qbt-pack-list">
                   {c.pack.contents.map((x) => <li key={x}><span className="qbt-pack-check" style={{ color: "var(--ts-accent)" }}><Check /></span>{x}</li>)}
                 </ul>
                 <div className="qbt-pack-meta"><span className="qbt-pack-chip">PDF</span><span className="qbt-pack-chip">{c.pack.pages}</span><span className="qbt-pack-chip">{c.pack.size}</span></div>
-                <div style={{ marginTop: 22 }}><a href={c.pack.href} className="ts-btn ts-btn--primary" target="_blank" rel="noopener">Download the pack<Arrow /></a></div>
+                <div style={{ marginTop: 22 }}><TradePackButton label="Download the guide" resource={{ title: c.pack.title, href: c.pack.href, fileType: "PDF", fileSize: c.pack.size }} /></div>
               </div>
             </div>
           </div>
