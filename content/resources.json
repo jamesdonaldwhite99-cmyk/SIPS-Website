@@ -14,11 +14,11 @@
     {
       "kicker": "Brochure",
       "title": "Insulspan® Brochure",
-      "copy": "Full product overview for the Insulspan® insulated roofing panel range — profiles, thicknesses, colour options and applications.",
+      "copy": "Full product overview for Insulspan® insulated roof panels: the roof, insulation and a finished Surfmist ceiling in one panel, spans, profiles and colours.",
       "fileType": "PDF",
-      "fileSize": "1.8 MB",
+      "fileSize": "4.8 MB",
       "cover": "/photos/resources/insulspan-brochure.png",
-      "href": "/pdfs/insulspan-brochure.pdf"
+      "href": "/pdfs/insulspan-brochure.pdf?v=f6123df7"
     },
     {
       "kicker": "Install guide",
@@ -59,20 +59,20 @@
     {
       "kicker": "Install guide",
       "title": "Insulated Patio Install Guide",
-      "copy": "Complete installation guide for Quick Built Systems insulated patio kits — covering fixings, flashings, beam connections and finishing.",
+      "copy": "Step-by-step guide to installing an attached Insulspan® patio roof: receiver channel, beam on posts and roof panels, in eight steps.",
       "fileType": "PDF",
-      "fileSize": "1.6 MB",
+      "fileSize": "5.4 MB",
       "cover": "/photos/resources/insulated-patio-install-guide.png",
-      "href": "/pdfs/insulated-patio-install-guide.pdf"
+      "href": "/pdfs/insulated-patio-install-guide.pdf?v=1ce08943"
     },
     {
       "kicker": "Brochure",
       "title": "Panelspan® Wall Panel",
-      "copy": "Product brochure for the Panelspan® structural wall panel system — FC and MgO finishes, thicknesses and structural data.",
+      "copy": "Panelspan® structural insulated wall panels: MagnaClad MgO faces on a high-density EPS core.",
       "fileType": "PDF",
-      "fileSize": "560 KB",
+      "fileSize": "1.7 MB",
       "cover": "/photos/resources/panelspan-wall-panel.png",
-      "href": "/pdfs/panelspan-wall-panel.pdf"
+      "href": "/pdfs/panelspan-wall-panel.pdf?v=47dd06a3"
     },
     {
       "kicker": "Technical guide",
@@ -113,11 +113,11 @@
     {
       "kicker": "Install guide",
       "title": "Quick Built Sub Floor Installation Guide",
-      "copy": "Step-by-step subfloor installation guide for QuickBuilt Systems — bearer and joist layout, fixing details and tolerances.",
+      "copy": "Step-by-step guide to installing a Quick Built steel floor: posts on footings, bearers and joists, in thirteen steps.",
       "fileType": "PDF",
-      "fileSize": "644 KB",
+      "fileSize": "2.7 MB",
       "cover": "/photos/resources/quick-built-subfloor-guide.png",
-      "href": "/pdfs/quick-built-subfloor-guide.pdf"
+      "href": "/pdfs/quick-built-subfloor-guide.pdf?v=59aa4d3d"
     },
     {
       "kicker": "Brochure",
@@ -133,18 +133,18 @@
       "title": "Slenderline Installation Guide",
       "copy": "Step-by-step installation guide for the QuickBuilt Slenderline modular acoustic fencing system — site set-out, post install, panel and capping installation, painting and finishing.",
       "fileType": "PDF",
-      "fileSize": "1.2 MB",
+      "fileSize": "2.5 MB",
       "cover": "/photos/resources/slenderline-install-guide.png",
-      "href": "/pdfs/Quickbuilt Slenderline Installation Guide V3_compressed.pdf"
+      "href": "/pdfs/Quickbuilt Slenderline Installation Guide V3_compressed.pdf?v=1977c938"
     },
     {
       "kicker": "Install guide",
       "title": "Slenderline Aluminium Post Install Manual",
       "copy": "Installation manual for Slenderline aluminium posts — site set-out, base brackets, corner posts, panel and capping installation, painting and finishing.",
       "fileType": "PDF",
-      "fileSize": "13.7 MB",
+      "fileSize": "3.8 MB",
       "cover": "/photos/resources/slenderline-aluminium-post-install.png",
-      "href": "/pdfs/Slenderline Aluminium Post Install Manual V3.pdf"
+      "href": "/pdfs/Slenderline Aluminium Post Install Manual V3.pdf?v=728bef87"
     }
   ],
   "heroEyebrow": "Resources",
